@@ -1,0 +1,25 @@
+= FIT CTU BI
+
+Collection of my projects made on FIT_CTU throughout bachelor studies.
+
+== First semester
+
+link:BI-PA1/index.adoc[Programming and Algorithms (BI-PA1)] - homeworks on ProgTest, exercises from labs
+
+*Digital and Analog Circuits* (BI-CAO) - Wolfram Mathematica homeworks and labs
+
+*Programming in Shell 1* (BI-PS1) - notes from lectures and labs
+
+|===
+|Subject |Grade |Total |Exam |Assessment
+
+|Programming and Algorithmics 1|A|106.61/100|36.50/50|70.11/50
+|Digital and Analog Circuits|A 3+|65/50
+|Programming in Shell 1|A 3+|113.67/50
+|Elements of Calculus|A|100.50/100|38/40|62.50/60
+|Mathematical Logic|A|102/100|64/64|34/32
+|Law and informatics|B 3+|43/50
+|Preparatory Mathematics|- 3+|18/20
+|Introduction to Linux 4+|-
+|Physical Education 1 4+|-
+|===

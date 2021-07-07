@@ -1,0 +1,66 @@
+Na 4 bitech může být 16 možností, na 3 8 možností.
+
+2^2 2^1 2^0   DEC
+ 0   0   0     0
+ 0   0   1     1
+ 0   1   0     2
+ 0   1   1     3
+ 1   0   0     4
+ 1   0   1     5
+ 1   1   0     6
+ 1   1   1     7
+
+Příklad: 2 + 6 na třech bitecch
+2(10) = 010 (2)
+6(10) = 110 (2)
+----- 1|000 CHYBA! Přetečení
+
+Pozor na reprezentaci se znaménkem v přímém a doplňkovém kódu:
+
+BIN   DEC (přímý i doplňkový) BIN  DEC (přímý)  DEC (doplňkový)    
+0000   +0                    1000   -0           -8
+0001   +1                    1001   -1           -7
+0010   +2                    1010   -2           -6
+0011   +3                    1011   -3           -5
+0100   +4                    1100   -4           -4
+0101   +5                    1101   -5           -3
+0110   +6                    1110   -6           -2
+0111   +7                    1111   -7           -1
+
+1000 do doplňkového: 1. = znaménko (-), zbytek 000 otočíme (111) a přičteme jedničku (1000) = -8
+1111 do doplňkového: 1. = znaménko (-), zbytek 111 otočíme (000) a přičteme jedničku (001) = -1
+
+Pozor, v doplňkovém kódu 1000 reprezentuje -8!
+
+Př. jaké hodnoty má 8bitů v přímém kódu? -127 až 127 a v doplňkovém? -128 až 127
+
+Jak se sčítá v přímém kódu?
+3 (011) + 4 (100) = 7 (111) ANO!
+4 (100) + 5 (101) = ??? (1001) = -1 ???
+7 (111) - 1 (1001) = ??? (1|0000) = 0 ???
+
+V přímém kódu se extrémně složitě zjišťuje, jestli jsme sečetli správně.
+
+Jak se sčítá v doplňkovém kódu?
+3 (011) + 4 (100) = 7 (111) ANO! (přenos 0000)
+5 (0101) + 7 (0111) = ??? (1100) -2 ??? (přenos 01|11)
+
+Jsme na 7 bitech:
+
+53 (10) do přímého i doplňkového = 0110101(2)
+-53(10) do přímého = 1110101 (2)
+-53(10) do doplňkového? 1XXXXXX = 1001011 (2)
+110101 znegujeme: 001010 a přičteme 1 = 001011
+
+Převod na dekadický zápis:
+
+1001000(2) je to v doplňkovém
+- znaménko a 001000 -> 110111 + 1 -> 111000 = (8 + 16 + 32) = 56 -> -56
+
+Pracujeme na čtyřech bitech:
+
+Bez znamének:
+1010 (2) = 10 (10)
+1111 (2) = 15 (10)
+------------------
+1001 (2) =  9 (10)

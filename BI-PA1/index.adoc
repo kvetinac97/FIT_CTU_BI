@@ -1,0 +1,26 @@
+= Programming and Algorithmics 1
+
+Got more than 100 % thanks to bonuses on homework. +
+Got 100 % for code review and activity on labs. +
+Finished *19th* from 834 students.
+
+== Tasks
+
+ - Task 0: Quotes (100 %)
+ - Task 1: Triangles (100 %)
+ - Task 2: Symmetric numbers (150 %)
+ - Task 3: Trimming lines (94 %)
+ - Task 4: Water tank (156 %)
+ - Task 5: Flight control (100 %)
+ - Task 6: Autocomplete II (100 %)
+ - Task 7: Cutting planks (117 %)
+ - Task 8: Dieselgate 2 (100 %)
+ - _eXtra task: Kakuro (15%)_
+
+== Labs
+
+Combination of tasks solved at labs and notes
+
+== Random
+
+Random programs I wrote during studies to practice C

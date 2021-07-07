@@ -1,0 +1,54 @@
+Když chceme převést číslo z desítkové soustavy do dvojkové, dělím dvojkou a dostanu zbytek 0|1. Ty si dám pod sebe. Až se dostanu na nulu, odspoda nahoru můžu napsat číslo.
+
+LSB = Least Significant Byte (poslední číslice)
+MSB = Most Significant Byte (první číslice)
+
+Zpět se můžu dostat tím, že budu zprava doleva zvyšovat mocninu (dvojky) a přičtu do cíle
+
+17853(10) = do16
+
+17853 : 16 = 1115 zb. 13 | D
+ 1115 : 16 =   69 zb. 11 | B
+   69 : 16 =    4 zb.  5 | 5
+    4 : 16 =    0 zb.  4 | 4
+
+45BD(16) !!!ODSPODU NAHORU!!!
+
+45BD(16) do 10
+
+D = 13 * 16^0 =    13
+B = 11 * 16^1 =   176
+5 =  5 * 16^2 =  1280
+4 =  4 * 16^3 = 16384
+----------------------
+                17853
+
+
+
+45(10) > (8)
+
+45 : 8 = 5 zb. 5
+5 : 8 = 0 zb. 5
+
+55(8) = 45(10)
+
+
+8(10) > (8)
+
+8 : 8 = 1 zb. 0
+1 : 8 = 0 zb. 1
+
+10(8) = 8 (10)
+
+101101(2) do (8)???
+
+101|101 rozdělíme do trojic (8 = 2^3) zprava doleva !!!
+
+101(2) = 1 + 4 = 5
+55(8)
+
+
+Převod desetinných čísel?
+
+1011.011(2)
+1 * 2^3 + 1 * 2^1 + 1 * 2^0 + 1 * 2^-2 + 1*2^-3 = 8 + 2 + 1 + 0,25 + 0,125 = 11,375(10)
