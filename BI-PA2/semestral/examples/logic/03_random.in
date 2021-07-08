@@ -1,0 +1,17 @@
+set A1 3.0
+set A2 16
+set A3 5e40
+set A4 2e-40
+set A5 30
+set A6 18
+
+set B1 "=IF ( (pow(2;A1) - (pow(A2;1/2) - 2 * (pow(2;2) - pow(2;3)) ) - pow(-1;2/6)) > 156 - (30 + (58 - 6    * 7 ) * 5 + 2 * ( 90 / 18 + 12 ) ) ; "Spatne" ; "Spravne" )"
+get B1
+
+set B1 "=IF ( 156 - (A5 + (58 - 6    * 7 ) * 5 + 2 * ( 90 / A6 + 12 ) ) == 12 ; "Pohoda." ; -67 )"
+get B1
+
+set B1 =A3
+set B2 =A4
+set B3 "=B1 * B2"
+get B3

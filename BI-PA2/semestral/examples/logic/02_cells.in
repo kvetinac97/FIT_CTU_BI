@@ -1,0 +1,61 @@
+set A1 2
+set A2 1
+set A3 3
+set A4 4
+set A5 1.5
+set A6 -2.0
+
+set B1 =IF(A1>A2;A3;A4)
+get B1
+
+set B1 =IF(A1>A2;A5;A6)
+get B1
+
+set B1 "=IF ( A1 > A2 ; A3 ; A4 )"
+get B1
+set B1 "=IF ( A2 > A1 ; A3 ; A4 )"
+get B1
+
+set B1 "=IF ( A1 > A2 ; A5 ; A4 )"
+get B1
+set B1 "=IF ( A2 > A1 ; A5 ; A4 )"
+get B1
+
+set B1 "=IF ( A1 > A2 ; A3 ; A6 )"
+get B1
+set B1 "=IF ( A2 > A1 ; A3 ; A6 )"
+get B1
+
+set B1 "=IF ( A1 > A2 ; A5 ; A6 )"
+get B1
+set B1 "=IF ( A2 > A1 ; A5 ; A6 )"
+get B1
+
+set B1 "=IF( A1 < A2 ; A5 ; A6 )"
+get B1
+set B1 "=IF( A2 < A1 ; A5 ; A6 )"
+get B1
+
+set B1 "=IF( A1 <= A2 ; A5 ; A6 )"
+get B1
+set B1 "=IF( A2 <= A1 ; A5 ; A6 )"
+get B1
+set B1 "=IF( A2 <= A2 ; A5 ; A6 )"
+get B1
+
+set B1 "=IF( A1 >= A2 ; A5 ; A6 )"
+get B1
+set B1 "=IF( A2 >= A1 ; A5 ; A6 )"
+get B1
+set B1 "=IF( A2 >= A2 ; A5 ; A6 )"
+get B1
+
+set B1 "=IF( A1 == A2 ; A5 ; A6 )"
+get B1
+set B1 "=IF( A2 == A2 ; A5 ; A6 )"
+get B1
+
+set B1 "=IF( A1 != A2 ; A5 ; A6 )"
+get B1
+set B1 "=IF( A2 != A2 ; A5 ; A6 )"
+get B1

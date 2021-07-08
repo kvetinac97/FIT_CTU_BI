@@ -1,0 +1,31 @@
+set A1 3
+set A2 -2
+set A3 1
+
+set B1 "=A2"
+get B1
+set B1 "=-A2"
+get B1
+set B1 "=-(A2)"
+get B1
+set B1 "=-++-(A2)"
+get B1
+set B1 "=-++-(-A2)"
+get B1
+set B1 "=A3"
+get B1
+
+set B1 "=B1"
+get B1
+
+set B1 "=A1"
+set B2 "=B3"
+set B3 "=B5"
+set B5 "=B2"
+get B2
+get B3
+get B5
+
+set B1 "=B23"
+get B1
+get Z2

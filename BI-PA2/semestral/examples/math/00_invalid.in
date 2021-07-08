@@ -1,0 +1,22 @@
+set B1 "=5 +"
+get B1
+set B1 "=5 + 3 -"
+get B1
+set B1 "=(5 + 1"
+get B1
+set B1 "=5 + 1)"
+get B1
+set B1 "=(5 + 3)fasjlfa"
+get B1
+set B1 "=daslkčš"
+get B1
+set B1 "=tan(5)"
+get B1
+set B1 "=(((3 - 2))"
+get B1
+set B1 "=(min(36,72 - 1 * 2) + ( 8 / 4 + 9 - 4 + (3 / 2) ) ) - 4 * 5"
+get B1
+set B1 "=(min(36;72 -  * 2) + ( 8 / 4 + 9 - 4 + (3 / 2) ) ) - 4 * 5"
+get B1
+set B1 "=(min(36;72 - 1 * 2) +  8 / 4 + 9 - 4 + (3 / 2) ) ) - 4 * 5"
+get B1

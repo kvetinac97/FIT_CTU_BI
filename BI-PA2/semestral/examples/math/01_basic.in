@@ -1,0 +1,22 @@
+set A1 "=0"
+get A1
+set A1 "=-0"
+get A1
+set A1 "=(1)"
+get A1
+set A1 "=-(1)"
+get A1
+set A1 "=-1"
+get A1
+set A1 "=--1"
+get A1
+set A1 "=+-1"
+get A1
+set A1 "=+(-1)"
+get A1
+set A1 "=+-(-+1)"
+get A1
+set A1 "=(((1)))"
+get A1
+set A1 "=()"
+get A1

@@ -1,0 +1,56 @@
+set B1 =IF(5>3;1;2)
+get B1
+
+set B1 =IF(5>3;"ANO";"NE")
+get B1
+
+set B1 "=IF ( 5 > 3 ; 1 ; 2 )"
+get B1
+set B1 "=IF ( 3 > 5 ; 1 ; 2 )"
+get B1
+set B1 "= IF ( 3 > 5 ; 1 ; 2 )"
+get B1
+
+set B1 "=IF ( 5 > 3 ; "Ano" ; 2 )"
+get B1
+set B1 "=IF ( 3 > 5 ; "Ano" ; 2 )"
+get B1
+
+set B1 "=IF ( 5 > 3 ; 1 ; "Ne" )"
+get B1
+set B1 "=IF ( 3 > 5 ; 1 ; "Ne" )"
+get B1
+
+set B1 "=IF ( 5 > 3 ; "Ano" ; "Ne" )"
+get B1
+set B1 "=IF ( 3 > 5 ; "Ano" ; "Ne" )"
+get B1
+
+set B1 "=IF( 5 < 3 ; "ANO" ; "NE" )"
+get B1
+set B1 "=IF( 3 < 5 ; "ANO" ; "NE" )"
+get B1
+
+set B1 "=IF( 5 <= 3 ; "ANO" ; "NE" )"
+get B1
+set B1 "=IF( 3 <= 5 ; "ANO" ; "NE" )"
+get B1
+set B1 "=IF( 3 <= 3 ; "ANO" ; "NE" )"
+get B1
+
+set B1 "=IF( 5 >= 3 ; "ANO" ; "NE" )"
+get B1
+set B1 "=IF( 3 >= 5 ; "ANO" ; "NE" )"
+get B1
+set B1 "=IF( 3 >= 3 ; "ANO" ; "NE" )"
+get B1
+
+set B1 "=IF( 5 == 3 ; "ANO" ; "NE" )"
+get B1
+set B1 "=IF( 3 == 3 ; "ANO" ; "NE" )"
+get B1
+
+set B1 "=IF( 5 != 3 ; "ANO" ; "NE" )"
+get B1
+set B1 "=IF( 3 != 3 ; "ANO" ; "NE" )"
+get B1

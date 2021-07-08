@@ -1,0 +1,27 @@
+= Programming and Algorithmics 2
+
+Completed 6/7 homework tasks, got some bonuses. +
+Got 100 % for activity on labs. +
+Finished *61th* from 654 students.
+
+== Tasks
+
+ - Task 1: Huffman code (130 %)
+ - Task 2: Tax register (100 %)
+ - Task 3: Big numbers (99 %)
+ - Task 4: e-Banking (125 %)
+ - Task 5: Mail box (100 %)
+ - _Task 6: HTML tables (0 %)_
+ - Task 7: Searching in sequences (114 %)
+
+== Semestral work
+
+One part of subject was creating semestral work. +
+I was given the theme "Simple spreadsheet". +
+Overall, I got 95% from this work.
+
+link:semestral/[See the semestral work here]
+
+== Labs (+ lectures and proseminars)
+
+Combination of tasks solved at labs, lectures and proseminars.
