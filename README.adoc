@@ -4,15 +4,15 @@ Collection of my projects made on FIT_CTU throughout bachelor studies.
 
 == First semester
 
-link:BI-PA1/index.adoc[Programming and Algorithms (BI-PA1)] - homeworks on ProgTest, exercises from labs
+link:BI-PA1/README.adoc[Programming and Algorithms (BI-PA1)] - homeworks on ProgTest, exercises from labs
 
-*Digital and Analog Circuits* (BI-CAO) - Wolfram Mathematica homeworks and labs
+link:BI-CAO/README.adoc[Digital and Analog Circuits (BI-CAO)] - Wolfram Mathematica homeworks and labs
 
-link:BI-PS1/index.adoc[Programming in Shell 1 (BI-PS1)] - notes from lectures and labs
+link:BI-PS1/README.adoc[Programming in Shell 1 (BI-PS1)] - notes from lectures and labs
 
-link:BI-ZMA/index.adoc[Elements of Calculus (BI-ZMA)] - grades and MARAST quiz results export
+link:BI-ZMA/README.adoc[Elements of Calculus (BI-ZMA)] - grades and MARAST quiz results export
 
-link:BI-MLO/index.adoc[Mathematical Logic (BI-MLO)] - grades export
+link:BI-MLO/README.adoc[Mathematical Logic (BI-MLO)] - grades export
 
 |===
 |Subject |Grade |Total |Exam |Assessment
