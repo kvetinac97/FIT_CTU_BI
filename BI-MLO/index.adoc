@@ -1,0 +1,5 @@
+= Mathematical Logic
+
+Got 29 out of 32 points from tests. +
+Got 5 activity points from homeworks given on lectures. +
+*Got full (64/64) points from exam.*

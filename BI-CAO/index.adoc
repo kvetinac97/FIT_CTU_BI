@@ -1,0 +1,12 @@
+= Digital and analog circuits
+
+Got *all the points and bonuses*, resulting in *130 %* (65/50 points) and grade A without exam.
+
+== Tests
+
+First test, written on 3rd, 7th and 11th lab. +
+I did not archive second and third test.
+
+== Notes
+
+Various notes (in Wolfram Mathematica) taken throughout labs.

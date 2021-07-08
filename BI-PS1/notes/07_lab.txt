@@ -1,0 +1,81 @@
+SED:
+ - stream editor, provádí akci na jednotlivých řádkách
+ - přepínač -n potlačí výpis výsledku
+
+ - oddělení částí: středník (;) nebo newline
+ - skript můžeme uložit do souboru pomocí -f
+
+Vzory:
+ - '' všechny řádky
+ - 'n' číslo řádky
+
+ - '$' poslední řádka
+ - '/RE/' řádky odpovídající danému RE
+ - 'm,n' řádky od m do n
+
+sed -r: používá rozšířené regulární výrazy
+
+Příkazy:
+ - p: vytiskne řádku
+ - d: smaže řádku
+
+ - q: vypíše řádku a ukončí skript (sed 'q' vypíše 1. a ukončí se)
+ - Q: okamžité ukončení (sed 'Q' nevypíše nic a ukončí se)
+ - =: vypíše číslo řádky (sed -n '$=' vypíše číslo poslední řádky)
+  (sed -n '/0$/=' vypíše čísla všech řádek končících na 0)
+
+Substituce:
+ - s/RE/náhrada/příznak
+   n: nahrazení n-tého výskytu
+   g: nahrazení všech výskytů
+   p: vytištění řádku pouze, pokud proběhla náhrada
+
+ - pozor, za oddělovač sed považuje první znak za s, takže můžeme použít i jiné znaky
+   sed 's,/,//,g'
+
+Můžeme nahradit konec řádku/slova také nějakým znakem (tím se přidá znak na konec řádku)
+ - sed 's/$/ <-- konec řádky'
+
+Můžeme také nahradit nalezeným znakem (zkratka &)
+ - sed 's/[1234567890]$/& <-- konec řádky'
+
+Můžeme použít také blok příkazů
+ - sed -n '1p { příkaz; příkaz2; příkaz3 }'
+
+
+AWK:
+ - awk 'awk_výraz', výraz se skládá ze vzorů a akcí (oboje můžou chybět)
+ - části se oddělují středníkem nebo novým řádkem
+ - skript můžeme uložit do souboru a pak spustit -f 'soubor.awk'
+
+ - ze základu nedělá nic '', '0'
+ - pokud neuvedeme vzor, provede se na všech řádkách
+ - rozděluje řádku na jednotlivá slova ($1 .. $NF)
+
+Princip AWK:
+ - načte data ze souboru / vstupu
+ - vstup se rozdělí na jednotlivé záznamy (RS = oddělovač záznamů (\n), NR = počet řádek)
+
+ - záznam se rozdělí na položky (FS = oddělovač položek (' ', \t), NF = počet položek, $0 celý záznam, $1, $2 ... první, druhá položka)
+
+ - řetězce uvádíme v uvozovkách ""
+ - oddělovač položek lze nastavit přepínačem -F
+
+ - v příkazu print $1, $7 bude každá čárka nahrazena OFS (\n) a na konci se vytiskne ORS (\n)
+
+Vzory:
+ - prázdný vzor odpovídá každé řádce
+ - LE (logický výraz, PROMENNA == 15, PROMENNA != 15)
+
+ - /RE/ (regulární výraz)
+ - m,n (všechny řádky od m do n)
+ - BEGIN/END (provede se před/po zpracování vstupu)
+
+Pokud chceme doplněk k tomu, co se našlo v regulárním výrazu, dáme ! na začátek.
+Pokud chceme, aby třetí položka odpovídala regulárnímu výrazu, použijeme
+ $3 ~ /RE/, aby neodpovídala $3 !~ /RE/
+
+Prázdná akce = výpis záznamu, můžeme používat funkci rand() (a v BEGIN srand())
+
+
+

@@ -8,7 +8,11 @@ link:BI-PA1/index.adoc[Programming and Algorithms (BI-PA1)] - homeworks on ProgT
 
 *Digital and Analog Circuits* (BI-CAO) - Wolfram Mathematica homeworks and labs
 
-*Programming in Shell 1* (BI-PS1) - notes from lectures and labs
+link:BI-PS1/index.adoc[Programming in Shell 1 (BI-PS1)] - notes from lectures and labs
+
+link:BI-ZMA/index.adoc[Elements of Calculus (BI-ZMA)] - grades and MARAST quiz results export
+
+link:BI-MLO/index.adoc[Mathematical Logic (BI-MLO)] - grades export
 
 |===
 |Subject |Grade |Total |Exam |Assessment

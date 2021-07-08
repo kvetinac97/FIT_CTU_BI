@@ -1,0 +1,52 @@
+PS1/9
+
+AWK:
+ - awk 'awk_výraz' soubory
+ - na každou řádku se aplikuje daný výraz
+
+ - 1 řádka se rozdělí na jednotlivá slova (oddělovač -F = mezera, tabulátor) $1 $2 $NF ($0 celá)
+
+ - awk_výraz: /vzor/{akce}
+ - více výrazů: je lepší si udělat soubor a předat ho přes -f soubor
+
+ - není-li vzor, předají se všechny řádky
+ - není-li explicitní akce, použije se print $0
+
+Tisk: awk 'print $2 $3 $1' nebo
+awk 'printf %s\t%s $3, $1'
+
+AWK -f/F 'awk_výraz' [prom=hod, prom2=hod2] soubory...
+
+Pokud nápisu prom=hod, tak s danou proměnnou můžeme pracovat v rámci řádku
+
+Vzorem může být /regulární výraz/, normální výraz, interval 1,5 nebo 2,$. BEGIN provede skript na začátku, END na konci
+
+Intervaly můžeme dělat i s regulárními výrazy.
+
+V awk lze pracovat i s podmínkami, poleno a cykly... tomu se však věnovat nebudeme.
+
+Můžeme použit relační operátory:
+ >, >=, <, <=, ==, !=, ~, !~
+ +, *, /, -, %, ^ (mocnění), ++, - -
+ &&, ||, !
+
+!/regVýraz/ všechny řádky neobsahující
+
+NF počet položek v aktuálním řádku
+NR počet zpracovaných řádek
+
+FS vstupní oddělovač (mezera)
+OFS výstupní oddělovač (mezera)
+Můžeme nastavit jak chceme.
+
+Řetězce v awk výrazu musíme používat "takto". Proměnné nemají na začátku $ (kromě $0, $1...)
+
+Čítačka
+BEGIN{i=0}
+/něco/{i++, print i". "$0}
+
+Tisk předposledního sloupce $(NF-1)
+
+Funkce:
+ - sin, cos, exp...
+ - length, split, substr, tolower, toupper

@@ -1,0 +1,144 @@
+UNIX:  - soubor: pojmenovaná posloupnost bajtů na datovém médiu  - víceuživatelský, přenosný, unifikované prostředí, multitasking   - shell (terminál) = spojení s okolím (Bourne again shell [bash])  - nápověda pokud něco nevím: man / info / help [příkaz]  - příkazy se dají zadávat i skriptem (.sh)
+
+Adresáře:  - stromová struktura (jeden strom), začíná / (root)  - část stromu může být ale také na jiném disku  - pracovní adresář (pwd) / domovský adresář (~)
+
+Základní syntaxe příkazové řádky: <výzva> <proměnná>=<hodnota>  - mezi jménem proměnné, znakem '=' a hodnotou nesmí být mezery  - pokud obsahuje hodnota mezery, musíme proměnnou uzavřít do ""   - příkazy: <výzva> <jméno příkazu> <přepínače> <argumenty>  - každý příkaz má standardní vstup a standardní výstup + chybový výstup  - více příkazů: P1 & P2 (asynchronně), P1 | P2 (kolona), P1 ; P2 (za sebou)
+
+Přepínač: ovlivňuje vykonání příkazu, začíná pomlčkou/ami (-, --)
+Argument: určuje data ke zpracování
+Příkaz: jeho jednoznačnost určuje jestli uvedeme absolutní/relativní cestu
+
+Krátký přepínač:  - začíná 1 pomlčkou, obsahuje jeden znak, dá se jich napsat více za sebe  - jejich argument můžeme oddělit mezerou nebo napsat přímo
+
+Historie příkazů: můžeme vyhledávat pomocí ^R
+Souborový systém: root (/), . (aktuální složka), .. (o úroveň výše)
+
+Výstup příkazu můžeme: pozastavit (^S), spustit (^Q), poslat dál (P1 | P2)
+Přesměrování do voidu > /dev/null nebo do souboru > / >> fname.txt
+
+Dlouhý přepínač: začíná dvěma pomlčkami, obsahuje slovo
+Proměnné ($PROM): netypové, musíme je deklarovat (A="text")   - složité uvozovky escapují vše až na znaky $\  - jednoduché uvozovky escapují všechno
+
+Detekce znaků rušících speciální význam (Quoting)
+ - metaznaky: mezera, enter, tabulátor, |, &, ;, () <>
+ - pro odstranění používáme znaky \ ' "
+
+ - lomítkem můžeme odstranit i znak konce řádku
+ - pozor, apostrofy nemůžeme escapovat takto '\'' !!! (chyba)
+
+Odstranění komentářů (Comments)
+ - slovo začínající # uvozuje komentář až do konce řádku
+ - pokud napíšu a#b nebo '#' "#", nepočítá se to jako komentář 
+Rozdělení řádky na jednotlivé příkazy (Pipelines)
+ - enter, středník, |, &, případně && a ||
+ - & asynchronně (například pro otevření externího programu)
+ - && (pokud se předchozí provede), || (pokud se předchozí neprovede)
+
+Expanze speciálních znaků (Expansion)
+ - způsobují ji znaky {,} vlnovka, $, ${}, $(), $(())
+ - {a..z} způsobí expanzi od a do z, {txt,jpg}, nepoužívat mezeru!
+
+ - výjimka: nelze udělat min=1; max=10; echo {$min..$max}
+ - můžeme také nahradit příkazy $(prikaz parametry)
+
+Rozdělení na slova (Word splitting)
+ - na slova se dělí proměnnou $IFS, standardně: mezera, tabulátor a enter
+ - parametry (argumenty) skriptu $* (všechny argumenty na jedné řádce),
+   $@ (každý argument na jedné řádce), $# (počet argumentů)
+
+
+
+
+Náhrada jmen souborů:
+ - ? jeden znak, * všechny soubory (až na ty s . nebo s / na začátku)
+ - [a-z] od a do z, [^a-z] všechny až na a-z, [0-9]  - [d45#] vše co začíná na d, 4, 5 nebo #
+ - hranatá závorka je náhrada pouze jednoho znaku !!!
+
+ - shell si to sám rozdělí (ls ? na ls a b c d e f g h i ...)
+ - pozor na používání něčeho ve stylu *j*, *a*a*a*
+ - ls -ld */ (-d vypíše informace o adresáři místo vypsání adresáře,
+   */ adresáře, */* včetně obsahu)
+
+ - pozor, jedná se o speciální znaky, při výpisu ls *, ne ls "*" !!!
+ - pokud se expanze neprovede, vrátí se nám daný znak
+ - expanze začínající tečkou = skryté soubory (ls .* *)
+
+Přesměrování:
+ - provede se před spuštěním příkazu a vyhodnocuje se zleva doprava
+ - nejdříve se vytvoří soubor, až poté se do něj vypíše příkaz !!!
+
+ - použit můžeme: wc -l < soubor, wc -l soubor, nebo cat soubor | wc -l
+ - UVOZOVKY na PC: alt gr shift paragraf, TILDA: alt gr shift středník
+ - jméno souboru pro přesměrování může být v proměnné 
+ - here-strings přesměrování (wc -c <<<"$PATH")
+ - přesměrování chybového i nechybového najednou prikaz &> soubor
+ - smazání obsahu souboru: > soubor
+
+Spouštění příkazu:
+ - pokud název příkazu nemá lomítko (bez absolutní cesty), hledáme:    a) funkci, b) vestavěný příkaz, c) externí příkaz
+ - jinak se soubor spouští ze zadané absolutní cesty
+
+Skript: textový soubor, který obsahuje sadu příkazů
+ - volání: bash skript, bash < skript, skript | bash
+ - na začátku souboru bude výraz #!/bin/bash
+EDITOR VIM:
+ - v každém UNIXovém systému, příkazový a editační režim
+ - z příkazového do editačního: stiskneme [a], zpět [esc]  - odejití [:q!], odejít s uložením [:q] 
+Adresáře: pwd, ~+ (aktuální) / oldpwd ~- (poslední) / ~ home (domovský)
+Přesun mezi složkami: cd 
+Informace o souborech: ls
+ -d (informace o složkách, ne jejich výpis), -l (podrobný výpis)
+ seřazení: -t (čas vytvoření), -S (velikost), -r (obráceně)
+ -R (rekurzivně projde adresáře), -i (zobrazí také iNode)
+ -s (vytiskne velikost každého souboru)
+
+Příkaz stat: stat -c '%i %F %n' soubor
+ -i: iNode, F - typ souboru, n - jméno souboru
+
+Příkaz du (disk usage):
+ -s (pro každý argument zobrazí celkové zaplnění)
+ -sh (tuto velikost zobrazí v lidsky čitelném formátu)
+ -k (zobrazí v kilobajtech) 
+Seřazení podle velikosti souboru: sort (bere i -h = seřadí lidsky)
+Příkaz df (disk free):
+ -h: lidsky čitelné, -i: zobrazí také iNody jednotlivých míst
+ -k: zobrazí v kilobajtech
+
+Informace o přidělené kvótě na serveru: quota [-v = na každém systému]
+Příkaz pro změnu času souboru (časové značky - touch)
+ - touch foo (vytvoří soubor), touch -c soubor (nevytváří soubor)
+ - touch -t YYYYMMDDHHMM.SS soubor (změní časovou značku)  - touch -r soubor1 soubor2 (přenese čas souboru soubor1 na soubor2)
+
+Typ obsahu souboru podle jeho začátku (type) Zobrazení obsahu souboru (less, cat -n), binárního souboru (cat -v, od, strings)
+
+file "$(type -P ls)" .. zkusí najít soubor ls a zobrazí jeho typ
+Číslování řádků souboru: cat -n soubor, případně | nl
+
+Binární soubor:
+ - cat -v soubor (není ideální, nejde tomu rozumět)
+ - binární obsah | od -c (octal dump, -c pouze tisknutelné charaktery a \x)
+ - od -x vytiskne v hexadecimálním formátu, od --endian=big|little 
+Big endian: 01 02 03 04 x Little endian: 04 03 02 01 (všechno obrátí)
+man ascii: ASCII tabulka
+strings: vypíše všechny čitelné sekvence delší než 4 znaky v rámci binárního souboru
+
+Vytváření a rušení souborů: obyčejné soubory (>, >>, touch)
+ - adresáře (mkdir, pokud delší cesta, použít mkdir -p)
+ - vytváření linků (ln), rušení souborů (rm) / adresářů (rmdir)
+ - kopírování/přejmenování/přesun: cp, mv
+
+Symbolické odkazy: ln -s soubor odkaz
+ - pokud soubor, na který odkazujeme neexistuje, jedná se o "broken link"
+
+Kopírování souborů:
+  - cp soubor1 soubor2 soubor3 soubor4 (1,2,3 se zkopírují do 4)
+  -P ignoruje symbolické odkazy = kopíruje přímo zdroj daného odkazu   -r rekurzivně, -p zanechá originální čas souboru a uživatele
+
+find | sort = najde soubory v adresáři a seřadí je
+
+Mazání souborů:
+ - rm smaže jednotlivý soubor, rmdir složku
+ - rmdir smaže prázdný adresář, rmdir -p smaže i prázdný adresář po cestě
+ - rm -i (zeptá se uživatele na smazání každého souboru)
+ - rm, r\m, \rm (zruší alias a zavolá se originální příkaz)
+ - příkaz yes (neustále píše y, yes | rm *)

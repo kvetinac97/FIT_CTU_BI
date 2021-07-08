@@ -1,0 +1,77 @@
+PS1/11
+
+Přístupová práva:
+ - přihlášení lokálně / vzdáleně
+ - každý uživatelsky účet má:
+
+ - uživatelské jméno (max 8 znaků, unikátní, jen lowercase a čísla)
+
+ - UID (číslo uživatele): vnitřní identita, unikátní, 0 = root většinou
+
+ - GID (číslo primární skupiny), všechny zobrazím pomocí id -a
+
+ - úplné jméno uživatele, příkazový interpret, domovský adresář (sekundární skupiny)
+
+Nalezneme přes: getent passwd
+
+Hashované heslo se ukládá do souboru /etc/shadow, root může změnit heslo bez starého, uživatel jen se znalosti starého.
+
+Lokální databaze - /etc/passwd|shadow|group
+
+Centrální databaze: NIS (fray - příkaz ypcat), LDAP
+
+Pokud jsem ve více skupinách, můžu si je měnit. Nezáleží na uživateli ale na identitě příkazu (většinou stejná jako uživatele, ale v passwd lze použít root).
+
+Příkaz su - username = změní identitu (když nenapíšu username, default “”)
+
+Změna skupiny newgrp skupina (musím být členem nové skupiny)
+
+Přístupová práva:
+ - každý soubor má v i-node:
+   UID, GID, rwx pro ugo
+
+(Read Write eXecute)
+(User Group Others)
+
+ - soubor je zase vytvářen procesem, ne uživatelem
+
+Význam:
+ - r: číst obsah souboru (cat), vypisovat obsah adresáře bez atributů (ls)
+
+ - w: měnit obsah souboru (vi),
+vytvářet a rušit soubory adresáře (rm)
+
+ - x: spouštět soubor jako program, nastavovat a procházet adresář (cd)
+
+Pozor, pokud nechceme, aby šlo soubor smazat, musíme jemu nadřazenému adresáři smazat právo w.
+
+Pozor, u práv r—rwx—- pokud jsem vlastník i skupinový, mám práva pouze r (normální vlastník má větší práva).
+
+Příkaz CHMOD:
+ - přepínač -R (rekurzivně = nastaví se na všechny podsoubory a podadredáře)
+
+chmod práva soubory
+
+Práva: symbolický/oktalový zápis
+ - chmod u+x,g-r,o+w soubor
+ a(ll), u(vlastník), g(skupina), o(statní)
+ + přidej, - odeber, = nastav
+ rwx (obvious)
+
+Oktalový zápis:
+ r=4, w=2, x=1
+ Pořadí user group others
+ rwxrwxrwx = 777
+ r—-w—wx = 423
+...
+
+Základní přístupová práva se nastavují maskou (příkaz umask)
+
+Chová se jinak pro soubory a adresáře (soubory - start 666, složky start 777 = nebezpečné)
+
+Maska 0 = nic se na základě nemění
+
+Maska 022 = odečte se 22 (na 644, 755)
+Maska 077 = odečte se 77 (na 600, 700)
+
+Změna skupiny na jinou: chgrp skupina soubor

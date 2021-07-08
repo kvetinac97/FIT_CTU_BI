@@ -1,0 +1,65 @@
+Regulerní výrazy:
+
+fgrep, grep -F: nepoužívá regulerní výrazy
+grep: základní regulerní výrazy
+egrep: rozšířené regulerní výrazy
+
+GREP:
+ -i: ignoruje velká a malá písmena
+ -v: vybírá pouze řádky, které se neshodují
+
+ -w: pattern v grepu bude matchovat pouze celá slova
+ -c: vytiskne pouze počet nalezených řádek
+ -n: vytiskne u každé řádky její číslo v originálním souboru
+
+ -l: vypisuje pouze jména souborů, v nichž se nachází daný řetězec !DŮLEŽITÉ (LearnShell)!
+ -o: vypíše pouze nalezené vzory na řádcích, ne celý řádek
+ --color: zapne obarvení vyhledávaných výrazů (--color -A3/-B3...)
+
+ -A3: udá kontext k nalezenému řádku (after 3 = po každém nalezeném řádku ukáže ještě další 3)
+ -B3: before 3 = před každým nalezeným řádkem ukáže ještě další 3
+ -C3: context 3 = vypíše před každým nalezeným řádkem další 3 a po další 3
+
+Tři šipky: <<< přesměruje obsah proměnné na standardní vstup (tr ":" "\n" <<< "$PATH")
+
+Spojení regulárních výrazů pro vyhledání více výrazů (a zároveň, AND):
+ - řetězením grepů s jednotlivými podmínkami
+ - grep Petr, grep Jan
+
+Realizace ORu: použijeme přepínač -e, který očekává také argument.
+Řetězce, dle kterých vyhledáváme, můžeme uložit do souboru a pak je načíst přes grep -f soubor
+Můžeme využít pro vyhledání řetězce obsahujícího -l (alternativně: grep -- -l)
+
+Atomické výrazy:
+ - každý regulární výraz se skládá z atomárních regulárních výrazů jejich řetězením
+ - atomární výraz: jeden znak zapsaný přímo (a, b, 3, $, !), znak z množiny ([a-z], [:lower:], [a42cD.]) nebo libovolný znak .
+
+ - kotva: můžeme říci, že chceme hledat ze začátku řádky (^) nebo / a do konce řádky ($)
+ - tak stejně můžeme ukotvit na začátek slova \< nebo na konec slova \> (slovo = a-zA-Z)
+  (vyhledávání slov můžeme tedy zapsat jako grep -w slovo nebo grep '\<slovo\>'
+
+VŽDY PSÁT DO APOSTROFŮ, ABY NÁM TO NEINTERPRETOVAL SHELL!!! POZOR NA ESCAPOVÁNÍ ZNAKU . (\.)
+LC_ALL=C; nastaví pouze lokální znaky (C: výchozí, PC angličtina)
+
+Grep rozumí výčtu znaků [Ww], [XYZ], rozsahu znaků [X-Z], všem velkým/malým písmenům [[:upper:]], [[:lower:]], můžeme negovat výčet znaků ^[[:lower:]], [[:alpha:]] písmena
+
+Grep umí na jednom řádku najít také více slov.
+
+Kvantifikátory:
+ - umožní nám opakovat atomární regulární výrazy
+ - * (hvězdička): libovolněkrát (0 - nekonečno výskytů)
+ - + (plus): jednou nebo vícekrát (rozšířené výrazy, 1 - nekonečno výskytů)
+ - {n,m} nebo {n,} nebo {,m}: n až m krát nebo n krát nebo 0 až m krát (rozšířené výrazy, \{n,m\} v základních)
+ - ? (otazník): ani jednou nebo jednou (rozšířené výrazy, \? v základních)
+
+Rozšířené výrazy (?, +) lze využívat i s obyčejným grepem tím, že použijeme před nimi \ (zpětné lomítko)
+Pozor, kvantifikátor nehledá pouze jedno písmeno a konec, matchne každé písmeno v každém slově !!!
+
+Řešení: ne .*:, ale [^:]*:
+
+Nalezení řetězce [slovo]: \[slovo] nebo fgrep [slovo]
+Nalezení řetězce .zip: \.zip nebo fgrep .zip
+
+Podřetězce:
+ - v rozšířených regulárních výrazech, ty základní je umožňují pomocí \(\)
+ JIŽ PŘÍŠTĚ

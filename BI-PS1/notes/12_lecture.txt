@@ -1,0 +1,39 @@
+PS1/12
+
+Příkaz find:  - find [přepínače] adresář [výrza]
+ - hledá rekurzivně soubory podle daného výrazu v podstromu   (výrazy můžeme spojit součtem -o, upřednostnit \( \), negovat \!, default and)
+
+ - výraz je kritérium nebo akce
+ - výrazy vždy začínají minusem (-)
+ - pozor na escapování hvězdiček shellem !!!
+
+ - pokud nenapíšu žádnou akci, zavolá se akce -print (vytisknutí)
+
+Kritéria:  - type [d, f, l, c] jedná se o adresář / soubor / link  - size 1024 (bloků), -size 1024c (bytů) -size 1024c+ (bytů a víc)
+ - inum číslo_iNode (př. -inum 34733 -ls)
+
+ -name 'klasickývzor' (např. -name '*jméno*')
+ -perm nnn (přístupová práva)
+ -mtime 1 (čas modifikace, 1 = právě 1 den starý, 1+ více, 1- méně)
+
+Akce:  -print: vytiskne jméno nalezeného souboru  -ls: pro každý nalezený soubor zavolá příkaz ls -li soubor
+
+ -exec příkaz {} \; příkaz2 {} \; (zde je {} jméno souboru)
+ -ok příkaz {} (bezpečný exec)
+
+Archivace a komprese:
+ - zabalení jednotlivých souborů do jednoho souboru (archivu)  - zmenšení objemu souboru odstraněním zbytečných souborů
+ - používání pro zálohu, problémy: linky, atributy souborů
+
+ - příkaz TAR
+
+TAR:  - Create, Update, Test (prohlížení), eXtract, Recover, V (výpis archivovaných souborů)
+ - tar cf archiv.tar soubory/adresáře  - archivace ze souboru, který obsahuje seznam souborů ( -I seznam.txt )
+
+Komprimace pomocí příkazů compress/uncompress/zcat:  - compress soubor, uncompress soubor
+
+Komprimace pomocí bzip2  - bzip2 soubor, bunzip soubor.bz2
+
+Komprimace pomocí zip  -zip archiv.zip soubory, unzip -l archiv.zip, unzip archiv.zip
+
+Komprimace pomocí gtar  - GNU implementace příkazu tar 

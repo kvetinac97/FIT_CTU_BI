@@ -1,0 +1,91 @@
+Souborový systém:
+ - pwd, ~+ (aktuální pracovní adresář)
+ - oldpwd, ~- (poslední pracovní adresář)
+ - home, ~ (domovský adresář)
+
+Přesun mezi složkami: cd
+Informace o souborech: (ls)
+ -d (informace o složkách, ne jejich výpis)
+ -l (podrobný výpis)
+
+ -t (seřadí podle času vytvoření)
+ -S (seřadí podle velikosti)
+ -Sr (seřadí obráceně podle velikosti)
+
+ -R (rekurzivně projde adresáře)
+ -i (zobrazí u každého souboru i jeho iNode)
+ -s (vytiskne velikost každého souboru)
+
+Informace o souboru pomocí (stat soubor):
+ -c (vypíše ve specifickém formátu: %i - iNode, %F - typ souboru, %n - jméno souboru)
+
+Informace o FileSystemu (du = disk usage):
+ -s (pro každý argument zobrazí celkové zaplnění)
+ -sh (tuto velikost zobrazí v lidsky čitelném formátu)
+ -k (zobrazí v kilobajtech)
+
+Seřazení podle velikosti souboru: sort (bere i -h = seřadí lidsky)
+Volné místo na disku: (df = disk free)
+ -h: lidsky čitelné
+ -i: zobrazí také iNody jednotlivých míst
+ -k: zobrazí v kilobajtech
+
+Informace o přiděleném místě (kvótě) na serveru: quota [-v = na každém systému]
+
+Příkaz pro změnu souboru (časové značky - touch)
+ - touch foo (vytvoří soubor)
+ - touch -c soubor (nevytváří soubor)
+ - touch -t 201810161510.33 soubor (změní časovou značku na daný údaj - 16.10.2018 10:33)
+ - touch -r soubor1 soubor2 (přenese čas souboru soubor1 na soubor2)
+
+Typ obsahu souboru podle jeho začátku (type)
+Zobrazení obsahu souboru (less, cat -n), binárního souboru (cat -v, od, strings)
+
+file "$(type -P ls)" .. zkusí najít soubor ls a zobrazí jeho typ
+
+Zobrazení obsahu textového souboru stránkovačem
+ - less soubor
+
+Číslování řádku souboru: cat -n soubor, případně | nl
+
+Zobrazení obsahu binárního souboru:
+ - cat -v soubor (není ideální, nejde tomu rozumět)
+ - binární obsah | od -c (octal dump, -c vypíše pouze tisknutelné charaktery a \x)
+ - od -x vytiskne v hexadecimálním formátu, od --endian=big|little (seřadí byty v pořadí Big endian)
+
+Big endian: 01 02 03 04 x Little endian: 04 03 02 01 (všechno obrátí)
+man ascii: ASCII tabulka
+strings: vypíše všechny čitelné sekvence delší než 4 znaky v rámci binárního souboru
+
+Vytváření a rušení souborů:
+ - obyčejné soubory (>, >>, touch)
+ - adresáře (mkdir, pokud delší cesta, použít mkdir -p)
+
+ - vytváření linků (ln), rušení souborů (rm) / adresářů (rmdir)
+ - kopírování/přejmenování/přesun: cp, mv
+
+Symbolické odkazy:
+ - ln -s soubor odkaz
+ - pokud soubor, na který odkazujeme neexistuje, jedná se o "broken link"
+
+Přejmenování nebo přesun souborů je to stejné (v rámci stejného systému je hned, mění iNode)
+(v rámci jiných souborových systémů se přesunují data souboru)
+Link se nedá využít na zjištění velikosti adresáře
+
+Kopírování souborů:
+ - cp soubor1 soubor2 soubor3 soubor4 (1,2,3 se zkopírují do 4,
+  -P ignoruje symbolické odkazy = kopíruje přímo zdroj daného odkazu, -r rekurzivně)
+ - cp -p zanechá originální čas souboru a uživatele
+
+find | sort = najde soubory v adresáři a seřadí je
+
+Mazání souborů:
+ - rm smaže jednotlivý soubor, rmdir složku
+ - rmdir smaže prázdný adresář, rmdir -p smaže i prázdnýý adresář po cestě
+ - rm -i (zeptá se uživatele na smazání každého souboru), na frayi automaticky aktivní
+
+ - rm -f (přebije interactive)
+ - rm, r\m, \rm (zruší alias a zavolá se originální příkaz)
+ - příkaz yes (neustále píše y, yes | rm *)
+
+PŘÍŠTĚ: pevné linky

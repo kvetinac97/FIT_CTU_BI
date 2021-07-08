@@ -1,0 +1,66 @@
+PS1/8
+
+Filtry sed a awk:
+
+SED
+ - dostává na vstup nějaké řetězce
+ - sed "výraz" (soubory)
+
+ - na každou řádku se aplikuje sed výraz, umí aktivně měnit dané řádky
+ - sed výraz: "(adresa) příkaz (parametry) (přepínač)"
+
+ -n: potlačí kopírování vstupu na výstup
+ -e: přidá další skript
+ -f: přidá soubor se skripty
+ -E: používá rozšířené regulární výrazy
+
+Default adresa: všechny řádky
+
+Adresa:
+ -m: pořadové číslo vstupní řádky
+ -m,n: rozsah vstupních řádek
+ -$: číslo poslední řádky
+
+ -/RE/: řádka obsahující daný regulární výraz
+ - /RE/,/RE/ řádky od 1. obsahující 1. výraz do 1. obsahující 2. výraz
+
+Příkazy:
+ -p: tisk daných řádek na výstup
+ -d: smazání daných řádek
+
+ -s/RE1/RE2/příznak : náhrada řetězců obsahujících RE1 řetězcem RE2
+
+ - default: nahradí se 1. výskyt na řádku
+ - příznak n: náhrada n-tého výskytu na řádku (1 <= n <= 512)
+ - příznak g: náhrada všech řetězců
+
+Můžu načíst filtry i ze souboru:
+
+SOUBOR.sed
+1d
+5,7d
+8,$p
+
+Příkaz: sed -n -f SOUBOR.sed
+
+Místo číslování podvýrazů
+ - sed 's/^work(.*)/\1 slovo'
+WORKBENCH -> BENCH slovo
+Můžeme použit & (celý matchnutý výraz)
+ - sed 's/^work.*/& slovo/
+WORKBENCH -> WORKBENCH slovo
+
+Příklady navíc: #bonus
+ -i (insert): vloží řádku před jinou řádku
+ -a (append): připojí řádku na konec jiné řádky
+
+AWK:
+ - programovatelný filtr
+ - na řádek se nahlíží jako na posloupnost, základní oddělovač $1, $2... ($0 celá řádka)
+
+ - přepínač -F x (nastaví oddělovač)
+
+awk 'výraz'
+
+Výraz: /vzor/{akce}
+Chybějící vzor = akce se provede na každé řádce

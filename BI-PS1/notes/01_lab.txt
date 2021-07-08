@@ -1,0 +1,133 @@
+Shell
+ - case-sensitive, příkazy oddělujeme středníkem
+ - pohyb po příkazové řádce šipkami, odeslat enterem můžeme kdykoliv
+ - tabulátor umožňuje doplnit názvy příkazů a souborů
+ - tabulátor nám pomáhá také kontrolovat, jestli píšeme správně
+
+Chyby při spouštění príkazů:
+ - častou chybou může být například napsání velkými písmeny
+ - nebo například zapomenutí mezery mezi argumentem a názvem příkazu
+ - takovým způsobem si můžeme omylem chtít spustit soubor na cestě místo dostání se do cesty
+
+Přepínač x argument:
+ - přepínač ovlivňuje vykonání příkazu
+ - přepínače je dobrý zvyk dávat před argumenty
+ - přepínače vždy začínají pomlčkou nebo dvěma pomlčkami
+ - argument určuje data ke zpracování, může jich být více a oddělují se mezerou
+
+Jak ale vylistovat adresář "-l"?
+ - napsat "--" (= konec přepínačů, začni psát argumenty)
+
+Příkaz:
+ - většinou první slovo na řádce
+ - bez cesty nemusí být jednoznačný, s absolutní cestou je jednoznačný
+ - lze ukončit Ctrl^C
+
+declare: Zjistí (-p) / deklaruje hodnotu určité proměnné
+type: zjistí, jestli je příkaz uložen v nějaké cestě, nebo je interní (shell-builtin)
+date: napíše aktuální datum
+pwd: vypíše aktuální adresář
+mkdir: vytvoří novou složku (přepínač -p = vytvoří všechny adresáře po cestě)
+[mkdir abc/test hodí chybu, mkdir -p abc/test bude fungovat]
+touch: změní čas modifikace souboru a pokud soubor neexistuje, vytvoří ho
+cd: přejde do složky
+less: čte soubor odspodu
+more: čte soubor od začátku
+ - q: ukončí program, h: nápověda, n: přeskočí na následující text, __G skok na řádku __
+// je to stejné jako / pro zjednodušení programování
+rm: odstraní složku (přepínač -r = rekurzivně odstraní i podsoubory)
+Ctrl^S: pozastaví výstup na terminál
+Ctrl^Q: opětovně spustí výstup
+Ctrl^C: ukončí program
+
+ls: vypíše seznam souborů ve složce
+ - přepínač -l (ukazovat také data o souborech)
+ - přepínač -d (ukazuje pouze složky)
+ - přepínač -a (ukáže i skryté soubory [.soubor])
+ - argument složka nebo ??? (co mají tři znaky), ????? (co má pět znaků)
+
+Přepínače:
+ a) krátké
+  - začínají "-", obsahují jeden znak
+  - lze je psát dohromady
+  - jejich argument můžeme oddělit mezerou nebo psát přímo
+
+ b) dlouhé
+  - začínají "--", obsahují celé slovo
+  - píšou se zvlášť
+  - jejich argument musíme oddělit mezerou nebo "="
+
+Vyhledávání v historii příkazů
+ - Ctrl^P či Ctrl^N (předchozí, následující) či Ctrl^R (vyhledávání)
+
+Souborový systém:
+ - všechno začíná v /
+ - v relativní cestě lze využít "." nebo ".." (./d = d)
+ - z důvodu ochrany se musí program z aktuálního adresáře spouštět přes ./program
+
+Výstup lze přesměrovat do souboru pomocí >soubor (přemaže) nebo >>soubor (file_append)
+Pokud chceme výstup zrušit, přesměrovat do černé díry, hodíme ho do >/dev/null
+Anebo jde výstup také přesměrovat do jiného procesu prikaz1 | prikaz2 | prikaz3
+
+Proměnné
+ - netypové, musíme je deklarovat
+ - při deklaraci NESMÍME používat mezery (prom=hodnota)
+ - $prom nahradí hodnotu proměnné
+ - kus textu při deklaraci musíme dát do uvozovek ("", pokud máme znaky jako $\ musíme )
+
+$PS1 = Proměnná, která nám mění text promptu
+
+Dokumentace k příkazům:
+ - help (vestavěné), man (externí), info (novější dokumentace)
+
+Příkazy:
+ - p1 ; p2 (= provedou se postupně)
+ - p3 & p4 (= provedou se asynchronně)
+ - p1 | p2 (= výstup p1 se vloží jako vstup p2)
+
+Vytvoření klíče:
+ - ssh-keygen (potvrdit cestu, nezadávat heslo)
+ - less (vlnovka)/.ssh/id_rsa (soukromý klíč)
+ - less (vlnovka)/.ssh/id_rsa.pub (veřejný klíč, jedna řádka)
+ - ssh-copy-id wrzecond@fray1.fit.cvut.cz, zadat heslo
+ - pak se připojit: ssh ...
+
+První URL: https://courses.fit.cvut.cz/BI-PS1/@master/homework/01/
+
+Při psaní proměnných do PS1 můžeme použít:
+ - \t (čas 00:00:00)
+ - \u (aktuální uživatel)
+ - \w (aktuální složka)
+
+více v man bash a /PROMPTING
+
+WC:
+ - přepínač -l (řádky)
+ - přepínač -c (znaky)
+ - přepínač -w (slova)
+
+Proměnné můžeme spojovat "$PROMENNA""$DALSIPROMENNA"text
+Stránkovač příkazu man: PAGER=...
+
+Příkaz date
+ - argument musí mít na začátku +
+ - %a (jméno dne zkráceně), %A jméno dne, %b (jméno měsíce), %Z (časová zóna), %Y (rok)
+ - %m (číslo měsíce), %d (číslo dne), %H (00), %M (00), %S (00), %e den měsíce bez 0
+ - %U číslo týdne v roku
+
+více na man date, man 3(C) strftime
+
+Příkaz printf:
+ - printf '%s\t' *
+  (Pro každou položku v adresáři = * ji vypíše a za ni napíše tabulátor)
+ - printf '%Xs' : X značí počet znaků
+
+Další přepínače příkazu ls:
+ - -l: zobrazí plný výpis
+ - -d: zobrazí i složky
+ - -a: vypíše všechny složky a soubory, i skryté
+ - -S: seřadí podle velikosti souboru SESTUPNĚ
+ - -t: seřadí podle timestampu SESTUPNĚ
+ - -r: seřadí obráceně
+
+Více: man ls

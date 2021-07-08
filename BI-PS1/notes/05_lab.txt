@@ -1,0 +1,53 @@
+Každý program má 3 file deskriptory: 0 (vstup), 1 (výstup), 2 (chybový výstup)
+
+Výstupy můžeme přesměrovat do různých souborů:
+ - ls ? foo >out 2>error
+ - head ??? (vypíše prvních 10 řádek)
+
+ - spojení výstupů aplikací file-descriptoru:
+   ls ? foo >com 2>&1
+
+Zpracování výstupu stdout a stderr najednou:
+ - ls ? foo | wc -l
+ - ls ? foo 2>&1 | wc -l
+
+Přehození výstupů:
+ - ls ? foo 3>&2 2>&1 >&3 | wc -l (do 3 uložíme 2, do 2 jedničku a do 1 trojku)
+
+Příkaz tee:
+ - vezme standardní vstup, rozdvojí ho, část pošle do souboru a část pošle dále
+
+Příkaz head:
+ - zobrazí prvních n řádků souborů (default 10)
+ - head -n 20 / head -20, head -n -20 (všechno kromě posledních 20 řádků)
+
+Příkaz nl: očísluje řádky
+
+Příkaz tail:
+ - zobrazí posledních n řádků souboru (default 10)
+ - tail -n 20 / tail -n +20 (od 20. řádku do konce)
+
+Head a Tail umí vypsat i první znaky a bajty (-c, -b)
+Příkaz getent získá systémová data z databáze passwd: getent passwd (/etc/passwd)
+
+Split: rozdělí po 10 řádcích a vytvoří soubory (xaa-xaf)
+Cat: zase nám tyto soubory spojí dohromady
+
+Rozdělení textů podle sloupců: příkazy cut (-d :, delimiter, -f1-2 sloupce, -c1 jeden znak)
+Příkaz rev: otočí nám sloupce: data | rev | cut -d: -f1 | rev
+Spojení sloupců: příkaz paste (-d delimiter, -f sloupce, -s na řádku (serialize) = seřadí hodnoty za sebou)
+
+TR (translate): nahradí znak(y) jiným(i) znakem/znaky
+ - přepínače -s (squeeze), -cd a-zA-Z (odstraň všechno co není písmeno), -d smaž
+
+JOIN: slučuje na základě stejné hodnoty v jednom sloupci
+
+Řazení řádků:
+ - příkaz SORT (-n: seřadí numericky (1 2 3 10, ne 1 10 2 3), -t: určí rozdělovač sloupců -k: seřazuje podle určitého sloupce k2 od 2. sloupce dál, 2,2 pouze druhý sloupec -k1,1 -k2,2r r = obráceně, -u = unique, odstraní duplicitní řádky)
+
+ - příkaz UNIQ: odstraní duplictní řádky (ale pouze pod sebou! a\nb\nb\na\nb\n vrátí a\nb\na\nb\n)
+   -d vypíše pouze řádky, které se opakují, -c odstraní duplicity a napíše kolik jich bylo 
+   odstraněno)
+
+ - příkaz COMM: nalezne společné/jedinečné řádky ze dvou souborů
+ - verzování diff a cmp (porovnávají): jak?

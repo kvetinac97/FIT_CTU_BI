@@ -1,0 +1,24 @@
+Další filtry (příkazy):
+
+SPLIT: rozdělí soubor do menších o příslušné velikosti, dělí vodorovně -b velikost (v bajtech), -l velikost (v počtu řádků), -a velikost přípony
+
+Výstupní soubory se pak jmenují jmenoaa, jmenoab, jmenoac…
+Chceme-li místo xaa, xbb vygenerovat ahoj_aa, ahoj_bb, dáme argument "ahoj"
+
+CAT: spojí více souborů za sebe do výstupního souboru (cat ahoj_?? > ahoj.txt)
+
+UNIQ: odstraní duplikované sousední řádky (uniq -c vypíše kolikrát se ta řádka vyskytla,
+ u niq -d vypíše pouze duplikované řádky, a to jednou, uniq -u vypíše pouze jedinečné řádky)
+
+SORT -u je "aliasem" sort | uniq
+
+SORT: seřadí řádky souboru (-f ignoruje malá/velká písmena, -n seřadí jako čísla, -M seřadí jako měsíce, -r seřadí opačně, -t: definuje oddělovač sloupců, -k: definuje sloupce,  podle kterých se bude řadit (pozor! -k4 = od 4. sloupce, -k4,4 podle 4. sloupce, -k4,4n numericky  -k4,4r pozpátku, -k4,4M podle měsíců
+
+CMP, DIFF: rozdíl mezi dvěma soubory (návratová hodnota 0 = stejné soubory, 1 = jsou různé
+cmp -s: vyhodí hlášku, pouze vrátí návratový kód
+
+COMM: porovná řádky dvou textových souborů a vypíše 3 sloupce (1. soubor1, 2. soubor2, 3. řádky v obou souborech), -123 potlačí daný sloupec
+
+XARGS: načte položky ze standardního vstupu a provede příkaz s danými položkami
+xargs $(dlouhá roura) banner == prom=$(dlouhá roura); banner $prom
+dlouhá roura | xargs -I {} cp {} složka = zkopíruje soubory z roury do složky

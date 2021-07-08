@@ -1,0 +1,48 @@
+Přibližná funkcionalita shellu:
+
+Detekce znaků rušících speciální význam (Quoting)
+ - metaznaky: mezera, enter, tabulátor, |, &, ;, () <>
+ - pro odstranění používáme znaky \ ' "
+
+ - lomítkem můžeme odstranit i znak konce řádku
+ - pozor, apostrofy nemůžeme escapovat takto '\'' !!! (chyba)
+ - pokud dáme před druhý argument printf dolar ($), můžeme tisknout speciální utf znaky, \t, \', \"
+
+PŘÍKAZY:
+ printf '%s\n' ... %s textový řetězec, \n newline
+ mv původníCesta nováCesta
+ ~ vypíšeme pomocí altgr + shift + ;
+ set vypíše seznam všech aktuálních proměnných
+ grep vyhledává podle prvního argumentu řádky
+(set | grep ^text): chceme pouze řádky začínající (^) na IFS
+ od: interpretuje všechny znaky v ASCII hodnotě, od -x hexadecimálně
+
+Odstranění komentářů (Comments)
+ - slovo začínající # uvozuje komentář až do konce řádku
+ - pokud napíšu a#b nebo '#' "#", nepočítá se to jako komentář
+
+Rozdělení řádky (Lists) na jednotlivé příkazy (Pipelines)
+ - enter, středník, |, &, případně && a ||
+ & asynchronně (dobré využití například pro otevření externího programu)
+ ; enter (za sebou), && (pokud se předchozí provede), || (pokud se předchozí neprovede)
+
+Expanze speciálních znaků (Expansion)
+ - způsobují ji znaky {,} vlnovka, $, ${}, $(), $(())
+ - {a..z} způsobí expanzi od a do z, {txt,jpg} kombinuje se s první závorkou pomocí {}.{}
+   nepoužívat mezeru!
+
+ - můžeme změnit příponu souborů pomocí mv soubor.{priponaStara, priponaNova}
+ - výjimka: nelze udělat min=1; max=10; echo {$min..$max}
+ - chceme-li vypsat proměnnou a zapsat na ni něco buď použijeme "$t""ahoj" nebo "{$t}ahoj"
+ - můžeme také nahradit příkazy $(prikaz parametry)
+
+Rozdělení na slova (Word splitting)
+ - na slova se dělí proměnnou $IFS, standardní oddělovače jsou mezera, tabulátor a enter
+ - parametry (argumenty) skriptu $* (všechny argumenty na jedné řádce),
+   $@ (každý argument na jedné řádce), $# (počet argumentů)
+
+PŘÍŠTĚ:
+
+Náhrada jmen souborů (Pathname expansion)
+Přesměrování (Redirection)
+Hledání (spuštění) příkazů

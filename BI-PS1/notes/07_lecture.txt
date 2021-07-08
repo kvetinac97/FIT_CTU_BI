@@ -1,0 +1,30 @@
+PS1/7
+
+Pokračování... rozšířené regulární výrazy:
+
+^ začátek řádky
+$ konec řádky
+\ ignorování metaznaku
+
+. [abc] [a-z] [:lower:] [:upper:] [:digit:] [:blank:] [:alnum:] právě jeden znak
+[^dhs] doplněk znaků (všechny až na d, h, s)
+
+Opakovače: ? (0-1x), * (0 a více krát), + (1 a více krát), {1,} (1 a více krát), {1,3} (1 až 3 krát), {,2} (nejvýše 2krát)
+
+Pozor, v RE je pouze *! Chceme-li použít {} + ? v RE, musíme použit \{\} a tímto jim přidáme speciální význam.
+
+Podvýrazy: ()
+Alternace: |
+
+POZOR! Hledaný výraz musíme VŽDY dát do apostrofů, jinak bude zle.
+
+Chceme li hledat něco a něco, zřetězíme grepy. Chceme li hledat něco nebo něco, použijeme | (egrep).
+
+egrep '(spider|man)' soubor
+
+Hledání slov: \<slovo\> (BE i RE)
+
+Pokud definujeme určitý výraz pomocí ( závorek ), můžeme se k němu následně odkázat pomocí \C, kde C je číslo (počítáme od 1)
+
+Vyhledání palindromů délky 3 (například):
+ ^(.)\1$ - druhy znak se nahradí prvním

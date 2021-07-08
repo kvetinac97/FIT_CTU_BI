@@ -1,0 +1,51 @@
+Linky:
+ - pevné (nejde dělat na adresáře, bezpropritní, pouze v rámci jednoho filesystému)
+ -  symbolické (nový iNode, obsahuje jméno souboru, na který odkazuje), při smazání dochází k poškození odkazu
+
+Základní příkazy:
+ - cp/mv s1 s2 (s2 existuje = vytvoří se v něm kopie s1, s2 neexistuje = zkopíruje se obsah s1 do s2, pokud je to adresář, pokud není, přepíše to s2)
+
+- příkaz cp ničí symbolické a pevné linky
+ - u destruktivních příkazů je lepší udělat nejdříve echo příkaz parametry (zjistíme, co to udela)
+
+Filtr:
+ - program vykonávající jednoduchou činnost
+ - zpracovává textový výstup aplikací
+
+ - dají se dohromady implementovat do roury
+ - pozor ale, ne všechno jsou filtry !!!
+
+GREP: vypíše řádek obsahující hledaný výraz (pwd | grep Tomáš | wc -l)
+
+TEE: umožní duplikaci výstupu příkazu do souboru (pwd | grep Tomáš | tee tomasove.txt | wc -l)
+
+Do TEE můžeme přidat více souborů (tee a b c) a přepínač (-a = append).
+
+NL: ocisluje řádky vstupu, přepínače -s ´retezec´= oddělí číslo řádky od textu něčím jiným než mezerou, -bp ´vzor´ = ocisluje jen vybrané řádky
+
+TR: nahradí znaky z vstupního řetězce jiným znakem (tr abc cab = nahradí výskyty a znakem c, b znakem a, c znakem b)
+
+Pozor na nahrazování intervalů [a-z], [A-Z], jsou závisle na kódování. Je lepší používat [:lower:] [:upper:]
+
+tr -s znak1 znak2 : pokud je více stejných znaků za sebou, smrskne je do jednoho
+
+tr -d znak1 znak2 : vyhodí znaky z textu
+
+Můžeme nahradit také jakýkoliv binární znak: \012
+
+HEAD / TAIL: vypíše pouze prvních/posledních x řádek ze souboru (head -5 ... prvních 5 řádek, tail -20 ... posledních 20 řádek)
+
+tail -n +k ... čte od k-tého řádku do konce souboru
+
+tail -nl (řádky) / - nc (znaky) / -nb (bloky)
+
+CUT: krájí soubor kolmě (na sloupce, např. když chci ukrojit třeba přístupová práva)
+
+cut -c2 (vypíše druhý znak každého sloupce), cut -c1-10,40- (vypíše od 1. do 10. znaku a od 40. znaku do konce)
+
+(c = znak číslo: cM (m-tý znak), cM-N (od m do n), cM- (od M do konce)
+
+cut -d ' ' f1,9- (oddělovač je mezera, chci 1. a 9. pole do konce)
+
+PASTE: srazí více sloupců za sebe
+paste -d ":" nastaví oddělovač (default \t)

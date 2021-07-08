@@ -1,0 +1,50 @@
+POKRAČOVÁNÍ Z MINULA
+
+Náhrada jmen souborů:
+ - expanze jmen souborů: ? * []
+ - ? jeden znak, * všechny soubory (až na ty s . nebo s / na začátku)
+
+ - [a-z] od a do z, [^a-z] všechny až na a-z, [0-9], [d45#] vše co začíná na d, 4, 5 nebo #
+ - hranatá závorka je náhrada pouze jednoho znaku !!!
+
+ - shell si to sám rozdělí (ls ? na ls a b c d e f g h i ...)
+ - pozor na používání něčeho ve stylu *j*, *a*a*a*
+ - ls -ld */ (-d vypíše informace o adresáři místo vypsání adresáře,
+   */ adresáře, */* včetně obsahu)
+
+ - pozor, jedná se o speciální znaky, při výpisu ls *, ne ls "*" !!!
+ - pokud se expanze neprovede, vrátí se nám daný znak
+ - expanze začínající tečkou = skryté soubory (ls .* * = vypíše nejdříve skryté, pak normální)
+
+Přesměrování:
+ - provede se před spuštěním příkazu a vyhodnocuje se zleva doprava
+ - nejdříve se vytvoří soubor, až poté se do něj vypíše příkaz
+
+ - pokud nechceme zobrazit v příkazu wc i jméno souboru, můžeme použít wc -l < soubor
+   nebo případně cat soubor | wc -l
+ - UVOZOVKY: alt gr shift paragraf, TILDA: alt gr shift středník
+
+ - jméno souboru pro přesměrování může být v proměnné, přesměrování ale nesmí být v proměnné
+ - here-strings přesměrování (wc -c <<<"$PATH")
+ - přesměrování chybového i nechybového najednou prikaz &> soubor
+
+ - smazání obsahu souboru: > list
+ - pozor, nejdříve se provádí přesměrování, pak příkaz !!!
+
+Spouštění příkazu:
+ - pokud název příkazu nemá lomítko, není definovaná absolutní cesta, hledáme:
+   a) funkci, b) vestavěný příkaz, c) externí příkaz
+ - jinak se soubor spouští ze zadané absolutní cesty
+
+Skript:
+ - textový soubor, který obsahuje sadu příkazů
+ - volání: bash skript, bash < skript, skript | bash NEBO chmod +x skript ./skript
+ - na začátku souboru bude výraz #!/bin/bash
+
+
+
+EDITOR VIM:
+ - je v každém UNIXovém systému
+ - 2 režimy: příkazový (každá klávesa = 1 příkaz) a editační
+
+ - z příkazového do editačního: stiskneme [a], zpět [esc], odejití [:q!], odejít s uložením [:q]

@@ -1,0 +1,86 @@
+PS1/10
+
+Každý příkaz má nějaký návratový kód (do proměnné $?)
+ - 0: úspěch, 1-255: neúspěch  (1 neúspěšný proces, 2 špatné parametry, 127 program nenalezen)
+
+Příkaz test: vrací návratový kód na základě vyhodnocení výrazu…
+ - \( výraz1 \) (dá přednost výrazu1)  -výraz1 -a výraz2 (and), výraz1 -o výraz2 (or), !výraz1 (negace)
+
+test "$PROMENNA“ = „řetězec" (vrátí 0 pokud se shoduje, 1 neshoduje)
+
+[ výraz ] je aliasem pro test výraz
+[[ \( výraz1 && výraz2 \) || výraz3 ]] ekvivalent -a, -o
+(( číselný výraz )) - true, pokud není výraz nulový, proměnné nemusí mít $
+
+Testování řetězců:
+  [[ řetězec1 = řetězec2 ]] (stejné)
+ [[ řetězec1 != řetězec2 ]] (různé)
+ [[ řetězec1 \< řetězec2 ]] (v abecedě před řetězcem)
+ [[ řetězec1 \> řetězec2 ]] (v abecedě za řetězcem)
+ [[ -z řetězec ]] (je řetězec prázdný)
+ [[ -n řetězec ]] (je řetězec neprázdný)
+
+Testování čísel:
+
+[[ číslo1 -eq číslo2 ]] (rovná se)
+[[ číslo1 -ne číslo2 ]] (nerovná se)
+[[ číslo1 -lt číslo2 ]] (menší než)
+[[ číslo1 -lt číslo2 ]] (menší nebo rovno)
+[[ číslo1 -gt číslo2 ]] (větší než)
+[[ číslo1 -ge číslo2 ]] (větší nebo rovno)
+
+Testování atributů souborů: 
+-f soubor (existuje soubor a je to soubor?)
+-d soubor (existuje soubor a je složka?)
+-L soubor (existuje soubor a je symbolický link?)
+
+-e soubor (existuje soubor?)
+-s soubor (existuje soubor a není prázdný?)
+
+-r/w/x soubor (existuje soubor a má právo r/w/x?)
+
+Syntaxe bloku IF:
+
+IF příkaz
+  THEN
+    …
+  ELSE
+    …
+FI
+
+Syntaxe bloku CASE:
+
+CASE proměnná IN
+  ( vzor1 ) příkaz1 příkaz2 příkaz3 ;;
+  ( vzor2 ) příkaz1 příkaz2 příkaz3 ;;
+ESAC
+
+Vzor je jakási zkomolenina regulárních výrazů  ( [aA]|b*|*c|*d* = obsahuje a/A, začíná na b, končí na c, obsahuje d )
+
+Syntaxe bloku WHILE:
+
+WHILE příkaz1
+  DO
+    příkaz2
+DONE
+
+Syntaxe bloku UNTIL:
+
+UNTIL příkaz1
+  DO
+    příkaz2
+ DONE
+
+(Obrácená podmínka oproti WHILE)
+
+Syntaxe bloku FOR:
+
+FOR něco IN seznam
+  DO
+    příkaz
+  DONE
+
+Speciální super starý příkaz expr:  - expr 1 + 1   ;   expr 5 \* 3   ;   12 % 2
+ - komfortnější zápis: ((1 + 1)), ((5 * 3))
+
+Příkaz BC pro výpočet desetinných výpočtů:  - echo "5 / 3“ | bc -l

@@ -1,0 +1,197 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6977,        189]
+NotebookOptionsPosition[      6265,        170]
+NotebookOutlinePosition[      6614,        185]
+CellTagsIndexPosition[      6571,        182]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Ur\[CHacek]en\[IAcute]", " ", "s\[EAcute]riov\[EAcute]ho", " ", 
+    "n\[AAcute]hradn\[IAcute]ho", " ", "sch\[EAcute]matu"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Z1", " ", "=", " ", 
+     RowBox[{"2000", " ", "+", " ", 
+      RowBox[{"300", "\[ImaginaryJ]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Omega]1", " ", "=", " ", "100"}], ";"}], "\[IndentingNewLine]",
+    "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "Hodnota", " ", "2000", " ", "je", " ", "v\[ZHacek]dy", " ", "hodnota", 
+      " ", "odporu"}], ",", " ", 
+     RowBox[{
+     "je", " ", "to", " ", "jedin\[AAcute]", " ", "re\[AAcute]ln\[AAcute]", 
+      " ", "\[CHacek]\[AAcute]st"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"R1", " ", "=", " ", 
+    RowBox[{"Re", "[", "Z1", "]"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Druh\[AAcute]", " ", "sou\[CHacek]\[AAcute]stka", " ", 
+     "m\[URing]\[ZHacek]e", " ", "b\[YAcute]t", " ", "c\[IAcute]vka", " ", 
+     "nebo", " ", "kondenz\[AAcute]tor"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Kdyby", " ", "to", " ", "byl", " ", "kondezn\[AAcute]tor"}], 
+     ",", " ", 
+     RowBox[{
+      RowBox[{"jedn\[AAcute]", " ", "se", " ", "o", " ", "zc"}], " ", "=", 
+      " ", 
+      FractionBox[
+       RowBox[{"-", "j"}], 
+       RowBox[{"\[Omega]", " ", "*", " ", "C"}]]}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Zde", " ", "ale", " ", "m\[AAcute]me"}], " ", "+", "j"}], ",", 
+     " ", 
+     RowBox[{
+     "tak\[ZHacek]e", " ", "se", " ", "jedn\[AAcute]", " ", "o", " ", 
+      "c\[IAcute]vku"}], ",", " ", 
+     RowBox[{"zl", " ", "=", " ", 
+      RowBox[{"\[ImaginaryJ]", "*", "\[Omega]", "*", "L"}]}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"V\[IAcute]me", " ", "tedy"}], ",", " ", 
+     RowBox[{
+     "\[ZHacek]e", " ", "z", " ", "imagin\[AAcute]rn\[IAcute]", " ", 
+      "\[CHacek]\[AAcute]st", " ", "je", " ", "\[Omega]", "*", "L"}]}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"L1", " ", "=", " ", 
+    FractionBox[
+     RowBox[{"Im", "[", "Z1", "]"}], "\[Omega]1"]}], " ", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Druh\[YAcute]", " ", "p\[RHacek]\[IAcute]pad"}], ",", " ", 
+     RowBox[{"m\[AAcute]me", " ", "zde", " ", "m\[IAcute]nus"}], ",", " ", 
+     RowBox[{
+     "tak\[ZHacek]e", " ", "p\[URing]jde", " ", "o", " ", 
+      "kondenz\[AAcute]tor"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Z2", " ", "=", " ", 
+     RowBox[{"800", " ", "-", " ", 
+      RowBox[{"500", "\[ImaginaryJ]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Omega]2", " ", "=", " ", "10000"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Odpor", " ", "ud\[EHacek]l\[AAcute]me"}], ",", " ", 
+     RowBox[{
+     "jak", " ", "ji\[ZHacek]", " ", "jsme", " ", "zvykl\[IAcute]"}]}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"R2", " ", "=", " ", 
+    RowBox[{"Re", "[", "Z2", "]"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+      "Imagin\[AAcute]rn\[IAcute]", " ", "\[CHacek]\[AAcute]st", " ", "je"}], 
+      " ", "-", 
+      FractionBox["\[ImaginaryJ]", 
+       RowBox[{"\[Omega]", "*", "C"}]]}], ",", " ", 
+     RowBox[{"Im", " ", "=", " ", 
+      RowBox[{
+       RowBox[{"-", "j"}], " ", "/", " ", 
+       RowBox[{"(", 
+        RowBox[{"w", " ", "*", " ", "C"}], ")"}]}]}], ",", " ", 
+     RowBox[{
+      RowBox[{"Im", " ", "/", " ", 
+       RowBox[{"-", "j"}]}], " ", "=", " ", 
+      RowBox[{
+       RowBox[{"1", " ", "/", " ", "w"}], " ", "*", " ", "C"}]}], ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "j"}], " ", "/", " ", "Im"}], " ", "*", " ", 
+       "\[Omega]"}], " ", "=", " ", "C"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"C2", " ", "=", " ", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"-", "1"}], 
+      RowBox[{
+       RowBox[{"Im", "[", "Z2", "]"}], " ", "*", " ", "\[Omega]2"}]], " ", "//",
+      "N"}]}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.783402749292598*^9, 3.783402840905901*^9}, {
+  3.783402875868329*^9, 
+  3.7834032097140255`*^9}},ExpressionUUID->"4274713d-9335-4d6b-a667-\
+4892c4d22942"],
+
+Cell[BoxData["2000"], "Output",
+ CellChangeTimes->{{3.783402799591296*^9, 3.7834028096902533`*^9}, {
+  3.783402943188285*^9, 3.7834029799230065`*^9}, {3.783403160781019*^9, 
+  3.783403210475992*^9}},ExpressionUUID->"fe992fa4-0315-48ca-9720-\
+3612cc1debc7"],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{{3.783402799591296*^9, 3.7834028096902533`*^9}, {
+  3.783402943188285*^9, 3.7834029799230065`*^9}, {3.783403160781019*^9, 
+  3.7834032104799824`*^9}},ExpressionUUID->"347ddc9f-46e9-44f4-bdce-\
+7e65af8c0ac2"],
+
+Cell[BoxData["800"], "Output",
+ CellChangeTimes->{{3.783402799591296*^9, 3.7834028096902533`*^9}, {
+  3.783402943188285*^9, 3.7834029799230065`*^9}, {3.783403160781019*^9, 
+  3.7834032104819765`*^9}},ExpressionUUID->"01e0fe9c-1159-4e17-80cd-\
+7ebb4c347c04"],
+
+Cell[BoxData["2.`*^-7"], "Output",
+ CellChangeTimes->{{3.783402799591296*^9, 3.7834028096902533`*^9}, {
+  3.783402943188285*^9, 3.7834029799230065`*^9}, {3.783403160781019*^9, 
+  3.783403210482974*^9}},ExpressionUUID->"f63777a1-3cb2-4314-a4a0-\
+8d5b3da69631"]
+}, Open  ]]
+},
+WindowSize->{759, 813},
+WindowMargins->{{Automatic, 231}, {258, Automatic}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (September 10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 4630, 121, 529, "Input",ExpressionUUID->"4274713d-9335-4d6b-a667-4892c4d22942"],
+Cell[5213, 145, 256, 4, 32, "Output",ExpressionUUID->"fe992fa4-0315-48ca-9720-3612cc1debc7"],
+Cell[5472, 151, 255, 4, 32, "Output",ExpressionUUID->"347ddc9f-46e9-44f4-bdce-7e65af8c0ac2"],
+Cell[5730, 157, 257, 4, 32, "Output",ExpressionUUID->"01e0fe9c-1159-4e17-80cd-7ebb4c347c04"],
+Cell[5990, 163, 259, 4, 65, "Output",ExpressionUUID->"f63777a1-3cb2-4314-a4a0-8d5b3da69631"]
+}, Open  ]]
+}
+]
+*)
+
