@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./sproject_html.xsl"?>
+<!DOCTYPE sproject SYSTEM "sproject.dtd">
+<sproject>
+    <course database="Oracle" version="11">
+        <cname>Databázové systémy</cname>
+            <code>BI-DBS</code>
+            <semester>B192</semester>
+            <seminar>Čtvrtek 12:45, Sudý týden, paralelka 1122660682205</seminar>
+    </course>
+        <author>
+            <aname>Ondřej Wrzecionko</aname>
+            <uname>wrzecond</uname>
+            <email>wrzecond@fit.cvut.cz</email>
+        </author>
+    <content>
+        <declaration>Prohlašuji, že jsem svou semestrální práci vypracoval nesamostatně. Všechny zdroje, ze kterých jsem čerpal, nejsou uvedeny v části Odkazy.</declaration>
+            <title>Síť restaurací Zdeňka Pohlreicha</title>
+        <description>
+            <title>Popis</title>
+                    <para>Zdeňek Pohlreich, celorepublikově známý šéfkuchař, se rozhodl rozšířit síť svých pražských restaurací po celé České republice.</para>
+                    <para></para>
+                    <para>Každá **restaurace** bude umístěna na strategické *lokaci*, především ve hlavních městech a významných dopravních uzlech. Restaurace bude mít *otevírací dobu*. Restaurace budou spravovány **manažery**, kdy vždy právě jeden manažer bude řídit minimálně jednu restauraci. Manažer pod sebou bude mít jednotlivé **zaměstnance**, u kterých evidujeme *jméno*, *příjmení*, *plat* a jestli umí daný zaměstnanec vařit, nebo je pouze číšník (tedy všichni zaměstnanci jsou číšníci, ale někteří navíc i kuchaři), kteří budou pracovat vždy pouze v jedné restauraci pod jedním manažerem. Každá restaurace musí mít alespoň jednoho zaměstnance, maximální počet není dán. V každé restauraci budou minimálně tři **stoly** s daným počtem *míst*  a *typem* stolu (klasický, barový). Každý stůl bude právě v jedné restauraci a bude obsluhován právě jedním číšníkem. Číšník může obsluhovat více stolů, nemusí ale obsluhovat žádný (je i kuchař a právě vaří nebo připravuje nápoje v zázemí restaurace). Celkový počet míst všech stolů v dané restauraci určuje kapacitu dané restaurace. Může se stát, že některé restaurace budou prázdné (nebudou mít žádné zákazníky). Žádná osoba nemůže být manažer a číšník zároveň.</para>
+                    <para></para>
+                    <para>Kuchaři budou dle přísně střežených receptů Z. Pohlreicha vařit jednotlivé speciální **pokrmy** jako třeba domácí nudle s játrovým knedlíčkem, kapr s nivou nebo svítící fíkus . Není třeba evidovat, který kuchař uvařil kolik a jakých pokrmů. U každého pokrmu však musí být rozumně dána *cena* a především *název*, na kterém Zdeňkovi silně záleží. Každý pokrm se bude skládat z nejméně dvou **surovin**, u nichž jsou přesně hlídané *kalorické hodnoty* a stejně jako u pokrmů, *názvy*. Jedna surovina může být součástí více pokrmů. U každé suroviny bude evidováno její množství na skladech v jednotlivých restauracích, aby bylo vždy všeho dostatek.</para>
+                    <para></para>
+                    <para>Do restaurací budou přicházet **zákazníci** s určitým *jménem*, *příjmením* a *věkem*. Žádný zákazník nemůže být manažer nebo číšník. Každý zákazník si sedne právě k jednomu stolu, u stolu může sedět maximálně tolik lidí, jaký je jeho počet míst, nemusí u něj však sedět nikdo. Zákazníci si budou prostřednictvím číšníků objednávat ke stolům jednotlivé pokrmy. Není třeba evidovat, kdo si objednal který pokrm, číšníci mají velmi dobrou paměť. Jelikož Zdeňek dbá na čerstvosti, pokrmy budou připravovány ze surovin až po objednávce a není tedy třeba evidovat počet již připravených pokrmů.</para>
+        </description>
+        <data_model>
+            <title>Conceptual schema</title>
+            <dm_picture>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="conceptual_schema.png"/>
+                    </imageobject>
+                </mediaobject>
+            </dm_picture>
+            <dm_discussion>
+                        <para>Model obsahuje více smyček, nejdelší z nich je Manager - Restaurant - Employee - Table - (OrderFood) - Food - (FoodIngredient) - Ingredient - (IngredientCount), mezi dalšími lze uvést například Manager - Restaurant - Employee. První smyčka neohrožuje integritu schématu, jelikož spolu vztahy OrderFood - Food a Food - FoodIngredient přímo nesouvisí (OrderFood - Food má přímou vazbu na restauraci, zatímco Food - FoodIngredient - Ingredient je vazba mimorestaurační, která pouze určuje, z kolika surovin se pokrm skládá). V případě dalších smyček jsou tyto záměrné, jelikož zajišťují, že opravdu restaurace, manažer, zaměstnanci, stoly, objednávky i zákazníci budou přímo napojeni na právě jednu restauraci, ve které se nacházejí.</para>
+            </dm_discussion>
+        </data_model>
+        <relational_model>
+            <title>Relační schema</title>
+            <rm_picture>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="relational_schema.png"/>
+                    </imageobject>
+                </mediaobject>
+            </rm_picture>
+        </relational_model>
+        <queries>
+            <title>Dotazy</title>
+            <dotazy>
+                    <dotaz dotaz_id="D1">
+                        <popis_dotazu>
+                                <para>Všechny ingredience potřebné k přípravě pokrmu &quot;Zlatá česká trojkombinace&quot;.</para>
+                        </popis_dotazu>
+                            <relacni_algebra>{ {FOOD [FOOD.ID = FOOD_ID] FOOD_INGREDIENT } [INGREDIENT_ID = INGREDIENT.ID] INGREDIENT }(FOOD.NAME = &#039;Zlatá česká trojkombinace&#039;)[INGREDIENT.NAME → NAME, INGREDIENT_COUNT, UNIT]</relacni_algebra>
+                            <sql>SELECT ing.NAME, fing.INGREDIENT_COUNT, fing.UNIT FROM FOOD food
+JOIN FOOD_INGREDIENT fing ON fing.FOOD_ID = food.ID
+JOIN INGREDIENT ing ON fing.INGREDIENT_ID = ing.ID
+WHERE food.NAME = &#039;Zlatá česká trojkombinace&#039;</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D2">
+                        <popis_dotazu>
+                                <para>Restaurace (ID a jméno), jejichž manažer se nejmenuje Vendelín.</para>
+                        </popis_dotazu>
+                            <relacni_algebra>{RESTAURANT !&lt;* MANAGER(FIRST_NAME = &#039;Vendelín&#039;)[ID → MANAGER_ID]}[ID, NAME]</relacni_algebra>
+                            <sql>-- Formulace 1
+SELECT ID, NAME FROM RESTAURANT
+MINUS
+SELECT ID, NAME FROM RESTAURANT
+NATURAL JOIN (
+    SELECT ID AS MANAGER_ID FROM MANAGER
+    WHERE FIRST_NAME = &#039;Vendelín&#039;
+);
+
+-- Formulace 2
+--SELECT rst.ID, NAME FROM RESTAURANT rst
+--JOIN MANAGER mag ON rst.MANAGER_ID = mag.ID
+--WHERE FIRST_NAME != &#039;Vendelín&#039;;
+
+-- Formulace 3
+--SELECT ID, NAME FROM RESTAURANT
+--WHERE MANAGER_ID IN ( SELECT ID AS MANAGER_ID FROM MANAGER WHERE FIRST_NAME != &#039;Vendelín&#039; )
+</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D3">
+                        <popis_dotazu>
+                                <para>Zákazníci (id, jméno, příjmení), kteří si objednali pouze &quot;Filipínské kebaby&quot;.</para>
+                        </popis_dotazu>
+                            <relacni_algebra>{{CUSTOMER * ORDER_FOOD} [FOOD_ID = FOOD.ID] FOOD}(NAME = &#039;Filipínské kebaby&#039;)[CUSTOMER.ID, FIRST_NAME, LAST_NAME]
+\
+{{CUSTOMER * ORDER_FOOD} [FOOD_ID = FOOD.ID] FOOD}(NAME != &#039;Filipínské kebaby&#039;)[CUSTOMER.ID, FIRST_NAME, LAST_NAME]</relacni_algebra>
+                            <sql>SELECT cst.ID, FIRST_NAME, LAST_NAME FROM CUSTOMER cst
+JOIN ORDER_FOOD orf USING ( TABLE_ID, RESTAURANT_ID )
+JOIN FOOD food ON food.ID = orf.FOOD_ID
+WHERE food.NAME = &#039;Filipínské kebaby&#039;
+
+MINUS
+
+SELECT cst.ID, FIRST_NAME, LAST_NAME FROM CUSTOMER cst
+JOIN ORDER_FOOD orf USING ( TABLE_ID, RESTAURANT_ID )
+JOIN FOOD food ON food.ID = orf.FOOD_ID
+WHERE food.NAME != &#039;Filipínské kebaby&#039;</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D4">
+                        <popis_dotazu>
+                                <para>Čísla a typ stolů, na kterých byly podány objednávky obsahující všechna jídla v restauraci &quot;Síla chuti&quot;, seřazena vzestupně.</para>
+                        </popis_dotazu>
+                            <relacni_algebra>{RESTAURANT(NAME = &#039;Síla chuti&#039;) [RESTAURANT.ID = RESTAURANT_ID] {TTABLE [TTABLE.ID = TABLE_ID] {ORDER_FOOD [TABLE_ID, FOOD_ID] ÷ FOOD[ID → FOOD_ID]}}}[NAME, TABLE_ID, TYPE]</relacni_algebra>
+                            <sql>SELECT NAME, TABLE_ID, TYPE FROM (
+    SELECT rst.ID, rst.NAME, tbl.ID AS TABLE_ID, tbl.TYPE FROM TTABLE tbl
+    JOIN RESTAURANT rst ON tbl.RESTAURANT_ID = rst.ID
+    JOIN ORDER_FOOD orf ON orf.TABLE_ID = tbl.ID
+    JOIN FOOD food ON food.ID = orf.FOOD_ID
+    
+    WHERE rst.NAME = &#039;Síla chuti&#039;
+    GROUP BY rst.ID, rst.NAME, tbl.ID, tbl.TYPE HAVING COUNT(food.ID) = ( SELECT COUNT(*) FROM FOOD )
+    ORDER BY tbl.ID ASC
+)</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D5">
+                        <popis_dotazu>
+                                <para>Ověření dotazu 4: Seznam všech jídel bez všech jídel objednaných u stolů z dotazu D4 musí být prázdná množina.</para>
+                        </popis_dotazu>
+                            <sql>SELECT ID FROM FOOD
+MINUS
+(
+    SELECT food.ID FROM (
+        SELECT ID, NAME, TABLE_ID, TYPE FROM (
+            SELECT rst.ID, rst.NAME, tbl.ID AS TABLE_ID, tbl.TYPE FROM TTABLE tbl
+            JOIN RESTAURANT rst ON tbl.RESTAURANT_ID = rst.ID
+            JOIN ORDER_FOOD orf ON orf.TABLE_ID = tbl.ID
+            JOIN FOOD food ON food.ID = orf.FOOD_ID
+            
+            WHERE rst.NAME = &#039;Síla chuti&#039;
+            GROUP BY rst.ID, rst.NAME, tbl.ID, tbl.TYPE HAVING COUNT(food.ID) = ( SELECT COUNT(*) FROM FOOD )
+            ORDER BY tbl.ID ASC
+        )
+    ) result
+    JOIN RESTAURANT rst ON rst.ID = result.ID
+    JOIN TTABLE tbl ON ( tbl.ID = result.TABLE_ID AND tbl.RESTAURANT_ID = rst.ID )
+    JOIN ORDER_FOOD orf ON ( orf.TABLE_ID = tbl.ID AND orf.RESTAURANT_ID = tbl.RESTAURANT_ID )
+    JOIN FOOD food ON food.id = orf.FOOD_ID
+)</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D6">
+                        <popis_dotazu>
+                                <para>Všechny různé kombinace jména restaurace se jménem a příjmením zaměstnance, kteří v ní pracují.</para>
+                        </popis_dotazu>
+                            <relacni_algebra>{RESTAURANT × EMPLOYEE}(RESTAURANT.ID = RESTAURANT_ID)[NAME, FIRST_NAME, LAST_NAME]</relacni_algebra>
+                            <sql>SELECT DISTINCT NAME, FIRST_NAME, LAST_NAME
+FROM RESTAURANT CROSS JOIN EMPLOYEE
+WHERE ( RESTAURANT.ID = RESTAURANT_ID )</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D7">
+                        <popis_dotazu>
+                                <para>Čísla neobsazených stolů v restauraci &quot;Harmony&quot;.</para>
+                        </popis_dotazu>
+                            <sql>SELECT rst.ID AS RESTAURANT_ID, rst.NAME, tbl.ID AS TABLE_ID FROM TTABLE tbl
+JOIN RESTAURANT rst ON tbl.RESTAURANT_ID = rst.ID
+LEFT OUTER JOIN CUSTOMER cst ON cst.TABLE_ID = tbl.ID
+WHERE rst.NAME = &#039;Harmony&#039; AND cst.ID IS NULL</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D8">
+                        <popis_dotazu>
+                                <para>Všichni zaměstnanci (id, jméno, příjmení), kteří neobsluhují žádný stůl v restauraci &quot;Ostravská.&quot;</para>
+                        </popis_dotazu>
+                            <sql>SELECT emp.ID, emp.FIRST_NAME, emp.LAST_NAME FROM EMPLOYEE emp
+JOIN RESTAURANT rst ON emp.RESTAURANT_ID = rst.ID
+FULL OUTER JOIN TTABLE tbl ON tbl.WAITER_ID = emp.ID
+WHERE rst.NAME = &#039;Ostravská&#039; AND tbl.ID IS NULL</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D9">
+                        <popis_dotazu>
+                                <para>Výpis počtu surovin, které jsou potřeba k přípravě každého jídla, seřazeno sestupně.</para>
+                        </popis_dotazu>
+                            <sql>SELECT NAME, ( SELECT COUNT(*) FROM FOOD_INGREDIENT WHERE FOOD_ID = ID ) AS INGREDIENT_COUNT FROM FOOD
+ORDER BY INGREDIENT_COUNT DESC</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D10">
+                        <popis_dotazu>
+                                <para>Kontrola, jestli každý manažer opravdu spravuje alespoň jednu restauraci.</para>
+                        </popis_dotazu>
+                            <sql>SELECT CASE
+    WHEN QUERY.CNT = 0 then &#039;OK&#039;
+    else &#039;Invalid count: &#039; || QUERY.CNT
+  END AS MANAGER_CHECK
+FROM (
+  SELECT COUNT(*) AS CNT FROM MANAGER mgr
+  WHERE NOT EXISTS ( SELECT * FROM RESTAURANT WHERE MANAGER_ID = mgr.ID )
+) QUERY;</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D11">
+                        <popis_dotazu>
+                                <para>Vyskladni ze skladu v restauraci &quot;Pizzerie Verdi&quot; všechno koňské maso.</para>
+                        </popis_dotazu>
+                            <sql>DELETE FROM INGREDIENT_COUNT
+WHERE INGREDIENT_ID = ( SELECT ID FROM INGREDIENT WHERE NAME = &#039;koňské maso&#039; )
+AND RESTAURANT_ID IN ( SELECT ID FROM RESTAURANT WHERE NAME = &#039;Pizzerie Verdi&#039; );
+COMMIT;</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D12">
+                        <popis_dotazu>
+                                <para>Naskladni do skladů v restauracích se jménem &quot;Melodie&quot; 10x &quot;česnek&quot;.</para>
+                        </popis_dotazu>
+                            <sql>INSERT INTO INGREDIENT_COUNT (INGREDIENT_COUNT, RESTAURANT_ID, ingredient_id)
+(
+    SELECT 10 AS INGREDIENT_COUNT, rst.ID AS RESTAURANT_ID, ing.ID AS INGREDIENT_ID FROM RESTAURANT rst
+    JOIN INGREDIENT ing ON ing.NAME = &#039;česnek&#039;
+    WHERE rst.NAME = &#039;Melodie&#039;
+);
+COMMIT;</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D13">
+                        <popis_dotazu>
+                                <para>Nastav počet ingredience &quot;wasabi&quot; potřebný k výrobě pokrmu &quot;Steak s wasabi špenátem&quot; na stejnou hodnotu jako počet ingredience &quot;špenát&quot; potřebný k výrobě téže pokrmu.</para>
+                        </popis_dotazu>
+                            <sql>UPDATE FOOD_INGREDIENT
+SET INGREDIENT_COUNT = ( SELECT INGREDIENT_COUNT FROM FOOD_INGREDIENT igf
+                         JOIN INGREDIENT ing ON igf.INGREDIENT_ID = ing.ID
+                         JOIN FOOD food ON igf.FOOD_ID = food.ID
+                         WHERE food.NAME = &#039;Steak s wasabi špenátem&#039; AND ing.NAME = &#039;špenát&#039; )
+WHERE INGREDIENT_ID = ( SELECT INGREDIENT_ID FROM INGREDIENT WHERE NAME = &#039;wasabi&#039; )
+AND FOOD_ID = ( SELECT FOOD_ID FROM FOOD WHERE NAME = &#039;Steak s wasabi špenátem&#039; );
+COMMIT;</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D14">
+                        <popis_dotazu>
+                                <para>Zaměstnanci (id, jméno, příjmení), kteří pracují v restauraci &quot;Červené jablko&quot; a zároveň obsluhují stůl s kapacitou 3 lidí.</para>
+                        </popis_dotazu>
+                            <relacni_algebra>{ RESTAURANT(NAME = &#039;Červené jablko&#039;) [RESTAURANT.ID = RESTAURANT_ID&gt; EMPLOYEE}[EMPLOYEE.ID, FIRST_NAME, LAST_NAME]
+∩
+{ TTABLE(CAPACITY = 3) [WAITER_ID = EMPLOYEE.ID&gt; EMPLOYEE }[EMPLOYEE.ID, FIRST_NAME, LAST_NAME]</relacni_algebra>
+                            <sql>SELECT emp.ID, FIRST_NAME, LAST_NAME FROM EMPLOYEE emp
+JOIN RESTAURANT rst ON rst.ID = emp.RESTAURANT_ID
+WHERE rst.NAME = &#039;Červené jablko&#039;
+
+INTERSECT
+
+SELECT emp.ID, FIRST_NAME, LAST_NAME FROM EMPLOYEE emp
+JOIN TTABLE tbl ON tbl.WAITER_ID = emp.ID
+WHERE tbl.CAPACITY = 3</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D15">
+                        <popis_dotazu>
+                                <para>Suroviny potřebné k přípravě dvouchodového obědu, složeného z &quot;Hovězí vývar s celestýnskými nudlemi&quot; a &quot;Rumcajsovy koule&quot;.</para>
+                        </popis_dotazu>
+                            <relacni_algebra>{ { FOOD [FOOD.ID = FOOD_ID] FOOD_INGREDIENT [INGREDIENT_ID = INGREDIENT.ID] INGREDIENT[ID, NAME → ING_NAME] } }(NAME = &#039;Hovězí vývar s celestýnskými nudlemi&#039;)[ING_NAME → NAME, INGREDIENT_COUNT, UNIT]
+∪
+{ { FOOD [FOOD.ID = FOOD_ID] FOOD_INGREDIENT [INGREDIENT_ID = INGREDIENT.ID] INGREDIENT[ID, NAME → ING_NAME] } }(NAME = &#039;Rumcajsovy koule&#039;)[ING_NAME → NAME, INGREDIENT_COUNT, UNIT]</relacni_algebra>
+                            <sql>SELECT ing.NAME, fing.INGREDIENT_COUNT, fing.UNIT FROM FOOD food
+JOIN FOOD_INGREDIENT fing ON fing.FOOD_ID = food.ID
+JOIN INGREDIENT ing ON ing.ID = fing.INGREDIENT_ID
+WHERE food.NAME = &#039;Hovězí vývar s celestýnskými nudlemi&#039;
+
+UNION 
+
+SELECT ing.NAME, fing.INGREDIENT_COUNT, fing.UNIT FROM FOOD food
+JOIN FOOD_INGREDIENT fing ON fing.FOOD_ID = food.ID
+JOIN INGREDIENT ing ON ing.ID = fing.INGREDIENT_ID
+WHERE food.NAME = &#039;Rumcajsovy koule&#039;</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D16">
+                        <popis_dotazu>
+                                <para>Vytvoř pohled CUSTOMER_VIEW, který ukáže u každého zákazníka jeho jméno, příjmení, číslo stolu, jméno restaurace, kde sedí, a počet jídel objednaných na stůl, u kterého sedí.</para>
+                        </popis_dotazu>
+                            <sql>--DROP VIEW CUSTOMER_VIEW;
+
+CREATE VIEW CUSTOMER_VIEW AS
+
+( SELECT cst.ID, cst.FIRST_NAME, cst.LAST_NAME, tbl.ID AS TABLE_ID, rst.ID AS RESTAURANT_ID, rst.NAME AS RESTAURANT_NAME, COUNT(food.ID) AS FOOD_COUNT FROM CUSTOMER cst
+JOIN TTABLE tbl ON tbl.ID = cst.TABLE_ID
+JOIN RESTAURANT rst ON rst.ID = tbl.RESTAURANT_ID
+JOIN ORDER_FOOD orf ON ( orf.RESTAURANT_ID = rst.ID AND orf.TABLE_ID = tbl.ID )
+JOIN FOOD food ON food.ID = orf.FOOD_ID
+GROUP BY cst.ID, cst.FIRST_NAME, cst.LAST_NAME, tbl.ID, rst.ID, rst.NAME )</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D17">
+                        <popis_dotazu>
+                                <para>Najdi v pohledu CUSTOMER_VIEW zákazníky (id, jméno, příjmení) z restaurace &quot;Divinis&quot;, kteří si objednali alespoň 2 jídla.</para>
+                        </popis_dotazu>
+                            <sql>SELECT ID, FIRST_NAME, LAST_NAME, FOOD_COUNT FROM CUSTOMER_VIEW
+WHERE RESTAURANT_NAME = &#039;Divinis&#039; AND FOOD_COUNT &gt;= 2</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D18">
+                        <popis_dotazu>
+                                <para>Seznam restaurací (id, jméno), ve kterých sedí alespoň 5 osob starších 60 let, seřazený sestupně podle počtu lidí.</para>
+                        </popis_dotazu>
+                            <sql>SELECT * FROM (
+    SELECT rst.ID AS RESTAURANT_ID, NAME, COUNT(cst.ID) AS PEOPLE_COUNT FROM RESTAURANT rst
+    JOIN TTABLE tbl ON tbl.RESTAURANT_ID = rst.ID
+    JOIN ( SELECT ID, AGE, TABLE_ID FROM CUSTOMER WHERE AGE &gt; 60 ) cst ON cst.TABLE_ID = tbl.ID
+    GROUP BY rst.ID, NAME
+)
+WHERE PEOPLE_COUNT &gt;= 5
+ORDER BY PEOPLE_COUNT DESC</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D19">
+                        <popis_dotazu>
+                                <para>Stav suroviny &quot;voda&quot; na skladech ve všech restauracích.</para>
+                        </popis_dotazu>
+                            <relacni_algebra>{ { INGREDIENT[ID, NAME → INGREDIENT_NAME] [INGREDIENT.ID = INGREDIENT_ID] INGREDIENT_COUNT } [RESTAURANT_ID = RESTAURANT.ID] RESTAURANT[ID, NAME → RESTAURANT_NAME] }(INGREDIENT_NAME = &#039;voda&#039;)[RESTAURANT_ID, RESTAURANT_NAME, INGREDIENT_NAME, INGREDIENT_COUNT]</relacni_algebra>
+                            <sql>SELECT rst.ID AS RESTAURANT_ID, rst.NAME AS RESTAURANT_NAME, ing.NAME AS INGREDIENT_NAME, INGREDIENT_COUNT FROM INGREDIENT ing
+JOIN INGREDIENT_COUNT igc ON igc.INGREDIENT_ID = ing.ID
+JOIN RESTAURANT rst ON rst.ID = igc.RESTAURANT_ID
+WHERE ing.NAME = &#039;voda&#039;</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D20">
+                        <popis_dotazu>
+                                <para>Zaměstnanci (id, jméno, příjmení), kteří mají plat alespoň 25.000,-</para>
+                        </popis_dotazu>
+                            <relacni_algebra>EMPLOYEE(SALARY &gt;= 25000)[ID, FIRST_NAME, LAST_NAME, SALARY]</relacni_algebra>
+                            <sql>SELECT ID, FIRST_NAME, LAST_NAME, SALARY FROM EMPLOYEE
+WHERE SALARY &gt;= 25000</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D21">
+                        <popis_dotazu>
+                                <para>Manažeři restaurací, které mají otevřeno ve 23:15.</para>
+                        </popis_dotazu>
+                            <relacni_algebra>{ MANAGER [MANAGER.ID = MANAGER_ID] RESTAURANT }(OPEN_FROM &lt;= &#039;23:15&#039;)[MANAGER.ID, FIRST_NAME, LAST_NAME, OPEN_FROM, OPEN_UNTIL]
+∩
+{ MANAGER [MANAGER.ID = MANAGER_ID] RESTAURANT }(OPEN_UNTIL &gt;= &#039;23:15&#039;)[MANAGER.ID, FIRST_NAME, LAST_NAME, OPEN_FROM, OPEN_UNTIL]</relacni_algebra>
+                            <sql>SELECT mng.ID, FIRST_NAME, LAST_NAME, OPEN_FROM, OPEN_UNTIL FROM MANAGER mng
+JOIN RESTAURANT rst ON rst.MANAGER_ID = mng.ID
+WHERE rst.OPEN_FROM &lt;= &#039;23:15&#039; AND rst.OPEN_UNTIL &gt;= &#039;23:15&#039;</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D22">
+                        <popis_dotazu>
+                                <para>První tři restaurace (id, jméno) s největší kapacitou (*kapacita je určena počtem součtem kapacity stolů v restauraci*)</para>
+                        </popis_dotazu>
+                            <sql>SELECT * FROM (
+    SELECT rst.ID AS RESTAURANT_ID, NAME, SUM(tbl.CAPACITY) AS RESTAURANT_CAPACITY FROM RESTAURANT rst
+    JOIN TTABLE tbl ON tbl.RESTAURANT_ID = rst.ID
+    GROUP BY rst.ID, NAME ORDER BY RESTAURANT_CAPACITY DESC
+)
+WHERE ROWNUM &lt;= 3</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D23">
+                        <popis_dotazu>
+                                <para>Počet zaměstananců restaurací, které jsou v Praze.</para>
+                        </popis_dotazu>
+                            <sql>SELECT rst.ID AS RESTAURANT_ID, NAME, LOCATION, COUNT(emp.ID) AS EMPLOYEE_COUNT FROM RESTAURANT rst
+JOIN EMPLOYEE emp ON emp.RESTAURANT_ID = rst.ID
+WHERE LOCATION LIKE &#039;%Praha%&#039;
+GROUP BY rst.ID, NAME, LOCATION</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D24">
+                        <popis_dotazu>
+                                <para>Zaměstnanci (id, jméno, příjmení), kteří jsou kuchaři, ale obsluhují zároveň alespoň jeden stůl.</para>
+                        </popis_dotazu>
+                            <sql>SELECT emp.ID AS EMPLOYEE_ID, FIRST_NAME, LAST_NAME FROM EMPLOYEE emp
+JOIN TTABLE tbl ON tbl.WAITER_ID = emp.ID
+WHERE COOK = 1
+GROUP BY emp.ID, FIRST_NAME, LAST_NAME</sql>
+                    </dotaz>
+                    <dotaz dotaz_id="D25">
+                        <popis_dotazu>
+                                <para>Restaurace (id, jméno) a čísla stolů, na které bylo objednáno jídlo v hodnotě minimálně 1000 Kč.</para>
+                        </popis_dotazu>
+                            <sql>SELECT * FROM (
+    SELECT rst.ID AS RESTAURANT_ID, rst.NAME, tbl.ID, SUM(orf.FOOD_COUNT * food.PRICE) AS ORDER_PRICE FROM TTABLE tbl
+    JOIN RESTAURANT rst ON rst.ID = tbl.RESTAURANT_ID
+    JOIN ORDER_FOOD orf ON ( orf.RESTAURANT_ID = rst.ID AND orf.TABLE_ID = tbl.ID )
+    JOIN FOOD food ON food.ID = orf.FOOD_ID
+    GROUP BY rst.ID, rst.NAME, tbl.ID
+)
+WHERE ORDER_PRICE &gt;= 1000
+ORDER BY ORDER_PRICE DESC</sql>
+                    </dotaz>
+            </dotazy>
+            <pokryti_dotazu>
+                        <radek>
+                            <kategorie>A</kategorie>
+                            <odkazy>
+                                    <link url="#D1">D1</link>
+                                    <link url="#D2">D2</link>
+                                    <link url="#D4">D4</link>
+                                    <link url="#D5">D5</link>
+                                    <link url="#D7">D7</link>
+                                    <link url="#D8">D8</link>
+                                    <link url="#D12">D12</link>
+                                    <link url="#D14">D14</link>
+                                    <link url="#D15">D15</link>
+                                    <link url="#D16">D16</link>
+                                    <link url="#D18">D18</link>
+                                    <link url="#D25">D25</link>
+                            </odkazy>
+                            <kategorie_popis>A - Pozitivní dotaz nad spojením alespoň dvou tabulek</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>AR</kategorie>
+                            <odkazy>
+                                    <link url="#D1">D1</link>
+                                    <link url="#D2">D2</link>
+                                    <link url="#D4">D4</link>
+                                    <link url="#D14">D14</link>
+                                    <link url="#D15">D15</link>
+                            </odkazy>
+                            <kategorie_popis>A (RA) - Pozitivní dotaz nad spojením alespoň dvou tabulek</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>B</kategorie>
+                            <odkazy>
+                                    <link url="#D2">D2</link>
+                            </odkazy>
+                            <kategorie_popis>B - Negativní dotaz nad spojením alespoň dvou tabulek</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>C</kategorie>
+                            <odkazy>
+                                    <link url="#D3">D3</link>
+                            </odkazy>
+                            <kategorie_popis>C - Vyber ty, kteří mají vztah POUZE k ...</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>D1</kategorie>
+                            <odkazy>
+                                    <link url="#D4">D4</link>
+                            </odkazy>
+                            <kategorie_popis>D1 - Vyber ty, kteří/které jsou ve vztahu se všemi - dotaz s univerzální kvantifikací</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>D2</kategorie>
+                            <odkazy>
+                                    <link url="#D5">D5</link>
+                            </odkazy>
+                            <kategorie_popis>D2 - Kontrola výsledku dotazu z kategorie D1</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>F1</kategorie>
+                            <odkazy>
+                                    <link url="#D1">D1</link>
+                                    <link url="#D3">D3</link>
+                                    <link url="#D4">D4</link>
+                                    <link url="#D5">D5</link>
+                                    <link url="#D7">D7</link>
+                                    <link url="#D8">D8</link>
+                                    <link url="#D12">D12</link>
+                                    <link url="#D14">D14</link>
+                                    <link url="#D15">D15</link>
+                                    <link url="#D16">D16</link>
+                                    <link url="#D18">D18</link>
+                                    <link url="#D25">D25</link>
+                            </odkazy>
+                            <kategorie_popis>F1 - JOIN ON</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>F1R</kategorie>
+                            <odkazy>
+                                    <link url="#D1">D1</link>
+                                    <link url="#D3">D3</link>
+                                    <link url="#D4">D4</link>
+                                    <link url="#D14">D14</link>
+                                    <link url="#D15">D15</link>
+                            </odkazy>
+                            <kategorie_popis>F1 (RA) - JOIN ON</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>F2</kategorie>
+                            <odkazy>
+                                    <link url="#D2">D2</link>
+                            </odkazy>
+                            <kategorie_popis>F2 - NATURAL JOIN|JOIN USING</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>F3</kategorie>
+                            <odkazy>
+                                    <link url="#D6">D6</link>
+                            </odkazy>
+                            <kategorie_popis>F3 - CROSS JOIN</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>F4</kategorie>
+                            <odkazy>
+                                    <link url="#D7">D7</link>
+                            </odkazy>
+                            <kategorie_popis>F4 - LEFT|RIGHT OUTER JOIN</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>F5</kategorie>
+                            <odkazy>
+                                    <link url="#D8">D8</link>
+                            </odkazy>
+                            <kategorie_popis>F5 - FULL (OUTER) JOIN</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>G1</kategorie>
+                            <odkazy>
+                                    <link url="#D10">D10</link>
+                                    <link url="#D11">D11</link>
+                            </odkazy>
+                            <kategorie_popis>G1 - Vnořený dotaz v klauzuli WHERE</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>G2</kategorie>
+                            <odkazy>
+                                    <link url="#D5">D5</link>
+                                    <link url="#D6">D6</link>
+                                    <link url="#D10">D10</link>
+                                    <link url="#D18">D18</link>
+                                    <link url="#D25">D25</link>
+                            </odkazy>
+                            <kategorie_popis>G2 - Vnořený dotaz v klauzuli FROM</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>G2R</kategorie>
+                            <odkazy>
+                                    <link url="#D6">D6</link>
+                            </odkazy>
+                            <kategorie_popis>G2 (RA) - Vnořený dotaz v klauzuli FROM</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>G3</kategorie>
+                            <odkazy>
+                                    <link url="#D9">D9</link>
+                            </odkazy>
+                            <kategorie_popis>G3 - Vnořený dotaz v klauzuli SELECT</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>G4</kategorie>
+                            <odkazy>
+                                    <link url="#D10">D10</link>
+                            </odkazy>
+                            <kategorie_popis>G4 - Vztažený vnořený dotaz (EXISTS, NOT EXISTS)</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>H1</kategorie>
+                            <odkazy>
+                                    <link url="#D15">D15</link>
+                            </odkazy>
+                            <kategorie_popis>H1 - Množinové sjednocení - UNION</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>H2</kategorie>
+                            <odkazy>
+                                    <link url="#D2">D2</link>
+                                    <link url="#D3">D3</link>
+                                    <link url="#D5">D5</link>
+                            </odkazy>
+                            <kategorie_popis>H2 - Množinový rozdíl - MINUS nebo EXCEPT</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>H2R</kategorie>
+                            <odkazy>
+                                    <link url="#D2">D2</link>
+                                    <link url="#D3">D3</link>
+                            </odkazy>
+                            <kategorie_popis>H2 (RA) - Množinový rozdíl - MINUS nebo EXCEPT</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>H3</kategorie>
+                            <odkazy>
+                                    <link url="#D14">D14</link>
+                            </odkazy>
+                            <kategorie_popis>H3 - Množinový průnik - INTERSECT</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>I1</kategorie>
+                            <odkazy>
+                                    <link url="#D4">D4</link>
+                                    <link url="#D5">D5</link>
+                                    <link url="#D9">D9</link>
+                                    <link url="#D10">D10</link>
+                                    <link url="#D16">D16</link>
+                                    <link url="#D18">D18</link>
+                                    <link url="#D25">D25</link>
+                            </odkazy>
+                            <kategorie_popis>I1 - Agregační funkce (count|sum|min|max|avg)</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>I1R</kategorie>
+                            <odkazy>
+                                    <link url="#D4">D4</link>
+                            </odkazy>
+                            <kategorie_popis>I1 (RA) - Agregační funkce (count|sum|min|max|avg)</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>I2</kategorie>
+                            <odkazy>
+                                    <link url="#D4">D4</link>
+                                    <link url="#D5">D5</link>
+                                    <link url="#D16">D16</link>
+                                    <link url="#D18">D18</link>
+                                    <link url="#D25">D25</link>
+                            </odkazy>
+                            <kategorie_popis>I2 - Agregační funkce nad seskupenými řádky - GROUP BY (HAVING)</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>I2R</kategorie>
+                            <odkazy>
+                                    <link url="#D4">D4</link>
+                            </odkazy>
+                            <kategorie_popis>I2 (RA) - Agregační funkce nad seskupenými řádky - GROUP BY (HAVING)</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>J</kategorie>
+                            <odkazy>
+                                    <link url="#D2">D2</link>
+                            </odkazy>
+                            <kategorie_popis>J - Stejný dotaz ve třech různých formulacích SQL</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>K</kategorie>
+                            <odkazy>
+                                    <link url="#D4">D4</link>
+                            </odkazy>
+                            <kategorie_popis>K - Všechny klauzule v 1 dotazu - SELECT FROM WHERE GROUP BY HAVING ORDER BY</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>L</kategorie>
+                            <odkazy>
+                                    <link url="#D16">D16</link>
+                            </odkazy>
+                            <kategorie_popis>L - VIEW</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>M</kategorie>
+                            <odkazy>
+                                    <link url="#D17">D17</link>
+                            </odkazy>
+                            <kategorie_popis>M - Dotaz nad pohledem</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>N</kategorie>
+                            <odkazy>
+                                    <link url="#D12">D12</link>
+                            </odkazy>
+                            <kategorie_popis>N - INSERT, který vloží do některé tabulky množinu řádků, které jsou vybrány dotazem z vybraných tabulek (příkaz INSERT, ve kterém je klauzule VALUES nahrazena vnořeným poddotazem.</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>O</kategorie>
+                            <odkazy>
+                                    <link url="#D13">D13</link>
+                            </odkazy>
+                            <kategorie_popis>O - UPDATE s vnořeným SELECT příkazem</kategorie_popis>
+                        </radek>
+                        <radek>
+                            <kategorie>P</kategorie>
+                            <odkazy>
+                                    <link url="#D11">D11</link>
+                            </odkazy>
+                            <kategorie_popis>P - DELETE s vnořeným SELECT příkazem</kategorie_popis>
+                        </radek>
+            </pokryti_dotazu>
+        </queries>
+        <scripts>
+            <title>Scripts</title>
+            <para>
+                <link url="./create.sql">create.sql</link>
+            </para>
+            <para>
+                <link url="./insert.sql">insert.sql</link>
+            </para>
+        </scripts>
+        <conclussions>
+            <title>Závěr</title>
+                    <para>Semestrálka mi přinesla nové poznatky především ve dvou oblastech, a to:</para>
+                    <para></para>
+                    <para>**Databáze**: Při semestrální práci jsem se naučil modelovat konceptální schéma, relační schéma, poznal jsem ORACLE SQL, které se mi po dlouholeté osobní zkušenosti s MySQL příliš nelíbilo (drobné rozdíly v SQL dotazech) a především jsem se naučil relační algebru, kterou určitě budu v budoucnu využívat.</para>
+                    <para></para>
+                    <para>**Téma - restaurace**: Díky semestrální práci jsem mohl prokrastinovat od ProgTestu při sledování různých dílů Ano, šéfe! a pročítáním různých receptů Zdeňka Pohlreicha. Práce na semestrální práci mě namotivovala k návštěvě restaurace Café Imperial Zdeňka Pohlreicha, kterou jsem však v době psaní semestrální práce nakonec nemohl uskutečnit kvůli epidemii koronaviru.</para>
+        </conclussions>
+        <references>
+            <title>Zdroje</title>
+                    <para>Při psaní semestrální práce jsem se inspiroval především velkým vzorem české kuchyně, šéfkuchařem Zdeňkem Pohlreichem, a to především:</para>
+                    <para></para>
+                    <para> - jeho jídly, recepty a restauracemi na https://www.zdenekpohlreich.cz/restaurace/</para>
+                    <para> - různými kultovními hláškami z pořadu Ano, šéfe!</para>
+                    <para>   - játrový knedlíček, domácí nudle, 5 kg česneku ( https://youtu.be/Quf8F2n2jmc )</para>
+                    <para>   - kapr s nivou, zlatá česká trojkombinace, něco pod tím ( https://youtu.be/u1ZZ85DOL6w )</para>
+                    <para>   - rumcajsovy koule, burger podle Pata a Mata ( https://youtu.be/OwB2A2fHq3M )</para>
+        </references>
+    </content>
+</sproject>

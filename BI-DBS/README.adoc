@@ -1,0 +1,9 @@
+= Database Systems
+
+Got more than 100% thanks to bonuses on semestral work. +
+Got 91 % from semestral test and 96 % from exam. +
+Finished *6th* out of 493 students.
+
+== Semestral work
+
+As semestral work, I chose to implement database for restaurant system. You can link:semestral/[see the semestral work here]
