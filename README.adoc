@@ -54,3 +54,34 @@ link:BI-LIN/[Linear Algebra (BI-LIN)] - grades and MARAST quiz results export
 |English in Informatics 4+|-
 |Physical Education 2 4+|-
 |===
+
+== Third semester
+
+BI-AG1 (progtest, marast, grades)
+
+BI-AAG (progtest, marast, grades)
+
+BI-ZDM (marast, grades)
+
+BI-TJV (labs, semestral, grades)
+
+BI-XML (semestral)
+
+BI-IOS (hw1, hw2, semestral)
+
+BI-PHP (hw1-7, final, grades)
+
+BI-ANG (exam pdf)
+
+|===
+|Subject |Grade |Total |Exam |Assessment
+
+|Algorithms and Graphs 1|A|91.59/100|39/50|52.59/50
+|Automata and Grammars|A|100/100|57/60|43/40
+|Elements of Discrete Mathematics|A|91.5/100|56/60|35.5/40
+|Java Technology|A|101/100|36/40|65/60
+|XML Technology|A 3+|-
+|Basics of iOS Application Development|A|96/100|60/60|36/40
+|Programming in PHP|A|97/100|28/30|69/70
+|English Exam after A2L Course|A 3+|-
+|===
