@@ -1,4 +1,4 @@
-= Elements of calculus
+= Elements of Calculus
 
 Completed all mandatory MARAST quizzes. +
 Got 42.5 out of 45 points from tests. +

@@ -40,7 +40,7 @@ link:BI-A2L/[English in Informatics] - homeworks and final exam
 
 link:BI-PJV/[Programming in Java] - homeworks on ProgTest, exercises from labs, grades and results export
 
-BI-LIN: MARAST
+link:BI-LIN/[Linear Algebra (BI-LIN)] - grades and MARAST quiz results export
 
 |===
 |Subject |Grade |Total |Exam |Assessment
