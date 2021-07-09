@@ -1,0 +1,93 @@
+Archivace:
+ - ukládání informací z filesystému
+ (obsah souborů, metadata souborů, jména souborů, struktura)
+
+TAR:
+ - Tape ARchiver
+ - přepínač c (--create), f (--file = zálohuje do / čte ze souboru)
+
+ - přepínač t (výpis), v (verbose = podrobnější popis)
+ - přepínač u (update) = updatuje jednotlivé soubory (zanechá staré)
+ - přepínač x (extract)
+
+Archivace pomocí seznamu souborů:
+ - printf '%s\n' data/? > list
+ - tar cf archiv -T list
+
+Lze nakombinovat: find (...) | tar cf archiv -T -
+
+Komprese:
+ - cílem zmenšit původní soubory ale zachovat všechna data
+ - soubor je přepsán komprimovaným souborem
+ - komprimovat lze i na standardní výstup/vstup
+
+ - gzip soubor (vytvoří soubor.gz)
+ - gunzip soubor (zruší soubor.gz, vytvoří soubor dekomprese)
+ - podrobnosti: gzip -v
+
+Můžeme komprimovat/dekomprimovat i standardní vstup/výstup (gzip <f1)
+Dá se kombinovat i s tarem.
+
+Komprese: tar czf data.tgz data
+Dekomprese: tar xzf data.tgz
+
+POZOR !!! V testu nepoužívat tar czf, použít tar cf data.tar data && gzip data.tar !!!
+(Záleží přesně na zadání testu)
+
+POZOR !!! gzip uloží soubor s cestou, kterou mu zadáme (relativní / absolutní). Chceme relativní v případě testů !!!
+
+
+PROCESY A ÚLOHY:
+ - proces = jakási instance běžícího programu z pohledu Operačního systému
+ - každý proces má svoje PID ( aktuální zjistíme $$ )
+ - procesy vznikají z jiných (vztah rodič - potomek $PPID )
+
+Příkaz ps:
+ - zobrazí seznam daných procesů
+ - přepínač -f: podrobný popis informací
+ - přepínač -o (pid=) -o (ppid=) = vypíšeme pouze to, co chceme
+ - přepínač -p (můžeme dát uživatelský název celého procesu)
+
+Příkaz pstree:
+ - zobrazí celý strom procesů
+ - přepínač -p (zobrazí také číslo daného procesu)
+ - přepínač -pls $$ (zobrazí pouze strom vedoucí k aktuálnímu procesu)
+ - přepínač -e (nebo -A) = vypíšou informace o všech běžících procesech v systému
+
+Vyhledávání procesů:
+ - ps -e -o (co chceme: pid,ppid,user,args...)
+ - následně použijeme grep
+
+Efektivnější hledání procesů (příkaz pgrep):
+ - fungují klasické regulární výrazy, k tomu ještě navíc:
+ - přepínač -l (list, k názvu procesu přihodí jeho jméno)
+
+ - přepínač -x (hledá výskyt přesně konkrétního slova)
+ - přepínač -U username (vyhledá všechny procesy patřící uživateli)
+ - přepínač -t číslo (hledá procesy v daném terminálu)
+
+ - soubor $(tty) je znakový soubor obsahující informace o aktuálním terminálu
+
+Příkaz top (zjistí aktuální stav procesů a to, jak spotřebovávají paměť a CPU)
+
+Posílání signálu procesu:
+ - signály slouží ke kontrole daného procesu
+ - SIGTERM (ukončení procesu), SIGKILL (násilné ukončení procesu)
+
+ - kill -l vypíše seznam všech signálů
+ - kill -ČÍSLOSIGNÁLU ČÍSLOPROCESU (default SIGTERM)
+
+Úlohy v shellu:
+ - programy tvoří jednotlivé úlohy v shellu, můžou běžet na popředí/pozadí
+ - popředí (terminál = vstup), pozadí (terminál není vstup)
+ - úlohy jde pozastavit, převést na popředí/pozadí nebo ukončit
+
+ - příkaz jobs (vypíše aktuálně běžící procesy v shellu)
+ - příkaz fg (první job na řadě = označen +, druhý na řadě -) převede + job na popředí
+ - ^Z pozastavení aktuálně běžícího procesu
+
+ - příkaz bg (poslední aktuálně běžící job, který byl zastaven, spustí znovu a na pozadí)
+ - můžeme dát na popředí také konkrétní job (pomocí fg %1, kill %2, bg %3 ...)
+
+SMART: můžeme jakoby přepínat mezi běhy (pozastavit vi, pak pomocí fg znovu spustit...)
+

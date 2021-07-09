@@ -1,0 +1,90 @@
+Podmínku tvoří návratový kód příkazu
+ (0 = úspěch, ostatní = neúspěch)
+
+Již známe příkaz &&|| příkaz
+Plnohodnotný příkaz: if neco then neco else neco fi
+
+Dvojtečka = interní alias shellu pro true
+Použití vykřičníku = negace podmínky (if ! true)
+
+Cykly:
+ while neco do neco done
+ for neco in seznam do neco done
+ for ((init;cond;iter)) do neco done (matematické prostředí)
+
+Časté chyby: udělejte všechno pro soubory v aktuálním adresáři
+for i in * ( ne for i in $(ls) !!! )
+
+Test nebo [ výraz ]
+ - umožňuje porovnávat proměnné, pracovat se soubory ...
+ - nápověda: help test
+
+ - pozor, musíme dát mezeru, aby to bylo dobře interpretováno
+ - pokud chceme použít !, <, > nebo (), musíme je escapovat
+
+ -z: prázdný řetězec, -n: neprázdný řetězec
+ - můžeme zjistit, co všechno je soubor (pomoc najdeme v manuálu)
+ - lze použít také -a (and) a -o (or)
+
+POZOR! nezaměňovat text s čísly (čísla porovnávat přes -lt, do uvozovek)
+
+Bloky příkazů:
+ { p1; p2; } - blok v aktuálním shellu (povinné mezery a středníky)
+ ( p1; p2 ) - volání v subshellu (kombinují se vstupy a výstupy, nepamatují se proměnné)
+
+Dobré, pokud chceme za podmínkou zavolat více příkazů najednou.
+
+
+Přístupová práva:
+ - r/w/x, různá interpretace pro soubory a adresáře
+ - pro vlastníka, skupinu vlastníka a ostatní
+
+Největší zábava - adresáře:
+ - r: možnost číst adresář (soubory v adresáři)
+ - w: možnost vytvářet a mazat v adresáři soubory
+ - x: možnost vstoupit do adresáře (přístup k datům adresáře - na data souborů)
+ - t: speciální právo (v daném adresáři může každý vytvářet soubory, ale může mazat jen svoje)
+
+Smazání souboru záleží na právu w adresáře.
+Na vytvoření souboru potřebujeme ještě i právo x.
+
+Nastavování přístupových práv příkazem chmod:
+ - zadání relativní nebo absolutní, lze nastavit rekurzivně -R
+ - relativní zápis: komu, jak a co ( User, Group, Others, All ) nebo ( + přidat = nastav - odeber)
+   nebo ( Read, Write, eXecute, eXecute x velkým = pouze pro adresáře )
+
+ - můžeme také použít g=u (nastav skupině stejná práva jako vlastníkovi)
+ - pokud vynecháme komu, nastaví se všem podle masky
+
+Maska určuje výchozí práva souborů a adresářů:
+ - u souborů vychází z 666 (rw-rw-rw-)
+ - u adresářů vychází z 777 (rwxrwxrwx)
+
+ - maska se odečítá od výchozích práv
+ - ovlivňuje nastavení práv symbolickým zápisem
+
+FIND:
+ - rekurzivně hledá, pokud pro položku najde pravdivý výraz, vypíše se jeho jméno s cestou
+ - dá se specifikovat i určitá akce s daným souborem
+ - přepínač -ls: podrobný výpis všech souborů
+
+Filtrování podle vlastností:
+ - find složka -name jméno
+ - find složka -name 'pathname_expansion' ( * [] ^ )
+
+ - find složka -type d (nebo f l)
+ - find složka -size 0 (nebo libovolné jiné číslo)
+ - find složka -user username (majitelem je user)
+ - find složka -mtime 1 (bylo modifikováno 1 den nazpátek)
+
+Numerické hodnoty můžeme doladit pomocí -1 (1 den zpět doteď), +1000 (před 1000 dny a starší)
+Size ze základu používá velikost bloků, pokud použijeme -size -10c (méně než 10 znaků), +10c (více), 10c (přesně 10)
+
+Pokud kritérií zadám více, použije se jako AND
+Pokud chci OR, můžu mezi to dát -o, když chci negaci, vykřičník.
+Můžu také použít závorky (pozor na escape \( \) )
+
+Můžeme použít predikát -exec příkaz {} \; ( zde se {} nahradí volaným souborem, ukončení \; nebo + ) plusko argumenty akumuluje, středník volá příkaz nanovo pro každé
+
+Dobrá kombinace: find a grep -l (soubory obsahující text? zkombinujeme find a grep)
+
