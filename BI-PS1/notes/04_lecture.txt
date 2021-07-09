@@ -142,3 +142,70 @@ Mazání souborů:
  - rm -i (zeptá se uživatele na smazání každého souboru)
  - rm, r\m, \rm (zruší alias a zavolá se originální příkaz)
  - příkaz yes (neustále píše y, yes | rm *)
+
+ - logický systém souborů:  pro běžného uživatele
+  se jeví jako strom adresářů, používáme cd, pwd, ls, cp,
+  ve skutečnosti je ale tvořen více fyzickými soubory (příkazy mount, df)
+
+Výhody této koncepce:
+ - administrátor rozhoduje o pokrytí logického FS fyzickými FS
+ - pokrytí můžeme změnit bez vlivu na logický FS (vyměnit disky…)
+
+Důležité adresáře:
+ /bin: spustitelné programy, /sbin: programy pro start/admin. systému
+ /dev: speciální soubory, /etc: konfigurační soubory, /home: dom. adr.
+ /lib: knihovny, /tmp: dočasné soubory, /opt: externí aplikace,
+ /usr: systémové soubory s fixní velikostí, /var: sys. soubory s dyn. velik.
+
+ - fyzický systém souborů: podstrom adresářů, který je celý
+  uložen na jednom médiu (lokální disk, vzdálený server),
+ diskový (ext3/ext4), síťový (nfs, smb), pseudo (tmpfs, fdfs)
+
+ - tmp: pseudo systém, součást RAM, rychlý, všichni zápis
+ - proc: pseudo systém, pohled na tabulku procesů
+
+
+Obsah souboru je uložen na disku v jednotlivých datových blocích
+Přístup k souboru: more / less / cp / rm / mv / ln
+(nebo systémovými voláními: open(), close(), seek(), read(), write())
+
+Adresář: soubor, ma strukturu na úrvoni tabulky o dvou sloupcích
+(jméno souboru, odkaz na uzel v daném logickém filesystému)
+
+Implementace FS: disk je rozdělen na menší oblasti (fyzické systémy
+souborů) + zavaděč OS (nahraje jádro do paměti).
+
+Jak je reprezentován jednotlivý adresář?
+ - tabulka, každý řádek je soubor v inventáři
+ - 1. sloupec je jméno souboru, 2. sloupec je odkaz na i-node
+
+I-node má pak také vlastní tabulku s číslem, atributy a místem v paměti (adresami paměťových bloků).
+
+ln soubor odkaz: vytvoření pevného odkazu na soubor
+(odkaz se nastaví na stejný paměťový blok jako původní soubor)
+
+ - lze vytvořit pouze na existující soubory, jména jsou rovnocenná
+ - k uvolnění paměťového bloku dojde až po odstranění. Všech
+ - funguje pouze v rámci jednoho fyzického souborového systému
+
+ - počet linků víceméně říká, kolika máme podadresářů
+ (2 při vytvoření: sám na sebe (.) a na rodičovský (..) + potomci)
+
+Soubor:
+ - jméno + atributy + data
+ - jméno záleží na FS a implementaci (max délka, nesmí
+   používat /, rozlišují se malá a velká písmena)
+
+ - jména začínající tečkou (.) = skryté soubory a adresáře
+  (nenahrazují se při ? a *, nejsou vypsány ls (musím ls -a)
+ - . = aktuální adresář, .. = nadřazený adresář
+
+ - atributy souboru:
+   TYP souboru - d (adresář), - (obyčejný soubor),
+   c (znakový soubor), b (blokový soubor), l (link), p (roura)
+
+Symbolický link: odkaz (jako odkaz ve Windowsech)
+Roura: soubor typu FIFO, vytvořen při použití kolony příkazů
+
+Znakový soubor: např. /dev/pts/x, x je číslo terminálu
+(můžu poslat výstup do jiného terminálu)

@@ -1,0 +1,36 @@
+Přístup k serveru:
+ - ssh wrzecond@fray1.fit.cvut.cz
+ - heslo na https://profile.fit.cvut.cz
+
+UNIX:
+ - starý operační systém (1959), z něj BSD + Xenix
+ - OS, Boot (zavedení OS do paměti a jeho spuštění), jádro OS (kernel - nejnižší část, přiděluje)
+ - Soubor (pojmenovaná posloupnost bajtů na datovém médiu), systém souborů
+
+ - uživatel, administrátor, root, přístupová práva souboru, program, překladač, skript…
+ - víceuživatelský, přenosný, unifikované prostředí a podporuje multitasking
+ - shell (terminál) = funguje jako spojení s okolím (Bourne again shell [bash] / C shell)
+
+ - celý předmět: praktický, o tom, co se dá zadat do shellu s nějakými výstupy
+ - nápověda pokud něco nevím: man [příkaz], info [příkaz], help [příkaz]
+ - příkazy se dají zadávat i skriptem (.sh)
+
+Adresáře:
+ - stromová struktura (jeden strom)
+ - začíná / (root), část stromu může být
+   ale také na jiném disku
+
+ - pracovní adresář (pwd), ten kde jsem
+ - domovský adresář (~ zkratka, pevný,
+   jediné místo, kde si můžu dělat co chci)
+
+ - absolutní cesta /home/stud/karel/dopis.txt
+ - relativní cesta dopis.txt
+
+Základní syntaxe příkazové řádky: <výzva> <proměnná>=<hodnota>
+ - mezi jménem proměnné, znakem '=' a hodnotou nesmí být mezery
+ - pokud obsahuje hodnota mezery, musíme proměnnou uzavřít do uvozovek
+
+ - příkazy: <výzva> <jméno příkazu> <přepínače> <argumenty>
+ - každý příkaz má standardní vstup a standardní výstup + chybový výstup
+ - více příkazů za sebou: P1 & (asynchronně), P1 | P2 (kolona), P1 ; P2 (za sebou)

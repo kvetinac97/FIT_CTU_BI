@@ -1,0 +1,16 @@
+= Algorithms and Graphs 1
+
+Got over 100 % throughout the semester thanks to bonuses and activity. +
+Got at least 7.5 / 10 points from every ProgTest, +
+Finished *19th* of 529 students (in ProgTest). +
+Got 89.59 points, went to oral exam to finish with grade A. +
+
+== Tasks
+
+- Task 1: Spacial infection (60 %)
+- Task 2: University supercomputer (60 %)
+- Task 3: Elections (100 %)
+
+== Random
+
+Various programs written to practice topics like AVL, binomial/binary heap...

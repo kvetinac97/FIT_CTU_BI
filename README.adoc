@@ -57,7 +57,7 @@ link:BI-LIN/[Linear Algebra (BI-LIN)] - grades and MARAST quiz results export
 
 == Third semester
 
-BI-AG1 (progtest, marast, grades)
+link:BI-AG1/[Algorithms and Graphs 1 (BI-AG1)] - homeworks on ProgTest, grades and MARAST quiz results export
 
 BI-AAG (progtest, marast, grades)
 

@@ -1,0 +1,98 @@
+Struktura shellu (uživatel > bash > jádro > HW):
+ - nejdříve zkontroluje syntaxi bash (chyby: neexistující příkaz, mezery v definici proměnné)
+ - následně zkusí jádro zavolat daný příkaz (chyby: soubor/přepínač neexistuje) na HW
+
+1. Detekce znaků rušících speciální znaky (na úrovni bashe):
+ - \ ruší význam speciálního znaku, '' ruší význam všech speciálních znaků kromě '
+ - "" ruší význam všech speciálních znaků kromě \ ` $
+
+ - ` příkaz ` = náhrada příkazů (echo date vypíše "date", echo `date` vypíše "Tuesday …")
+ - $(příkaz) = také náhrada příkazů, $((výraz)) = náhrada aritmetického výrazu
+
+ - POZOR! Náhrada proměnných způsobí, že PROM='ahoj    karel';
+   echo $PROM vypíše "ahoj karel", echo "$PROM" vypíše "ahoj    karel"
+
+2. Odstranění komentářů: echo a b #c d vypíše "a b" x echo a b \# c d nebo "a b # c d"
+
+3. Postupné rozdělování příkazové řádky na jednoduché příkazy:
+ - jednoduchý příkaz (prom=hodnota; prikaz arg1 arg2 arg3)
+ - roura, kolona příkazů (prikaz1 | prikaz2, např. echo "Spočítej počet slov" | wc -w)
+ - seznam příkazů (1 nebo více rour odděleno znaky ; nebo &)
+
+ - složený příkaz ( list) { list; } (( výraz )) [[ výraz ]] for while until if case
+ - každý příkaz vrací návratový kód (0 = úspěch, 1-255 = -254 kód chyby)
+   $? = proměnná obsahující návratový kód posledního vykonaného příkazu
+
+ -  (příkaz1 ; příkaz2) = spuštění v podshellu, {příkaz1 ; příkaz2} = spuštění v aktuální instanci
+ - PRO JISTOTU VŽDYCKY PSÁT UVOZOVKY PŘI ZÁPISU/VÝPISU PROMĚNNÝCH !!!
+ - příkaz1 | příkaz2, návratový kód roury je návratovým kódem posledního příkazu
+
+ - příkaz1 && příkaz2: příkaz2 se provede pouze pokud se provede příkaz1
+ - příkaz1 || příkaz2: příkaz2 se provede pouze pokud se neprovede příkaz1
+ - příkaz 2>/dev/null: chyba příkazu se NEUKÁŽE
+
+4. Náhrady:
+ - ~: odpovídá domovskému adresáři, ~uživatel odpovídá domovskému adresáři uživatele
+ - můžu ještě nahradit příkaz jeho nechybovým výstupem (``, $(prikaz))
+
+5. Rozdělení na slova: oddělení obsahu je provedeno pomocí \n \t a mezery
+Oddělovače slov se dají vypsat pomocí proměnné IFS.
+
+6. Náhrada jmen souborů
+ - metaznaky, platí jen pro jména souborů: * (nahradí všechny řetězce
+   co nemají . a / na začátku (ls * = všechno, ls *xxx, všechno co končí na xxx, xxx* začíná na x
+
+ - pozor na chování příkazu ls a pokud to ničemu neodpovídá, text zůstane nezměněn
+ - další náhrada: ? (nahradí jeden znak mimo . na začátku nebo / všude)
+ - [abc, a-c, d-p] odpovídá právě jednomu z daných znaků, [!abc] odpovídá alespoň jednomu
+
+Zpracování příkazové řádky:
+ 1. Detekce znaků rušících speciální znaky
+ 2. Odstranění komentářů (#)
+
+ 3. Rozdělení příkazové řádky
+  na jednoduché příkazy
+ 4. NÁHRADY
+
+ 5. Rozdělení na slova
+ 6. Náhrada jmen souborů
+ 7. Přesměrování vstupu a výstupu
+ 8. Přiřazení hodnot proměnných
+
+Přesměrování vstupu a výstupu:
+ - vstup (0) = klávesnice
+ - výstup (1) = na terminál
+ - chybový výstup (2) = na terminál
+
+ - příkaz < soubor (soubor bude
+  přesměrován jako vstup příkazu)
+ - příkaz > soubor (soubor bude nastaven
+   jako výstup příkazu)
+
+ - příkaz >> soubor (file_append)
+ - příkaz << soubor
+ (čtení dokud nenapíšu určitý znak)
+
+ - můžeme použít příkaz 2> …
+ (přesměrování chybového přístupu)
+
+Příklad: wc << KONEC
+(bude číst, dokud nenapíšu "KONEC")
+
+Příkaz > soubor 2>&1
+(standardní výstup se uloží do jedničky,
+dvojka se uloží do jedničky, jednička
+do souboru)
+
+Přiřazení hodnot proměnných:
+ (HOME = domovský adresář,
+  PWD aktuální adresář, PATH = seznam
+  adresářů pro příkazu, PS1 = prompt,
+
+  IFS = oddělovače slov vstupní řádky,
+  $ PID instance shellu
+  ? Návratový kód předchozího procesu)
+
+Poziční parametry:
+ - $0 (jméno příkazu, $1…999 jedn. příkazy,
+   $# počet příkazů atd.)
