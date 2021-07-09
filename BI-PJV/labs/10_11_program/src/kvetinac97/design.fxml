@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@design.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kvetinac97.Controller">
+   <center>
+      <TableView fx:id="fTable" prefHeight="454.0" prefWidth="699.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="fColId" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="fColName" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="fColPrice" prefWidth="75.0" text="Price" />
+            <TableColumn fx:id="fColCount" prefWidth="75.0" text="Count" />
+        </columns>
+      </TableView>
+   </center>
+   <top>
+      <HBox spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox spacing="15.0">
+               <children>
+                  <Label text="Item:" />
+                  <TextField fx:id="fName" promptText="Name" />
+                  <TextField fx:id="fPrice" promptText="Price" />
+                  <Button mnemonicParsing="false" onAction="#addItem" text="Add" />
+               </children>
+               <padding>
+                  <Insets left="20.0" top="10.0" />
+               </padding></VBox>
+             <VBox spacing="15.0">
+               <children>
+                  <Label text="Actions:" />
+                  <Button mnemonicParsing="false" onAction="#sellItem" text="Sell" />
+                  <Button mnemonicParsing="false" onAction="#returnItem" text="Return" />
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding></VBox>
+         </children>
+         <padding>
+            <Insets bottom="15.0" />
+         </padding>
+      </HBox>
+   </top>
+</BorderPane>

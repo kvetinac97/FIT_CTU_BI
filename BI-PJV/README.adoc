@@ -1,0 +1,14 @@
+= Programming in Java
+
+Got nearly 100 % resulting in grade A without oral exam. +
+Got 100 % for homeworks on ProgTest.
+
+== ProgTest
+
+Throughout the semester, we had one big homework: to develop game "The Drake". To help us, first 5 weeks, we were given set of Unit tests to develop the game logic and then, we had 2 weeks to create the UI.
+
+link:progtest/[You can see the game files (and download the game) here]
+
+== Labs
+
+Various tasks solved on labs, each focused on different part of Java language.

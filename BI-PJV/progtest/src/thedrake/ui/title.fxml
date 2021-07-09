@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thedrake.ui.TitleScreenController">
+   <center>
+       <FlowPane id="root" alignment="CENTER" orientation="VERTICAL" prefHeight="400.0" prefWidth="400.0" stylesheets="@title.css" vgap="10.0" BorderPane.alignment="CENTER">
+           <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="350.0" text="TheDrake v1.0">
+            <font>
+               <Font name="Chalkboard SE Light" size="48.0" />
+            </font></Label>
+           <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#startGame" prefHeight="45.0" prefWidth="350.0" stylesheets="@title.css" text="TWO PLAYERS">
+            <font>
+               <Font size="24.0" />
+            </font>
+            <FlowPane.margin>
+               <Insets top="20.0" />
+            </FlowPane.margin></Button>
+           <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#showDialog" prefWidth="350.0" stylesheets="@title.css" text="PLAYER VS COMPUTER">
+            <font>
+               <Font size="24.0" />
+            </font></Button>
+           <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#showDialog" prefWidth="350.0" stylesheets="@title.css" text="INTERNET">
+               <font>
+                   <Font size="24.0" />
+               </font></Button>
+           <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#exit" prefWidth="350.0" stylesheets="@title.css" text="QUIT">
+            <font>
+               <Font size="24.0" />
+            </font>
+            <FlowPane.margin>
+               <Insets top="20.0" />
+            </FlowPane.margin></Button>
+       </FlowPane>
+   </center>
+</BorderPane>
