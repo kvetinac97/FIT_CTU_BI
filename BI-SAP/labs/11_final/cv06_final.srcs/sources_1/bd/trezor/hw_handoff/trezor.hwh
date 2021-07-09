@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Mar 30 15:48:07 2020" VIVADOVERSION="2018.2">
+
+  <SYSTEMINFO ARCH="artix7" BOARD="xilinx.com:ac701:part0:1.4" DEVICE="7a200t" NAME="trezor" PACKAGE="fbg676" SPEEDGRADE="-2"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="O" NAME="y" SIGIS="data" SIGNAME="automat_0_output_state_logic_O">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="automat_0_output_state_logic" PORT="O"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="clk" SIGIS="undef" SIGNAME="External_Ports_clk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="automat_0_dff_1" PORT="clk"/>
+        <CONNECTION INSTANCE="automat_0_dff_0" PORT="clk"/>
+        <CONNECTION INSTANCE="automat_0_dff_2" PORT="clk"/>
+        <CONNECTION INSTANCE="debounce_0" PORT="clk"/>
+        <CONNECTION INSTANCE="debounce_1" PORT="clk"/>
+        <CONNECTION INSTANCE="debounce_2" PORT="clk"/>
+        <CONNECTION INSTANCE="debounce_3" PORT="clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="reset" SIGIS="undef" SIGNAME="External_Ports_reset">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="automat_0_dff_1" PORT="reset"/>
+        <CONNECTION INSTANCE="automat_0_dff_0" PORT="reset"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="up" SIGIS="undef" SIGNAME="External_Ports_up">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="debounce_0" PORT="tl_in"/>
+        <CONNECTION INSTANCE="or_0" PORT="I0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="right" SIGIS="undef" SIGNAME="External_Ports_right">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="debounce_1" PORT="tl_in"/>
+        <CONNECTION INSTANCE="or_0" PORT="I1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="down" SIGIS="undef" SIGNAME="External_Ports_down">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="debounce_2" PORT="tl_in"/>
+        <CONNECTION INSTANCE="or_0" PORT="I2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="left" SIGIS="undef" SIGNAME="External_Ports_left">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="debounce_3" PORT="tl_in"/>
+        <CONNECTION INSTANCE="or_0" PORT="I3"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="tb1" SIGIS="undef" SIGNAME="automat_0_trezorKoder_0_buttons1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="automat_0_trezorKoder_0" PORT="buttons1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="tb0" SIGIS="undef" SIGNAME="automat_0_trezorKoder_0_buttons0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="automat_0_trezorKoder_0" PORT="buttons0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ts1" SIGIS="undef" SIGNAME="automat_0_dff_0_q">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="automat_0_dff_0" PORT="q"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ts0" SIGIS="undef" SIGNAME="automat_0_dff_0_q">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="automat_0_dff_0" PORT="q"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE FULLNAME="/automat_0/dff_0" HWVERSION="1.0" INSTANCE="automat_0_dff_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dff" VLNV="FIT:user:dff:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="trezor_dff_0_0"/>
+        <PARAMETER NAME="CE" VALUE="true"/>
+        <PARAMETER NAME="Reset" VALUE="true"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="d" SIGIS="data" SIGNAME="automat_0_next_state_logic_0_d0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_next_state_logic_0" PORT="d0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk" SIGIS="undef" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ce" SIGIS="undef" SIGNAME="automat_0_edge_detector_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_edge_detector" PORT="O"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" SIGIS="undef" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="q" SIGIS="data" SIGNAME="automat_0_dff_0_q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_next_state_logic_0" PORT="q0"/>
+            <CONNECTION INSTANCE="automat_0_output_state_logic" PORT="I1"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="ts1"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="ts0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/automat_0/dff_1" HWVERSION="1.0" INSTANCE="automat_0_dff_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dff" VLNV="FIT:user:dff:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="trezor_dff_1_0"/>
+        <PARAMETER NAME="CE" VALUE="true"/>
+        <PARAMETER NAME="Reset" VALUE="true"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="d" SIGIS="data" SIGNAME="automat_0_next_state_logic_0_d1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_next_state_logic_0" PORT="d1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk" SIGIS="undef" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ce" SIGIS="undef" SIGNAME="automat_0_edge_detector_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_edge_detector" PORT="O"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" SIGIS="undef" SIGNAME="External_Ports_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="q" SIGIS="data" SIGNAME="automat_0_dff_1_q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_next_state_logic_0" PORT="q1"/>
+            <CONNECTION INSTANCE="automat_0_output_state_logic" PORT="I0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/automat_0/dff_2" HWVERSION="1.0" INSTANCE="automat_0_dff_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dff" VLNV="FIT:user:dff:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="trezor_dff_0_1"/>
+        <PARAMETER NAME="CE" VALUE="false"/>
+        <PARAMETER NAME="Reset" VALUE="false"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="d" SIGIS="data" SIGNAME="or_0_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="or_0" PORT="O"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="clk" SIGIS="undef" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="q" SIGIS="data" SIGNAME="automat_0_dff_2_q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_edge_detector" PORT="I1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/automat_0/edge_detector" HWVERSION="1.0" INSTANCE="automat_0_edge_detector" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="and" VLNV="FIT:user:and:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="I0_inverted" VALUE="false"/>
+        <PARAMETER NAME="I1_inverted" VALUE="true"/>
+        <PARAMETER NAME="I2_inverted" VALUE="false"/>
+        <PARAMETER NAME="I3_inverted" VALUE="false"/>
+        <PARAMETER NAME="I4_inverted" VALUE="false"/>
+        <PARAMETER NAME="I5_inverted" VALUE="false"/>
+        <PARAMETER NAME="I6_inverted" VALUE="false"/>
+        <PARAMETER NAME="I7_inverted" VALUE="false"/>
+        <PARAMETER NAME="O_inverted" VALUE="false"/>
+        <PARAMETER NAME="Component_Name" VALUE="trezor_and_0_1"/>
+        <PARAMETER NAME="Inputs" VALUE="2"/>
+        <PARAMETER NAME="I0_Inverted" VALUE="false"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="I0" SIGIS="data" SIGNAME="or_0_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="or_0" PORT="O"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="I1" SIGIS="data" SIGNAME="automat_0_dff_2_q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_dff_2" PORT="q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="O" SIGIS="data" SIGNAME="automat_0_edge_detector_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_dff_1" PORT="ce"/>
+            <CONNECTION INSTANCE="automat_0_dff_0" PORT="ce"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/automat_0/next_state_logic_0" HWVERSION="1.0" INSTANCE="automat_0_next_state_logic_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="next_state_logic" VLNV="xilinx.com:module_ref:next_state_logic:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="trezor_next_state_logic_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="buttons1" SIGIS="undef" SIGNAME="automat_0_trezorKoder_0_buttons1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_trezorKoder_0" PORT="buttons1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="buttons0" SIGIS="undef" SIGNAME="automat_0_trezorKoder_0_buttons0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_trezorKoder_0" PORT="buttons0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="q1" SIGIS="undef" SIGNAME="automat_0_dff_1_q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_dff_1" PORT="q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="q0" SIGIS="undef" SIGNAME="automat_0_dff_0_q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_dff_0" PORT="q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="d1" SIGIS="undef" SIGNAME="automat_0_next_state_logic_0_d1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_dff_1" PORT="d"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="d0" SIGIS="undef" SIGNAME="automat_0_next_state_logic_0_d0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_dff_0" PORT="d"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/automat_0/output_state_logic" HWVERSION="1.0" INSTANCE="automat_0_output_state_logic" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="and" VLNV="FIT:user:and:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="I0_inverted" VALUE="false"/>
+        <PARAMETER NAME="I1_inverted" VALUE="false"/>
+        <PARAMETER NAME="I2_inverted" VALUE="false"/>
+        <PARAMETER NAME="I3_inverted" VALUE="false"/>
+        <PARAMETER NAME="I4_inverted" VALUE="false"/>
+        <PARAMETER NAME="I5_inverted" VALUE="false"/>
+        <PARAMETER NAME="I6_inverted" VALUE="false"/>
+        <PARAMETER NAME="I7_inverted" VALUE="false"/>
+        <PARAMETER NAME="O_inverted" VALUE="false"/>
+        <PARAMETER NAME="Component_Name" VALUE="trezor_and_0_0"/>
+        <PARAMETER NAME="Inputs" VALUE="2"/>
+        <PARAMETER NAME="I0_Inverted" VALUE="false"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="I0" SIGIS="data" SIGNAME="automat_0_dff_1_q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_dff_1" PORT="q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="I1" SIGIS="data" SIGNAME="automat_0_dff_0_q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_dff_0" PORT="q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="O" SIGIS="data" SIGNAME="automat_0_output_state_logic_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="y"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/automat_0/trezorKoder_0" HWVERSION="1.0" INSTANCE="automat_0_trezorKoder_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="trezorKoder" VLNV="xilinx.com:module_ref:trezorKoder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="trezor_trezorKoder_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="up" SIGIS="undef" SIGNAME="debounce_0_tl_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="debounce_0" PORT="tl_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="right" SIGIS="undef" SIGNAME="debounce_1_tl_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="debounce_1" PORT="tl_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="down" SIGIS="undef" SIGNAME="debounce_2_tl_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="debounce_2" PORT="tl_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="left" SIGIS="undef" SIGNAME="debounce_3_tl_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="debounce_3" PORT="tl_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="buttons1" SIGIS="undef" SIGNAME="automat_0_trezorKoder_0_buttons1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_next_state_logic_0" PORT="buttons1"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="tb1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="buttons0" SIGIS="undef" SIGNAME="automat_0_trezorKoder_0_buttons0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_next_state_logic_0" PORT="buttons0"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="tb0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/debounce_0" HWVERSION="1.0" INSTANCE="debounce_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="debounce" VLNV="FIT:user:debounce:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="width" VALUE="22"/>
+        <PARAMETER NAME="Component_Name" VALUE="trezor_debounce_0_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="synthesis.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk" SIGIS="undef" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tl_in" SIGIS="undef" SIGNAME="External_Ports_up">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="up"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tl_out" SIGIS="undef" SIGNAME="debounce_0_tl_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_trezorKoder_0" PORT="up"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/debounce_1" HWVERSION="1.0" INSTANCE="debounce_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="debounce" VLNV="FIT:user:debounce:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="width" VALUE="22"/>
+        <PARAMETER NAME="Component_Name" VALUE="trezor_debounce_1_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="synthesis.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk" SIGIS="undef" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tl_in" SIGIS="undef" SIGNAME="External_Ports_right">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="right"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tl_out" SIGIS="undef" SIGNAME="debounce_1_tl_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_trezorKoder_0" PORT="right"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/debounce_2" HWVERSION="1.0" INSTANCE="debounce_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="debounce" VLNV="FIT:user:debounce:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="width" VALUE="22"/>
+        <PARAMETER NAME="Component_Name" VALUE="trezor_debounce_2_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="synthesis.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk" SIGIS="undef" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tl_in" SIGIS="undef" SIGNAME="External_Ports_down">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="down"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tl_out" SIGIS="undef" SIGNAME="debounce_2_tl_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_trezorKoder_0" PORT="down"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/debounce_3" HWVERSION="1.0" INSTANCE="debounce_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="debounce" VLNV="FIT:user:debounce:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="width" VALUE="22"/>
+        <PARAMETER NAME="Component_Name" VALUE="trezor_debounce_3_0"/>
+        <PARAMETER NAME="LOGO_FILE" VALUE="synthesis.png"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk" SIGIS="undef" SIGNAME="External_Ports_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="tl_in" SIGIS="undef" SIGNAME="External_Ports_left">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="left"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tl_out" SIGIS="undef" SIGNAME="debounce_3_tl_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_trezorKoder_0" PORT="left"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/or_0" HWVERSION="1.0" INSTANCE="or_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="or" VLNV="FIT:user:or:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="I0_inverted" VALUE="false"/>
+        <PARAMETER NAME="I1_inverted" VALUE="false"/>
+        <PARAMETER NAME="I2_inverted" VALUE="false"/>
+        <PARAMETER NAME="I3_inverted" VALUE="false"/>
+        <PARAMETER NAME="I4_inverted" VALUE="false"/>
+        <PARAMETER NAME="I5_inverted" VALUE="false"/>
+        <PARAMETER NAME="I6_inverted" VALUE="false"/>
+        <PARAMETER NAME="I7_inverted" VALUE="false"/>
+        <PARAMETER NAME="O_inverted" VALUE="false"/>
+        <PARAMETER NAME="Component_Name" VALUE="trezor_or_0_0"/>
+        <PARAMETER NAME="Inputs" VALUE="4"/>
+        <PARAMETER NAME="I0_Inverted" VALUE="false"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="I0" SIGIS="data" SIGNAME="External_Ports_up">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="up"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="I1" SIGIS="data" SIGNAME="External_Ports_right">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="right"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="I2" SIGIS="data" SIGNAME="External_Ports_down">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="down"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="I3" SIGIS="data" SIGNAME="External_Ports_left">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="left"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="O" SIGIS="data" SIGNAME="or_0_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="automat_0_edge_detector" PORT="I0"/>
+            <CONNECTION INSTANCE="automat_0_dff_2" PORT="d"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

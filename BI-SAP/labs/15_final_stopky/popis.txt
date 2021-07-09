@@ -1,0 +1,7 @@
+Program je nastaven tak, aby pøerušení bylo zavoláno 16x za sekundu (dìlicí pomìr 8).
+Inkrementuje o 16tinu sekundy, poèítá ve znacích.
+
+Stav joysticku je pøeèten každou 16tinu sekundy a poèítá s tøemi polohami
+LEFT - STOP (zastaví stopky, pokud aktuálnì bìží)
+RIGHT - START (spustí stopky, pokud aktuálnì nebìží)
+ENTER - RESET (resetuje stopky na 0 a zastaví je)

@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../pravdivostni.srcs/sources_1/imports/Downloads/l2_algebra_4.vhd" \
+"../../../../pravdivostni.srcs/sim_1/imports/Downloads/l2_algebra_4_test.vhd" \
+
+# Do not sort compile order
+nosort

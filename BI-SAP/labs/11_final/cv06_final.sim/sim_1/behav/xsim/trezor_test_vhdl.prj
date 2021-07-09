@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../cv06_final.srcs/sources_1/imports/Downloads/jerabst1_trezorKoder.vhd" \
+"../../../../cv06_final.srcs/sources_1/imports/Downloads/wrzecond_trezor.vhd" \
+"../../../../cv06_final.ip_user_files/bd/trezor/sim/trezor.vhd" \
+"../../../../cv06_final.srcs/sources_1/bd/trezor/hdl/trezor_wrapper.vhd" \
+"../../../../cv06_final.srcs/sim_1/imports/Downloads/seq_detector_test_18_19.vhd" \
+
+# Do not sort compile order
+nosort

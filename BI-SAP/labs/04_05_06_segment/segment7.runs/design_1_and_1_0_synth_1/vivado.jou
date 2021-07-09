@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Tue Mar  3 08:19:13 2020
+# Process ID: 7456
+# Current directory: C:/testsap/segment7/segment7.runs/design_1_and_1_0_synth_1
+# Command line: vivado.exe -log design_1_and_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_and_1_0.tcl
+# Log file: C:/testsap/segment7/segment7.runs/design_1_and_1_0_synth_1/design_1_and_1_0.vds
+# Journal file: C:/testsap/segment7/segment7.runs/design_1_and_1_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_and_1_0.tcl -notrace

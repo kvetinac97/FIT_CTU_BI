@@ -1,0 +1,22 @@
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+### Simulation start ###
+ State = 0x0
+  INC = 0 Next = 0x0 Output = 0x0 Correct = 0x0 - OK
+  INC = 1 Next = 0x1 Output = 0x0 Correct = 0x0 - OK
+ State = 0x1
+  INC = 0 Next = 0x1 Output = 0x1 Correct = 0x1 - OK
+  INC = 1 Next = 0x2 Output = 0x1 Correct = 0x1 - OK
+ State = 0x2
+  INC = 0 Next = 0x2 Output = 0x3 Correct = 0x3 - OK
+  INC = 1 Next = 0x3 Output = 0x3 Correct = 0x3 - OK
+ State = 0x3
+  INC = 0 Next = 0x3 Output = 0x2 Correct = 0x2 - OK
+  INC = 1 Next = 0x4 Output = 0x2 Correct = 0x2 - OK
+ State = 0x4
+  INC = 0 Next = 0x4 Output = 0x6 Correct = 0x6 - OK
+  INC = 1 Next = 0x5 Output = 0x6 Correct = 0x6 - OK
+ State = 0x5
+  INC = 0 Next = 0x5 Output = 0x7 Correct = 0x7 - OK
+  INC = 1 Next = 0x0 Output = 0x7 Correct = 0x7 - OK
+### Simulation end ###

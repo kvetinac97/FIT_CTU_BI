@@ -1,0 +1,17 @@
+0.6
+2018.2
+Jun 14 2018
+20:41:02
+C:/Users/kvetinac97/seq_detector/seq_detector.srcs/sim_1/imports/Downloads/l5_posloupnost_test_v2.vhd,1585248263,vhdl,,,,l5_posloupnost_test_v2,,,,,,,,
+C:/Users/kvetinac97/seq_detector/seq_detector.srcs/sim_1/imports/Downloads/l5_posloupnost_test_v2_wrapper.vhd,1585247229,vhdl,,,,l5_posloupnost_test_v2_wrapper,,,,,,,,
+C:/Users/kvetinac97/seq_detector/seq_detector.srcs/sim_1/imports/Downloads/seq_detector_test_Jerabek.vhd,1585244498,vhdl,,,,seq_detector_test,,,,,,,,
+C:/Users/kvetinac97/seq_detector/seq_detector.srcs/sources_1/bd/seq_detector/hdl/seq_detector_wrapper.vhd,1585247173,vhdl,,,,seq_detector_wrapper,,,,,,,,
+C:/Users/kvetinac97/seq_detector/seq_detector.srcs/sources_1/bd/seq_detector/ip/seq_detector_debounce_0_0/seq_detector_debounce_0_0_sim_netlist.vhdl,1585245709,vhdl,,,,seq_detector_debounce_0_0;seq_detector_debounce_0_0_debounce,,,,,,,,
+C:/Users/kvetinac97/seq_detector/seq_detector.srcs/sources_1/bd/seq_detector/ip/seq_detector_dff_0_0/seq_detector_dff_0_0_sim_netlist.vhdl,1585245648,vhdl,,,,seq_detector_dff_0_0;seq_detector_dff_0_0_dff,,,,,,,,
+C:/Users/kvetinac97/seq_detector/seq_detector.srcs/sources_1/bd/seq_detector/ip/seq_detector_dff_1_0/seq_detector_dff_1_0_sim_netlist.vhdl,1585245664,vhdl,,,,seq_detector_dff_1_0;seq_detector_dff_1_0_dff,,,,,,,,
+C:/Users/kvetinac97/seq_detector/seq_detector.srcs/sources_1/bd/seq_detector/ip/seq_detector_dff_2_0/seq_detector_dff_2_0_sim_netlist.vhdl,1585245671,vhdl,,,,seq_detector_dff_2_0;seq_detector_dff_2_0_dff,,,,,,,,
+C:/Users/kvetinac97/seq_detector/seq_detector.srcs/sources_1/bd/seq_detector/ip/seq_detector_next_state_logic_0_0/seq_detector_next_state_logic_0_0_sim_netlist.vhdl,1585245510,vhdl,,,,seq_detector_next_state_logic_0_0;seq_detector_next_state_logic_0_0_next_state_logic,,,,,,,,
+C:/Users/kvetinac97/seq_detector/seq_detector.srcs/sources_1/bd/seq_detector/ip/seq_detector_output_logic_0_0/seq_detector_output_logic_0_0_sim_netlist.vhdl,1585245566,vhdl,,,,seq_detector_output_logic_0_0,,,,,,,,
+C:/Users/kvetinac97/seq_detector/seq_detector.srcs/sources_1/bd/seq_detector/sim/seq_detector.vhd,1585247173,vhdl,,,,seq_detector,,,,,,,,
+C:/Users/kvetinac97/seq_detector/seq_detector.srcs/sources_1/imports/Downloads/l5_next_state_logic.vhd,1585248084,vhdl,,,,next_state_logic,,,,,,,,
+C:/Users/kvetinac97/seq_detector/seq_detector.srcs/sources_1/imports/Downloads/l5_output_logic.vhd,1585244248,vhdl,,,,output_logic,,,,,,,,

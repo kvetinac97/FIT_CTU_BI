@@ -1,0 +1,36 @@
+{
+   ExpandedHierarchyInLayout: "",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
+#  -string -flagsOSRD
+preplace port detect -pg 1 -y 210 -defaultsOSRD
+preplace port btn -pg 1 -y 260 -defaultsOSRD
+preplace port switch -pg 1 -y 170 -defaultsOSRD
+preplace port s0 -pg 1 -y 20 -defaultsOSRD
+preplace port clk -pg 1 -y 240 -defaultsOSRD
+preplace port s1 -pg 1 -y 50 -defaultsOSRD
+preplace port s2 -pg 1 -y 80 -defaultsOSRD
+preplace port reset -pg 1 -y -60 -defaultsOSRD
+preplace inst dff_2 -pg 1 -lvl 3 -y 230 -defaultsOSRD
+preplace inst debounce_0 -pg 1 -lvl 1 -y 250 -defaultsOSRD
+preplace inst vcc_0 -pg 1 -lvl 2 -y 400 -defaultsOSRD
+preplace inst dff_0 -pg 1 -lvl 3 -y -90 -defaultsOSRD
+preplace inst output_logic_0 -pg 1 -lvl 4 -y 210 -defaultsOSRD
+preplace inst dff_1 -pg 1 -lvl 3 -y 70 -defaultsOSRD
+preplace inst next_state_logic_0 -pg 1 -lvl 2 -y 230 -defaultsOSRD
+preplace netloc output_logic_0_y 1 4 1 N
+preplace netloc vcc_0_O 1 2 1 740
+preplace netloc clk_0_1 1 0 1 NJ
+preplace netloc dff_2_q 1 1 4 370 340 N 340 920 80 N
+preplace netloc dff_1_q 1 1 4 360 330 N 330 910 50 N
+preplace netloc sw_0_1 1 0 4 NJ 170 340J 140 710 350 930
+preplace netloc dff_0_q 1 1 4 350 320 N 320 900 20 N
+preplace netloc debounce_0_tl_out 1 1 2 330 130 760J
+preplace netloc next_state_logic_0_d0 1 2 1 700
+preplace netloc next_state_logic_0_d1 1 2 1 730
+preplace netloc reset_0_1 1 0 3 NJ -60 NJ -60 720J
+preplace netloc next_state_logic_0_d2 1 2 1 750
+preplace netloc tl_in_0_1 1 0 1 NJ
+levelinfo -pg 1 -20 170 600 830 1020 1130 -top -180 -bot 460
+",
+}
+0

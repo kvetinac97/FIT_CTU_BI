@@ -1,0 +1,36 @@
+{
+   ExpandedHierarchyInLayout: "",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
+#  -string -flagsOSRD
+preplace port A -pg 1 -y -470 -defaultsOSRD
+preplace port B -pg 1 -y -450 -defaultsOSRD
+preplace port C -pg 1 -y -350 -defaultsOSRD
+preplace port P -pg 1 -y -460 -defaultsOSRD
+preplace port Q -pg 1 -y -340 -defaultsOSRD
+preplace port D -pg 1 -y -330 -defaultsOSRD
+preplace port R -pg 1 -y -220 -defaultsOSRD
+preplace port E -pg 1 -y -230 -defaultsOSRD
+preplace port S -pg 1 -y -100 -defaultsOSRD
+preplace port F -pg 1 -y -210 -defaultsOSRD
+preplace port G -pg 1 -y -110 -defaultsOSRD
+preplace port H -pg 1 -y -90 -defaultsOSRD
+preplace inst and_0 -pg 1 -lvl 1 -y -460 -defaultsOSRD
+preplace inst xor_0 -pg 1 -lvl 1 -y -100 -defaultsOSRD
+preplace inst or_0 -pg 1 -lvl 1 -y -220 -defaultsOSRD
+preplace inst nand_0 -pg 1 -lvl 1 -y -340 -defaultsOSRD
+preplace netloc I0_3_1 1 0 1 NJ
+preplace netloc and_0_O 1 1 1 N
+preplace netloc I1_1_1 1 0 1 NJ
+preplace netloc I1_0_1 1 0 1 NJ
+preplace netloc I1_3_1 1 0 1 NJ
+preplace netloc I1_2_1 1 0 1 NJ
+preplace netloc xor_0_O 1 1 1 NJ
+preplace netloc I0_1_1 1 0 1 NJ
+preplace netloc nand_0_O 1 1 1 NJ
+preplace netloc I0_2_1 1 0 1 NJ
+preplace netloc or_0_O 1 1 1 NJ
+preplace netloc I0_0_1 1 0 1 NJ
+levelinfo -pg 1 -70 60 240 -top -530 -bot 140
+",
+}
+

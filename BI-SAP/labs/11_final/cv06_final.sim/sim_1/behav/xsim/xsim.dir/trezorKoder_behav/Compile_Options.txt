@@ -1,0 +1,1 @@
+-wto "ed437a4879214aa69f405ea8b8ca42d0" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "trezorKoder_behav" "xil_defaultlib.trezorKoder" -log "elaborate.log" 

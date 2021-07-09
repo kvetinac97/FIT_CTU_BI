@@ -1,0 +1,530 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Tue Mar  3 08:57:08 2020
+# Process ID: 12836
+# Current directory: C:/testsap/segment7/segment7.runs/synth_1
+# Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file: C:/testsap/segment7/segment7.runs/synth_1/design_1_wrapper.vds
+# Journal file: C:/testsap/segment7/segment7.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '//fsu01/ucebny/home/wrzecond/Downloads/lib_SAP_2020_02_11'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+Command: synth_design -top design_1_wrapper -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6076 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 460.875 ; gain = 100.688
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:34]
+INFO: [Synth 8-3491] module 'design_1' declared at 'C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:55]
+INFO: [Synth 8-638] synthesizing module 'design_1' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:38]
+INFO: [Synth 8-3491] module 'design_1_vcc_0_2' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_vcc_0_2_stub.vhdl:5' bound to instance 'an_3' of component 'design_1_vcc_0_2' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:405]
+INFO: [Synth 8-638] synthesizing module 'design_1_vcc_0_2' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_vcc_0_2_stub.vhdl:12]
+INFO: [Synth 8-3491] module 'design_1_and_0_0' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_0_stub.vhdl:5' bound to instance 'and0' of component 'design_1_and_0_0' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:409]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_0_0' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'design_1_and_1_0' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_0_stub.vhdl:5' bound to instance 'and1' of component 'design_1_and_1_0' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:415]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_1_0' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_0_5' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_5_stub.vhdl:5' bound to instance 'and10' of component 'design_1_and_0_5' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:422]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_0_5' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_5_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_1_3' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_3_stub.vhdl:5' bound to instance 'and11' of component 'design_1_and_1_3' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:429]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_1_3' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_3_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_2_2' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_2_2_stub.vhdl:5' bound to instance 'and12' of component 'design_1_and_2_2' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:436]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_2_2' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_2_2_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_3_0' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_3_0_stub.vhdl:5' bound to instance 'and13' of component 'design_1_and_3_0' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:443]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_3_0' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_3_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'design_1_and_0_6' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_6_stub.vhdl:5' bound to instance 'and14' of component 'design_1_and_0_6' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:451]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_0_6' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_6_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'design_1_and_1_4' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_4_stub.vhdl:5' bound to instance 'and15' of component 'design_1_and_1_4' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:457]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_1_4' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_4_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_2_3' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_2_3_stub.vhdl:5' bound to instance 'and16' of component 'design_1_and_2_3' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:464]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_2_3' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_2_3_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_0_7' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_7_stub.vhdl:5' bound to instance 'and17' of component 'design_1_and_0_7' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:471]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_0_7' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_7_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_1_5' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_5_stub.vhdl:5' bound to instance 'and18' of component 'design_1_and_1_5' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:478]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_1_5' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_5_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'design_1_and_2_4' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_2_4_stub.vhdl:5' bound to instance 'and19' of component 'design_1_and_2_4' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:486]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_2_4' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_2_4_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'design_1_and_2_0' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_2_0_stub.vhdl:5' bound to instance 'and2' of component 'design_1_and_2_0' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:494]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_2_0' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_2_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_0_8' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_8_stub.vhdl:5' bound to instance 'and20' of component 'design_1_and_0_8' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:501]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_0_8' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_8_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_1_6' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_6_stub.vhdl:5' bound to instance 'and21' of component 'design_1_and_1_6' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:508]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_1_6' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_6_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_2_5' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_2_5_stub.vhdl:5' bound to instance 'and22' of component 'design_1_and_2_5' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:515]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_2_5' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_2_5_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_3_1' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_3_1_stub.vhdl:5' bound to instance 'and23' of component 'design_1_and_3_1' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:522]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_3_1' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_3_1_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'design_1_and_1_1' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_1_stub.vhdl:5' bound to instance 'and3' of component 'design_1_and_1_1' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:530]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_1_1' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_1_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'design_1_and_0_1' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_1_stub.vhdl:5' bound to instance 'and4' of component 'design_1_and_0_1' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:536]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_0_1' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_1_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_0_2' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_2_stub.vhdl:5' bound to instance 'and5' of component 'design_1_and_0_2' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:543]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_0_2' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_2_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_0_3' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_3_stub.vhdl:5' bound to instance 'and6' of component 'design_1_and_0_3' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:550]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_0_3' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_3_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_0_4' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_4_stub.vhdl:5' bound to instance 'and7' of component 'design_1_and_0_4' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:557]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_0_4' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_0_4_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'design_1_and_1_2' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_2_stub.vhdl:5' bound to instance 'and8' of component 'design_1_and_1_2' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_1_2' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_1_2_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_and_2_1' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_2_1_stub.vhdl:5' bound to instance 'and9' of component 'design_1_and_2_1' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:572]
+INFO: [Synth 8-638] synthesizing module 'design_1_and_2_1' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_and_2_1_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_gnd_0_0' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_gnd_0_0_stub.vhdl:5' bound to instance 'gnd_0' of component 'design_1_gnd_0_0' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:579]
+INFO: [Synth 8-638] synthesizing module 'design_1_gnd_0_0' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_gnd_0_0_stub.vhdl:12]
+INFO: [Synth 8-3491] module 'design_1_or_0_0' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_or_0_0_stub.vhdl:5' bound to instance 'or0' of component 'design_1_or_0_0' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:583]
+INFO: [Synth 8-638] synthesizing module 'design_1_or_0_0' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_or_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_or_0_1' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_or_0_1_stub.vhdl:5' bound to instance 'or1' of component 'design_1_or_0_1' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:590]
+INFO: [Synth 8-638] synthesizing module 'design_1_or_0_1' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_or_0_1_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_or_0_2' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_or_0_2_stub.vhdl:5' bound to instance 'or2' of component 'design_1_or_0_2' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:597]
+INFO: [Synth 8-638] synthesizing module 'design_1_or_0_2' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_or_0_2_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_or_0_3' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_or_0_3_stub.vhdl:5' bound to instance 'or3' of component 'design_1_or_0_3' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:604]
+INFO: [Synth 8-638] synthesizing module 'design_1_or_0_3' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_or_0_3_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_or_0_4' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_or_0_4_stub.vhdl:5' bound to instance 'or4' of component 'design_1_or_0_4' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:611]
+INFO: [Synth 8-638] synthesizing module 'design_1_or_0_4' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_or_0_4_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_or_0_5' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_or_0_5_stub.vhdl:5' bound to instance 'or5' of component 'design_1_or_0_5' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:618]
+INFO: [Synth 8-638] synthesizing module 'design_1_or_0_5' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_or_0_5_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'design_1_vcc_0_0' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_vcc_0_0_stub.vhdl:5' bound to instance 'vcc_0' of component 'design_1_vcc_0_0' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:626]
+INFO: [Synth 8-638] synthesizing module 'design_1_vcc_0_0' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_vcc_0_0_stub.vhdl:12]
+INFO: [Synth 8-3491] module 'design_1_vcc_0_1' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_vcc_0_1_stub.vhdl:5' bound to instance 'vcc_1' of component 'design_1_vcc_0_1' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:630]
+INFO: [Synth 8-638] synthesizing module 'design_1_vcc_0_1' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_vcc_0_1_stub.vhdl:12]
+INFO: [Synth 8-3491] module 'design_1_xor_0_0' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_xor_0_0_stub.vhdl:5' bound to instance 'xor0' of component 'design_1_xor_0_0' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'design_1_xor_0_0' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_xor_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'design_1_xor_0_1' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_xor_0_1_stub.vhdl:5' bound to instance 'xor1' of component 'design_1_xor_0_1' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:641]
+INFO: [Synth 8-638] synthesizing module 'design_1_xor_0_1' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_xor_0_1_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'design_1_xor_0_2' declared at 'C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_xor_0_2_stub.vhdl:5' bound to instance 'xor2' of component 'design_1_xor_0_2' [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:647]
+INFO: [Synth 8-638] synthesizing module 'design_1_xor_0_2' [C:/testsap/segment7/segment7.runs/synth_1/.Xil/Vivado-12836-PC-1042-103/realtime/design_1_xor_0_2_stub.vhdl:14]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (1#1) [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/synth/design_1.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (2#1) [C:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:34]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 516.988 ; gain = 156.801
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 516.988 ; gain = 156.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 516.988 ; gain = 156.801
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_0/design_1_and_0_0/design_1_and_0_0_in_context.xdc] for cell 'design_1_i/and0'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_0/design_1_and_0_0/design_1_and_0_0_in_context.xdc] for cell 'design_1_i/and0'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_0/design_1_and_1_0/design_1_and_1_0_in_context.xdc] for cell 'design_1_i/and1'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_0/design_1_and_1_0/design_1_and_1_0_in_context.xdc] for cell 'design_1_i/and1'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_2_0/design_1_and_2_0/design_1_and_2_0_in_context.xdc] for cell 'design_1_i/and2'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_2_0/design_1_and_2_0/design_1_and_2_0_in_context.xdc] for cell 'design_1_i/and2'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_xor_0_0/design_1_xor_0_0/design_1_xor_0_0_in_context.xdc] for cell 'design_1_i/xor0'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_xor_0_0/design_1_xor_0_0/design_1_xor_0_0_in_context.xdc] for cell 'design_1_i/xor0'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_1/design_1_and_0_1/design_1_and_2_0_in_context.xdc] for cell 'design_1_i/and4'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_1/design_1_and_0_1/design_1_and_2_0_in_context.xdc] for cell 'design_1_i/and4'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_1/design_1_and_1_1/design_1_and_1_1_in_context.xdc] for cell 'design_1_i/and3'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_1/design_1_and_1_1/design_1_and_1_1_in_context.xdc] for cell 'design_1_i/and3'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_xor_0_1/design_1_xor_0_1/design_1_xor_0_1_in_context.xdc] for cell 'design_1_i/xor1'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_xor_0_1/design_1_xor_0_1/design_1_xor_0_1_in_context.xdc] for cell 'design_1_i/xor1'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_2/design_1_and_0_2/design_1_and_1_2_in_context.xdc] for cell 'design_1_i/and5'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_2/design_1_and_0_2/design_1_and_1_2_in_context.xdc] for cell 'design_1_i/and5'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_3/design_1_and_0_3/design_1_and_0_3_in_context.xdc] for cell 'design_1_i/and6'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_3/design_1_and_0_3/design_1_and_0_3_in_context.xdc] for cell 'design_1_i/and6'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_or_0_0/design_1_or_0_0/design_1_or_0_1_in_context.xdc] for cell 'design_1_i/or0'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_or_0_0/design_1_or_0_0/design_1_or_0_1_in_context.xdc] for cell 'design_1_i/or0'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_4/design_1_and_0_4/design_1_and_0_4_in_context.xdc] for cell 'design_1_i/and7'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_4/design_1_and_0_4/design_1_and_0_4_in_context.xdc] for cell 'design_1_i/and7'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_2/design_1_and_1_2/design_1_and_1_2_in_context.xdc] for cell 'design_1_i/and8'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_2/design_1_and_1_2/design_1_and_1_2_in_context.xdc] for cell 'design_1_i/and8'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_2_1/design_1_and_2_1/design_1_and_0_3_in_context.xdc] for cell 'design_1_i/and9'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_2_1/design_1_and_2_1/design_1_and_0_3_in_context.xdc] for cell 'design_1_i/and9'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_or_0_1/design_1_or_0_1/design_1_or_0_1_in_context.xdc] for cell 'design_1_i/or1'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_or_0_1/design_1_or_0_1/design_1_or_0_1_in_context.xdc] for cell 'design_1_i/or1'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_5/design_1_and_0_5/design_1_and_0_5_in_context.xdc] for cell 'design_1_i/and10'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_5/design_1_and_0_5/design_1_and_0_5_in_context.xdc] for cell 'design_1_i/and10'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_3/design_1_and_1_3/design_1_and_1_0_in_context.xdc] for cell 'design_1_i/and11'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_3/design_1_and_1_3/design_1_and_1_0_in_context.xdc] for cell 'design_1_i/and11'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_2_2/design_1_and_2_2/design_1_and_1_2_in_context.xdc] for cell 'design_1_i/and12'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_2_2/design_1_and_2_2/design_1_and_1_2_in_context.xdc] for cell 'design_1_i/and12'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_3_0/design_1_and_3_0/design_1_and_3_0_in_context.xdc] for cell 'design_1_i/and13'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_3_0/design_1_and_3_0/design_1_and_3_0_in_context.xdc] for cell 'design_1_i/and13'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_xor_0_2/design_1_xor_0_2/design_1_xor_0_1_in_context.xdc] for cell 'design_1_i/xor2'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_xor_0_2/design_1_xor_0_2/design_1_xor_0_1_in_context.xdc] for cell 'design_1_i/xor2'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_or_0_2/design_1_or_0_2/design_1_or_0_1_in_context.xdc] for cell 'design_1_i/or2'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_or_0_2/design_1_or_0_2/design_1_or_0_1_in_context.xdc] for cell 'design_1_i/or2'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_6/design_1_and_0_6/design_1_and_0_0_in_context.xdc] for cell 'design_1_i/and14'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_6/design_1_and_0_6/design_1_and_0_0_in_context.xdc] for cell 'design_1_i/and14'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_4/design_1_and_1_4/design_1_and_0_5_in_context.xdc] for cell 'design_1_i/and15'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_4/design_1_and_1_4/design_1_and_0_5_in_context.xdc] for cell 'design_1_i/and15'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_2_3/design_1_and_2_3/design_1_and_1_0_in_context.xdc] for cell 'design_1_i/and16'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_2_3/design_1_and_2_3/design_1_and_1_0_in_context.xdc] for cell 'design_1_i/and16'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_or_0_3/design_1_or_0_3/design_1_or_0_1_in_context.xdc] for cell 'design_1_i/or3'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_or_0_3/design_1_or_0_3/design_1_or_0_1_in_context.xdc] for cell 'design_1_i/or3'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_7/design_1_and_0_7/design_1_and_0_7_in_context.xdc] for cell 'design_1_i/and17'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_7/design_1_and_0_7/design_1_and_0_7_in_context.xdc] for cell 'design_1_i/and17'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_5/design_1_and_1_5/design_1_and_1_5_in_context.xdc] for cell 'design_1_i/and18'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_5/design_1_and_1_5/design_1_and_1_5_in_context.xdc] for cell 'design_1_i/and18'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_2_4/design_1_and_2_4/design_1_and_2_4_in_context.xdc] for cell 'design_1_i/and19'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_2_4/design_1_and_2_4/design_1_and_2_4_in_context.xdc] for cell 'design_1_i/and19'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_or_0_4/design_1_or_0_4/design_1_or_0_1_in_context.xdc] for cell 'design_1_i/or4'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_or_0_4/design_1_or_0_4/design_1_or_0_1_in_context.xdc] for cell 'design_1_i/or4'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_gnd_0_0/design_1_gnd_0_0/design_1_gnd_0_0_in_context.xdc] for cell 'design_1_i/gnd_0'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_gnd_0_0/design_1_gnd_0_0/design_1_gnd_0_0_in_context.xdc] for cell 'design_1_i/gnd_0'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_vcc_0_0/design_1_vcc_0_0/design_1_vcc_0_0_in_context.xdc] for cell 'design_1_i/vcc_0'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_vcc_0_0/design_1_vcc_0_0/design_1_vcc_0_0_in_context.xdc] for cell 'design_1_i/vcc_0'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_vcc_0_1/design_1_vcc_0_1/design_1_vcc_0_0_in_context.xdc] for cell 'design_1_i/vcc_1'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_vcc_0_1/design_1_vcc_0_1/design_1_vcc_0_0_in_context.xdc] for cell 'design_1_i/vcc_1'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_vcc_0_2/design_1_vcc_0_2/design_1_vcc_0_0_in_context.xdc] for cell 'design_1_i/an_3'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_vcc_0_2/design_1_vcc_0_2/design_1_vcc_0_0_in_context.xdc] for cell 'design_1_i/an_3'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_8/design_1_and_0_8/design_1_and_0_5_in_context.xdc] for cell 'design_1_i/and20'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_0_8/design_1_and_0_8/design_1_and_0_5_in_context.xdc] for cell 'design_1_i/and20'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_6/design_1_and_1_6/design_1_and_0_5_in_context.xdc] for cell 'design_1_i/and21'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_1_6/design_1_and_1_6/design_1_and_0_5_in_context.xdc] for cell 'design_1_i/and21'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_2_5/design_1_and_2_5/design_1_and_2_5_in_context.xdc] for cell 'design_1_i/and22'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_2_5/design_1_and_2_5/design_1_and_2_5_in_context.xdc] for cell 'design_1_i/and22'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_3_1/design_1_and_3_1/design_1_and_3_1_in_context.xdc] for cell 'design_1_i/and23'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_and_3_1/design_1_and_3_1/design_1_and_3_1_in_context.xdc] for cell 'design_1_i/and23'
+Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_or_0_5/design_1_or_0_5/design_1_or_0_5_in_context.xdc] for cell 'design_1_i/or5'
+Finished Parsing XDC File [c:/testsap/segment7/segment7.srcs/sources_1/bd/design_1/ip/design_1_or_0_5/design_1_or_0_5/design_1_or_0_5_in_context.xdc] for cell 'design_1_i/or5'
+Parsing XDC File [C:/testsap/segment7/segment7.srcs/constrs_1/new/segment7.xdc]
+WARNING: [Vivado 12-584] No ports matched 'f_f'. [C:/testsap/segment7/segment7.srcs/constrs_1/new/segment7.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'f_f'. [C:/testsap/segment7/segment7.srcs/constrs_1/new/segment7.xdc:23]
+WARNING: [Vivado 12-584] No ports matched 'f_f'. [C:/testsap/segment7/segment7.srcs/constrs_1/new/segment7.xdc:33]
+WARNING: [Vivado 12-584] No ports matched 'f_f'. [C:/testsap/segment7/segment7.srcs/constrs_1/new/segment7.xdc:43]
+Finished Parsing XDC File [C:/testsap/segment7/segment7.srcs/constrs_1/new/segment7.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/testsap/segment7/segment7.srcs/constrs_1/new/segment7.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/design_1_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/testsap/segment7/segment7.srcs/constrs_1/new/segment7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/testsap/segment7/segment7.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/testsap/segment7/segment7.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 821.410 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for design_1_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/xor0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and4. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/xor1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and5. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and6. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/or0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and7. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and8. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and9. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/or1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and10. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and11. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and12. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and13. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/xor2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/or2. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and14. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and15. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and16. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/or3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and17. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and18. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and19. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/or4. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/gnd_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/vcc_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/vcc_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/an_3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and20. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and21. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and22. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/and23. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/or5. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:19 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:27 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:27 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:27 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-----------------+----------+
+|      |BlackBox name    |Instances |
++------+-----------------+----------+
+|1     |design_1_vcc_0_2 |         1|
+|2     |design_1_and_0_0 |         1|
+|3     |design_1_and_1_0 |         1|
+|4     |design_1_and_0_5 |         1|
+|5     |design_1_and_1_3 |         1|
+|6     |design_1_and_2_2 |         1|
+|7     |design_1_and_3_0 |         1|
+|8     |design_1_and_0_6 |         1|
+|9     |design_1_and_1_4 |         1|
+|10    |design_1_and_2_3 |         1|
+|11    |design_1_and_0_7 |         1|
+|12    |design_1_and_1_5 |         1|
+|13    |design_1_and_2_4 |         1|
+|14    |design_1_and_2_0 |         1|
+|15    |design_1_and_0_8 |         1|
+|16    |design_1_and_1_6 |         1|
+|17    |design_1_and_2_5 |         1|
+|18    |design_1_and_3_1 |         1|
+|19    |design_1_and_1_1 |         1|
+|20    |design_1_and_0_1 |         1|
+|21    |design_1_and_0_2 |         1|
+|22    |design_1_and_0_3 |         1|
+|23    |design_1_and_0_4 |         1|
+|24    |design_1_and_1_2 |         1|
+|25    |design_1_and_2_1 |         1|
+|26    |design_1_gnd_0_0 |         1|
+|27    |design_1_or_0_0  |         1|
+|28    |design_1_or_0_1  |         1|
+|29    |design_1_or_0_2  |         1|
+|30    |design_1_or_0_3  |         1|
+|31    |design_1_or_0_4  |         1|
+|32    |design_1_or_0_5  |         1|
+|33    |design_1_vcc_0_0 |         1|
+|34    |design_1_vcc_0_1 |         1|
+|35    |design_1_xor_0_0 |         1|
+|36    |design_1_xor_0_1 |         1|
+|37    |design_1_xor_0_2 |         1|
++------+-----------------+----------+
+
+Report Cell Usage: 
++------+-------------------------+------+
+|      |Cell                     |Count |
++------+-------------------------+------+
+|1     |design_1_and_0_0_bbox_1  |     1|
+|2     |design_1_and_0_1_bbox_19 |     1|
+|3     |design_1_and_0_2_bbox_20 |     1|
+|4     |design_1_and_0_3_bbox_21 |     1|
+|5     |design_1_and_0_4_bbox_22 |     1|
+|6     |design_1_and_0_5_bbox_3  |     1|
+|7     |design_1_and_0_6_bbox_7  |     1|
+|8     |design_1_and_0_7_bbox_10 |     1|
+|9     |design_1_and_0_8_bbox_14 |     1|
+|10    |design_1_and_1_0_bbox_2  |     1|
+|11    |design_1_and_1_1_bbox_18 |     1|
+|12    |design_1_and_1_2_bbox_23 |     1|
+|13    |design_1_and_1_3_bbox_4  |     1|
+|14    |design_1_and_1_4_bbox_8  |     1|
+|15    |design_1_and_1_5_bbox_11 |     1|
+|16    |design_1_and_1_6_bbox_15 |     1|
+|17    |design_1_and_2_0_bbox_13 |     1|
+|18    |design_1_and_2_1_bbox_24 |     1|
+|19    |design_1_and_2_2_bbox_5  |     1|
+|20    |design_1_and_2_3_bbox_9  |     1|
+|21    |design_1_and_2_4_bbox_12 |     1|
+|22    |design_1_and_2_5_bbox_16 |     1|
+|23    |design_1_and_3_0_bbox_6  |     1|
+|24    |design_1_and_3_1_bbox_17 |     1|
+|25    |design_1_gnd_0_0_bbox_25 |     1|
+|26    |design_1_or_0_0_bbox_26  |     1|
+|27    |design_1_or_0_1_bbox_27  |     1|
+|28    |design_1_or_0_2_bbox_28  |     1|
+|29    |design_1_or_0_3_bbox_29  |     1|
+|30    |design_1_or_0_4_bbox_30  |     1|
+|31    |design_1_or_0_5_bbox_31  |     1|
+|32    |design_1_vcc_0_0_bbox_32 |     1|
+|33    |design_1_vcc_0_1_bbox_33 |     1|
+|34    |design_1_vcc_0_2_bbox_0  |     1|
+|35    |design_1_xor_0_0_bbox_34 |     1|
+|36    |design_1_xor_0_1_bbox_35 |     1|
+|37    |design_1_xor_0_2_bbox_36 |     1|
+|38    |IBUF                     |     4|
+|39    |OBUF                     |    11|
++------+-------------------------+------+
+
+Report Instance Areas: 
++------+-------------+---------+------+
+|      |Instance     |Module   |Cells |
++------+-------------+---------+------+
+|1     |top          |         |    52|
+|2     |  design_1_i |design_1 |    37|
++------+-------------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 821.410 ; gain = 461.223
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 821.410 ; gain = 156.801
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 821.410 ; gain = 461.223
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+94 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:31 . Memory (MB): peak = 836.516 ; gain = 487.801
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/testsap/segment7/segment7.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 836.832 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Mar  3 08:57:48 2020...

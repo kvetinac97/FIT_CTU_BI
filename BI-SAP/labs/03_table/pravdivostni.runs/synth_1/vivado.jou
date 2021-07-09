@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Tue Feb 25 08:27:57 2020
+# Process ID: 8596
+# Current directory: C:/testsap/pravdivostni/pravdivostni.runs/synth_1
+# Command line: vivado.exe -log algebra_4.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source algebra_4.tcl
+# Log file: C:/testsap/pravdivostni/pravdivostni.runs/synth_1/algebra_4.vds
+# Journal file: C:/testsap/pravdivostni/pravdivostni.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source algebra_4.tcl -notrace

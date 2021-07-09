@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../bd/trezor/sim/trezor.vhd" \
+
+nosort

@@ -1,0 +1,7 @@
+Running: xsim.dir/algebra_4_test_behav/xsimk.exe -simmode gui -wdb algebra_4_test_behav.wdb -simrunnum 0 -socket 58229
+Design successfully loaded
+Design Loading Memory Usage: 5612 KB (Peak: 5612 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 6152 KB (Peak: 6152 KB)
+Simulation CPU Usage: 0 ms

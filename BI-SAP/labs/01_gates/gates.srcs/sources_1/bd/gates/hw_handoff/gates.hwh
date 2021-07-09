@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Feb 19 18:17:55 2020" VIVADOVERSION="2018.2.1">
+
+  <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:basys3:part0:1.1" DEVICE="7a35t" NAME="gates" PACKAGE="cpg236" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="A" SIGIS="data" SIGNAME="External_Ports_A">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="and_0" PORT="I0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="B" SIGIS="data" SIGNAME="External_Ports_B">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="and_0" PORT="I1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="P" SIGIS="data" SIGNAME="and_0_O">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="and_0" PORT="O"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="E" SIGIS="data" SIGNAME="External_Ports_E">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="or_0" PORT="I0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="F" SIGIS="data" SIGNAME="External_Ports_F">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="or_0" PORT="I1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="R" SIGIS="data" SIGNAME="or_0_O">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="or_0" PORT="O"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="C" SIGIS="data" SIGNAME="External_Ports_C">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="nand_0" PORT="I0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="D" SIGIS="data" SIGNAME="External_Ports_D">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="nand_0" PORT="I1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="Q" SIGIS="data" SIGNAME="nand_0_O">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="nand_0" PORT="O"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="G" SIGIS="data" SIGNAME="External_Ports_G">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xor_0" PORT="I0"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="H" SIGIS="data" SIGNAME="External_Ports_H">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xor_0" PORT="I1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="S" SIGIS="data" SIGNAME="xor_0_O">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="xor_0" PORT="O"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE FULLNAME="/and_0" HWVERSION="1.0" INSTANCE="and_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="and" VLNV="FIT:user:and:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="I0_inverted" VALUE="false"/>
+        <PARAMETER NAME="I1_inverted" VALUE="false"/>
+        <PARAMETER NAME="I2_inverted" VALUE="false"/>
+        <PARAMETER NAME="I3_inverted" VALUE="false"/>
+        <PARAMETER NAME="I4_inverted" VALUE="false"/>
+        <PARAMETER NAME="I5_inverted" VALUE="false"/>
+        <PARAMETER NAME="I6_inverted" VALUE="false"/>
+        <PARAMETER NAME="I7_inverted" VALUE="false"/>
+        <PARAMETER NAME="O_inverted" VALUE="false"/>
+        <PARAMETER NAME="Component_Name" VALUE="gates_and_0_0"/>
+        <PARAMETER NAME="Inputs" VALUE="2"/>
+        <PARAMETER NAME="I0_Inverted" VALUE="false"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="I0" SIGIS="data" SIGNAME="External_Ports_A">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="A"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="I1" SIGIS="data" SIGNAME="External_Ports_B">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="B"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="O" SIGIS="data" SIGNAME="and_0_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="P"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/nand_0" HWVERSION="1.0" INSTANCE="nand_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="and" VLNV="FIT:user:and:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="I0_inverted" VALUE="false"/>
+        <PARAMETER NAME="I1_inverted" VALUE="false"/>
+        <PARAMETER NAME="I2_inverted" VALUE="false"/>
+        <PARAMETER NAME="I3_inverted" VALUE="false"/>
+        <PARAMETER NAME="I4_inverted" VALUE="false"/>
+        <PARAMETER NAME="I5_inverted" VALUE="false"/>
+        <PARAMETER NAME="I6_inverted" VALUE="false"/>
+        <PARAMETER NAME="I7_inverted" VALUE="false"/>
+        <PARAMETER NAME="O_inverted" VALUE="true"/>
+        <PARAMETER NAME="Component_Name" VALUE="gates_and_1_0"/>
+        <PARAMETER NAME="Inputs" VALUE="2"/>
+        <PARAMETER NAME="I0_Inverted" VALUE="false"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="I0" SIGIS="data" SIGNAME="External_Ports_C">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="C"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="I1" SIGIS="data" SIGNAME="External_Ports_D">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="D"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="O" SIGIS="data" SIGNAME="nand_0_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/or_0" HWVERSION="1.0" INSTANCE="or_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="or" VLNV="FIT:user:or:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="I0_inverted" VALUE="false"/>
+        <PARAMETER NAME="I1_inverted" VALUE="false"/>
+        <PARAMETER NAME="I2_inverted" VALUE="false"/>
+        <PARAMETER NAME="I3_inverted" VALUE="false"/>
+        <PARAMETER NAME="I4_inverted" VALUE="false"/>
+        <PARAMETER NAME="I5_inverted" VALUE="false"/>
+        <PARAMETER NAME="I6_inverted" VALUE="false"/>
+        <PARAMETER NAME="I7_inverted" VALUE="false"/>
+        <PARAMETER NAME="O_inverted" VALUE="false"/>
+        <PARAMETER NAME="Component_Name" VALUE="gates_or_0_0"/>
+        <PARAMETER NAME="Inputs" VALUE="2"/>
+        <PARAMETER NAME="I0_Inverted" VALUE="false"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="I0" SIGIS="data" SIGNAME="External_Ports_E">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="E"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="I1" SIGIS="data" SIGNAME="External_Ports_F">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="F"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="O" SIGIS="data" SIGNAME="or_0_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="R"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/xor_0" HWVERSION="1.0" INSTANCE="xor_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xor" VLNV="FIT:user:xor:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="I0_inverted" VALUE="false"/>
+        <PARAMETER NAME="I1_inverted" VALUE="false"/>
+        <PARAMETER NAME="I2_inverted" VALUE="false"/>
+        <PARAMETER NAME="I3_inverted" VALUE="false"/>
+        <PARAMETER NAME="I4_inverted" VALUE="false"/>
+        <PARAMETER NAME="I5_inverted" VALUE="false"/>
+        <PARAMETER NAME="I6_inverted" VALUE="false"/>
+        <PARAMETER NAME="I7_inverted" VALUE="false"/>
+        <PARAMETER NAME="O_inverted" VALUE="false"/>
+        <PARAMETER NAME="Component_Name" VALUE="gates_xor_0_0"/>
+        <PARAMETER NAME="Inputs" VALUE="2"/>
+        <PARAMETER NAME="I0_Inverted" VALUE="false"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="I0" SIGIS="data" SIGNAME="External_Ports_G">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="G"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="I1" SIGIS="data" SIGNAME="External_Ports_H">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="H"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="O" SIGIS="data" SIGNAME="xor_0_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="S"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

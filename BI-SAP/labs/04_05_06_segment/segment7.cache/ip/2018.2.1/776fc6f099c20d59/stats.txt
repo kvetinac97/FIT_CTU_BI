@@ -1,0 +1,4 @@
+NumberHits:1
+Timestamp: Tue Mar 03 07:20:12 UTC 2020
+VLNV: FIT:user:and:1.0
+SynthRuntime: 36

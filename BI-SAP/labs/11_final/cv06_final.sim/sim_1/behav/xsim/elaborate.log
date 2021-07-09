@@ -1,0 +1,30 @@
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto ed437a4879214aa69f405ea8b8ca42d0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot trezor_wrapper_behav xil_defaultlib.trezor_wrapper -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-122] trezor_dff_0_0 remains a black-box since it has no binding entity [C:/Users/kvetinac97/Documents/cv06_final/cv06_final.ip_user_files/bd/trezor/sim/trezor.vhd:118]
+WARNING: [VRFC 10-122] trezor_dff_1_0 remains a black-box since it has no binding entity [C:/Users/kvetinac97/Documents/cv06_final/cv06_final.ip_user_files/bd/trezor/sim/trezor.vhd:126]
+WARNING: [VRFC 10-122] trezor_dff_0_1 remains a black-box since it has no binding entity [C:/Users/kvetinac97/Documents/cv06_final/cv06_final.ip_user_files/bd/trezor/sim/trezor.vhd:134]
+WARNING: [VRFC 10-122] trezor_and_0_1 remains a black-box since it has no binding entity [C:/Users/kvetinac97/Documents/cv06_final/cv06_final.ip_user_files/bd/trezor/sim/trezor.vhd:140]
+WARNING: [VRFC 10-122] trezor_next_state_logic_0_0 remains a black-box since it has no binding entity [C:/Users/kvetinac97/Documents/cv06_final/cv06_final.ip_user_files/bd/trezor/sim/trezor.vhd:146]
+WARNING: [VRFC 10-122] trezor_and_0_0 remains a black-box since it has no binding entity [C:/Users/kvetinac97/Documents/cv06_final/cv06_final.ip_user_files/bd/trezor/sim/trezor.vhd:155]
+WARNING: [VRFC 10-122] trezor_trezorkoder_0_0 remains a black-box since it has no binding entity [C:/Users/kvetinac97/Documents/cv06_final/cv06_final.ip_user_files/bd/trezor/sim/trezor.vhd:161]
+WARNING: [VRFC 10-122] trezor_debounce_0_0 remains a black-box since it has no binding entity [C:/Users/kvetinac97/Documents/cv06_final/cv06_final.ip_user_files/bd/trezor/sim/trezor.vhd:278]
+WARNING: [VRFC 10-122] trezor_debounce_1_0 remains a black-box since it has no binding entity [C:/Users/kvetinac97/Documents/cv06_final/cv06_final.ip_user_files/bd/trezor/sim/trezor.vhd:284]
+WARNING: [VRFC 10-122] trezor_debounce_2_0 remains a black-box since it has no binding entity [C:/Users/kvetinac97/Documents/cv06_final/cv06_final.ip_user_files/bd/trezor/sim/trezor.vhd:290]
+WARNING: [VRFC 10-122] trezor_debounce_3_0 remains a black-box since it has no binding entity [C:/Users/kvetinac97/Documents/cv06_final/cv06_final.ip_user_files/bd/trezor/sim/trezor.vhd:296]
+WARNING: [VRFC 10-122] trezor_or_0_0 remains a black-box since it has no binding entity [C:/Users/kvetinac97/Documents/cv06_final/cv06_final.ip_user_files/bd/trezor/sim/trezor.vhd:302]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling architecture structure of entity xil_defaultlib.automat_0_imp_1WIPABH [automat_0_imp_1wipabh_default]
+Compiling architecture structure of entity xil_defaultlib.trezor [trezor_default]
+Compiling architecture structure of entity xil_defaultlib.trezor_wrapper
+Built simulation snapshot trezor_wrapper_behav

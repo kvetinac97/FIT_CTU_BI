@@ -1,0 +1,41 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.9</VERSION>
+ <DEVICE>ATmega169</DEVICE>
+ <WORKING_DIR>C:\Users\Wrzecionkovi\Downloads\cv09</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Wrzecionkovi\Downloads\cv09\cv09.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes\m169def.inc</FILE>
+  <FILE>C:\Users\Wrzecionkovi\Downloads\cv09\print.inc</FILE>
+  <FILE>C:\Users\Wrzecionkovi\Downloads\cv09\znaky.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Wrzecionkovi\Downloads\cv09\cv09.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Users\Wrzecionkovi\Downloads\cv09\cv09.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Users\Wrzecionkovi\Downloads\cv09\cv09.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <init_disp><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\print.inc</FILE><LINE>3</LINE></init_disp>
+  <show_char><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\print.inc</FILE><LINE>18</LINE></show_char>
+  <mezera><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\print.inc</FILE><LINE>42</LINE></mezera>
+  <neznak><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\print.inc</FILE><LINE>39</LINE></neznak>
+  <nemezera><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\print.inc</FILE><LINE>44</LINE></nemezera>
+  <znaky><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\znaky.inc</FILE><LINE>8</LINE></znaky>
+  <zobzc><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\print.inc</FILE><LINE>64</LINE></zobzc>
+  <start><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\cv09.asm</FILE><LINE>15</LINE></start>
+  <retez><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\cv09.asm</FILE><LINE>12</LINE></retez>
+  <run><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\cv09.asm</FILE><LINE>30</LINE></run>
+  <showdispl><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\cv09.asm</FILE><LINE>49</LINE></showdispl>
+  <showchar><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\cv09.asm</FILE><LINE>59</LINE></showchar>
+  <end><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\cv09.asm</FILE><LINE>97</LINE></end>
+  <wait><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\cv09.asm</FILE><LINE>80</LINE></wait>
+  <wait2><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\cv09.asm</FILE><LINE>82</LINE></wait2>
+  <wait3><FILE>C:\Users\Wrzecionkovi\Downloads\cv09\cv09.asm</FILE><LINE>84</LINE></wait3>
+ </LABELS>
+</ASSEMBLER_INFO>

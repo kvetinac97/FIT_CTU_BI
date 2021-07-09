@@ -1,0 +1,7 @@
+= Computer Structures and Architectures
+
+Got more than 100 % thanks to creative solutions and activity, resulting in grade A without exam. +
+
+== Labs
+
+Vivado (1-11) and Assembler (12-15) exercises.

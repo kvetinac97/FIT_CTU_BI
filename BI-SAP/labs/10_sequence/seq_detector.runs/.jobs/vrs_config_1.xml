@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="seq_detector_next_state_logic_0_0_synth_1" LaunchDir="C:/Users/kvetinac97/seq_detector/seq_detector.runs/seq_detector_next_state_logic_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="seq_detector_output_logic_0_0_synth_1" LaunchDir="C:/Users/kvetinac97/seq_detector/seq_detector.runs/seq_detector_output_logic_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="seq_detector_dff_0_0_synth_1" LaunchDir="C:/Users/kvetinac97/seq_detector/seq_detector.runs/seq_detector_dff_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="seq_detector_dff_1_0_synth_1" LaunchDir="C:/Users/kvetinac97/seq_detector/seq_detector.runs/seq_detector_dff_1_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="seq_detector_dff_0_0_synth_1"/>
+	</Run>
+	<Run Id="seq_detector_dff_2_0_synth_1" LaunchDir="C:/Users/kvetinac97/seq_detector/seq_detector.runs/seq_detector_dff_2_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="seq_detector_dff_0_0_synth_1"/>
+	</Run>
+	<Run Id="seq_detector_debounce_0_0_synth_1" LaunchDir="C:/Users/kvetinac97/seq_detector/seq_detector.runs/seq_detector_debounce_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+</Runs>
+

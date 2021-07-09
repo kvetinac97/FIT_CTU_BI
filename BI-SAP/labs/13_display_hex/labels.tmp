@@ -1,0 +1,39 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.9</VERSION>
+ <DEVICE>ATmega169</DEVICE>
+ <WORKING_DIR>C:\Users\Wrzecionkovi\Downloads\cv08</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Wrzecionkovi\Downloads\cv08\cv08_2.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes\m169def.inc</FILE>
+  <FILE>C:\Users\Wrzecionkovi\Downloads\cv08\print.inc</FILE>
+  <FILE>C:\Users\Wrzecionkovi\Downloads\cv08\znaky.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Wrzecionkovi\Downloads\cv08\cv08.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Users\Wrzecionkovi\Downloads\cv08\cv08.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Users\Wrzecionkovi\Downloads\cv08\cv08.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <init_disp><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\print.inc</FILE><LINE>3</LINE></init_disp>
+  <show_char><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\print.inc</FILE><LINE>18</LINE></show_char>
+  <mezera><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\print.inc</FILE><LINE>42</LINE></mezera>
+  <neznak><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\print.inc</FILE><LINE>39</LINE></neznak>
+  <nemezera><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\print.inc</FILE><LINE>44</LINE></nemezera>
+  <znaky><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\znaky.inc</FILE><LINE>8</LINE></znaky>
+  <zobzc><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\print.inc</FILE><LINE>64</LINE></zobzc>
+  <start><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\cv08_2.asm</FILE><LINE>13</LINE></start>
+  <isch1><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\cv08_2.asm</FILE><LINE>41</LINE></isch1>
+  <isnum1><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\cv08_2.asm</FILE><LINE>37</LINE></isnum1>
+  <next1><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\cv08_2.asm</FILE><LINE>46</LINE></next1>
+  <isch2><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\cv08_2.asm</FILE><LINE>71</LINE></isch2>
+  <isnum2><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\cv08_2.asm</FILE><LINE>67</LINE></isnum2>
+  <next2><FILE>C:\Users\Wrzecionkovi\Downloads\cv08\cv08_2.asm</FILE><LINE>76</LINE></next2>
+ </LABELS>
+</ASSEMBLER_INFO>

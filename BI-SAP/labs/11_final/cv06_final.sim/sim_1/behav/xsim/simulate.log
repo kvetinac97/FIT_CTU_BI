@@ -1,0 +1,9 @@
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+Note: Testovani dobre posloupnosti trezoru:
+Time: 100 ns  Iteration: 0  Process: /trezor_test/stim_proc  File: C:/Users/kvetinac97/Documents/cv06_final/cv06_final.srcs/sim_1/imports/Downloads/seq_detector_test_18_19.vhd
+Error: detekce prvni casti neprosla
+Time: 105 ns  Iteration: 0  Process: /trezor_test/stim_proc  File: C:/Users/kvetinac97/Documents/cv06_final/cv06_final.srcs/sim_1/imports/Downloads/seq_detector_test_18_19.vhd
+Failure: Test dokoncen
+Time: 210 ns  Iteration: 0  Process: /trezor_test/stim_proc  File: C:/Users/kvetinac97/Documents/cv06_final/cv06_final.srcs/sim_1/imports/Downloads/seq_detector_test_18_19.vhd
+$finish called at time : 210 ns : File "C:/Users/kvetinac97/Documents/cv06_final/cv06_final.srcs/sim_1/imports/Downloads/seq_detector_test_18_19.vhd" Line 106

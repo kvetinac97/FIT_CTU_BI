@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../cv04.srcs/sources_1/imports/Downloads/l4_next_state_logic.vhd" \
+"../../../../cv04.srcs/sources_1/imports/Downloads/l4_output_logic.vhd" \
+"../../../../cv04.srcs/sim_1/imports/Downloads/l4_automat_test.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Wed Feb 19 19:06:08 2020
+# Process ID: 4244
+# Current directory: C:/testsap/scitacka/scitacka.runs/impl_1
+# Command line: vivado.exe -log adder_vhdl.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source adder_vhdl.tcl -notrace
+# Log file: C:/testsap/scitacka/scitacka.runs/impl_1/adder_vhdl.vdi
+# Journal file: C:/testsap/scitacka/scitacka.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source adder_vhdl.tcl -notrace

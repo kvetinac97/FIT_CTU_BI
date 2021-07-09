@@ -34,6 +34,8 @@ link:BI-PA2/[Programming and Algorithms (BI-PA2)] - homeworks on ProgTest, semes
 
 link:BI-DBS/[Database Systems (BI-DBS)] - semestral work, grades export
 
+link:BI-SAP/[Computer Structures and Architectures (BI-SAP)] - Vivado + Assembler homeworks, grades export
+
 BI-A2L
 
 BI-PJV
@@ -46,8 +48,8 @@ BI-SAP
 |Programming and Algorithmics 2|A 3+|97.64/100
 |Database Systems|A|61.95/60|19.36/20|42.59/40
 |Computer Structures and Architectures|A 3+|52/50
-|Linear algebra|A|101/100|87/90|14/10
-|Law and business|A 3+|28/30
+|Linear Algebra|A|101/100|87/90|14/10
+|Law and Business|A 3+|28/30
 |Programming in Java|A|69.47/70|29.47/30|40/40
 |English in Informatics 4+|-
 |Physical Education 2 4+|-

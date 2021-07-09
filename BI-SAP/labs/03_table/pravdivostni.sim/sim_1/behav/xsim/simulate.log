@@ -1,0 +1,5 @@
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+Failure:  Simulace dokonèena. 
+Time: 320 ns  Iteration: 0  Process: /algebra_4_test/stim_proc  File: C:/testsap/pravdivostni/pravdivostni.srcs/sim_1/imports/Downloads/l2_algebra_4_test.vhd
+$finish called at time : 320 ns : File "C:/testsap/pravdivostni/pravdivostni.srcs/sim_1/imports/Downloads/l2_algebra_4_test.vhd" Line 76
