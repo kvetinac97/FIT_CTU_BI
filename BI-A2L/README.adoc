@@ -1,0 +1,9 @@
+= English in Informatics
+
+Due to coronavirus, lessons were cancelled. +
+Assessment was given for completing homeworks.
+
+== Homeworks
+
+Answers for homeworks given from book "Career Paths" +
+After deadline for each homework, we were given a "key" so wrong answers are highlighted in red.

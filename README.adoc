@@ -36,11 +36,9 @@ link:BI-DBS/[Database Systems (BI-DBS)] - semestral work, grades export
 
 link:BI-SAP/[Computer Structures and Architectures (BI-SAP)] - Vivado + Assembler homeworks, grades export
 
-BI-A2L
+link:BI-A2L/[English in Informatics] - homeworks and final exam
 
 BI-PJV
-
-BI-SAP
 
 |===
 |Subject |Grade |Total |Exam |Assessment
