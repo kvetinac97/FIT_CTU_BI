@@ -71,9 +71,7 @@ link:BI-IOS/[Basics of iOS Application Development (BI-IOS)] - semestral work an
 
 link:BI-PHP/[Programming in PHP (BI-PHP)] - homeworks, exercises from labs, final task (exam) and grades export
 
-BI-PHP (hw1-7, final, grades)
-
-BI-ANG (exam pdf)
+link:BI-ANG/[English Exam after A2L Course (BI-ANG)] - exam essay
 
 |===
 |Subject |Grade |Total |Exam |Assessment
