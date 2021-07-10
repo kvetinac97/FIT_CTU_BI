@@ -1,0 +1,156 @@
+### []
+
+GET http://localhost:8080/books
+Accept: application/json
+Cache-Control: no-cache
+
+### 404 not found
+
+GET http://localhost:8080/book/1
+Accept: application/json
+Cache-Control: no-cache
+
+### 401 unauthorized
+
+POST http://localhost:8080/books
+
+### 400 bad request
+
+POST http://localhost:8080/books
+Authorization: Basic YWRtaW46cGFzJHdvcmQ=
+Content-Type: application/json
+
+{
+  "name": "The Little Prince",
+  "author": "Antoine de Saint-Exupéry",
+  "publisher": "Mariner Books",
+  "isbn": "978-0156012195"
+}
+
+### 201 created
+
+POST http://localhost:8080/books
+Authorization: Basic YWRtaW46cGFzJHdvcmQ=
+Content-Type: application/json
+
+{
+  "name": "The Little Prince",
+  "author": "Antoine de Saint-Exupéry",
+  "publisher": "Mariner Books",
+  "isbn": "978-0156012195",
+  "pages": 96
+}
+
+### 201 created
+
+POST http://localhost:8080/books
+Authorization: Basic YWRtaW46cGFzJHdvcmQ=
+Content-Type: application/json
+
+{
+  "name": "The Little Red Hiding Hood",
+  "author": "Unknown",
+  "publisher": "GRADA",
+  "isbn": "143-3245695736",
+  "pages": 20
+}
+
+### 201 created
+
+POST http://localhost:8080/books
+Authorization: Basic YWRtaW46cGFzJHdvcmQ=
+Content-Type: application/json
+
+{
+  "name": "R.U.R.",
+  "author": "Karel Čapek",
+  "publisher": "Luxor",
+  "isbn": "425-8364788024",
+  "pages": 160
+}
+
+### 200, all three books
+
+GET http://localhost:8080/books
+Accept: application/json
+Cache-Control: no-cache
+
+### 200, R.U.R.
+
+GET http://localhost:8080/books/3
+Accept: application/json
+Cache-Control: no-cache
+
+### 401 Unauthorized
+
+DELETE http://localhost:8080/books/2
+
+### 404 Not found
+
+DELETE http://localhost:8080/books/128
+Authorization: Basic YWRtaW46cGFzJHdvcmQ=
+
+### 204 No content
+
+DELETE http://localhost:8080/books/2
+Authorization: Basic YWRtaW46cGFzJHdvcmQ=
+
+### 404 Not found
+
+DELETE http://localhost:8080/books/2
+Authorization: Basic YWRtaW46cGFzJHdvcmQ=
+
+### 200 Two books
+
+GET http://localhost:8080/books
+
+### 401 unauthorized
+
+PUT http://localhost:8080/books
+
+### 400 bad request
+
+PUT http://localhost:8080/books
+Authorization: Basic YWRtaW46cGFzJHdvcmQ=
+Content-Type: application/json
+
+{
+  "name": "The Big Prince",
+  "author": "Antoine Exupéry",
+  "publisher": "Mariner",
+  "isbn": "128-8888888888",
+  "pages": 128
+}
+
+### 204 no content
+
+PUT http://localhost:8080/books
+Authorization: Basic YWRtaW46cGFzJHdvcmQ=
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "The Big Prince",
+  "author": "Antoine Exupéry",
+  "publisher": "Mariner",
+  "isbn": "128-8888888888",
+  "pages": 128
+}
+
+### 200 two books with updated data of book 1
+GET http://localhost:8080/books
+
+### 404 not found
+
+PUT http://localhost:8080/books
+Authorization: Basic YWRtaW46cGFzJHdvcmQ=
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "The Little Red Hiding Hood",
+  "author": "Unknown",
+  "publisher": "GRADA",
+  "isbn": "143-3245695736",
+  "pages": 20
+}

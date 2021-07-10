@@ -1,0 +1,23 @@
+{
+    "name": "kvetinac97/cv06",
+    "description": "BI-PHP test project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kvetinac97",
+            "email": "kvetinac97@email.cz"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "kvetinac97\\": "src/kvetinac97/"
+        }
+    },
+    "require": {
+        "monolog/monolog": "^2.1",
+        "symfony/validator": "^5.1",
+        "doctrine/annotations": "^1.10",
+        "doctrine/cache": "^1.10"
+    }
+}

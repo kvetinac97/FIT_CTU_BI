@@ -1,0 +1,19 @@
+{
+  "name": "bi-php/final-task",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "FinalTask\\": "src/"
+    }
+  },
+  "require": {
+    "phpunit/phpunit": "^9.5",
+    "ext-simplexml": "*",
+    "ext-pdo": "*"
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit src/Tests",
+    "checksum": "(find ./src -name '*Test.php' ; find ./bin -name '*.php') | xargs cat | bin/checksum.php",
+    "evaluate": "vendor/bin/phpunit --log-junit results.xml src/Tests/ ; bin/evaluate.php"
+  }
+}

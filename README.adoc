@@ -69,6 +69,8 @@ link:BI-XML/[XML Technology (BI-XML)] - semestral work, exam and practice exerci
 
 link:BI-IOS/[Basics of iOS Application Development (BI-IOS)] - semestral work and homeworks
 
+link:BI-PHP/[Programming in PHP (BI-PHP)] - homeworks, exercises from labs, final task (exam) and grades export
+
 BI-PHP (hw1-7, final, grades)
 
 BI-ANG (exam pdf)

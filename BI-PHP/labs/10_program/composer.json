@@ -1,0 +1,14 @@
+{
+    "name": "kvetinac97/cv10",
+    "type": "project",
+    "require": {
+        "symfony/console": "^5.2",
+        "php": "^8.0"
+    },
+    "authors": [
+        {
+            "name": "kvetinac97",
+            "email": "kvetinac97@email.cz"
+        }
+    ]
+}

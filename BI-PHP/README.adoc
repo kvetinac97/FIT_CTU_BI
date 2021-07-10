@@ -1,0 +1,27 @@
+= Programming in PHP
+
+Got 98 % points for homeworks and 93 % for exam. +
+Finished *1st* from 51 students, with 97 / 100 points.
+
+== Tasks
+
+ - Task 1: Game of life (100 %)
+ - Task 2: Shopping list (100 %)
+ - Task 3: Bag & Set (100 %)
+ - Task 4: Iterators (100 %)
+ - Task 5: Invoices (100 %)
+ - Task 6: Bank transactions (100 %)
+ - Task 7: Testing (100 %)
+ - Task 8: REST API (85 %)
+ - Task 9: Web scraping (100 %)
+ - Task 10: Stars (100 %)
+
+== Exam
+
+ - Task 1: Triangle (100 %)
+ - Task 2: COVID-19 (100 %)
+ - Task 3: Events (80 %)
+
+== Labs
+
+Various code written on labs

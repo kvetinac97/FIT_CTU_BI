@@ -1,0 +1,10 @@
+{
+    "name": "kvetinac97/cv06",
+    "autoload": {
+        "psr-4": {
+            "Entity\\": "src/Entity/",
+            "Repository\\": "src/Repository/"
+        }
+    },
+    "require": {}
+}

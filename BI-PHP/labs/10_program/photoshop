@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/src/kvetinac97/ResizeCommand.php';
+require __DIR__ . '/src/kvetinac97/FilterCommand.php';
+
+use kvetinac97\FilterCommand;
+use kvetinac97\ResizeCommand;
+use Symfony\Component\Console\Application;
+
+$app = new Application();
+$app->add(new ResizeCommand());
+$app->add(new FilterCommand());
+
+try {
+    $app->run();
+}
+catch ( Exception $xxx ) {}

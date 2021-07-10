@@ -1,0 +1,11 @@
+image: php:7.4
+
+before_script:
+  - bash ci/docker_install.sh > /dev/null
+  - chmod +x bin/composer.phar
+  - chmod +x bin/evaluate.php
+  - bin/composer.phar install
+
+test:
+  script:
+    - bin/composer.phar evaluate

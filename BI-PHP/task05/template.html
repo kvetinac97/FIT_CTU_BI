@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <style>
+        .bordered, .borderedFirst { border: 1px solid black }
+        td { padding-left: 5px }
+        td.bordered { text-align: right; padding-right: 5px }
+        th, td.borderedFirst { text-align: left; padding-left: 5px }
+    </style>
+</head>
+<body style="font-family: Helvetica">
+FAKTURA - DOKLAD c. %DOKLAD_ID
+<br><br>
+<table style="border: 1px solid black; border-collapse: collapse; width: 90%">
+    <colgroup>
+        <col style="width: 50%">
+        <col style="border-left: 1px solid black; width: 50%">
+    </colgroup>
+
+    <tr style="text-align: left"><th>Dodavatel</th><th>Odberatel</th></tr>
+    <tr><td style="color: white">_</td><td></td></tr>
+    <tr><td>%DODAVATEL_NAME</td><td>%ODBERATEL_NAME</td></tr>
+    <tr><td>%DODAVATEL_STREET %DODAVATEL_NUMBER</td><td>%ODBERATEL_STREET %ODBERATEL_NUMBER</td></tr>
+    <tr><td>%DODAVATEL_ZIP %DODAVATEL_CITY</td><td>%ODBERATEL_ZIP %ODBERATEL_CITY</td></tr>
+    <tr><td style="color: white">_</td><td></td></tr>
+    <tr><td>%DODAVATEL_ICO</td><td>%ODBERATEL_ICO</td></tr>
+    <tr><td style="color: white">_</td><td></td></tr>
+    <tr><td>%DODAVATEL_PHONE</td><td>%ODBERATEL_PHONE</td></tr>
+    <tr><td>%DODAVATEL_EMAIL</td><td>%ODBERATEL_EMAIL</td></tr>
+</table>
+<br><br>
+<table class="bordered" style="width: 90%; border-collapse: collapse">
+    <tr class="bordered"><th class="bordered">Polozka</th><th class="bordered">Pocet m.j.</th><th class="bordered">Cena za m.j.</th><th class="bordered">Celkem</th></tr>
+    %ITEM_ROWS
+    <tr class="bordered"><td class="borderedFirst" colspan="3" style="font-weight: bold">Celkem</td><td style="font-weight: bold" class="bordered">%TOTAL_PRICE</td></tr>
+</table>
+</body>
+</html>
