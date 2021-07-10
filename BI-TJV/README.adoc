@@ -1,0 +1,17 @@
+= Java Technology
+
+Got 100 % and 5 bonus points for semestral work. +
+Got 90 % in oral exam, resulting in grade A.
+
+== Semestral work
+
+In this subject, I developed a smart restaurant system (Android application + Java REST-API).
+
+link:semestral/[You can see the semestral work here]
+
+I continued with this theme also in subjects link:../BI-IOS/[BI-IOS] and link:../BI-KOT/[BI-KOT]. +
+Database was used in subjects link:../BI-DBS[BI-DBS] and link:../BI-VWM[BI-VWM].
+
+== Labs
+
+Various tasks solved on labs, each focused on different part of Java technology.

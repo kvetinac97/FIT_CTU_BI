@@ -63,7 +63,7 @@ link:BI-AAG/[Automata and Grammars (BI-AAG)] - homework on ProgTest, grades and 
 
 link:BI-ZDM/[Elements of Discrete Mathematics (BI-ZDM)] - grades and MARAST quiz results export
 
-BI-TJV (labs, semestral, grades)
+link:BI-TJV/[Java Technology (BI-TJV)] - semestral work, exercises from labs and grades export
 
 BI-XML (semestral)
 
