@@ -65,7 +65,7 @@ link:BI-ZDM/[Elements of Discrete Mathematics (BI-ZDM)] - grades and MARAST quiz
 
 link:BI-TJV/[Java Technology (BI-TJV)] - semestral work, exercises from labs and grades export
 
-BI-XML (semestral)
+link:BI-XML/[XML Technology (BI-XML)] - semestral work, exam and practice exercises
 
 BI-IOS (hw1, hw2, semestral)
 
