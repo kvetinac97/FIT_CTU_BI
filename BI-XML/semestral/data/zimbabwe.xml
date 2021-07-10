@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<country name="Zimbabwe" short="ZWE">
+    <introduction>
+        <paragraph>
+            A series of trading states developed in the area of Zimbabwe prior to the arrival of the first European explorers; the largest of these was the Kingdom of Zimbabwe (ca. 1220-1450). In the 1880s, European colonists arrived with the British South Africa Company (BSAC), which obtained mining rights and established company rule over the area. The southern portion of BSAC holdings were annexed by the UK in 1923 and became the British colony of Southern Rhodesia. A 1961 constitution was formulated that favored whites in power. In 1965 the government unilaterally declared its independence, but the UK did not recognize the act and demanded more complete voting rights for the black African majority in the country (then called Rhodesia). UN sanctions and a guerrilla uprising finally led to free elections in 1979 and independence (as Zimbabwe) in 1980. Robert MUGABE, the nation's first prime minister, was the country's only ruler (as president since 1987) from independence until his resignation in November 2017. His chaotic land redistribution campaign, which began in 1997 and intensified after 2000, caused an exodus of white farmers, crippled the economy, and ushered in widespread shortages of basic commodities. Ignoring international condemnation, MUGABE rigged the 2002 presidential election to ensure his reelection.
+        </paragraph>
+        <paragraph>
+            In 2005, the capital city of Harare embarked on Operation Restore Order, ostensibly an urban rationalization program, which resulted in the destruction of the homes or businesses of 700,000 mostly poor supporters of the opposition. MUGABE in 2007 instituted price controls on all basic commodities causing panic buying and leaving store shelves empty for months. General elections in both 2008 and 2013 were severely flawed and widely condemned, but allowed MUGABE to remain president. As a prerequisite to holding the 2013 election, Zimbabwe enacted a new constitution by referendum, although many provisions in the new constitution have yet to be codified in law. In November 2017, Vice President Emmerson MNANGAGWA took over following a military intervention that forced MUGABE to resign. MNANGAGWA was inaugurated president days later, promising to hold presidential elections in 2018. In July 2018, MNANGAGWA won the presidential election after a close contest with Movement for Democratic Change Alliance candidate Nelson CHAMISA. MNANGAGWA has since resorted to the government's longstanding practice of violently disrupting protests or opposition rallies. Official inflation rates soared in 2019, approaching 500% by the end of the year. MUGABE died in September 2019.
+        </paragraph>
+    </introduction>
+    <geography>
+        <span name="Location" align="top">Southern Africa, between South Africa and Zambia</span>
+        <span name="Continent" align="top">Africa</span>
+        <span name="Coastline" align="top" newline="1">none</span>
+        <coordinates latitude="20.00" lattype="S" longitude="30.00" longtype="E" />
+        <area total="390757" land="386847" rank="62" water="3910">about four times the size of Indiana; slightly larger than Montana</area>
+        <boundaries total="3229" count="4">
+            <boundary with="Botswana" length="834" />
+            <boundary with="Mozambique" length="1402" />
+            <boundary with="South Africa" length="230" />
+            <boundary with="Zambia" length="763" />
+        </boundaries>
+        <maritime_claims />
+        <elevation mean="961" lowestalt="162" lowest="junction of the Runde and Save Rivers" highest="Inyangani" highestalt="2592" />
+        <land agricultural="42.5" arable="10.9" arablecrops="0.3" arablepasture="31.3" forest="39.5" other="18" irrigated="1.740" />
+        <span name="Climate">tropical; moderated by altitude; rainy season (November to March)</span>
+        <span name="Terrain" newline="1">mostly high plateau with higher central plateau (high veld); mountains in east</span>
+        <span name="Distribution" newline="1">Aside from major urban agglomerations in Harare and Bulawayo, population distribution is fairly even, with slightly greater overall numbers in the eastern half as shown in this population distribution map</span>
+        <span name="Environment - issues" newline="1">deforestation; soil erosion; land degradation; air and water pollution; the black rhinoceros herd - once the largest concentration of the species in the world - has been significantly reduced by poaching; poor mining practices have led to toxic waste and heavy metal pollution</span>
+        <span name="Environment - agreements">party to: Biodiversity, Climate Change, Desertification, Endangered Species, Hazardous Wastes, Law of the Sea, Ozone Layer Protection</span>
+        <span name="Resources" align="right" newline="1">coal, chromium ore, asbestos, gold, nickel, copper, iron ore, vanadium, lithium, tin, platinum group metals</span>
+        <span name="Hazards" align="right" newline="1">recurring droughts; floods and severe storms are rare</span>
+        <span name="Note" align="right">landlocked; the Zambezi forms a natural riverine boundary with Zambia; in full flood (February-April) the massive Victoria Falls on the river forms the world's largest curtain of falling water; Lake Kariba on the Zambia-Zimbabwe border forms the world's largest reservoir by volume (180 cu km; 43 cu mi)</span>
+    </geography>
+    <people_and_society>
+        <population count="14546314" ranking="73" />
+        <nationality noun="Zimbabwean(s)" adjective="Zimbabwean" />
+        <ethnic_groups>African</ethnic_groups>
+        <languages>
+            <language name="Shona" official="true" />
+            <language name="Ndebele" official="true" />
+            <language name="English" official="true" />
+            <language name="Chewa" />
+            <language name="Chibarwe" />
+            <language name="Kalanga" />
+            <language name="Koisan" />
+            <language name="Nambya" />
+            <language name="Ndau" />
+            <language name="Shangani" />
+            <language name="Sotho" />
+            <language name="Tonga" />
+            <language name="Tswana" />
+            <language name="Venda" />
+            <language name="Xhosa" />
+        </languages>
+        <religions>
+            <religion name="Protestant" percent="74.8" />
+            <religion name="Roman Catholic" percent="7.3" />
+            <religion name="Other Christian" percent="5.3" />
+            <religion name="Traditional" percent="1.5" />
+            <religion name="Muslim" percent="0.5" />
+            <religion name="none" percent="10.5" />
+        </religions>
+        <age_structure>
+            <age min="0" max="14" percent="38.32" male="2759155" female="2814462" />
+            <age min="15" max="24" percent="20.16" male="1436710" female="1495440" />
+            <age min="25" max="54" percent="32.94" male="2456392" female="2334973" />
+            <age min="55" max="64" percent="4.07" male="227506" female="363824" />
+            <age min="65" max="120" percent="4.52" male="261456" female="396396" />
+        </age_structure>
+        <dependency_ratio total="81.6" youth="76.1" elderly="5.5" potential="18.3" />
+        <rate_per_thousand birth="33.6" death="9.3" />
+        <sex_ratio total="0.96" >
+            <age min="0" max="14" male_over_female="0.98" />
+            <age min="15" max="24" male_over_female="0.96" />
+            <age min="25" max="54" male_over_female="1.05" />
+            <age min="55" max="64" male_over_female="0.63" />
+            <age min="65" max="120" male_over_female="0.66" />
+        </sex_ratio>
+        <average_mother first_birth_age="20" mortality_rate="458" children="3.93" />
+        <drinking_water total="77.3" urban="98" rural="67.4" />
+        <sanitation_facility_access total="64.2" rural="49" urban="96.1" />
+        <diseases>
+            <disease type="food or waterborne">bacterial and protozoal diarrhea, hepatitis A, and typhoid fever</disease>
+            <disease type="vectorborne">malaria and dengue fever</disease>
+            <disease type="water contact">schistosomiasis</disease>
+            <disease type="animal contact">rabies</disease>
+        </diseases>
+        <health_expenditure>6.6</health_expenditure>
+        <statistics>
+            <statistic name="median_age" total="20.5" male="20.3" female="20.6" ranking="190">Median age</statistic>
+            <statistic name="infant_mortality" total="30.3" male="34.2" female="26.4" ranking="55">Infant mortality</statistic>
+            <statistic name="life_expectancy" total="62.3" male="60.2" female="64.5" ranking="210">Life expectancy</statistic>
+            <statistic name="literacy" total="86.5" male="88.5" female="84.6">Literacy</statistic>
+            <statistic name="school_life_expectancy" total="11" male="12" female="11">School life expectancy</statistic>
+            <statistic name="youth_unemployment" total="16.5" male="11.6" female="21.2" ranking="83">Youth unemployment</statistic>
+        </statistics>
+    </people_and_society>
+    <government>
+        <span name="Country name" align="top">Republic of Zimbabwe (short Zimbabwe)</span>
+        <span name="Type" align="top">presidential republic</span>
+        <span name="Capital" align="top">Harare</span>
+        <span name="UTC time" align="top" newline="1">UTC+2</span>
+        <span name="Independence day" align="top">18th April 1980</span>
+        <span name="Legal system" align="top">mixed legal system of English common law, Roman-Dutch civil law, and customary law</span>
+        <span name="Suffrage" align="top" newline="1">at the age of 18</span>
+        <span name="Political parties" align="top" newline="1">
+            MDC Alliance [Thokozane KHUPEIS] (acting)
+            Movement for Democratic Change - MDC-T [Thokozani KHUPE]
+            National People's Party or NPP [Joyce MUJURU] (formerly Zimbabwe People First or ZimPF)
+            National Patriotic Front or NPF [Ambrose MUTINHIRI]
+            Zimbabwe African National Union-Patriotic Front or ZANU-PF [Emmerson Dambudzo MNANGAGWA]
+            Zimbabwe African Peoples Union or ZAPU [Isaac MABUKA]
+        </span>
+
+        <divisions count="10" name="province">Bulawayo*, Harare*, Manicaland, Mashonaland Central, Mashonaland East, Mashonaland West, Masvingo, Matabeleland North, Matabeleland South, Midlands</divisions>
+
+        <citizenships>
+            <citizenship by="birth">no</citizenship>
+            <citizenship by="descent only">the father must be a citizen of Zimbabwe; in the case of a child born out of wedlock, the mother must be a citizen</citizenship>
+        </citizenships>
+
+        <executive>
+            <span name="Chief of state">
+                President Emmerson Dambudzo MNANGAGWA (since 24 November 2017); First Vice President Constantino CHIWENGA (since 28 December 2017); note - Robert Gabriel MUGABE resigned on 21 November 2017, after ruling for 37 years
+            </span>
+            <span name="Head of government">
+                President Emmerson Dambudzo MNANGAGWA (since 24 November 2017); Vice President Constantino CHIWENGA (since 28 December 2017); Vice President Kembo MOHADI (since 28 December 2017)
+            </span>
+            <span name="Cabinet">Cabinet appointed by president, responsible to National Assembly</span>
+            <span name="Elections">each presidential candidate nominated with a nomination paper signed by at least 10 registered voters (at least 1 candidate from each province) and directly elected by absolute majority popular vote in 2 rounds if needed for a 5-year term (no term limits); election last held on 3 July 2018 (next to be held in 2023); co-vice presidents drawn from party leadership</span>
+            <span name="Election results">Emmerson MNANGAGWA reelected president in 1st round of voting; percent of vote - Emmerson MNANGAGWA (ZANU-PF) 50.8%, Nelson CHAMISA (MDC-T) 44.3%, Thokozani KHUPE (MDC-N) .9%, other 3%</span>
+        </executive>
+
+        <legislative>
+            <span name="Description">
+                bicameral Parliament consists of:
+                Senate (80 seats; 60 members directly elected in multi-seat constituencies - 6 seats in each of the 10 provinces - by proportional representation vote, 16 indirectly elected by the regional governing councils, 2 reserved for the National Council Chiefs, and 2 reserved for members with disabilities; members serve 5-year terms)
+                National Assembly (270 seats; 210 members directly elected in single-seat constituencies by simple majority vote and 60 seats reserved for women directly elected by proportional representation vote; members serve 5-year terms)
+            </span>
+            <span name="Elections">
+                Senate - last held for elected member on 30 July 2018 (next to be held in 2023)
+                National Assembly - last held on 30 July 2018 (next to be held in 2023)
+            </span>
+            <span name="Election results">
+                Senate - percent of vote by party - NA; seats by party - ZANU-PF 34, MDC Alliance 25, Chiefs 18, people with disabilities 2, MDC-T 1; composition - men 45, women 35, percent of women 43.8%
+                National Assembly - percent of vote by party - NA; seats by party - ZANU-PF 179, MDC Alliance 88, MDC-T 1, NPF 1, independent 1; composition - men 185, women 25, percent of women 31.5%; note - total Parliament percent of women 34.3%
+            </span>
+        </legislative>
+
+        <judicial>
+            <span name="Highest courts">Supreme Court (consists of the chief justice and 4 judges); Constitutional Court (consists of the chief and deputy chief justices and 9 judges)</span>
+            <span name="Judge selection">Supreme Court judges appointed by the president upon recommendation of the Judicial Service Commission, an independent body consisting of the chief justice, Public Service Commission chairman, attorney general, and 2-3 members appointed by the president; judges normally serve until age 65 but can elect to serve until age 70; Constitutional Court judge appointment NA; judges serve nonrenewable 15-year terms</span>
+            <span name="Subordinate courts">High Court; Labor Court; Administrative Court; regional magistrate courts; customary law courts; special courts</span>
+        </judicial>
+
+        <flag>
+            <image>zwe_flag.jpg</image>
+            <description>
+                seven equal horizontal bands of green (top), yellow, red, black, red, yellow, and green with a white isosceles triangle edged in black with its base on the hoist side; a yellow Zimbabwe bird representing the long history of the country is superimposed on a red five-pointed star in the center of the triangle, which symbolizes peace; green represents agriculture, yellow mineral wealth, red the blood shed to achieve independence, and black stands for the native people
+            </description>
+        </flag>
+
+        <span name="International organizations" align="right" newline="1">
+            ACP, AfDB, AU, COMESA, FAO, G-15, G-77, IAEA, IBRD, ICAO, ICRM, IDA, IFAD, IFC, IFRCS, ILO, IMF, IMO, Interpol, IOC, IOM, IPU, ISO, ITSO, ITU, ITUC (NGOs), MIGA, NAM, OPCW, PCA, SADC, UN, UNAMID, UNCTAD, UNESCO, UNIDO, UNMIL, UNMISS, UNOCI, UNWTO, UPU, WCO, WFTU (NGOs), WHO, WIPO, WMO, WTO
+        </span>
+        <span name="Constitution - history" align="right" newline="1">previous 1965 (at Rhodesian independence), 1979 (Lancaster House Agreement), 1980 (at Zimbabwean independence); latest final draft completed January 2013, approved by referendum 16 March 2013, approved by Parliament 9 May 2013, effective 22 May 2013</span>
+        <span name="Constitution - amendments" align="right" newline="1">proposed by the Senate or by the National Assembly; passage requires two-thirds majority vote by the membership of both houses of Parliament and assent of the president of the republic; amendments to constitutional chapters on fundamental human rights and freedoms and on agricultural lands also require approval by a majority of votes cast in a referendum; amended many times, last in 2017</span>
+        <span name="Symbols" align="right">Zimbabwe bird symbol, African fish eagle, flame lily; national colors: green, yellow, red, black, white</span>
+        <span name="Anthem" align="right">"Kalibusiswe Ilizwe leZimbabwe" [Northern Ndebele language] "Simudzai Mureza WeZimbabwe" [Shona] (Blessed Be the Land of Zimbabwe)</span>
+    </government>
+    <economy>
+        <span name="Overview" align="top">
+            Zimbabwe's economy depends heavily on its mining and agriculture sectors. Following a contraction from 1998 to 2008, the economy recorded real growth of more than 10% per year in the period 2010-13, before falling below 3% in the period 2014-17, due to poor harvests, low diamond revenues, and decreased investment. Lower mineral prices, infrastructure and regulatory deficiencies, a poor investment climate, a large public and external debt burden, and extremely high government wage expenses impede the country’s economic performance.
+            Until early 2009, the Reserve Bank of Zimbabwe (RBZ) routinely printed money to fund the budget deficit, causing hyperinflation. Adoption of a multi-currency basket in early 2009 - which allowed currencies such as the Botswana pula, the South Africa rand, and the US dollar to be used locally - reduced inflation below 10% per year. In January 2015, as part of the government’s effort to boost trade and attract foreign investment, the RBZ announced that the Chinese renmimbi, Indian rupee, Australian dollar, and Japanese yen would be accepted as legal tender in Zimbabwe, though transactions were predominantly carried out in US dollars and South African rand until 2016, when the rand’s devaluation and instability led to near-exclusive use of the US dollar. The government in November 2016 began releasing bond notes, a parallel currency legal only in Zimbabwe which the government claims will have a one-to-one exchange ratio with the US dollar, to ease cash shortages. Bond notes began trading at a discount of up to 10% in the black market by the end of 2016.
+            Zimbabwe’s government entered a second Staff Monitored Program with the IMF in 2014 and undertook other measures to reengage with international financial institutions. Zimbabwe repaid roughly $108 million in arrears to the IMF in October 2016, but financial observers note that Zimbabwe is unlikely to gain new financing because the government has not disclosed how it plans to repay more than $1.7 billion in arrears to the World Bank and African Development Bank. International financial institutions want Zimbabwe to implement significant fiscal and structural reforms before granting new loans. Foreign and domestic investment continues to be hindered by the lack of land tenure and titling, the inability to repatriate dividends to investors overseas, and the lack of clarity regarding the government’s Indigenization and Economic Empowerment Act.
+        </span>
+
+        <gdp_values>
+            <gdp_value type="value" ranking="127">34.27</gdp_value>
+            <gdp_value type="exchange rate">17.64</gdp_value>
+            <gdp_value type="per capita">2300</gdp_value>
+            <gdp_value type="exports" ranking="113">4.353</gdp_value>
+            <gdp_value type="imports" ranking="122">5.472</gdp_value>
+        </gdp_values>
+
+        <rates>
+            <rate type="unemployment_rate">11.3</rate>
+            <rate type="below_poverty_line">72.3</rate>
+            <rate type="public_debt">82.3</rate>
+            <rate type="inflation_rate">0.9</rate>
+            <rate type="growth_rate">3.7</rate>
+            <rate type="gross_national_saving">23.3</rate>
+        </rates>
+
+        <compositions>
+            <factor name="end use">
+                <composition for="household">77.6</composition>
+                <composition for="government">24</composition>
+                <composition for="investment_fixed_capital">12.6</composition>
+                <composition for="investment_inventories">0</composition>
+                <composition for="export">25.6</composition>
+                <composition for="import">-39.9</composition>
+            </factor>
+            <factor name="sector of origin">
+                <composition for="agriculture">12</composition>
+                <composition for="industry">22.2</composition>
+                <composition for="services">65.8</composition>
+            </factor>
+        </compositions>
+
+        <occupations>
+            <occupation name="agriculture">67.5</occupation>
+            <occupation name="industry">7.3</occupation>
+            <occupation name="services">25.2</occupation>
+        </occupations>
+
+        <eximports>
+            <eximport name="partners" for="Exports">South Africa 50.3%, Mozambique 22.5%, UAE 9.8%, Zambia 4.9%</eximport>
+            <eximport name="partners" for="Imports">South Africa 47.8%, Zambia 20.5%</eximport>
+            <eximport name="commodities" for="Exports">platinum, cotton, tobacco, gold, ferroalloys, textiles/clothing</eximport>
+            <eximport name="commodities" for="Imports">machinery and transport equipment, other manufactures, chemicals, fuels, food products</eximport>
+        </eximports>
+
+        <span name="Labor force" align="right">7,907,000 people</span>
+        <span name="Agriculture" align="right">tobacco, corn, cotton, wheat, coffee, sugarcane, peanuts; sheep, goats, pigs</span>
+        <span name="Industry" align="right">mining (coal, gold, platinum, copper, nickel, tin, diamonds, clay, numerous metallic and nonmetallic ores), steel; wood products, cement, chemicals, fertilizer, clothing and footwear, foodstuffs, beverages</span>
+    </economy>
+    <energy>
+        <electrification total="53" urban="89" rural="36" without="7000000" />
+        <electricity production="6.8" production_rank="113" consumption="7.118" consumption_rank="108"
+                     exports="1.239" imports="2.22" generating="0.2122" />
+        <electricity_source fossil="58" nuclear="0" hydroelectric="37" other_renewable="5" />
+
+        <resource_list>
+            <resource name="Crude oil" unit="bbl/day" runit="bbl" production="0" exports="0" imports="0" reserves="0" />
+            <resource name="Refined petroleum" unit="bbl/day" production="0" consumption="27000" exports="0" imports="26400" />
+            <resource name="Natural gas" unit="cu m" runit="cu m" production="0" consumption="0" exports="0" imports="0" reserves="0" />
+        </resource_list>
+    </energy>
+    <communications>
+        <phones>
+            <phone type="fixed" total="258419" per_100="1.81" ranking="117" />
+            <phone type="cellular" total="12863830" per_100="90.1" ranking="72" />
+        </phones>
+        <phone_systems>
+            <phone_system type="general">competition has driven the expansion of the telecommunications sector, particularly cellular voice and mobile broadband, in recent years; 3 mobile network operators continue to invest in M-commerce and M-banking facilities; continued advancement with national and international fiber backbone network as well as 3G and LTE mobile broadband services; mobile Internet connections make up 98% of all Internet connections</phone_system>
+            <phone_system type="domestic">consists of microwave radio relay links, open-wire lines, radiotelephone communication stations, fixed wireless local loop installations, fiber-optic cable, VSAT terminals, and a substantial mobile-cellular network; Internet connection is most readily available in Harare and major towns; two government owned and two private cellular providers; fixed-line 2 per 100 and mobile-cellular 90 per 100</phone_system>
+            <phone_system type="international">country code - 263; fiber-optic connections to neighboring states provide access to international networks via undersea cable; satellite earth stations - 2 Intelsat; 5 international digital gateway exchanges</phone_system>
+        </phone_systems>
+
+        <internet code="zw" users="3796618" percent="27.06" ranking="93" />
+        <span name="Broadcast media" align="right">government owns all local radio and TV stations; foreign shortwave broadcasts and satellite TV are available to those who can afford antennas and receivers; in rural areas, access to TV broadcasts is extremely limited; analog TV only, no digital service</span>
+    </communications>
+    <transportation>
+        <span name="Pipelines" align="top" newline="1">270 km refined products</span>
+
+        <air>
+            <air_unit name="Registered carriers">2</air_unit>
+            <air_unit name="Aircraft registered by carriers">12</air_unit>
+            <air_unit name="Annual passengers transferred">285539</air_unit>
+            <air_unit name="Position in the world">29</air_unit>
+            <air_unit name="Heliports">0</air_unit>
+
+            <span name="Annual traffic">670,000 mt-km</span>
+            <span name="Registration prefix">Z</span>
+
+            <airports total="196">
+                <airport min="0" max="913">72</airport>
+                <airport min="914" max="1523">111</airport>
+                <airport min="1524" max="2437">8</airport>
+                <airport min="2438" max="3047">2</airport>
+                <airport min="3048" max="9999">3</airport>
+            </airports>
+        </air>
+
+        <rails total="3427">
+            <rail gauge="standard">0</rail>
+            <rail gauge="narrow">3427</rail>
+        </rails>
+
+        <roads total="97267" ranking="49">
+            <road type="paved">18481</road>
+            <road type="unpaved">78786</road>
+        </roads>
+
+        <water>
+            <length>0</length>
+            <ranking>200</ranking>
+            <ports>Binga, Kariba (Zambezi)</ports>
+        </water>
+    </transportation>
+    <military_and_security>
+        <span name="Forces" newline="1">Zimbabwe Defense Forces (ZDF): Zimbabwe National Army (ZNA), Air Force of Zimbabwe (AFZ)</span>
+        <span name="Expenditures" newline="1">1 % of GDP (121st in the world)</span>
+        <span name="Personnel strength" newline="1">size estimates for the Zimbabwe Defense Forces (ZDF) vary; approximately 30,000 active duty troops, including about 4,000 serving in the Air Force</span>
+        <span name="Equipment acquisitions">
+            the ZDF inventory is comprised mostly of older Chinese- and Russian-origin equipment; since 2000, China is the leading arms supplier to the ZDF, although there are no recorded deliveries of weapons since 2006
+        </span>
+    </military_and_security>
+    <transnational_issues>
+        <span name="Disputes" newline="1">Namibia has supported, and in 2004 Zimbabwe dropped objections to, plans between Botswana and Zambia to build a bridge over the Zambezi River, thereby de facto recognizing a short, but not clearly delimited, Botswana-Zambia boundary in the river; South Africa has placed military units to assist police operations along the border of Lesotho, Zimbabwe, and Mozambique to control smuggling, poaching, and illegal migration</span>
+        <span name="IDPs">25,517</span>
+        <span name="Illicit drugs" newline="1">
+            transit point for cannabis and South Asian heroin, mandrax, and methamphetamines en route to South Africa
+        </span>
+        <refugees>
+            <refugee from="Mozambique" count="8060" />
+            <refugee from="Nigeria" count="116237" />
+            <refugee from="Democratic Republic of Congo" count="10837" />
+            <refugee from="stateless" count="300000" />
+        </refugees>
+    </transnational_issues>
+</country>

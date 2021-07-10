@@ -1,0 +1,256 @@
+<!ELEMENT countries (country)*>
+<!ELEMENT country (introduction|geography|people_and_society|government|economy|energy|communications|transportation|military_and_security|terrorism|transnational_issues)*>
+<!ATTLIST country
+        name CDATA #REQUIRED
+        short CDATA #REQUIRED>
+<!ELEMENT introduction (paragraph)*>
+<!ELEMENT paragraph (#PCDATA)>
+<!ELEMENT geography (span|coordinates|area|boundaries|maritime_claims|elevation|land)*>
+<!ELEMENT span (#PCDATA)>
+<!ATTLIST span
+        name CDATA #REQUIRED
+        align CDATA #IMPLIED
+        newline CDATA #IMPLIED>
+<!ELEMENT location (#PCDATA)>
+<!ELEMENT coordinates (#PCDATA)>
+<!ATTLIST coordinates
+        latitude CDATA #REQUIRED
+        lattype CDATA #REQUIRED
+        longitude CDATA #REQUIRED
+        longtype CDATA #REQUIRED>
+<!ELEMENT continent (#PCDATA)>
+<!ELEMENT area (#PCDATA)>
+<!ATTLIST area
+        total CDATA #REQUIRED
+        land CDATA #REQUIRED
+        rank CDATA #REQUIRED
+        water CDATA #REQUIRED>
+<!ELEMENT boundaries (boundary)*>
+<!ATTLIST boundaries
+        total CDATA #REQUIRED
+        count CDATA #REQUIRED>
+<!ELEMENT boundary (#PCDATA)>
+<!ATTLIST boundary
+        length CDATA #REQUIRED
+        with CDATA #REQUIRED>
+<!ELEMENT maritime_claims (maritime_claim)*>
+<!ELEMENT maritime_claim (#PCDATA)>
+<!ATTLIST maritime_claim
+        type CDATA #REQUIRED>
+<!ELEMENT elevation (#PCDATA)>
+<!ATTLIST elevation
+        mean CDATA #REQUIRED
+        lowestalt CDATA #REQUIRED
+        lowest CDATA #REQUIRED
+        highest CDATA #REQUIRED
+        highestalt CDATA #REQUIRED>
+<!ELEMENT land (#PCDATA)>
+<!ATTLIST land
+        agricultural CDATA #REQUIRED
+        arable CDATA #REQUIRED
+        arablecrops CDATA #REQUIRED
+        arablepasture CDATA #REQUIRED
+        forest CDATA #REQUIRED
+        other CDATA #REQUIRED
+        irrigated CDATA #REQUIRED>
+<!ELEMENT people_and_society (population|nationality|ethnic_groups|languages|religions|age_structure|dependency_ratio|rate_per_thousand|sex_ratio|average_mother|drinking_water|sanitation_facility_access|diseases|health_expenditure|statistics)*>
+<!ELEMENT population (#PCDATA)>
+<!ATTLIST population
+        count CDATA #REQUIRED
+        ranking CDATA #REQUIRED>
+<!ELEMENT nationality (#PCDATA)>
+<!ATTLIST nationality
+        noun CDATA #REQUIRED
+        adjective CDATA #REQUIRED>
+<!ELEMENT ethnic_groups (#PCDATA)>
+<!ELEMENT languages (language)*>
+<!ELEMENT language (#PCDATA)>
+<!ATTLIST language
+        name CDATA #REQUIRED
+        official CDATA #IMPLIED
+        percent CDATA #IMPLIED>
+<!ELEMENT religions (religion)*>
+<!ELEMENT religion (#PCDATA)>
+<!ATTLIST religion
+        name CDATA #REQUIRED
+        percent CDATA #REQUIRED>
+<!ELEMENT age_structure (age)*>
+<!ELEMENT age (#PCDATA)>
+<!ATTLIST age
+        female CDATA #IMPLIED
+        male CDATA #IMPLIED
+        male_over_female CDATA #IMPLIED
+        max CDATA #REQUIRED
+        min CDATA #REQUIRED
+        percent CDATA #IMPLIED>
+<!ELEMENT dependency_ratio (#PCDATA)>
+<!ATTLIST dependency_ratio
+        total CDATA #REQUIRED
+        youth CDATA #REQUIRED
+        elderly CDATA #REQUIRED
+        potential CDATA #REQUIRED>
+<!ELEMENT rate_per_thousand (#PCDATA)>
+<!ATTLIST rate_per_thousand
+        birth CDATA #REQUIRED
+        death CDATA #REQUIRED>
+<!ELEMENT sex_ratio (age)*>
+<!ATTLIST sex_ratio
+        total CDATA #REQUIRED>
+<!ELEMENT average_mother (#PCDATA)>
+<!ATTLIST average_mother
+        first_birth_age CDATA #REQUIRED
+        mortality_rate CDATA #REQUIRED
+        children CDATA #REQUIRED>
+<!ELEMENT drinking_water (#PCDATA)>
+<!ATTLIST drinking_water
+        total CDATA #REQUIRED
+        urban CDATA #REQUIRED
+        rural CDATA #REQUIRED>
+<!ELEMENT sanitation_facility_access (#PCDATA)>
+<!ATTLIST sanitation_facility_access
+        total CDATA #REQUIRED
+        rural CDATA #REQUIRED
+        urban CDATA #REQUIRED>
+<!ELEMENT diseases (disease)*>
+<!ELEMENT disease (#PCDATA)>
+<!ATTLIST disease
+        type CDATA #REQUIRED>
+<!ELEMENT health_expenditure (#PCDATA)>
+<!ELEMENT statistics (statistic)*>
+<!ELEMENT statistic (#PCDATA)>
+<!ATTLIST statistic
+        female CDATA #REQUIRED
+        male CDATA #REQUIRED
+        name CDATA #REQUIRED
+        ranking CDATA #IMPLIED
+        total CDATA #REQUIRED>
+<!ELEMENT government (span|divisions|citizenships|executive|legislative|judicial|flag)*>
+<!ELEMENT divisions (#PCDATA)>
+<!ATTLIST divisions
+        count CDATA #REQUIRED
+        name CDATA #REQUIRED>
+<!ELEMENT citizenships (citizenship)*>
+<!ELEMENT citizenship (#PCDATA)>
+<!ATTLIST citizenship
+        by CDATA #REQUIRED>
+<!ELEMENT executive (span)*>
+<!ELEMENT legislative (span)*>
+<!ELEMENT judicial (span)*>
+<!ELEMENT flag (image|description)*>
+<!ELEMENT image (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT economy (span|gdp_values|rates|compositions|occupations|eximports)*>
+<!ELEMENT gdp_values (gdp_value)*>
+<!ELEMENT gdp_value (#PCDATA)>
+<!ATTLIST gdp_value
+        type CDATA #REQUIRED
+        ranking CDATA #IMPLIED>
+<!ELEMENT rates (rate)*>
+<!ELEMENT rate (#PCDATA)>
+<!ATTLIST rate
+        type CDATA #REQUIRED>
+<!ELEMENT compositions (factor)*>
+<!ELEMENT factor (composition)*>
+<!ATTLIST factor
+        name CDATA #REQUIRED>
+<!ELEMENT composition (#PCDATA)>
+<!ATTLIST composition
+        for CDATA #REQUIRED>
+<!ELEMENT occupations (occupation)*>
+<!ELEMENT occupation (#PCDATA)>
+<!ATTLIST occupation
+        name CDATA #REQUIRED>
+<!ELEMENT eximports (eximport)*>
+<!ELEMENT eximport (#PCDATA)>
+<!ATTLIST eximport
+        name CDATA #REQUIRED
+        for CDATA #REQUIRED>
+<!ELEMENT energy (electrification|electricity|electricity_source|resource_list)*>
+<!ELEMENT electrification (#PCDATA)>
+<!ATTLIST electrification
+        total CDATA #REQUIRED
+        urban CDATA #REQUIRED
+        rural CDATA #REQUIRED
+        without CDATA #REQUIRED>
+<!ELEMENT electricity (#PCDATA)>
+<!ATTLIST electricity
+        production CDATA #REQUIRED
+        production_rank CDATA #REQUIRED
+        consumption CDATA #REQUIRED
+        consumption_rank CDATA #REQUIRED
+        exports CDATA #REQUIRED
+        imports CDATA #REQUIRED
+        generating CDATA #REQUIRED>
+<!ELEMENT electricity_source (#PCDATA)>
+<!ATTLIST electricity_source
+        fossil CDATA #REQUIRED
+        nuclear CDATA #REQUIRED
+        hydroelectric CDATA #REQUIRED
+        other_renewable CDATA #REQUIRED>
+<!ELEMENT resource_list (resource)*>
+<!ELEMENT resource (#PCDATA)>
+<!ATTLIST resource
+        consumption CDATA #IMPLIED
+        exports CDATA #REQUIRED
+        imports CDATA #REQUIRED
+        name CDATA #REQUIRED
+        production CDATA #IMPLIED
+        reserves CDATA #IMPLIED
+        runit CDATA #IMPLIED
+        unit CDATA #REQUIRED>
+<!ELEMENT communications (phones|phone_systems|span|internet)*>
+<!ELEMENT phones (phone)*>
+<!ELEMENT phone (#PCDATA)>
+<!ATTLIST phone
+        type CDATA #REQUIRED
+        total CDATA #REQUIRED
+        per_100 CDATA #REQUIRED
+        ranking CDATA #REQUIRED>
+<!ELEMENT phone_systems (phone_system)*>
+<!ELEMENT phone_system (#PCDATA)>
+<!ATTLIST phone_system
+        type CDATA #REQUIRED>
+<!ELEMENT internet (#PCDATA)>
+<!ATTLIST internet
+        code CDATA #REQUIRED
+        users CDATA #REQUIRED
+        percent CDATA #REQUIRED
+        ranking CDATA #REQUIRED>
+<!ELEMENT transportation (air|span|rails|roads|water)*>
+<!ELEMENT air (air_unit|span|airports)*>
+<!ELEMENT air_unit (#PCDATA)>
+<!ATTLIST air_unit
+        name CDATA #REQUIRED>
+<!ELEMENT airports (airport)*>
+<!ATTLIST airports
+        total CDATA #REQUIRED>
+<!ELEMENT airport (#PCDATA)>
+<!ATTLIST airport
+        max CDATA #REQUIRED
+        min CDATA #REQUIRED>
+<!ELEMENT rails (rail)*>
+<!ATTLIST rails
+        total CDATA #REQUIRED
+        ranking CDATA #IMPLIED>
+<!ELEMENT rail (#PCDATA)>
+<!ATTLIST rail
+        gauge CDATA #REQUIRED>
+<!ELEMENT roads (road)*>
+<!ATTLIST roads
+        total CDATA #REQUIRED
+        ranking CDATA #REQUIRED>
+<!ELEMENT road (#PCDATA)>
+<!ATTLIST road
+        type CDATA #REQUIRED>
+<!ELEMENT water (length|ranking|ports)*>
+<!ELEMENT ranking (#PCDATA)>
+<!ELEMENT length (#PCDATA)>
+<!ELEMENT ports (#PCDATA)>
+<!ELEMENT military_and_security (span)*>
+<!ELEMENT terrorism (#PCDATA)>
+<!ELEMENT transnational_issues (span|refugees)*>
+<!ELEMENT refugees (refugee)*>
+<!ELEMENT refugee (#PCDATA)>
+<!ATTLIST refugee
+        from CDATA #REQUIRED
+        count CDATA #REQUIRED>

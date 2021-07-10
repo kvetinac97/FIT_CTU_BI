@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+    <!-- general -->
+    <define name="attlist.empty" combine="interleave">
+        <empty />
+    </define>
+    <define name="attribute.total">
+        <attribute name="total"><data type="nonNegativeInteger"/></attribute>
+    </define>
+    <define name="attribute.total_percent">
+        <attribute name="total"><ref name="data.percent"/></attribute>
+    </define>
+    <define name="attribute.count">
+        <attribute name="count"><data type="nonNegativeInteger"/></attribute>
+    </define>
+    <define name="attribute.ranking">
+        <attribute name="ranking"><data type="nonNegativeInteger"/></attribute>
+    </define>
+    <define name="data.percent">
+        <data type="decimal">
+            <param name="minInclusive">0</param>
+            <param name="maxInclusive">100</param>
+        </data>
+    </define>
+    <define name="data.percent.all">
+        <data type="decimal">
+            <param name="minInclusive">-100</param>
+            <param name="maxInclusive">100</param>
+        </data>
+    </define>
+    <define name="span">
+        <element name="span">
+            <attribute name="name"/>
+            <optional>
+                <attribute name="align">
+                    <data type="string"><param name="pattern">top|right</param></data>
+                </attribute>
+            </optional>
+            <optional><attribute name="newline" /></optional>
+            <text />
+        </element>
+    </define>
+
+    <define name="countries">
+        <element name="countries">
+            <oneOrMore>
+                <ref name="country"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="country">
+        <element name="country">
+            <attribute name="name"/>
+            <attribute name="short"/>
+
+            <ref name="introduction"/>
+            <ref name="geography"/>
+            <ref name="people_and_society"/>
+            <ref name="government" />
+            <ref name="economy"/>
+            <ref name="energy"/>
+            <ref name="communications"/>
+            <ref name="transportation"/>
+            <ref name="military_and_security"/>
+            <optional>
+                <element name="terrorism">
+                    <ref name="attlist.empty" />
+                    <text />
+                </element>
+            </optional>
+            <ref name="transnational_issues"/>
+        </element>
+    </define>
+
+    <!-- introduction -->
+    <define name="introduction">
+        <element name="introduction">
+            <ref name="attlist.empty" />
+            <oneOrMore>
+                <element name="paragraph">
+                    <ref name="attlist.empty" />
+                    <text />
+                </element>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <!-- geography -->
+    <define name="geography">
+        <element name="geography">
+            <ref name="attlist.empty"/>
+
+            <zeroOrMore>
+                <choice>
+                    <ref name="area"/>
+                    <ref name="boundaries"/>
+                    <ref name="coordinates"/>
+                    <ref name="maritime_claims"/>
+                    <ref name="elevation"/>
+                    <ref name="land"/>
+                    <ref name="span"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="location">
+        <element name="location">
+            <ref name="attlist.empty"/>
+            <text/>
+        </element>
+    </define>
+    <define name="coordinates">
+        <element name="coordinates">
+            <attribute name="latitude">
+                <data type="decimal">
+                    <param name="minInclusive">0</param>
+                    <param name="maxInclusive">90</param>
+                </data>
+            </attribute>
+            <attribute name="lattype">
+                <data type="string"><param name="pattern">N|S</param></data>
+            </attribute>
+            <attribute name="longitude">
+                <data type="decimal">
+                    <param name="minInclusive">0</param>
+                    <param name="maxInclusive">180</param>
+                </data>
+            </attribute>
+            <attribute name="longtype">
+                <data type="string"><param name="pattern">E|W</param></data>
+            </attribute>
+        </element>
+    </define>
+    <define name="area">
+        <element name="area">
+            <ref name="attribute.total"/>
+            <attribute name="land"><data type="positiveInteger"/></attribute>
+            <attribute name="rank"><data type="integer"/></attribute>
+            <attribute name="water"><data type="nonNegativeInteger"/></attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="boundaries">
+        <element name="boundaries">
+            <ref name="attribute.total"/>
+            <ref name="attribute.count"/>
+            <zeroOrMore>
+                <ref name="boundary"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="boundary">
+        <element name="boundary">
+            <attribute name="length"><data type="nonNegativeInteger"/></attribute>
+            <attribute name="with"><text /></attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="maritime_claims">
+        <element name="maritime_claims">
+            <ref name="attlist.empty"/>
+            <zeroOrMore>
+                <element name="maritime_claim">
+                    <attribute name="type"/>
+                    <data type="positiveInteger"/>
+                </element>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="elevation">
+        <element name="elevation">
+            <attribute name="mean"><data type="integer"/></attribute>
+            <attribute name="lowestalt"><data type="integer"/></attribute>
+            <attribute name="highestalt"><data type="integer"/></attribute>
+            <attribute name="lowest"/>
+            <attribute name="highest"/>
+        </element>
+    </define>
+    <define name="land">
+        <element name="land">
+            <attribute name="agricultural"><ref name="data.percent"/></attribute>
+            <attribute name="arable"><ref name="data.percent"/></attribute>
+            <attribute name="arablecrops"><ref name="data.percent"/></attribute>
+            <attribute name="arablepasture"><ref name="data.percent"/></attribute>
+            <attribute name="forest"><ref name="data.percent"/></attribute>
+            <attribute name="other"><ref name="data.percent"/></attribute>
+            <attribute name="irrigated"><data type="decimal"/></attribute>
+        </element>
+    </define>
+
+    <!-- people and society -->
+    <define name="people_and_society">
+        <element name="people_and_society">
+            <ref name="attlist.empty"/>
+            <ref name="population"/>
+            <ref name="nationality"/>
+            <ref name="ethnic_groups"/>
+            <ref name="languages"/>
+            <ref name="religions"/>
+            <ref name="age_structure"/>
+            <ref name="dependency_ratio"/>
+            <ref name="rate_per_thousand"/>
+            <ref name="sex_ratio"/>
+            <ref name="average_mother"/>
+            <ref name="drinking_water"/>
+            <ref name="sanitation_facility_access"/>
+            <ref name="diseases"/>
+            <ref name="health_expenditure"/>
+            <ref name="statistics"/>
+        </element>
+    </define>
+    <define name="population">
+        <element name="population">
+            <ref name="attribute.count"/>
+            <ref name="attribute.ranking"/>
+        </element>
+    </define>
+    <define name="nationality">
+        <element name="nationality">
+            <attribute name="noun"/>
+            <attribute name="adjective"/>
+        </element>
+    </define>
+    <define name="ethnic_groups">
+        <element name="ethnic_groups">
+            <ref name="attlist.empty"/>
+            <text/>
+        </element>
+    </define>
+    <define name="languages">
+        <element name="languages">
+            <ref name="attlist.empty"/>
+            <oneOrMore>
+                <ref name="language"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="language">
+        <element name="language">
+            <attribute name="name"/>
+            <optional>
+                <attribute name="official"><data type="boolean"/></attribute>
+            </optional>
+            <optional>
+                <attribute name="percent"><ref name="data.percent"/></attribute>
+            </optional>
+        </element>
+    </define>
+    <define name="religions">
+        <element name="religions">
+            <ref name="attlist.empty"/>
+            <zeroOrMore>
+                <ref name="religion"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="religion">
+        <element name="religion">
+            <attribute name="name"/>
+            <attribute name="percent"><ref name="data.percent"/></attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="age_structure">
+        <element name="age_structure">
+            <ref name="attlist.empty"/>
+            <ref name="age_list"/>
+        </element>
+    </define>
+    <define name="age_list">
+        <element name="age"><ref name="attlist.age"/></element>
+        <element name="age"><ref name="attlist.age"/></element>
+        <element name="age"><ref name="attlist.age"/></element>
+        <element name="age"><ref name="attlist.age"/></element>
+        <element name="age"><ref name="attlist.age"/></element>
+    </define>
+    <define name="attlist.age" combine="interleave">
+        <optional><attribute name="female"><data type="nonNegativeInteger"/></attribute></optional>
+        <optional><attribute name="male"><data type="nonNegativeInteger"/></attribute></optional>
+        <optional><attribute name="male_over_female"><data type="decimal"/></attribute></optional>
+        <optional><attribute name="percent"><ref name="data.percent"/></attribute></optional>
+
+        <attribute name="min">
+            <data type="integer"><param name="pattern">0|15|25|55|65</param></data>
+        </attribute>
+        <attribute name="max">
+            <data type="integer"><param name="pattern">14|24|54|64|120</param></data>
+        </attribute>
+    </define>
+    <define name="dependency_ratio">
+        <element name="dependency_ratio">
+            <ref name="attribute.total_percent"/>
+            <attribute name="youth"><ref name="data.percent"/></attribute>
+            <attribute name="elderly"><ref name="data.percent"/></attribute>
+            <attribute name="potential"><ref name="data.percent"/></attribute>
+        </element>
+    </define>
+    <define name="rate_per_thousand">
+        <element name="rate_per_thousand">
+            <attribute name="birth"><data type="decimal"/></attribute>
+            <attribute name="death"><data type="decimal"/></attribute>
+        </element>
+    </define>
+    <define name="sex_ratio">
+        <element name="sex_ratio">
+            <attribute name="total"><data type="decimal"/></attribute>
+            <ref name="age_list"/>
+        </element>
+    </define>
+    <define name="average_mother">
+        <element name="average_mother">
+            <attribute name="first_birth_age"><data type="decimal"/></attribute>
+            <attribute name="mortality_rate"><data type="nonNegativeInteger"/></attribute>
+            <attribute name="children"><data type="decimal"/></attribute>
+        </element>
+    </define>
+    <define name="drinking_water">
+        <element name="drinking_water">
+            <ref name="attribute.total_percent"/>
+            <attribute name="urban"><ref name="data.percent"/></attribute>
+            <attribute name="rural"><ref name="data.percent"/></attribute>
+        </element>
+    </define>
+    <define name="sanitation_facility_access">
+        <element name="sanitation_facility_access">
+            <ref name="attribute.total_percent"/>
+            <attribute name="rural"><ref name="data.percent"/></attribute>
+            <attribute name="urban"><ref name="data.percent"/></attribute>
+        </element>
+    </define>
+    <define name="diseases">
+        <element name="diseases">
+            <ref name="attlist.empty"/>
+            <zeroOrMore>
+                <ref name="disease"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="disease">
+        <element name="disease">
+            <attribute name="type"/>
+            <text/>
+        </element>
+    </define>
+    <define name="health_expenditure">
+        <element name="health_expenditure">
+            <ref name="attlist.empty"/>
+            <ref name="data.percent"/>
+        </element>
+    </define>
+    <define name="statistics">
+        <element name="statistics">
+            <ref name="attlist.empty"/>
+            <zeroOrMore>
+                <ref name="statistic"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="statistic">
+        <element name="statistic">
+            <attribute name="name">
+                <data type="string">
+                    <param name="pattern">median_age|infant_mortality|life_expectancy|literacy|school_life_expectancy|youth_unemployment</param>
+                </data>
+            </attribute>
+
+            <attribute name="total"><data type="decimal"/></attribute>
+            <attribute name="male"><data type="decimal"/></attribute>
+            <attribute name="female"><data type="decimal"/></attribute>
+
+            <optional><ref name="attribute.ranking"/></optional>
+            <text />
+        </element>
+    </define>
+
+    <!-- government -->
+    <define name="government">
+        <element name="government">
+            <ref name="attlist.empty" />
+
+            <zeroOrMore>
+                <choice>
+                    <ref name="span" />
+                    <ref name="divisions" />
+                    <ref name="citizenships" />
+                    <ref name="executive" />
+                    <ref name="legislative" />
+                    <ref name="judicial" />
+                    <ref name="flag" />
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="divisions">
+        <element name="divisions">
+            <attribute name="count">
+                <data type="nonNegativeInteger" />
+            </attribute>
+            <attribute name="name" />
+            <text />
+        </element>
+    </define>
+    <define name="citizenships">
+        <element name="citizenships">
+            <ref name="attlist.empty" />
+            <oneOrMore>
+                <ref name="citizenship" />
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="citizenship">
+        <element name="citizenship">
+            <attribute name="by" />
+            <text />
+        </element>
+    </define>
+    <define name="executive">
+        <element name="executive">
+            <ref name="attlist.empty" />
+            <oneOrMore><ref name="span" /></oneOrMore>
+        </element>
+    </define>
+    <define name="legislative">
+        <element name="legislative">
+            <ref name="attlist.empty" />
+            <oneOrMore><ref name="span" /></oneOrMore>
+        </element>
+    </define>
+    <define name="judicial">
+        <element name="judicial">
+            <ref name="attlist.empty" />
+            <oneOrMore><ref name="span" /></oneOrMore>
+        </element>
+    </define>
+    <define name="flag">
+        <element name="flag">
+            <ref name="attlist.empty" />
+            <ref name="image" />
+            <ref name="description" />
+        </element>
+    </define>
+    <define name="image">
+        <element name="image">
+            <ref name="attlist.empty" />
+            <text />
+        </element>
+    </define>
+    <define name="description">
+        <element name="description">
+            <ref name="attlist.empty" />
+            <text />
+        </element>
+    </define>
+
+    <!-- economy -->
+    <define name="economy">
+        <element name="economy">
+            <ref name="attlist.empty"/>
+
+            <zeroOrMore>
+                <choice>
+                    <ref name="span"/>
+                    <ref name="gdp_values"/>
+                    <ref name="rates"/>
+                    <ref name="compositions"/>
+                    <ref name="occupations"/>
+                    <ref name="eximports"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="overview">
+        <element name="overview">
+            <ref name="attlist.empty"/>
+            <text/>
+        </element>
+    </define>
+    <define name="gdp_values">
+        <element name="gdp_values">
+            <ref name="attlist.empty" />
+            <oneOrMore>
+                <ref name="gdp_value" />
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="gdp_value">
+        <element name="gdp_value">
+            <attribute name="type">
+                <data type="string">
+                    <param name="pattern">value|exchange rate|per capita|exports|imports</param>
+                </data>
+            </attribute>
+            <optional>
+                <attribute name="ranking"><data type="nonNegativeInteger" /></attribute>
+            </optional>
+            <data type="decimal"/>
+        </element>
+    </define> <!-- in billions / miliardy -->
+    <define name="rates">
+        <element name="rates">
+            <ref name="attlist.empty"/>
+            <oneOrMore>
+                <ref name="rate" />
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="rate">
+        <element name="rate">
+            <attribute name="type">
+                <data type="string">
+                    <param name="pattern">unemployment_rate|below_poverty_line|public_debt|inflation_rate|growth_rate|gross_national_saving</param>
+                </data>
+            </attribute>
+            <ref name="data.percent" />
+        </element>
+    </define>
+    <define name="compositions">
+        <element name="compositions">
+            <ref name="attlist.empty"/>
+            <ref name="factor"/>
+            <ref name="factor"/>
+        </element>
+    </define>
+    <define name="factor">
+        <element name="factor">
+            <attribute name="name">
+                <data type="string">
+                    <param name="pattern">end use|sector of origin</param>
+                </data>
+            </attribute>
+            <oneOrMore>
+                <ref name="composition"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="composition">
+        <element name="composition">
+            <attribute name="for">
+                <data type="string">
+                    <param name="pattern">household|government|investment_fixed_capital|investment_inventories|export|import|agriculture|industry|services</param>
+                </data>
+            </attribute>
+            <ref name="data.percent.all"/>
+        </element>
+    </define>
+    <define name="occupations">
+        <element name="occupations">
+            <ref name="attlist.empty"/>
+            <ref name="occupation"/>
+            <ref name="occupation"/>
+            <ref name="occupation"/>
+        </element>
+    </define>
+    <define name="occupation">
+        <element name="occupation">
+            <attribute name="name">
+                <data type="string">
+                    <param name="pattern">agriculture|industry|services</param>
+                </data>
+            </attribute>
+            <ref name="data.percent"/>
+        </element>
+    </define>
+    <define name="eximports">
+        <element name="eximports">
+            <oneOrMore>
+                <ref name="eximport" />
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="eximport">
+        <element name="eximport">
+            <attribute name="name">
+                <data type="string">
+                    <param name="pattern">partners|commodities</param>
+                </data>
+            </attribute>
+            <attribute name="for">
+                <data type="string">
+                    <param name="pattern">Exports|Imports</param>
+                </data>
+            </attribute>
+            <text />
+        </element>
+    </define>
+
+    <!-- energy -->
+    <define name="energy">
+        <element name="energy">
+            <ref name="attlist.empty" />
+            <ref name="electrification" />
+            <ref name="electricity" />
+            <ref name="electricity_source" />
+            <ref name="resource_list" />
+        </element>
+    </define>
+    <define name="electrification">
+        <element name="electrification">
+            <ref name="attribute.total_percent" />
+            <attribute name="urban"><ref name="data.percent" /></attribute>
+            <attribute name="rural"><ref name="data.percent" /></attribute>
+            <attribute name="without"><data type="nonNegativeInteger" /></attribute>
+        </element>
+    </define>
+    <define name="electricity">
+        <element name="electricity">
+            <attribute name="production"><data type="decimal" /></attribute>
+            <attribute name="production_rank"><data type="nonNegativeInteger" /></attribute>
+            <attribute name="consumption"><data type="decimal" /></attribute>
+            <attribute name="consumption_rank"><data type="nonNegativeInteger" /></attribute>
+            <attribute name="exports"><data type="decimal" /></attribute>
+            <attribute name="imports"><data type="decimal" /></attribute>
+            <attribute name="generating"><data type="decimal" /></attribute>
+        </element>
+    </define>
+    <define name="electricity_source">
+        <element name="electricity_source">
+            <attribute name="fossil"><ref name="data.percent" /></attribute>
+            <attribute name="nuclear"><ref name="data.percent" /></attribute>
+            <attribute name="hydroelectric"><ref name="data.percent" /></attribute>
+            <attribute name="other_renewable"><ref name="data.percent" /></attribute>
+        </element>
+    </define>
+    <define name="resource_list">
+        <element name="resource_list">
+            <ref name="attlist.empty" />
+            <oneOrMore>
+                <ref name="resource" />
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="resource">
+        <element name="resource">
+            <attribute name="name" />
+            <attribute name="unit" />
+            <optional><attribute name="runit" /></optional>
+            <attribute name="production"><data type="decimal"/></attribute>
+            <optional><attribute name="consumption"><data type="decimal"/></attribute></optional>
+            <attribute name="exports"><data type="decimal"/></attribute>
+            <attribute name="imports"><data type="decimal"/></attribute>
+            <optional><attribute name="reserves"><data type="decimal"/></attribute></optional>
+        </element>
+    </define>
+
+    <!-- communications -->
+    <define name="communications">
+        <element name="communications">
+            <ref name="attlist.empty" />
+            <ref name="phones" />
+            <ref name="phone_systems" />
+            <ref name="internet" />
+            <ref name="span" />
+        </element>
+    </define>
+    <define name="phones">
+        <element name="phones">
+            <ref name="attlist.empty" />
+            <ref name="phone" />
+            <ref name="phone" />
+        </element>
+    </define>
+    <define name="phone">
+        <element name="phone">
+            <attribute name="type">
+                <data type="string">
+                    <param name="pattern">cellular|fixed</param>
+                </data>
+            </attribute>
+            <ref name="attribute.total" />
+            <attribute name="per_100"><data type="decimal" /></attribute>
+            <attribute name="ranking"><data type="nonNegativeInteger" /></attribute>
+        </element>
+    </define>
+    <define name="phone_systems">
+        <element name="phone_systems">
+            <ref name="phone_system" />
+            <ref name="phone_system" />
+            <ref name="phone_system" />
+        </element>
+    </define>
+    <define name="phone_system">
+        <element name="phone_system">
+            <attribute name="type" />
+            <text />
+        </element>
+    </define>
+    <define name="internet">
+        <element name="internet">
+            <attribute name="code" />
+            <attribute name="users"><data type="nonNegativeInteger" /></attribute>
+            <attribute name="percent"><ref name="data.percent" /></attribute>
+            <attribute name="ranking"><data type="nonNegativeInteger" /></attribute>
+        </element>
+    </define>
+
+    <!-- transportation -->
+    <define name="transportation">
+        <element name="transportation">
+            <ref name="attlist.empty"/>
+            <ref name="span"/>
+            <ref name="air"/>
+            <ref name="rails"/>
+            <ref name="roads"/>
+            <ref name="water"/>
+        </element>
+    </define>
+    <define name="air">
+        <element name="air">
+            <ref name="attlist.empty"/>
+            <oneOrMore>
+                <choice>
+                    <ref name="air_unit" />
+                    <ref name="span" />
+                </choice>
+            </oneOrMore>
+            <ref name="airports"/>
+        </element>
+    </define>
+    <define name="air_unit">
+        <element name="air_unit">
+            <attribute name="name">
+                <data type="string">
+                    <param name="pattern">Registered carriers|Aircraft registered by carriers|Annual passengers transferred|Position in the world|Heliports</param>
+                </data>
+            </attribute>
+            <data type="nonNegativeInteger"/>
+        </element>
+    </define>
+    <define name="airports">
+        <element name="airports">
+            <ref name="attribute.total"/>
+            <ref name="airport"/>
+            <ref name="airport"/>
+            <ref name="airport"/>
+            <ref name="airport"/>
+            <ref name="airport"/>
+        </element>
+    </define>
+    <define name="airport">
+        <element name="airport">
+            <attribute name="min">
+                <data type="integer">
+                    <param name="pattern">0|914|1524|2438|3048</param>
+                </data>
+            </attribute>
+            <attribute name="max">
+                <data type="integer">
+                    <param name="pattern">913|1523|2437|3047|9999</param>
+                </data>
+            </attribute>
+            <data type="nonNegativeInteger"/>
+        </element>
+    </define>
+    <define name="rails">
+        <element name="rails">
+            <ref name="attribute.total"/>
+            <optional><ref name="attribute.ranking"/></optional>
+            <zeroOrMore><ref name="rail"/></zeroOrMore>
+        </element>
+    </define>
+    <define name="rail">
+        <element name="rail">
+            <attribute name="gauge">
+                <data type="string"><param name="pattern">narrow|standard</param></data>
+            </attribute>
+            <data type="nonNegativeInteger"/>
+        </element>
+    </define>
+    <define name="roads">
+        <element name="roads">
+            <ref name="attribute.total"/>
+            <ref name="attribute.ranking"/>
+            <zeroOrMore><ref name="road"/></zeroOrMore>
+        </element>
+    </define>
+    <define name="road">
+        <element name="road">
+            <attribute name="type">
+                <data type="string"><param name="pattern">paved|unpaved|urban|non-urban</param></data>
+            </attribute>
+            <data type="nonNegativeInteger"/>
+        </element>
+    </define>
+    <define name="water">
+        <element name="water">
+            <ref name="attlist.empty"/>
+            <ref name="length"/>
+            <ref name="ranking"/>
+            <ref name="ports"/>
+        </element>
+    </define>
+    <define name="ranking">
+        <element name="ranking">
+            <ref name="attlist.empty"/>
+            <data type="positiveInteger"/>
+        </element>
+    </define>
+    <define name="length">
+        <element name="length">
+            <ref name="attlist.empty"/>
+            <data type="nonNegativeInteger"/>
+        </element>
+    </define>
+    <define name="ports">
+        <element name="ports">
+            <ref name="attlist.empty"/>
+            <text />
+        </element>
+    </define>
+
+    <!-- military and security -->
+    <define name="military_and_security">
+        <element name="military_and_security">
+            <ref name="attlist.empty"/>
+            <oneOrMore><ref name="span" /></oneOrMore>
+        </element>
+    </define>
+
+    <!-- transnational issues -->
+    <define name="transnational_issues">
+        <element name="transnational_issues">
+            <ref name="attlist.empty"/>
+            <oneOrMore>
+                <choice>
+                    <ref name="span"/>
+                    <ref name="refugees"/>
+                </choice>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="refugees">
+        <element name="refugees">
+            <ref name="attlist.empty"/>
+            <zeroOrMore>
+                <ref name="refugee"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="refugee">
+        <element name="refugee">
+            <attribute name="from"/>
+            <ref name="attribute.count"/>
+        </element>
+    </define>
+
+    <!-- general -->
+    <start>
+        <choice><ref name="countries"/></choice>
+    </start>
+
+</grammar>

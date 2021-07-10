@@ -1,0 +1,16 @@
+XML (EXTENSIBLE MARKUP LANGUAGE)
+
+- XML Tutorial: http://zvon.org/comp/r/tut-XML.html
+
+- Extensible Markup Language (XML) 1.0 (Fifth Edition): https://www.w3.org/TR/xml
+
+- Extensible Markup Language (XML) 1.1 (Second Edition): https://www.w3.org/TR/xml11
+
+- Namespaces in XML 1.0 (Third Edition): https://www.w3.org/TR/xml-names
+
+- Namespaces in XML 1.1 (Second Edition): https://www.w3.org/TR/xml-names11
+
+- XML Information Set (Second Edition): https://www.w3.org/TR/xml-infoset
+
+- XMLLINT -> Check well-formedness:
+  xmllint [--noout] 'f.xml'

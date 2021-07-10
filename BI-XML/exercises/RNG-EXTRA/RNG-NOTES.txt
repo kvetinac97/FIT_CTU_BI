@@ -1,0 +1,19 @@
+RNG (RELAX NG, REGULAR LANGUAGE FOR XML NEXT GENERATION)
+
+- RNG Tutorial: http://relaxng.org/tutorial-20011203.html
+
+- RNG Reference: http://zvon.org/comp/r/ref-RelaxNG.html
+
+- RNG Specification: http://www.relaxng.org/spec-20011203.html
+
+- RNC Tutorial: http://relaxng.org/compact-tutorial-20030326.html
+
+- XMLLINT -> RNG Validation:
+  xmllint [--noout] --relaxng 'f.rng' 'f.xml'
+
+- JING -> RNG/RNC Validation:
+  jing 'f.rng' 'f.xml'
+  jing -c 'f.rnc' 'f.xml'
+
+- TRANG -> RNG/RNC Conversion:
+  trang -I rnc -O rng 'f.rnc' 'f.rng'

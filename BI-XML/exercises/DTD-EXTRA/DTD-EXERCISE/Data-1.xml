@@ -1,0 +1,33 @@
+<shoppingCart>
+
+    <item id="nikon01">
+        <title>Nikon Coolpix S600 Silver</title>
+        <producer>Nikon</producer>
+        <price currency="USD">100</price>
+        <type category="compact"/>
+    </item>
+
+    <item id="fujifilm01">
+        <title>FujiFilm FinePix A850 Black</title>
+        <producer>FujiFilm</producer>
+        <price currency="EUR">150</price>
+        <type category="compact"/>
+    </item>
+
+    <item id="canon01">
+        <title>Canon PowerShot E1 Pink</title>
+        <producer>Canon</producer>
+        <price currency="USD">100</price>
+        <type category="compact"/>
+    </item>
+
+    <item id="canon02">
+        <title>Canon EOS 40D / EF-S 17-85 IS USM</title>
+        <description>Excellent for both professionals and amateurs.</description>
+        <producer>Canon</producer>
+        <price currency="USD">200</price>
+        <type category="SLR"/>
+    </item>
+
+<!-- == end of list == -->
+</shoppingCart>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <define name="shoppingCart">
+        <element name="shoppingCart">
+            <oneOrMore><ref name="item"/></oneOrMore>
+        </element>
+    </define>
+    <define name="item">
+        <element name="item">
+            <attribute name="id">
+                <data type="ID">
+                    <param name="pattern">ITM...</param>
+                </data>
+            </attribute>
+            <element name="title"><text /></element>
+            <optional><element name="description"><text /></element></optional>
+            <element name="producer"><text /></element>
+            <ref name="price" />
+            <ref name="type" />
+        </element>
+    </define>
+    <define name="price">
+        <element name="price">
+            <attribute name="currency">
+                <data type="string">
+                    <param name="pattern">CZK|EUR|USD</param>
+                </data>
+            </attribute>
+            <text />
+        </element>
+    </define>
+    <define name="type">
+        <element name="type">
+            <attribute name="category">
+                <data type="string">
+                    <param name="pattern">compact|EVF|SLR</param>
+                </data>
+            </attribute>
+            <empty />
+        </element>
+    </define>
+    <start><ref name="shoppingCart" /></start>
+</grammar>

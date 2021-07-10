@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<country name="Czechia" short="CZE">
+    <introduction>
+        <paragraph>
+            At the close of World War I, the Czechs and Slovaks of the former Austro-Hungarian Empire merged to form Czechoslovakia. During the interwar years, having rejected a federal system, the new country's predominantly Czech leaders were frequently preoccupied with meeting the increasingly strident demands of other ethnic minorities within the republic, most notably the Slovaks, the Sudeten Germans, and the Ruthenians (Ukrainians). On the eve of World War II, Nazi Germany occupied the territory that today comprises Czechia, and Slovakia became an independent state allied with Germany. After the war, a reunited but truncated Czechoslovakia (less Ruthenia) fell within the Soviet sphere of influence. In 1968, an invasion by Warsaw Pact troops ended the efforts of the country's leaders to liberalize communist rule and create "socialism with a human face," ushering in a period of repression known as "normalization." The peaceful "Velvet Revolution" swept the Communist Party from power at the end of 1989 and inaugurated a return to democratic rule and a market economy. On 1 January 1993, the country underwent a nonviolent "velvet divorce" into its two national components, the Czech Republic and Slovakia. The Czech Republic joined NATO in 1999 and the European Union in 2004. The country added the short-form name Czechia in 2016, while continuing to use the full form name, Czech Republic.
+        </paragraph>
+    </introduction>
+    <geography>
+        <span name="Location" align="top">Central Europe, between Germany, Poland, Slovakia, and Austria</span>
+        <span name="Continent" align="top">Europe</span>
+        <span name="Coastline" align="top" newline="1">none</span>
+        <coordinates latitude="49.45" lattype="N" longitude="15.30" longtype="E" />
+        <area total="78867" land="77247" water="1620" rank="117">about two-thirds the size of Pennsylvania; slightly smaller than South Carolina</area>
+        <boundaries total="2143" count="4">
+            <boundary with="Austria" length="402" />
+            <boundary with="Germany" length="704" />
+            <boundary with="Poland" length="796" />
+            <boundary with="Slovakia" length="241" />
+        </boundaries>
+        <maritime_claims />
+        <elevation mean="433" lowestalt="115" lowest="Labe (Elbe) River" highest="Snezka" highestalt="1602" />
+        <land agricultural="54.8" arable="41" arablecrops="1" arablepasture="12.8" forest="34.4" other="10.8" irrigated="320" />
+        <span name="Climate">temperate; cool summers; cold, cloudy, humid winters</span>
+        <span name="Terrain" newline="1">Bohemia in the west consists of rolling plains, hills, and plateaus surrounded by low mountains; Moravia in the east consists of very hilly country</span>
+        <span name="Distribution" newline="1">a fairly even distribution throughout most of the country, but the northern and eastern regions tend to have larger urban concentrations</span>
+        <span name="Environment - issues" newline="1">air and water pollution in areas of northwest Bohemia and in northern Moravia around Ostrava present health risks; acid rain damaging forests; land pollution caused by industry, mining, and agriculture</span>
+        <span name="Environment - agreements">party to: Air Pollution, Air Pollution-Nitrogen Oxides, Air Pollution-Persistent Organic Pollutants, Air Pollution-Sulfur 85, Air Pollution-Sulfur 94, Air Pollution-Volatile Organic Compounds, Antarctic-Environmental Protocol, Antarctic Treaty, Biodiversity, Climate Change, Climate Change-Kyoto Protocol, Desertification, Endangered Species, Environmental Modification, Hazardous Wastes, Law of the Sea, Ozone Layer Protection, Ship Pollution, Wetlands, Whaling</span>
+        <span name="Resources" align="right">hard coal, soft coal, kaolin, clay, graphite, timber, arable land</span>
+        <span name="Hazards" align="right" newline="1">flooding</span>
+        <span name="Note" align="right">landlocked; strategically located astride some of oldest and most significant land routes in Europe; Moravian Gate is a traditional military corridor between the North European Plain and the Danube in central Europe; the Hranice Abyss in Czechia is the world's deepest surveyed underwater cave at 404 m (1,325 ft); its survey is not complete and it could end up being some 800-1,200 m deep</span>
+    </geography>
+    <people_and_society>
+        <population count="10702498" ranking="85" />
+        <nationality noun="Czech(s)" adjective="Czech" />
+        <ethnic_groups>Czech, Moravian, Slovak, other, unspecified</ethnic_groups>
+        <languages>
+            <language name="Czech" percent="95.4" official="true" />
+            <language name="Slovak" percent="1.6" />
+            <language name="other" percent="3" />
+        </languages>
+        <religions>
+            <religion name="Roman Catholic" percent="10.4" />
+            <religion name="Protestant" percent="1.1" />
+            <religion name="none" percent="34.5" />
+            <religion name="other" percent="54" />
+        </religions>
+        <age_structure>
+            <age min="0" max="14" percent="15.17" male="834447" female="789328" />
+            <age min="15" max="24" percent="9.2" male="508329" female="475846" />
+            <age min="25" max="54" percent="43.29" male="2382899" female="2249774" />
+            <age min="55" max="64" percent="12.12" male="636357" female="660748" />
+            <age min="65" max="120" percent="20.23" male="907255" female="1257515" />
+        </age_structure>
+        <dependency_ratio total="56" youth="24.6" elderly="31.4" potential="3.2" />
+        <rate_per_thousand birth="8.9" death="10.7" />
+        <sex_ratio total="0.97" >
+            <age min="0" max="14" male_over_female="1.06" />
+            <age min="15" max="24" male_over_female="1.07" />
+            <age min="25" max="54" male_over_female="1.06" />
+            <age min="55" max="64" male_over_female="0.96" />
+            <age min="65" max="120" male_over_female="0.72" />
+        </sex_ratio>
+        <average_mother first_birth_age="28.4" mortality_rate="3" children="1.48" />
+        <drinking_water total="100" urban="100" rural="100" />
+        <sanitation_facility_access total="100" rural="100" urban="100" />
+        <diseases />
+        <health_expenditure>7.2</health_expenditure>
+        <statistics>
+            <statistic name="median_age" total="43.3" male="42" female="44.7" ranking="28">Median age</statistic>
+            <statistic name="infant_mortality" total="2.6" male="2.8" female="2.5" ranking="218">Infant mortality</statistic>
+            <statistic name="life_expectancy" total="79.3" male="76.3" female="82.4" ranking="56">Life expectancy</statistic>
+            <statistic name="literacy" total="99" male="99" female="99">Literacy</statistic>
+            <statistic name="school_life_expectancy" total="16" male="16" female="17">School life expectancy</statistic>
+            <statistic name="youth_unemployment" total="6.7" male="6.4" female="7.2" ranking="155">Youth unemployment</statistic>
+        </statistics>
+    </people_and_society>
+    <government>
+        <span name="Country name" align="top">Czech Republic (short Czechia)</span>
+        <span name="Type" align="top">parliamentary republic</span>
+        <span name="Capital" align="top">Prague</span>
+        <span name="UTC time" align="top" newline="1">UTC+1</span>
+        <span name="Independence day" align="top">28th October 1918</span>
+        <span name="Legal system" align="top">new civil code enacted in 2014, replacing civil code of 1964 - based on former Austro-Hungarian civil codes and socialist theory - and reintroducing former Czech legal terminology</span>
+        <span name="Suffrage" align="top" newline="1">at the age of 18</span>
+        <span name="Constitution - history" align="top" newline="1">previous 1960; latest ratified 16 December 1992, effective 1 January 1993</span>
+        <span name="Constitution - amendments" align="top" newline="1">passage requires at least three-fifths concurrence of members present in both houses of Parliament; amended several times, last in 2013</span>
+
+        <divisions count="14" name="region">Jihocesky (South Bohemia), Jihomoravsky (South Moravia), Karlovarsky (Karlovy Vary), Kralovehradecky (Hradec Kralove), Liberecky (Liberec), Moravskoslezsky (Moravia-Silesia), Olomoucky (Olomouc), Pardubicky (Pardubice), Plzensky (Pilsen), Praha (Prague)*, Stredocesky (Central Bohemia), Ustecky (Usti), Vysocina (Highlands), Zlinsky (Zlin)</divisions>
+
+        <citizenships>
+            <citizenship by="birth">no</citizenship>
+            <citizenship by="descent only">at least one parent must be a citizen of Czechia</citizenship>
+        </citizenships>
+
+        <executive>
+            <span name="Chief of state">
+                President Milos ZEMAN (since 8 March 2013)
+            </span>
+            <span name="Head of government">
+                Prime Minister Andrej BABIS (since 13 December 2017); First Deputy Prime Minister Jan HAMACEK (since 27 June 2018), Deputy Prime Minister Alena SCHILLEROVA (since 30 April 2019)
+            </span>
+            <span name="Cabinet">Cabinet appointed by the president on the recommendation of the prime minister</span>
+            <span name="Elections">president directly elected by absolute majority popular vote in 2 rounds if needed for a 5-year term (limited to 2 consecutive terms); elections last held on 12-13 January 2018 with a runoff on 26-27 January 2018 (next to be held in January 2023); prime minister appointed by the president for a 4-year term</span>
+            <span name="Election results">Milos ZEMAN reelected president in the second round; percent of vote - Milos ZEMAN (SPO) 51.4%, Jiri DRAHOS (independent) 48.6%</span>
+        </executive>
+
+        <legislative>
+            <span name="Description">
+                bicameral Parliament or Parlament consists of:
+                Senate or Senat (81 seats; members directly elected in single-seat constituencies by absolute majority vote in 2 rounds if needed; members serve 6-year terms with one-third of the membership renewed every 2 years)
+                Chamber of Deputies or Poslanecka Snemovna (200 seats; members directly elected in 14 multi-seat constituencies by proportional representation vote with a 5% threshold required to fill a seat; members serve 4-year terms)
+            </span>
+            <span name="Elections">
+                Senate - last held in 2 rounds on 2-3 and 9-10 October 2020 (next to be held in October 2022)
+                Chamber of Deputies - last held on 20-21 October 2017 (next to be held by October 2021)
+            </span>
+            <span name="Election results">
+                Senate - percent of vote by party - NA; seats by party - STAN 19, ODS 18, KDU-CSL 12, ANO 5, TOP 09 5, CSSD 3, SEN 21 3, Pirates 2, SZ 1, minor parties with one seat each 9, independents 4
+            </span>
+        </legislative>
+
+        <judicial>
+            <span name="Highest courts">Supreme Court (organized into Civil Law and Commercial Division, and Criminal Division each with a court chief justice, vice justice, and several judges); Constitutional Court (consists of 15 justices); Supreme Administrative Court (consists of 36 judges, including the court president and vice president, and organized into 6-, 7-, and 9-member chambers)</span>
+            <span name="Judge selection">Supreme Court judges proposed by the Chamber of Deputies and appointed by the president; judges appointed for life; Constitutional Court judges appointed by the president and confirmed by the Senate; judges appointed for 10-year, renewable terms; Supreme Administrative Court judges selected by the president of the Court; unlimited terms</span>
+            <span name="Subordinate courts">High Court; regional and district courts</span>
+        </judicial>
+
+        <flag>
+            <image>cze_flag.jpg</image>
+            <description>
+                two equal horizontal bands of white (top) and red with a blue isosceles triangle based on the hoist side
+            </description>
+        </flag>
+
+        <span name="Political parties" align="right" newline="1">
+            Christian Democratic Union-Czechoslovak People's Party or KDU-CSL [Pavel BELOBRADEK]
+            Civic Democratic Party or ODS [Petr FIALA]
+            Communist Party of Bohemia and Moravia or KSCM [Vojtech FILIP]
+            Czech Social Democratic Party or CSSD [Jan HAMACEK]
+            Freedom and Direct Democracy or SPD [Tomio OKAMURA]
+            Green Party or SZ [Petr STEPANEK]
+            Mayors and Independents or STAN [Petr GAZDIK]
+            Movement of Dissatisfied Citizens or ANO [Andrej BABIS]
+            Party of Civic Rights or SPO [Lubomir NECAS]
+            Pirate Party or Pirates [Ivan BARTOS]
+            Tradition Responsibility Prosperity 09 or TOP 09 [Jiri POSPISIL]
+        </span>
+        <span name="International organizations" align="right" newline="1">
+            Australia Group, BIS, BSEC (observer), CD, CE, CEI, CERN, EAPC, EBRD, ECB, EIB, ESA, EU, FAO, IAEA, IBRD, ICAO, ICC (national committees), ICCt, ICRM, IDA, IEA, IFC, IFRCS, ILO, IMF, IMO, IMSO, Interpol, IOC, IOM, IPU, ISO, ITSO, ITU, ITUC (NGOs), MIGA, MONUSCO, NATO, NEA, NSG, OAS (observer), OECD, OIF (observer), OPCW, OSCE, PCA, Schengen Convention, SELEC, UN, UNCTAD, UNESCO, UNHCR, UNIDO, UNWTO, UPU, WCO, WFTU (NGOs), WHO, WIPO, WMO, WTO, ZC
+        </span>
+        <span name="Symbols" align="right">silver (or white), double-tailed, rampant lion; national colors: white, red, blue</span>
+        <span name="Anthem" align="right">"Kde domov muj?" (Where is My Home?)</span>
+    </government>
+    <economy>
+        <span name="Overview" align="top">
+            Czechia is a prosperous market economy that boasts one of the highest GDP growth rates and lowest unemployment levels in the EU, but its dependence on exports makes economic growth vulnerable to contractions in external demand. Czechia’s exports comprise some 80% of GDP and largely consist of automobiles, the country’s single largest industry. Czechia acceded to the EU in 2004 but has yet to join the euro-zone. While the flexible koruna helps Czechia weather external shocks, it was one of the world’s strongest performing currencies in 2017, appreciating approximately 16% relative to the US dollar after the central bank (Czech National Bank - CNB) ended its cap on the currency’s value in early April 2017, which it had maintained since November 2013. The CNB hiked rates in August and November 2017 - the first rate changes in nine years - to address rising inflationary pressures brought by strong economic growth and a tight labor market.
+            Since coming to power in 2014, the new government has undertaken some reforms to try to reduce corruption, attract investment, and improve social welfare programs, which could help increase the government’s revenues and improve living conditions for Czechs. The government introduced in December 2016 an online tax reporting system intended to reduce tax evasion and increase revenues. The government also plans to remove labor market rigidities to improve the business climate, bring procurement procedures in line with EU best practices, and boost wages. The country's low unemployment rate has led to steady increases in salaries, and the government is facing pressure from businesses to allow greater migration of qualified workers, at least from Ukraine and neighboring Central European countries.
+            Long-term challenges include dealing with a rapidly aging population, a shortage of skilled workers, a lagging education system, funding an unsustainable pension and health care system, and diversifying away from manufacturing and toward a more high-tech, services-based, knowledge economy.
+        </span>
+
+        <gdp_values>
+            <gdp_value type="value" ranking="49">375.9</gdp_value>
+            <gdp_value type="exchange rate">215.8</gdp_value>
+            <gdp_value type="per capita">35500</gdp_value>
+            <gdp_value type="exports" ranking="33">144.8</gdp_value>
+            <gdp_value type="imports" ranking="32">134.7</gdp_value>
+        </gdp_values>
+
+        <rates>
+            <rate type="unemployment_rate">2.9</rate>
+            <rate type="below_poverty_line">9.7</rate>
+            <rate type="public_debt">34.7</rate>
+            <rate type="inflation_rate">2.4</rate>
+            <rate type="growth_rate">4.3</rate>
+            <rate type="gross_national_saving">26.9</rate>
+        </rates>
+
+        <compositions>
+            <factor name="end use">
+                <composition for="household">47.4</composition>
+                <composition for="government">19.2</composition>
+                <composition for="investment_fixed_capital">24.7</composition>
+                <composition for="investment_inventories">1.1</composition>
+                <composition for="export">79.9</composition>
+                <composition for="import">-72.3</composition>
+            </factor>
+            <factor name="sector of origin">
+                <composition for="agriculture">2.3</composition>
+                <composition for="industry">36.9</composition>
+                <composition for="services">60.8</composition>
+            </factor>
+        </compositions>
+
+        <occupations>
+            <occupation name="agriculture">2.8</occupation>
+            <occupation name="industry">38</occupation>
+            <occupation name="services">59.2</occupation>
+        </occupations>
+
+        <eximports>
+            <eximport name="partners" for="Exports">Germany 32.8%, Slovakia 7.8%, Poland 6.1%, France 5.1%, UK 4.9%, Austria 4.4%, Italy 4.1%</eximport>
+            <eximport name="partners" for="Imports">Germany 29.8%, Poland 9.1%, China 7.4%, Slovakia 5.8%, Netherlands 5.3%, Italy 4%</eximport>
+            <eximport name="commodities" for="Exports">machinery and transport equipment, raw materials, fuel, chemicals</eximport>
+            <eximport name="commodities" for="Imports">machinery and transport equipment, raw materials and fuels, chemicals</eximport>
+        </eximports>
+
+        <span name="Labor count" align="right">5,427,000 people</span>
+        <span name="Agriculture" align="right">wheat, potatoes, sugar beets, hops, fruit; pigs, poultry</span>
+        <span name="Industry" align="right">motor vehicles, metallurgy, machinery and equipment, glass, armaments</span>
+    </economy>
+    <energy>
+        <electrification total="100" urban="100" rural="100" without="0" />
+        <electricity production="77.39" production_rank="38" consumption="62.34" consumption_rank="42"
+                     exports="24.79" imports="13.82" generating="0.02163" />
+        <electricity_source fossil="60" nuclear="19" hydroelectric="5" other_renewable="16" />
+
+        <resource_list>
+            <resource name="Crude oil" unit="bbl/day" runit="million bbl" production="2000" exports="446" imports="155900" reserves="15" />
+            <resource name="Refined petroleum" unit="bbl/day" production="177500" consumption="213700" exports="52200" imports="83860"/>
+            <resource name="Natural gas" unit="million cu m" runit="billion cu m" production="229.4" consumption="8721" exports="0" imports="8891" reserves="3.964" />
+        </resource_list>
+    </energy>
+    <communications>
+        <phones>
+            <phone type="fixed" total="1473846" per_100="13.78" ranking="65" />
+            <phone type="cellular" total="13213279" per_100="123.54" ranking="71" />
+        </phones>
+        <phone_systems>
+            <phone_system type="general">good telephone and Internet service; the Czech Republic has a sophisticated telecom market; mobile sector showing steady growth, but perhaps without enough competition, regulator makes progress for 5G services; the govt. trying to stimulate competition, improve end-users pricing and step up quality; strong growth in cable and fiber sectors; fixed wireless broadband remains strong, with penetration among the highest in the EU</phone_system>
+            <phone_system type="domestic">14 per 100 fixed-line and mobile telephone usage increased to 124 per 100 mobile-cellular, the number of cellular telephone subscriptions now greatly exceeds the population</phone_system>
+            <phone_system type="international">country code - 420; satellite earth stations - 6 (2 Intersputnik - Atlantic and Indian Ocean regions, 1 Intelsat, 1 Eutelsat, 1 Inmarsat, 1 Globalstar)</phone_system>
+        </phone_systems>
+
+        <internet code="cz" users="8622750" percent="80.69" ranking="58" />
+        <span name="Broadcast media" align="right">22 TV stations operate nationally, with 17 of them in private hands; publicly operated Czech Television has 5 national channels; throughout the country, there are some 350 TV channels in operation, many through cable, satellite, and IPTV subscription services; 63 radio broadcasters are registered, operating over 80 radio stations, including 7 multiregional radio stations or networks; publicly operated broadcaster Czech Radio operates 4 national, 14 regional, and 4 Internet stations; both Czech Radio and Czech Television are partially financed through a license fee</span>
+    </communications>
+    <transportation>
+        <span name="Pipelines" align="top" newline="1">7,929 km refined products</span>
+
+        <air>
+            <air_unit name="Registered carriers">4</air_unit>
+            <air_unit name="Aircraft registered by carriers">48</air_unit>
+            <air_unit name="Annual passengers transferred">5727200</air_unit>
+            <air_unit name="Position in the world">45</air_unit>
+            <air_unit name="Heliports">1</air_unit>
+
+            <span name="Annual traffic">25.23 millions mt-km</span>
+            <span name="Registration prefix">OK</span>
+
+            <airports total="128">
+                <airport min="0" max="913">77</airport>
+                <airport min="914" max="1523">27</airport>
+                <airport min="1524" max="2437">13</airport>
+                <airport min="2438" max="3047">9</airport>
+                <airport min="3048" max="9999">2</airport>
+            </airports>
+        </air>
+
+        <rails total="9408" ranking="24">
+            <rail gauge="standard">9385</rail>
+            <rail gauge="narrow">23</rail>
+        </rails>
+
+        <roads total="55744" ranking="82">
+            <road type="paved">55744</road>
+        </roads>
+
+        <water>
+            <length>664</length>
+            <ranking>76</ranking>
+            <ports>Decin, Usti nad Labem (Elbe)</ports>
+        </water>
+    </transportation>
+    <military_and_security>
+        <span name="Forces" newline="1">Ministry of Defense and Armed Forces: Land Forces; Air Forces; Cyber Forces; Special Forces Directorate</span>
+        <span name="Expenditures" newline="1">1.19 % of GDP (109th in the world)</span>
+        <span name="Personnel strength" newline="1">the Czech military has approximately 25,000 active personnel (20,000 Army; 5,000 Air Force)</span>
+        <span name="Equipment acquisitions">
+            the Czech military has a mix of Soviet-era and more modern equipment, mostly of European origin; since 2010, the leading suppliers of military equipment to Czechia are Austria and Spain
+        </span>
+    </military_and_security>
+    <transnational_issues>
+        <span name="Disputes" newline="1">none</span>
+        <span name="IDPs" newline="1">0</span>
+        <span name="Illicit drugs" newline="1">
+            transshipment point for Southwest Asian heroin and minor transit point for Latin American cocaine to Western Europe; producer of synthetic drugs for local and regional markets; susceptible to money laundering related to drug trafficking, organized crime; significant consumer of ecstasy
+        </span>
+        <refugees>
+            <refugee from="stateless" count="1502" />
+        </refugees>
+    </transnational_issues>
+</country>

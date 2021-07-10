@@ -1,0 +1,17 @@
+DTD (DOCUMENT TYPE DEFINITION)
+
+- Document Type Declaration: <!DOCTYPE e SYSTEM "f.dtd">
+
+- DTD Tutorial: http://zvon.org/comp/r/tut-DTD.html
+
+- DTD Entities: http://xmlwriter.net/xml_guide/entity_declaration.shtml
+  - GENERAL ENTITY (&Name;) can be EXTERNAL or INTERNAL ENTITY
+  - PARAMETER ENTITY (%Name;) can be EXTERNAL or INTERNAL ENTITY
+  - More XML documents can be combined using EXTERNAL GENERAL ENTITIES
+
+- DTD Conditional Sections: https://docstore.mik.ua/orelly/web2/xhtml/ch15_06.htm
+
+- XML Catalogs: http://www.sagehill.net/docbookxsl/WriteCatalog.html
+
+- XMLLINT -> DTD Validation:
+  xmllint [--noout] --dtdvalid 'f.dtd' 'f.xml'

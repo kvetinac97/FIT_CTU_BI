@@ -1,0 +1,4 @@
+XML EXERCISE - INSTRUCTIONS
+
+1) Opravte soubory "*.xml" tak, aby byly well-formed. /
+1) Correct the "*.xml" files, so that they are well-formed.

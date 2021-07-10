@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE countries SYSTEM "schema/schema.dtd" [
+    <!ENTITY afghanistan SYSTEM "data/afghanistan.xml">
+    <!ENTITY czechia SYSTEM "data/czechia.xml">
+    <!ENTITY france SYSTEM "data/france.xml">
+    <!ENTITY zimbabwe SYSTEM "data/zimbabwe.xml">
+]>
+
+<countries>
+    &afghanistan;
+    &czechia;
+    &france;
+    &zimbabwe;
+</countries>

@@ -1,0 +1,46 @@
+RNG EXERCISE - INSTRUCTIONS
+
+1) Opravte sooubor "Data-1.xml" tak, aby byl well-formed. /
+1) Correct the "Data-1.xml" file, so that it is well-formed.
+
+2) Sestavte RELAX NG schema pro soubor "Data-1.xml" podle specifikace: /
+2) Create a RELAX NG schema for the "Data-1.xml" file according to the
+specification:
+
+* Korenovy element "shoppingCart" obsahuje jeden ci vice elementu "item". /
+* The root element "shoppingCart" contains one or more "item" elements.
+
+* Element "item" obsahuje: /
+* The "item" element contains:
+  * 1 element "title"
+  * nepovinny element "description" / optional element "description"
+  * 1 element "producer"
+  * 1 element "price"
+  * 1 element "type"
+
+* Element "item" ma atribut "id", ktery je typu ID a ma nasledujici hodnotu
+  "ITM###" (# = cislo). /
+* The "item" element has the "id" attribute, which is of type ID and has
+  the following value "ITM###" (# = number).
+
+* Element "price" ma atribut "currency", ktery obsahuje hodnotu "CZK",
+"EUR" nebo "USD". Obsahem elementu "price" je kladne cislo. /
+* The "price" element has the "currency" attribute, which contains the
+value "CZK", "EUR" or "USD". The content of the "price" element is a
+positive number.
+
+* Element "type" musi byt prazdny a ma povinny atribut "category", ktery
+obsahuje hodnotu "compact", "EVF" nebo "SLR". /
+* The "type" element must be empty and has the mandatory attribute
+"category", which contains the value "compact", "EVF" or "SLR".
+
+* Neni-li hodnota atributu nebo obsah elementu specifikovan predpokladejte
+  libovolny text. /
+* If the attribute value or element content is not specified assume an
+  arbitrary text.
+
+3) Zvalidujte soubor "Data-1.xml" pomoci RELAX NG schema a opravte pripadne
+chyby. Konvertujte schema z RNC do RNG a validujte pomoci obou typu. /
+3) Validate the "Data-1.xml" file using the RELAX NG schema and correct
+errors if any. Convert schema from RNC to RNG and validate using both
+types.

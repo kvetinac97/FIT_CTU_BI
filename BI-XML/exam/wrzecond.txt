@@ -1,0 +1,45 @@
+DIST. ZK - ONDREJ WRZECIONKO
+
+- Odpovezte v kratkem videu na nasledujici otazky/ukoly. Kde je to vhodne muzete do tohoto souboru pridat i textove odpovedi doplnujici video. Textove odpovedi muzete pouzit i pokud budete dodatecne potrebovat doplnit video. Pripadne muzete do tohoto souboru doplnit i odkaz na doplnkove video s uvodni prezentaci projektu (pokud tato cast neni obsazena v hlavnim videu).
+
+- Video nahrajte na vhodne online uloziste dle vaseho vyberu tak abyste mohli vlozit do tohoto souboru odkaz pro prehrani/stazeni videa.
+
+- Tento soubor s doplnenymi ZK odpovedmi odeslete do 14:00 zpet na muj email. Pred odeslanim do souboru nezapomente doplnit funkcni odkaz na ZK video a vlozit pripadne doplnujici textove odpovedi:).
+
+- Pro regulerni prubeh ZK je nutne aby ZK video obsahovalo rozpoznatelny oblicej.
+
+- Na vypracovani ZK otazek by melo byt do 14:00 casu dostatek vcetne rezervy na pripadne technicke problemy. Zvladnete-li vse odeslat driv tak bude cas i na pripadne upresneni odpovedi pokud se obratem ozvu s nejakou doplnujici otazkou, coz umozni samozrejme pripadne vylepseni hodnoceni:).
+
+- Pokud se zda, ze je nektera otazka nejednoznacna nebo nastal necekany technicky ci jiny problem poslete dotaz obratem na muj email nebo je-li to urgentni zavolejte na muj mobilni telefon +420 776 725 850.
+
+ZK VIDEA
+
+HLAVNI ZK VIDEO: https://youtu.be/wDu7KZNZyQI
+
+--------
+
+ZK OTAZKY
+
+1. Na uvod popiste kratce hlavni casti projektu co jste zpracoval a pripadne problemy, ktere bylo nutne pri zpracovavani projektu vyresit.
+
+ODPOVED: Projekt jsem zpracovával celý sám, od navrhnutí počáteční XML struktury, přes vkládání dat o jednotlivých oblastech (pomocí IntelliJ a regulárních výrazů), vytvoření validačního DTD (pomocí IntelliJ - Generate DTD a následnou úpravou)/RelaxNG schématu i stylesheetů (ručně, historii lze dobře vidět v Gitlabu a popis v README) a nasazení do Dockeru. Při zpracovávání projektu jsem řešil problémy s příliš komplexními validačními DTD/RelaxNG i stylovými XSLT soubory, a to z důvodu špatně zvolené počáteční XML struktury (elementy se stejným obsahem s jinými názvy, byť to nebylo třeba). Tuto strukturu jsem ale následně vylepšil (zavedením elementu span), což výrazně snížilo složitost validačních souborů.
+
+2. Popiste co musi XML dokument splnovat aby byl "valid" a "well-formed". Je "well-formed" XML dokument zaroven vzdy i "valid" XML dokumentem (zduvodnete)? Je "valid" XML dokument zaroven vzdy i "well-formed" XML dokumentem (zduvodnete)? Popiste take k cemu slouzi XML deklarace, jake ma casti a zda je povinna.
+
+ODPOVED: Aby byl XML dokument well-formed, musí mít správný syntax (jeden kořenový tag, správné pořadí uzavírání a zavírání tagů...). Aby byl XML dokument valid, musí být well-formed + úspěšně validován vůči nějakému XML schématu (např. DTD, RelaxNG). Každý valid dokument je tedy i well-formed přímo z definice. Oproti tomu, každý well-formed dokument NEMUSÍ být validní (příklad: pokud bude schéma vyžadovat, aby byl kořenový prvek <root>, pak bude XML dokument <test></test> sice well-formed, ale ne validní). XML deklarace je nepovinná, každopádně slouží k zjednodušení práce pro XML parser (obsahuje verzi XML standardu, kódování a standalone - zda dokument závisí (no) či nezávisí na nějakém externím schématu.
+
+3. K cemu slouzi v XML "xmlns" atribut? Je hodnota tohoto atributu dedicna pro dalsi vnorene XML elementy? Co znamenaji retezce "x" a "y" v nasledujicim kodu: <e xmlns:x="y"/>. Uvedte priklad jak a proc "xmlns" atribut vyuzivate v projektu. Popiste take z jakych casti se sklada kompletni jmeno XML elementu.
+
+ODPOVED: Definuje XML namespace (jmenný prostor), tato hodnota JE dědičná pro vnořené atributy. V daném kódu definujeme na elementu e jmenný prostor y s prefixem x. Kdybychom se následně tedy chtěli na věci definované v prostoru y odkázat, použijeme <elem x:neco="..."> V projektu atribut xmlns využívám pro definici jmenného prostoru pro RelaxNG (schema.rng), XSLT (pdf.xslt, html.xslt) a XSL-FO (pdf.xslt). Toto využití umožňuje se následně odkazovat na elementy v rámci RelaxNG (define, param...), XSLT (value-of, template) a XSL-FO (list-block, block) aniž by hrozila kolize s nějakými dalšími tagy. Jméno se může skládat z [a-zA-Z0-9_-], tečky a dvojtečky (té však pouze pro definici jmenného prostoru).
+
+4. K cemu slouzi XSLT elementy "for-each" a "template" + "apply-templates"? Porovnejte je mezi sebou a vysvetlete kdy je vhodnejsi pouzit element "for-each" a kdy spise elementy "template" + "apply-templates" (uvedte i priklady z vaseho projektu).
+
+ODPOVED: Element for-each aplikuje na každý element z výběru (select) jeho obsah. Oproti tomu, apply-templates zavolá na každý z prvků ve výběru (select) jiný obsah (xsl:template). For-each používám pro výpis prvků seznamu, kdy každý prvek seznamu má vždy totožný obsah, oproti tomu template používám pro jednotlivé sekce, kdy každá vypadá jinak + pro element span, který potřebuji použít na více místech (taková "proměnná")
+
+5. Popiste a porovnejte jak je mozne definovat styly pro elementy v XSL-FO a v (X)HTML pomoci CSS (uvedte i priklady z vaseho projektu). Popiste take strucne jak probiha ve vasem projektu generovani PDF vystupu. Z kolika hlavnich casti se tento proces sklada a jaky software tyto casti zajistuje ve vasem projektu?
+
+ODPOVED: Definování stylů v (X)HTML pomocí CSS probíhá buď přidáním prvku <style> (výsledná cesta /html/head/style) nebo "odkazu" <link rel="stylesheet" href="styl.css">. (Syntax CSS +/-). V mém projektu používám CSS výrazně, konkrétně knihovnu Bootstrap, kde je díky němu celý výsledný dokument rozdělen do odstavců. V XSL-FO, narozdíl od (X)HTML s CSS probíhá stylování přímo v dokumentu pomocí speciálních tagů (např. fo:flow, fo:page-sequence, fo:page-number, fo:list-block/list-item) a atributů na nich (fo:block page-break-before="..." font-size="..."). Toho právě využívám v projektu pro nastylování výsledného PDF (aby byly správně odstavce...). Generace PDF výstupu probíhá ve dvou částech - nejprve se vygeneruje FO soubor pomocí Saxonu, následně se pomocí FOP z FO souboru vytvoří výsledné PDF.
+
+6. Popiste alespon 3 moznosti pokrocilejsi validace co nabizi RelaxNG oproti DTD. Pouzivate nektere z moznosti pokrocilejsi validace co nabizi RelaxNG oproti DTD ve vasem projektu? Uvedte pripadne priklady z vaseho projektu.
+
+ODPOVED: RelaxNG je oproti DTD v XML formátu, RelaxNG umí oproti DTD například define, tedy pokud se nějaký atribut (například měna) opakuje u více elementů, lze si ho nadefinovat a pak se zbytečně neopakovat a použít <ref name="currencyAttribute">. RelaxNG umí navíc také třeba pokročilejší práci s přímými potomky (rodičovskému může nastavit libovolné pořadí s možností >>> vynechat <<< některý prvek). Také obsahuje datatypeLibrary, která umožňuje pokročilejší validaci dat v prvcích či atributech (ne pouze CDATA, text1|text2, ale Number, nonPositiveInteger větší než 10...). V projektu používám všechny z výše uvedených možností.

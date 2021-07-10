@@ -1,0 +1,13 @@
+<!ELEMENT shoppingCart (item)*>
+<!ELEMENT item (title|description|producer|price|type)*>
+<!ATTLIST item
+    id ID #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT producer (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price
+    currency (CZK|EUR|USD) #REQUIRED>
+<!ELEMENT type (#PCDATA)>
+<!ATTLIST type
+    category (compact|EVF|SLR) #REQUIRED>
+<!ELEMENT description (#PCDATA)>

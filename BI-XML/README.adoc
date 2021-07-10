@@ -1,0 +1,19 @@
+= XML Technology
+
+The whole semester was about semestral work. +
+Finished with grade A thanks to good quality of project.
+
+== Semestral work
+
+My goal was to grab information about 4 countries from The World Factbook and convert it to XML format. Then, I wrote DTD/RelaxNG validation schemes, XSLT transformation stylesheet to HTML and XSL-FO transformation stylesheet to PDF.
+
+link:semestral/[You can see the semestral work here] +
+link:semestral/output.pdf[Semestral work (PDF)]
+
+== Exam
+
+Answers to "distance" exam questions.
+
+== Exercises
+
+Mandatory exercises to practice DTD, RelaxNG and XSLT.
