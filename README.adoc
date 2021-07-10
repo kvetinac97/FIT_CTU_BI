@@ -36,7 +36,7 @@ link:BI-DBS/[Database Systems (BI-DBS)] - semestral work, grades export
 
 link:BI-SAP/[Computer Structures and Architectures (BI-SAP)] - Vivado + Assembler homeworks, grades export
 
-link:BI-A2L/[English in Informatics] - homeworks and final exam
+link:BI-A2L/[English in Informatics] - homeworks
 
 link:BI-PJV/[Programming in Java] - homeworks on ProgTest, exercises from labs, grades and results export
 
@@ -61,7 +61,7 @@ link:BI-AG1/[Algorithms and Graphs 1 (BI-AG1)] - homeworks on ProgTest, grades a
 
 link:BI-AAG/[Automata and Grammars (BI-AAG)] - homework on ProgTest, grades and MARAST quiz results export
 
-BI-ZDM (marast, grades)
+link:BI-ZDM/[Elements of Discrete Mathematics (BI-ZDM)] - grades and MARAST quiz results export
 
 BI-TJV (labs, semestral, grades)
 
