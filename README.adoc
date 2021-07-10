@@ -59,7 +59,7 @@ link:BI-LIN/[Linear Algebra (BI-LIN)] - grades and MARAST quiz results export
 
 link:BI-AG1/[Algorithms and Graphs 1 (BI-AG1)] - homeworks on ProgTest, grades and MARAST quiz results export
 
-BI-AAG (progtest, marast, grades)
+link:BI-AAG/[Automata and Grammars (BI-AAG)] - homework on ProgTest, grades and MARAST quiz results export
 
 BI-ZDM (marast, grades)
 

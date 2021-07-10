@@ -1,0 +1,13 @@
+= Automata and Grammars
+
+Got exactly 100 % of points thanks to activity in semester and nearly faultless exam and test. +
+
+Was the *first one to finish ProgTest homework* in just 4 hours and 16 minutes.
+
+== Task
+
+ - Part 1: Determinization of Multiple Input State Finite Automata (100 %)
+ - Part 2: Trimming of Deterministic Finite Automata (100 %)
+ - Part 3: Minimalization of Deterministic Finite Automata (100 %)
+
+The ProgTest task was split in 3 parts, which had to be developed consecutively (this is reason why there is only one solution cpp file).
