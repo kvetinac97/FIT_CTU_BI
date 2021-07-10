@@ -1,0 +1,25 @@
+= Basics of iOS Application Development
+
+Got 95 % from homeworks. +
+Got 100 % from semestral work, resulting in grade A.
+
+== GitHub repository
+
+Whole semester was guided with YouTube videos from Ackee/STRV, backed by corresponding GitHub repository branches.
+
+https://github.com/AckeeEDU/bi-ios-2020[GitHub repository from Ackee] +
+https://www.youtube.com/playlist?list=PL5XEIFcmLHCPdj_Mi6LVsgO3ZZoP_aZon[YouTube playlist from Ackee]
+
+== Tasks
+
+ - Task 1: Views & Controls (100 %)
+ - Task 2: Map kit & MVVM (80 %)
+
+== Semestral work
+
+In this subject, I continued with the theme of smart restaurant system - I added iOS application.
+
+link:semestral/[You can see the semestral work here]
+
+I used this theme also in subjects link:../BI-TJV/[BI-TJV] and link:../BI-KOT/[BI-KOT]. +
+Database was used in subjects link:../BI-DBS[BI-DBS] and link:../BI-VWM[BI-VWM].

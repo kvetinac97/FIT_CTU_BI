@@ -67,7 +67,7 @@ link:BI-TJV/[Java Technology (BI-TJV)] - semestral work, exercises from labs and
 
 link:BI-XML/[XML Technology (BI-XML)] - semestral work, exam and practice exercises
 
-BI-IOS (hw1, hw2, semestral)
+link:BI-IOS/[Basics of iOS Application Development (BI-IOS)] - semestral work and homeworks
 
 BI-PHP (hw1-7, final, grades)
 
