@@ -85,3 +85,31 @@ link:BI-ANG/[English Exam after A2L Course (BI-ANG)] - exam essay
 |Programming in PHP|A|97/100|28/30|69/70
 |English Exam after A2L Course|A 3+|-
 |===
+
+== Fourth semester
+
+BI-OSY - homeworks on progtest, exam on progtest, summary, results
+
+BI-PSI - semestral task, grades export
+
+BI-BEZ - lab wolfram notebooks, programming tasks, grades and MARAST export
+
+BI-SI1 - team repository, grades (moodle export)
+
+BI-VWM - semestral work
+
+BI-AND - semestral work, labs
+
+BI-KOT - semestral work, labs, lectures, homeworks
+
+|===
+|Subject |Grade |Total |Exam |Assessment
+
+|Operating Systems|A|117.15/100|33/33|84.15/67
+|Computer Networks|A|97.5/100|72.5/80|25/15
+|Security|A|94/100|42/50|52/50
+|Software Engineering 1|A|91/100|44/50|47/50
+|Searching Web and Multimedia Databases|A 3+|50/50
+|Basics of Android Application Development|A|101/100|67/76|34/24
+|Programming in Kotlin|A|90/100|37/50|53/50
+|===
