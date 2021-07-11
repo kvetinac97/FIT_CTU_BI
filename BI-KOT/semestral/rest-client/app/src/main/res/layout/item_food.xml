@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/food_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="12dp"
+
+        tools:text="Kebab"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/food_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:visibility="gone"
+
+        tools:text="3x"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+
+        app:layout_constraintTop_toTopOf="@id/food_name"
+        app:layout_constraintEnd_toStartOf="@id/food_price" />
+
+    <TextView
+        android:id="@+id/food_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+
+        tools:text="50,-"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+
+        app:layout_constraintTop_toTopOf="@id/food_name"
+        app:layout_constraintEnd_toStartOf="@id/food_edit" />
+
+    <ImageView
+        android:id="@+id/food_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+
+        android:src="@drawable/ic_item_edit"
+        android:contentDescription="@string/app_name"
+
+        app:layout_constraintTop_toTopOf="@id/food_name"
+        app:layout_constraintBottom_toBottomOf="@id/food_name"
+        app:layout_constraintEnd_toStartOf="@id/food_delete" />
+
+    <ImageView
+        android:id="@+id/food_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="24dp"
+
+        android:src="@drawable/ic_item_delete"
+        android:contentDescription="@string/app_name"
+
+        app:layout_constraintTop_toTopOf="@id/food_name"
+        app:layout_constraintBottom_toBottomOf="@id/food_name"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/allergen_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+
+        tools:text="Alergeny: 1, 3, 7"
+        android:textSize="16sp"
+
+        app:layout_constraintTop_toBottomOf="@id/food_name"
+        app:layout_constraintBottom_toTopOf="@id/food_line"
+        app:layout_constraintEnd_toStartOf="@id/allergen_info" />
+
+    <ImageButton
+        android:id="@+id/allergen_info"
+        android:layout_width="16sp"
+        android:layout_height="16sp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+
+        android:src="@drawable/ic_allergen_info"
+        android:contentDescription="@string/app_name"
+
+        app:layout_constraintTop_toTopOf="@id/allergen_text"
+        app:layout_constraintBottom_toBottomOf="@id/allergen_text"
+        app:layout_constraintEnd_toEndOf="@id/food_delete" />
+
+    <View
+        android:id="@+id/food_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/allergen_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

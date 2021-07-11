@@ -1,0 +1,310 @@
+### []
+
+GET http://localhost:8080/employees/
+Username: wrzecond
+Password: password
+
+### 201 created
+
+POST http://localhost:8080/employees/
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "123456",
+  "firstName": "Ondřej",
+  "lastName": "Wrzecionko",
+  "admin": false
+}
+
+### 204 no content
+PATCH http://localhost:8080/employees/passChange/
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+  "oldPassword": "password",
+  "newPassword": "password"
+}
+
+### 400 bad request (missing password and admin)
+
+POST http://localhost:8080/employees/
+Content-Type: application/json
+
+{
+  "username": "wrzecond",
+  "firstName": "Ondřej",
+  "lastName": "Wrzecionko"
+}
+
+### 204 no content
+
+PATCH http://localhost:8080/employees/82
+Content-Type: application/json
+
+{
+  "password": "000000",
+  "admin": true
+}
+
+### 200, [wrzecond]
+
+GET http://localhost:8080/employees/
+
+### 404 not found
+
+GET http://localhost:8080/employees/2
+
+### 200, wrzecond
+
+GET http://localhost:8080/employees/82
+
+### 404 not found
+
+DELETE http://localhost:8080/employees/2
+
+### 204 no content
+
+DELETE http://localhost:8080/employees/82
+
+### 200 []
+GET http://localhost:8080/tables/
+
+### 201 created
+POST http://localhost:8080/tables/
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+  "type": "BAR"
+}
+
+### 201 created
+POST http://localhost:8080/tables/
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+  "type": "BAR"
+}
+
+### 204 no content
+PATCH http://localhost:8080/tables/88
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+    "type": "OUTSIDE"
+}
+
+### 200 [BAR, INSIDE]
+GET http://localhost:8080/tables/
+
+### 200
+GET http://localhost:8080/tables/86
+
+### 204 no content
+DELETE http://localhost:8080/tables/86
+
+### 200 []
+GET http://localhost:8080/orders/
+Username: wrzecond
+Password: password
+
+### 400 bad request
+POST http://localhost:8080/orders/
+Content-Type: application/json
+
+{
+    "datetime": "2020-11-16 15:00:00"
+}
+
+### 201 created
+POST http://localhost:8080/orders/
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+  "table": 329,
+  "datetime": "2020-11-16T00:00:00.000Z"
+}
+
+### 204 no content
+PATCH http://localhost:8080/orders/330
+Content-Type: application/json
+
+{
+    "datetime": "2020-11-14T00:00:00.000Z"
+}
+
+### 204 no content
+DELETE http://localhost:8080/orders/91
+
+### 200 [...]
+GET http://localhost:8080/orders/90
+
+### 200 []
+GET http://localhost:8080/food/
+
+### 201 created
+POST http://localhost:8080/food/
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+    "name": "Kofola",
+    "price": 50,
+    "cooked": false
+}
+
+### 201 created
+POST http://localhost:8080/food/
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+  "name": "Polévka s játrovým knedlíčkem",
+  "price": 69,
+  "cooked": true
+}
+
+### 201 created
+POST http://localhost:8080/food/
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+  "name": "Kapr s nivou",
+  "price": 149,
+  "cooked": true
+}
+
+### 200 [kofola, kapr s nivou, polévka]
+GET http://localhost:8080/food/
+
+### 200 []
+GET http://localhost:8080/allergens/
+
+### 201 created
+POST http://localhost:8080/allergens/
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+    "name": "Měkkýši"
+}
+
+### 201 created
+POST http://localhost:8080/allergens/
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+  "name": "Mléko"
+}
+
+### 201 created
+POST http://localhost:8080/allergens/
+Content-Type: application/json
+
+{
+  "name": "Oříšky"
+}
+
+### 200 [Mléko, Lepek, Oříšky]
+GET http://localhost:8080/allergens/
+### 200 [kofola, kapr s nivou, polévka]
+GET http://localhost:8080/food/
+
+###
+GET http://localhost:8080/food/allergens/343
+
+### 204 no content
+PATCH http://localhost:8080/food/343
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+   "allergens": [344, 345]
+}
+
+### 400 bad request
+PATCH http://localhost:8080/food/93
+Content-Type: application/json
+
+{
+  "allergens": [100]
+}
+
+### 200
+GET http://localhost:8080/orders/
+### 200
+GET http://localhost:8080/food/
+
+### 201 created
+POST http://localhost:8080/order-food/
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+   "food": 342,
+   "order": 330,
+   "count": 4,
+   "datetime": "2020-11-16T15:00:00Z"
+}
+
+### 200
+POST http://localhost:8080/order-food/at/1
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+[
+  {"food": 53, "datetime": "2020-11-17T12:00:00Z", "count": 5}
+]
+
+### test
+PATCH http://localhost:8080/orders/330
+Username: wrzecond
+Password: password
+Content-Type: application/json
+
+{
+  "completed": false
+}
+
+### 400 bad request
+POST http://localhost:8080/order-food/
+Content-Type: application/json
+
+{
+  "food": 666,
+  "order": 56,
+  "count": 4,
+  "datetime": "2020-11-16T15:00:00Z"
+}
+
+###
+
+POST http://localhost:8080/order-food/at/OUTSIDE
+Content-Type: application/json
+
+[
+  {"food": 93, "datetime": "2020-11-17T12:00:00Z", "count": 1},
+  {"food": 94, "datetime": "2020-11-17T12:00:00Z", "count": 2}
+]

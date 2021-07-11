@@ -100,7 +100,7 @@ link:BI-VWM/[Searching Web and Multimedia Databases (BI-VWM)] - semestral work
 
 link:BI-AND/[Basics of Android Application Development (BI-AND)] - semestral work, code from labs and grades export
 
-BI-KOT - semestral work, labs, lectures, homeworks
+link:BI-KOT/[Programming in Kotlin (BI-KOT)] - semestral work, labs, lectures, homeworks and grades export
 
 |===
 |Subject |Grade |Total |Exam |Assessment

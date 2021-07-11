@@ -1,0 +1,44 @@
+stages:
+  - build
+
+build server:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  script:
+    - docker build -t tjv-model app-model
+    - docker container create --name temp-model tjv-model
+    - docker container cp temp-model:/model/target/app-model-1.0.0.jar model.jar
+    - docker container rm temp-model
+
+    - mkdir -p rest-server/libs/
+    - cp model.jar rest-server/libs/model.jar
+    - docker build -t tjv-server rest-server
+    - docker container create --name temp-server tjv-server
+    - docker container cp temp-server:/server/target/rest-server-1.0.0.jar server.jar
+    - docker container rm temp-server
+  artifacts:
+    paths:
+      - server.jar
+
+build client:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  script:
+    - docker build -t tjv-model app-model
+    - docker container create --name temp-model tjv-model
+    - docker container cp temp-model:/model/target/app-model-1.0.0.jar model.jar
+    - docker container rm temp-model
+
+    - mkdir -p rest-client/app/libs/
+    - cp model.jar rest-client/app/libs/model.jar
+    - docker build -t tjv-client rest-client
+    - docker container create --name temp-client tjv-client
+    - docker container cp temp-client:/client/app/build/outputs/apk/ client-apk/
+    - docker container rm temp-client
+  artifacts:
+    paths:
+      - client-apk/*

@@ -1,0 +1,17 @@
+= Programming in Kotlin
+
+Got 100 % from homeworks. +
+Got 100 % from semestral work. +
+Got 74 % from exam, resulting in grade A.
+
+== Semestral work
+
+In this subject, I rewrote the smart restaurant system from subject link:../BI-TJV[BI-TJV] from Java to Kotlin.
+
+link:semestral/[You can see the semestral work here]
+
+== Labs
+
+Various code written on lectures and labs, each focused on different part of Kotlin language.
+
+On each lab, we were given a homework (to finish the code started on lab). These homeworks are also part of the repository.
