@@ -92,7 +92,7 @@ link:BI-OSY/[Operating Systems (BI-OSY)] - homeworks on ProgTest
 
 link:BI-PSI/[Computer Networks (BI-PSI)] - semestral task and grades export
 
-BI-BEZ - lab wolfram notebooks, programming tasks, grades and MARAST export
+link:BI-BEZ/[Security (BI-BEZ)] - homeworks, lab notes, grades and MARAST quiz results export
 
 BI-SI1 - team repository, grades (moodle export)
 

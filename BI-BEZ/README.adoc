@@ -1,0 +1,21 @@
+= Security
+
+Completed all mandatory MARAST quizzes. +
+Got 100 % from homeworks and 90 % from MARAST tests. +
+
+Got 73 % from written exam. +
+Got 100 % from oral exam, resulting in grade A.
+
+== Tasks
+
+Homeworks from labs, mostly C/C++ programs concerning security.
+
+ - Task 1: Basic ciphers (Mathematica)
+ - Task 2: Hash finding
+ - Task 3: Block cipher modes (ECB vs CBC)
+ - Task 4: Asymmetric cryptography (RSA)
+ - Task 5: Certificates, TLS
+
+== Labs
+
+Wolfram Mathematica notebooks containing notes and formulas for "open book" exams / tests.
