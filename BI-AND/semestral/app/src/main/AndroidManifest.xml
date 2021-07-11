@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cz.fit.cvut.wrzecond.feedreader">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:name=".App"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+        android:usesCleartextTraffic="true"
+        tools:ignore="AllowBackup,UnusedAttribute">
+        <activity android:name=".activity.ArticleDetailActivity" />
+        <activity android:name=".activity.SettingsActivity" />
+        <activity
+            android:name=".activity.ArticlesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 3. kontrolni bod -->
+        <activity android:name=".activity.SynchronizationSettingsActivity" />
+        <service android:name=".service.FeedDownloader"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="true" />
+        <!-- 3. kontrolni bod -->
+    </application>
+
+</manifest>

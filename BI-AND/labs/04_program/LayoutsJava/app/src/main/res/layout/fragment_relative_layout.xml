@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/top_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:text="TopLeft" />
+
+    <Button
+        android:id="@+id/bottom_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="BottomRight" />
+
+    <Button
+        android:id="@+id/bottom_right_shifted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/bottom_right"
+        android:layout_above="@id/bottom_right"
+        android:text="BottomRight2" />
+
+    <Button
+        android:id="@+id/top_centered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_left"
+        android:layout_centerHorizontal="true"
+        android:text="TopCenter" />
+
+
+    <Button
+        android:id="@+id/center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Center" />
+
+    <Button
+        android:id="@+id/center_top_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/top_left"
+        android:layout_above="@id/center"
+        android:text="CenterTopLeft" />
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">FeedReader</string>
+    <string name="action_share">Share</string>
+    <string name="article_share">I recommend this article:</string>
+    <string name="action_full_article">FULL ARTICLE</string>
+    <string name="action_settings">Feed list</string>
+    <string name="feed_list_empty">No feeds found!</string>
+    <string name="action_add">New Feed</string>
+    <string name="feed_url_hint">Feed URL</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="create_feed">New feed</string>
+    <string name="empty_url">Empty URL</string>
+    <string name="delete_feed">Delete feed</string>
+    <string name="delete_feed_success">Feed deleted successfully.</string>
+    <string name="delete_feed_message">Are you sure you want to delete this feed?</string>
+    <string name="create_feed_success">New feed created successfully.</string>
+    <string name="feed_title_unknown">Unknown feed</string>
+    <string name="article_list_empty">No articles found!</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="download_failure">Download failed (wrong feed URL or structure)</string>
+    <string name="download_success">Download finished.</string>
+    <string name="sync_only_wifi">Sync only on Wi-Fi</string>
+    <string name="action_sync_settings">Preferences</string>
+</resources>

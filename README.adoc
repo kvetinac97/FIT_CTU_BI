@@ -98,7 +98,7 @@ link:BI-SI1/[Software Engineering I (BI-SI1)] - team project and grades export
 
 link:BI-VWM/[Searching Web and Multimedia Databases (BI-VWM)] - semestral work
 
-BI-AND - semestral work, labs
+link:BI-AND/[Basics of Android Application Development (BI-AND)] - semestral work, code from labs and grades export
 
 BI-KOT - semestral work, labs, lectures, homeworks
 

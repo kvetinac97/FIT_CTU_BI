@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "cz.cvut.fit.viewmodellivedata"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        releaseSigningConfig {
+            storeFile file("keystore.jks");
+            storePassword "im4Px4RCNbudMPgb6UH1"
+            keyAlias "keystore"
+            keyPassword "im4Px4RCNbudMPgb6UH1"
+        }
+    }
+
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseSigningConfig
+        }
+
+        beta.initWith(buildTypes.release)
+        beta {
+            applicationIdSuffix ".beta"
+        }
+
+        debug {
+            applicationIdSuffix ".debug"
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    def version_lifecycle = '2.0.0'
+    implementation "androidx.lifecycle:lifecycle-runtime:$version_lifecycle"
+    implementation "androidx.lifecycle:lifecycle-extensions:$version_lifecycle"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$version_lifecycle"
+
+    def version_support = '1.0.0'
+//    implementation "androidx.appcompat:appcompat:$version_support"
+//    implementation "androidx.legacy:legacy-support-v4:$version_support"
+    implementation "com.google.android.material:material:$version_support"
+    implementation "androidx.cardview:cardview:$version_support"
+
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+}

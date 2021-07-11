@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ViewModel and LiveData</string>
+    <string name="loading_issues_failed">Loading issues failed :(</string>
+    <string name="loading_issues_in_progress">Loading issues ...</string>
+    <string name="button_retry">Retry</string>
+</resources>

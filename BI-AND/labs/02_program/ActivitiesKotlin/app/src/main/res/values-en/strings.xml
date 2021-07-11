@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Activities</string>
+    <string name="main_plus">Plus</string>
+    <string name="main_minus">Minus</string>
+    <string name="action_settings">Settings</string>
+    <string name="main_destroy_me">Destroy me!</string>
+    <string name="slave_use">Use</string>
+    <string name="main_show_only">Show only</string>
+    <string name="main_grow_it_up">Grow it up</string>
+    <string name="zero">0</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_slave">SlaveActivity</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Fragments</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_b_title">B</string>
+    <string name="fragment_b_headline">To jsem já, fragment Béé!</string>
+    <string name="fragment_a_title">A</string>
+    <string name="fragment_a_fill_headline">Vyplnit headline</string>
+    <string name="fragment_a_clear_headline">Smazat headline</string>
+
+</resources>

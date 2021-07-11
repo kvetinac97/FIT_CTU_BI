@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="notes_empty">No notes</string>
+    <string name="notes_remove_dialog_title">Remove note?</string>
+    <string name="notes_remove_dialog_message">Do you really want to remove note?</string>
+    <string name="notes_remove_dialog_yes">Yes</string>
+    <string name="notes_remove_dialog_no">No</string>
+    <string name="notes_add">Add note</string>
+    <string name="new_note_title_hint">Title</string>
+    <string name="new_note_button_save">Save</string>
+    <string name="new_note_description_hint">Description</string>
+    <string name="new_note_title">New note</string>
+    <string name="new_note_error_title_empty">Title cannot be empty</string>
+    <string name="new_note_error_description_empty">Description cannot be empty</string>
+</resources>

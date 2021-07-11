@@ -1,0 +1,18 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MyToolbar" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="actionModeShareDrawable">@drawable/ic_menu_share</item>
+        <item name="actionOverflowButtonStyle">@style/MyOverFlow</item>
+    </style>
+
+    <style name="MyOverFlow" parent="@android:style/Widget.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_action_overflow</item>
+    </style>
+
+</resources>

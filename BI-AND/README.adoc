@@ -1,0 +1,15 @@
+= Basics of Android Application Development
+
+Got 11 points for activity on labs. +
+Got 95 % for the semestral work. +
+Got 100 % from oral exam, with grade A.
+
+== Semestral work
+
+As semestral work, we had to develop a RSS feed reader application. I chose to implement it in Kotlin.
+
+link:semestral/[You can see the semestral work here]
+
+== Labs
+
+Various tasks solved at labs, each aimed at different part of Android development.

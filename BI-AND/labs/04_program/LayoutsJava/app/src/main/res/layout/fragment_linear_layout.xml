@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:background="#ff0000"
+            android:text="30% width" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="0.6"
+            android:gravity="center"
+            android:background="#00ff00"
+            android:text="60% width" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:background="#00ffff"
+        android:padding="16dp"
+        android:text="Toto View zabírá prostor tohoto textu + 20% nealokovaného prostoru." />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0.5"
+        android:background="#ff00ff"
+        android:padding="16dp"
+        android:text="Toto View zabírá 50dp + 50% nealokovaného prostoru." />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:background="#ff0"
+        android:padding="16dp"
+        android:text="Toto View zabírá 30% nealokovaného prostoru." />
+
+</LinearLayout>

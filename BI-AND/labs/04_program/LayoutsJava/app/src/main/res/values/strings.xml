@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Layouts</string>
+    <string name="title_section1">Frame Layout</string>
+    <string name="title_section2">Linear Layout</string>
+    <string name="title_section3">Relative Layout</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

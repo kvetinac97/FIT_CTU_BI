@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cz.fit.cvut.and.intents">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- [2] doplňte permission, aby vaše aplikace uměla zjistit všechny nainstalované aplikace -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup">
+        <activity
+            android:name="cz.fit.cvut.and.intents.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="cz.fit.cvut.and.intents.WebActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <!-- [4] implementujte data intent filtery pro stranky www.fit.cvut.cz -->
+                <data android:scheme="https" android:host="fit.cvut.cz" />
+                <!-- end -->
+
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

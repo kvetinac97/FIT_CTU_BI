@@ -1,0 +1,42 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="280dp"
+
+            android:text="orem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non nisi a tortor sodales commodo ac non diam. Donec iaculis diam dui, quis faucibus metus laoreet eget. Donec in malesuada metus, non tristique tortor. Integer eget ante a sem pellentesque vulputate. Pellentesque a eleifend neque. Pellentesque vulputate fermentum nibh, vel condimentum nisi faucibus vitae. Mauris quis tortor viverra nulla feugiat porta at non magna. Aenean egestas purus et vestibulum euismod. Mauris pharetra nec orci non ultrices. Curabitur imperdiet malesuada ultricies. Ut sit amet ullamcorper sem, sed posuere nibh. Aliquam ac magna ac arcu accumsan tristique. Aliquam eleifend vel leo sit amet laoreet. Etiam ut rutrum massa. Nullam sed ipsum vitae libero egestas vulputate et eget sapien.
+
+Sed eget risus eget odio tempor scelerisque. Nam suscipit id urna ac porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris non quam et purus condimentum mattis. Vestibulum placerat velit lorem, a dapibus nunc sodales vitae. Phasellus at turpis nec sapien tristique faucibus ac in nisl. Maecenas ac accumsan diam, vel porta velit. Nullam sit amet dictum tellus. Curabitur posuere rutrum tellus ac ultricies. Nullam pretium, purus eu vestibulum sodales, nisl sem commodo velit, eget faucibus massa tortor ac ligula. In hac habitasse platea dictumst. Vestibulum semper blandit urna, vitae convallis nibh viverra ac. In hac habitasse platea dictumst.
+
+Donec commodo placerat nulla, vitae cursus enim ultricies facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi quis dolor volutpat, malesuada velit pharetra, hendrerit arcu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris mauris dolor, luctus non ornare in, luctus id nulla. Suspendisse eu tempus arcu, ac scelerisque urna. Praesent eleifend lectus mauris, eget sagittis diam porta at. Donec vitae cursus purus, at egestas dui. Integer eleifend interdum mi vitae pellentesque. Fusce quis ornare mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan lorem nec molestie tristique. Suspendisse eu lacus ut libero ullamcorper vehicula ut nec arcu. Proin non dapibus velit.
+
+Donec et augue vel massa elementum convallis ut in est. Aenean consectetur nisi vitae neque tristique, et consectetur libero egestas. Sed blandit odio vel faucibus rhoncus. Nunc mattis, felis mattis porttitor volutpat, quam justo luctus felis, et convallis elit velit sed nisi. Phasellus a vehicula metus, sed aliquet ipsum. Praesent aliquet ultrices odio. Aenean mollis, turpis eget euismod cursus, metus tortor tincidunt dui, ut porttitor augue sapien eu enim. Nunc vitae leo non tellus ornare viverra. Aenean adipiscing urna arcu, quis vulputate neque ornare a. Nullam sit amet porttitor odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis sollicitudin odio lacus, et placerat diam tincidunt et.
+
+Maecenas a est a nisl luctus malesuada. Aenean sapien dolor, aliquet id risus quis, hendrerit egestas felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non sem nec dui placerat pulvinar vel nec dolor. In condimentum augue nec enim ullamcorper posuere. Ut sollicitudin erat vulputate justo iaculis, non accumsan elit dignissim. Curabitur quis nisi id turpis rutrum elementum ac et tortor. Ut feugiat ante quis odio convallis, sed viverra erat venenatis. Maecenas convallis sem sed turpis gravida, ut ultricies est ornare." />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/raspeberry_meringue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal|top"
+            android:text="Raspberry meringue"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+
+    </FrameLayout>
+</ScrollView>

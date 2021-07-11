@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".activity.ArticlesActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/articles_fragment"
+        android:layout_width="0dp"
+        android:layout_weight="0.4"
+        android:layout_height="match_parent"
+        android:name="cz.fit.cvut.wrzecond.feedreader.fragment.ArticlesFragment"
+        tools:layout="@layout/fragment_articles" />
+
+    <include
+        layout="@layout/activity_fragment"
+        android:id="@+id/article_detail_fragment"
+        android:layout_width="0dp"
+        android:layout_weight="0.6"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

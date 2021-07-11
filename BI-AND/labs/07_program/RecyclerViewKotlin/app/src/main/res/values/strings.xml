@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="delete">Delete</string>
+</resources>

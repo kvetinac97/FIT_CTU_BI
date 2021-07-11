@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Toolbar</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="action_settings">Nastavení</string>
+    <string name="action_help">Nápověda</string>
+    <string name="action_add">Přidat</string>
+    <string name="action_search">Hledat</string>
+    <string name="action_share">Sdílet</string>
+
+</resources>

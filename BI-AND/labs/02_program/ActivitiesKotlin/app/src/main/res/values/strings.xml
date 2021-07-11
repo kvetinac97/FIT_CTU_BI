@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aktivity</string>
+    <string name="hello_world">Ahoj světe!</string>
+    <string name="action_settings">Nastavení</string>
+    <string name="title_activity_slave">OtrokAktivita</string>
+    <string name="main_plus">Plus</string>
+    <string name="main_minus">Mínus</string>
+    <string name="main_destroy_me">Znič mě!</string>
+    <string name="slave_use">Použít</string>
+    <string name="main_show_only">Jenom zobraz</string>
+    <string name="main_grow_it_up">Zvětši mi číslo</string>
+    <string name="zero">0</string>
+</resources>

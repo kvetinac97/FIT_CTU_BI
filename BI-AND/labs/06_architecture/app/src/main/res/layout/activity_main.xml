@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="cz.cvut.fit.viewmodellivedata.networking.entity.Resource" />
+        <import type="cz.cvut.fit.viewmodellivedata.viewmodel.IssuesViewModel" />
+        <import type="android.view.View" />
+
+        <variable
+            name="issueResource"
+            type="Resource" />
+
+        <variable
+            name="viewmodel"
+            type="IssuesViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/issue_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="@{issueResource.status == Resource.SUCCESS_STATUS ? View.VISIBLE : View.GONE}"
+            tools:visibility="gone"
+            app:layoutManager="LinearLayoutManager" />
+
+        <LinearLayout
+            android:id="@+id/error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="@{issueResource.status == Resource.ERROR_STATUS ? View.VISIBLE : View.GONE}"
+            tools:visibility="gone"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading_issues_failed"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewmodel.retryClicked()}"
+                android:text="@string/button_retry" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="@{issueResource.status == Resource.LOADING_STATUS ? View.VISIBLE : View.GONE}"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading_issues_in_progress"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
