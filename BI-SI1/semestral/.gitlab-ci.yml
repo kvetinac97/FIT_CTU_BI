@@ -1,0 +1,32 @@
+stages:
+  - build
+
+build restapi:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  script:
+    - docker build -t rest-api RestAPI
+    - docker container create --name temp-api rest-api
+    - docker container cp temp-api:/restapi/target/caltrack-1.0.0.jar restapi.jar
+    - docker container cp temp-api:/restapi/target/dokka dokka
+    - docker container rm temp-api
+  artifacts:
+    paths:
+      - restapi.jar
+      - dokka
+
+build app-doc:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  script:
+    - docker build -t app-doc Aplikace
+    - docker container create --name temp-app app-doc
+    - docker container cp temp-app:/app/doc doc
+    - docker container rm temp-app
+  artifacts:
+    paths:
+      - doc

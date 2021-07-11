@@ -94,7 +94,7 @@ link:BI-PSI/[Computer Networks (BI-PSI)] - semestral task and grades export
 
 link:BI-BEZ/[Security (BI-BEZ)] - homeworks, lab notes, grades and MARAST quiz results export
 
-BI-SI1 - team repository, grades (moodle export)
+link:BI-SI1/[Software Engineering I (BI-SI1)] - team project and grades export
 
 BI-VWM - semestral work
 
@@ -108,7 +108,7 @@ BI-KOT - semestral work, labs, lectures, homeworks
 |Operating Systems|A|117.15/100|33/33|84.15/67
 |Computer Networks|A|97.5/100|72.5/80|25/15
 |Security|A|94/100|42/50|52/50
-|Software Engineering 1|A|91/100|44/50|47/50
+|Software Engineering I|A|91/100|44/50|47/50
 |Searching Web and Multimedia Databases|A 3+|50/50
 |Basics of Android Application Development|A|101/100|67/76|34/24
 |Programming in Kotlin|A|90/100|37/50|53/50

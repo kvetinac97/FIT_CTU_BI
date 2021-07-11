@@ -1,0 +1,19 @@
+= Software Engineering I
+
+Worked as part of an amazing team - got 94 % from semester. +
+Got 88 % from oral exam, resulting in grade A.
+
+== Semestral work
+
+This project was aimed as teaching us how to work in team. I worked as part of a team consisting of 6 members.
+
+What I have done on the project:
+
+ - Team leading, organization
+ - Bigger part of Rest API
+ - Code part of iOS Application (ViewModels)
+ - Database model
+ - Installation guide
+
+link:semestral/[You can see the project here] +
+https://youtu.be/YMjwYJ0lBA8[Demo of the iOS application]
