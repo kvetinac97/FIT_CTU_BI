@@ -1,0 +1,12 @@
+PREFIX table: <http://wrzecond.fit.cvut.cz/table/>
+PREFIX order: <http://wrzecond.fit.cvut.cz/order/>
+
+CONSTRUCT { ?table table:has_food_count ?sum_food }
+WHERE {
+    {
+        SELECT ?table (SUM(?food_count) AS ?sum_food) WHERE {
+            ?order order:at ?table ;
+                order:count ?food_count
+        } GROUP BY ?table
+    }
+}

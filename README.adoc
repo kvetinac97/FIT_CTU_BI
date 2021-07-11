@@ -96,7 +96,7 @@ link:BI-BEZ/[Security (BI-BEZ)] - homeworks, lab notes, grades and MARAST quiz r
 
 link:BI-SI1/[Software Engineering I (BI-SI1)] - team project and grades export
 
-BI-VWM - semestral work
+link:BI-VWM/[Searching Web and Multimedia Databases (BI-VWM)] - semestral work
 
 BI-AND - semestral work, labs
 

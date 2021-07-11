@@ -1,0 +1,12 @@
+= Searching Web and Multimedia Databases
+
+Got 100 % from semestral project. +
+Due to coronavirus, the exam was cancelled, so I was graded A thanks to the project.
+
+== Semestral work
+
+As semestral work, I chose to rewrite database for restaurant system from the subject link:../BI-DBS/[BI-DBS] to SPARQL and RDF/XML.
+
+You can link:semestral/[see the semestral work here] +
+link:installation-guide.pdf[Installation guide (PDF)] +
+link:project-message.pdf[Project message (PDF)]

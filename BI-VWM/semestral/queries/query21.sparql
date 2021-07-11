@@ -1,0 +1,17 @@
+# Prefix
+PREFIX restaurant: <http://wrzecond.fit.cvut.cz/restaurant/>
+PREFIX manager: <http://wrzecond.fit.cvut.cz/manager/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# 21. Manažeři restaurací, které mají otevřeno ve 23:15
+SELECT ?restaurant (CONCAT(?first_name, " ", ?last_name) AS ?name) ?open_from ?open_until
+WHERE {
+    ?restaurant restaurant:open_from ?open_from ;
+                restaurant:open_until ?open_until ;
+                restaurant:managed_by ?manager .
+    ?manager    manager:first_name ?first_name ;
+                manager:last_name ?last_name .
+    FILTER (?open_from <= "23:15:00"^^xsd:time && ?open_until >= "23:15:00"^^xsd:time)
+}
+ORDER BY ?restaurant
+LIMIT 10

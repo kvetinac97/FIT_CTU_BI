@@ -1,0 +1,16 @@
+# Prefix
+PREFIX customer: <http://wrzecond.fit.cvut.cz/customer/>
+PREFIX table: <http://wrzecond.fit.cvut.cz/table/>
+PREFIX restaurant: <http://wrzecond.fit.cvut.cz/restaurant/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# 18. Seznam restaurací, ve kterých sedí alespoň 5 osob starších 60 let
+SELECT ?restaurant ?restaurant_name (COUNT(?customer_age) AS ?old_customers)
+WHERE {
+    ?restaurant restaurant:name ?restaurant_name ;
+                ^table:in/^customer:sits_at/customer:age ?customer_age .
+    FILTER (?customer_age > "60"^^xsd:integer)
+}
+GROUP BY ?restaurant ?restaurant_name HAVING (?old_customers >= 5)
+ORDER BY DESC(?old_customers)
+LIMIT 10

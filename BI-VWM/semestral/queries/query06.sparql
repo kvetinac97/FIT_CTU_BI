@@ -1,0 +1,25 @@
+# Prefix
+PREFIX employee: <http://wrzecond.fit.cvut.cz/employee/>
+PREFIX table: <http://wrzecond.fit.cvut.cz/table/>
+PREFIX order: <http://wrzecond.fit.cvut.cz/order/>
+
+# 6. Vytvoř graf "Zaměstnanec pracuje na pozici x a stará se o y objednávek
+
+CONSTRUCT {
+    ?employee employee:position ?position ;
+            employee:order_count ?order_count .
+}
+WHERE {
+    SELECT ?employee ?position (COUNT(?order) AS ?order_count) WHERE {
+        ?employee employee:works_in ?restaurant ;
+                  employee:salary ?salary ;
+                  employee:cook ?cook .
+        OPTIONAL {
+            ?table table:operated_by ?employee .
+            ?order order:at ?table .
+        }
+        BIND(IF(?cook, "Kuchař a Číšník", "Číšník") AS ?position)
+    }
+    GROUP BY ?employee ?position
+    LIMIT 15 # For documentation purposes
+}

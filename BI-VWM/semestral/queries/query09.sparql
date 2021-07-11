@@ -1,0 +1,16 @@
+# Prefix
+PREFIX food: <http://wrzecond.fit.cvut.cz/food/>
+PREFIX ingredient_food: <http://wrzecond.fit.cvut.cz/food/ingredient/>
+
+# 9. Počet surovin, které jsou potřeba k přípravě každého jídla, seřazeno sestupně.
+SELECT ?food ?food_name ?ingredient_count WHERE {
+    ?food food:name ?food_name .
+    {
+        SELECT ?food (COUNT(*) AS ?ingredient_count) WHERE {
+            ?food_ingredient ingredient_food:makes ?food
+        }
+        GROUP BY ?food
+    }
+}
+ORDER BY DESC(?ingredient_count)
+LIMIT 10

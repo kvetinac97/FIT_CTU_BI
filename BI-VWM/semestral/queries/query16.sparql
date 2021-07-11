@@ -1,0 +1,27 @@
+# Prefix
+PREFIX customer: <http://wrzecond.fit.cvut.cz/customer/>
+PREFIX table: <http://wrzecond.fit.cvut.cz/table/>
+PREFIX order: <http://wrzecond.fit.cvut.cz/order/>
+PREFIX restaurant: <http://wrzecond.fit.cvut.cz/restaurant/>
+
+# 16. Vytvoř graf zákazník má jméno, sedí u čísla stolu (...)
+
+CONSTRUCT {
+    ?customer customer:name ?name ;
+              customer:sits_at_id ?table_id ;
+              customer:sits_in_name ?restaurant_name ;
+              customer:unique_food_count ?food_count
+}
+WHERE {
+    SELECT ?customer ?name ?table_id ?restaurant_name (COUNT(?order) AS ?food_count) WHERE {
+        ?customer customer:first_name ?first_name ;
+                  customer:last_name ?last_name ;
+                  customer:sits_at ?table ;
+                  customer:sits_in/restaurant:name ?restaurant_name .
+        ?table table:id ?table_id .
+        OPTIONAL { ?order order:at ?table }
+        BIND (CONCAT(?first_name, " ", ?last_name) AS ?name)
+    }
+    GROUP BY ?customer ?name ?table_id ?restaurant_name
+    LIMIT 10 # Pro účely dokumentace
+}

@@ -1,0 +1,48 @@
+== MANAGER
+search       INSERT INTO MANAGER .* VALUES \( (.*),  '(.*)',  '(.*)' \);
+replace      manager:$1 manager:id "$1"^^xsd:integer ; \n manager:first_name "$2" ; \n manager:last_name "$3" .
+
+== RESTAURANT
+search       INSERT INTO RESTAURANT .* VALUES \( (.*), '(.*)',  '(.*)',  '(.*)',  '(.*)',  (.*) \);
+replace      restaurant:$1 restaurant:id "$1"^^xsd:integer ; \n restaurant:name "$2" ; \n restaurant:location "$3" ; \n restaurant:open_from "$4"^^xsd:time ; \n restaurant:open_until "$5"^^xsd:time ; \n restaurant:managed_by manager:$6 .
+
+== INGREDIENT
+search       INSERT INTO INGREDIENT .* VALUES \( (.*),  '(.*)',  (.*),  (.*),  (.*),  (.*) \);
+replace      ingredient:$1 ingredient:id "$1"^^xsd:integer ; \n ingredient:name "$2" ; \n ingredient:fat "$3"^^xsd:integer ; \n ingredient:fiber "$4"^^xsd:integer ; \n ingredient:protein "$5"^^xsd:integer ; \n ingredient:sugar "$6"^^xsd:integer .
+
+== FOOD
+
+search       INSERT INTO FOOD .* VALUES \( (.*),  '(.*)',  (.*) \);
+replace      food:$1 food:id "$1"^^xsd:integer ; \n food:name "$2" ; \n food:price "$3"^^xsd:integer .
+
+== FOOD_INGREDIENT
+
+search       INSERT INTO FOOD_INGREDIENT .* VALUES \( (.*),  '(.*)',  (.*), (.*) \);
+replace      food_ingredient:$4_$3 food_ingredient:makes food:$4 ; \n food_ingredient:with ingredient:$3 ; \n food_ingredient:count "$1"^^xsd:integer ; \n food_ingredient:unit "$2" .
+
+== EMPLOYEE
+
+search       INSERT INTO EMPLOYEE .* VALUES \( (.*), (.*), '(.*)', '(.*)', (.*), (.*)\);
+replace      employee:$1 employee:id "$1"^^xsd:integer ; \n employee:cook "$2"^^xsd:boolean ; \n employee:first_name "$3" ; \n employee:last_name "$4" ; \n employee:salary "$5"^^xsd:integer ; \n employee:works_in restaurant:$6 .
+
+== TABLE TYPES: created manually
+
+== TABLES
+
+search       INSERT INTO TTABLE .* VALUES \( (.*), (.*), (.*), (.*), (.*)\);
+replace      table:$1 table:id "$1"^^xsd:integer ; \n table:capacity "$2"^^xsd:integer ; \n table:type table_type:$3 ; \n table:in restaurant:$4 ; \n table:operated_by employee:$5 .
+
+== CUSTOMER
+
+search       INSERT INTO CUSTOMER .* VALUES \( (.*), (.*), '(.*)', '(.*)', (.*), (.*)\);
+replace      customer:$1 customer:id "$1"^^xsd:integer ; \n customer:age "$2"^^xsd:integer ; \n customer:first_name "$3" ; \n customer:last_name "$4" ; \n customer:sits_at table:$5 ; \n customer:sits_in restaurant:$6 .
+
+== ORDER
+
+search       INSERT INTO ORDER_FOOD .* VALUES \( (.*), (.*), (.*), (.*)\);
+replace      order:$2_$3_$4 order:at table:$2 ; \n order:in restaurant:$3 ; \n order:contains food:$4 ; \n order:count "$1"^^xsd:integer .
+
+== STORAGE ITEMS
+
+search       INSERT INTO INGREDIENT_COUNT .* VALUES \( (.*), (.*), (.*)\);
+replace      storage_item:$2_$3 storage_item:in restaurant:$2 ; \n storage_item:of ingredient:$3 ; \n storage_item:count "$1"^^xsd:integer .

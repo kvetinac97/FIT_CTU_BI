@@ -1,0 +1,13 @@
+PREFIX employee: <http://wrzecond.fit.cvut.cz/employee/>
+PREFIX table: <http://wrzecond.fit.cvut.cz/table/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?employee ?name WHERE {
+    ?employee employee:first_name ?first_name ;
+              employee:last_name ?last_name ;
+              employee:cook ?cook .
+    ?table table:operated_by ?employee .
+    BIND(CONCAT(?first_name, " ", ?last_name) AS ?name)
+    FILTER (?cook = "1"^^xsd:boolean)
+}
+GROUP BY ?employee ?name LIMIT 30 # alespoň 1 stůl = stačí, že vazba existuje

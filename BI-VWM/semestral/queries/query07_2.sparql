@@ -1,0 +1,15 @@
+# Prefix
+PREFIX table: <http://wrzecond.fit.cvut.cz/table/>
+PREFIX restaurant: <http://wrzecond.fit.cvut.cz/restaurant/>
+PREFIX customer: <http://wrzecond.fit.cvut.cz/customer/>
+
+# 7. Seznam neobsazených stolů ( = u kterých nikdo nesedí) v restauraci "Harmony"
+
+SELECT ?table
+WHERE {
+    ?table table:in/restaurant:name "Harmony" .
+    OPTIONAL { ?customer customer:sits_at ?table }
+    FILTER ( !BOUND(?customer) )
+}
+ORDER BY ?table
+LIMIT 10

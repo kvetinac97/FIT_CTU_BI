@@ -1,0 +1,23 @@
+# Prefix
+PREFIX employee: <http://wrzecond.fit.cvut.cz/employee/>
+PREFIX restaurant: <http://wrzecond.fit.cvut.cz/restaurant/>
+PREFIX table: <http://wrzecond.fit.cvut.cz/table/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# 14. Zaměstnanci (id, jméno, příjmení), kteří pracují v restauraci "Červené jablko"
+# a zároveň obsluhují stůl s kapacitou 3 lidí.
+
+SELECT ?employee ?name WHERE {
+    ?employee employee:works_in/restaurant:name ?restaurant_name ;
+              employee:first_name ?first_name ;
+              employee:last_name ?last_name .
+    FILTER EXISTS {
+        SELECT ?employee WHERE {
+            ?table table:capacity "3"^^xsd:integer ;
+                   table:operated_by ?employee
+        }
+    }
+    BIND(CONCAT(?first_name, " ", ?last_name) AS ?name)
+    FILTER (?restaurant_name = "Červené jablko")
+}
+LIMIT 10

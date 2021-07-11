@@ -1,0 +1,16 @@
+# Prefix
+PREFIX restaurant: <http://wrzecond.fit.cvut.cz/restaurant/>
+PREFIX table: <http://wrzecond.fit.cvut.cz/table/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# 22. První tři restaurace s největší kapacitou
+# (kapacita je určena počtem součtem kapacity stolů v restauraci)
+
+SELECT ?restaurant ?restaurant_name (SUM(?capacity) AS ?restaurant_capacity) WHERE {
+    ?restaurant restaurant:name ?restaurant_name .
+    ?table table:in ?restaurant ;
+           table:capacity ?capacity
+}
+GROUP BY ?restaurant ?restaurant_name
+ORDER BY DESC(?restaurant_capacity)
+LIMIT 3

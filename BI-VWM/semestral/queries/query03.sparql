@@ -1,0 +1,24 @@
+# Prefix
+PREFIX customer: <http://wrzecond.fit.cvut.cz/customer/>
+PREFIX order: <http://wrzecond.fit.cvut.cz/order/>
+PREFIX food: <http://wrzecond.fit.cvut.cz/food/>
+
+# 3. Zákazníci (id, jméno, příjmení), kteří si objednali pouze "Filipínské kebaby".
+
+SELECT ?customer (CONCAT(?first_name, " ", ?last_name) AS ?customer_name) ?table WHERE {
+    ?customer customer:first_name ?first_name ;
+              customer:last_name ?last_name ;
+              customer:sits_at ?table .
+    ?order order:at ?table ;
+           order:contains ?food .
+    ?food food:name ?food_name .
+    FILTER (?food_name = "Filipínské kebaby")
+    MINUS {
+        ?orderx order:at ?table ; # Odečítáme pouze na základě stolu
+                order:contains ?foodx .
+        ?foodx food:name ?food_namex .
+        FILTER (?food_namex != "Filipínské kebaby")
+    }
+}
+ORDER BY ?customer
+LIMIT 10

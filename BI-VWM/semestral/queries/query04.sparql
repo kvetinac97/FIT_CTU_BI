@@ -1,0 +1,27 @@
+# Prefix
+PREFIX restaurant: <http://wrzecond.fit.cvut.cz/restaurant/>
+PREFIX table: <http://wrzecond.fit.cvut.cz/table/>
+PREFIX table_type: <http://wrzecond.fit.cvut.cz/table/type/>
+PREFIX order: <http://wrzecond.fit.cvut.cz/order/>
+PREFIX food: <http://wrzecond.fit.cvut.cz/food/>
+
+# 4. Stoly, na kterých byly podány objednávky
+# obsahující všechna jídla v restauraci "Síla chuti".
+
+SELECT ?table ?table_type (COUNT(?food) AS ?food_count) WHERE {
+    ?restaurant restaurant:name ?restaurant_name .
+    ?table table:in ?restaurant ;
+           table:type ?type .
+    ?type table_type:name ?table_type .
+    ?order order:at ?table ;
+           order:contains ?food
+    FILTER (?restaurant_name = "Síla chuti")
+    {
+        SELECT (COUNT(?food) AS ?food_total) WHERE {
+            ?food food:id ?food_id
+        }
+    }
+}
+GROUP BY ?table ?table_type ?food_total HAVING (?food_count = ?food_total)
+ORDER BY ?table
+LIMIT 10

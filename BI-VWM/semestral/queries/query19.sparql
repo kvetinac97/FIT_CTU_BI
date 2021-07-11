@@ -1,0 +1,17 @@
+# Prefix
+PREFIX ingredient: <http://wrzecond.fit.cvut.cz/ingredient/>
+PREFIX storage_item: <http://wrzecond.fit.cvut.cz/storage/item/>
+PREFIX restaurant: <http://wrzecond.fit.cvut.cz/restaurant/>
+
+# 19. Stav suroviny "voda" na skladech ve všech restauracích.
+
+SELECT ?restaurant ?restaurant_name ?ingredient_name ?ingredient_count WHERE {
+    ?restaurant restaurant:id ?restaurant_id ;
+                restaurant:name ?restaurant_name .
+    ?storage_item storage_item:in ?restaurant ;
+                  storage_item:of/ingredient:name ?ingredient_name ;
+                  storage_item:count ?ingredient_count .
+    FILTER (?ingredient_name = "voda")
+}
+ORDER BY ?restaurant_id
+LIMIT 30

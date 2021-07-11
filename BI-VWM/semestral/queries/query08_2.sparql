@@ -1,0 +1,16 @@
+# Prefix
+PREFIX employee: <http://wrzecond.fit.cvut.cz/employee/>
+PREFIX restaurant: <http://wrzecond.fit.cvut.cz/restaurant/>
+PREFIX table: <http://wrzecond.fit.cvut.cz/table/>
+
+# 8. Všichni zaměstnanci, kteří neobsluhují žádný stůl v restauraci "Ostravská."
+
+SELECT ?employee (CONCAT(?first_name, " ", ?last_name) AS ?name) WHERE {
+    ?employee employee:works_in/restaurant:name "Ostravská" ;
+              employee:first_name ?first_name ;
+              employee:last_name ?last_name .
+    OPTIONAL { ?table table:operated_by ?employee }
+}
+GROUP BY ?employee ?first_name ?last_name HAVING (COUNT(?table) = 0)
+ORDER BY ?employee
+LIMIT 10

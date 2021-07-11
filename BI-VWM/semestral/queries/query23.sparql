@@ -1,0 +1,15 @@
+# Prefix
+PREFIX restaurant: <http://wrzecond.fit.cvut.cz/restaurant/>
+PREFIX employee: <http://wrzecond.fit.cvut.cz/employee/>
+
+# 23. Počet zaměstananců restaurací, které jsou v Praze.
+SELECT ?restaurant ?restaurant_name ?restaurant_location (COUNT(?employee) AS ?employee_count)
+WHERE {
+    ?restaurant restaurant:name ?restaurant_name ;
+                restaurant:location ?restaurant_location .
+    ?employee employee:works_in ?restaurant .
+    FILTER (CONTAINS(?restaurant_location, "Praha"))
+}
+GROUP BY ?restaurant ?restaurant_name ?restaurant_location
+ORDER BY DESC(?employee_count)
+LIMIT 10

@@ -1,0 +1,12 @@
+# Prefix
+PREFIX employee: <http://wrzecond.fit.cvut.cz/employee/>
+PREFIX restaurant: <http://wrzecond.fit.cvut.cz/restaurant/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# 20. Kontrola, že žádný zaměstnanec restaurace "Divinis" nemá vyšší plat než 29.000 Kč
+
+ASK WHERE { FILTER NOT EXISTS { # Reverse yes/no
+    ?employee employee:salary ?salary ;
+              employee:works_in/restaurant:name "Divinis" .
+    FILTER (?salary > "29000"^^xsd:integer)
+} }

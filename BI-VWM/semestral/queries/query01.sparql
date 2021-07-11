@@ -1,0 +1,17 @@
+# Prefix
+PREFIX food: <http://wrzecond.fit.cvut.cz/food/>
+PREFIX food_ingredient: <http://wrzecond.fit.cvut.cz/food/ingredient/>
+PREFIX ingredient: <http://wrzecond.fit.cvut.cz/ingredient/>
+
+# 1. Dotaz: všechny ingredience potřebné k přípravě pokrmu "Zlatá česká trojkombinace"
+
+SELECT ?ingredient ?ingredient_name ?count ?unit
+WHERE {
+    ?food food:name "Zlatá česká trojkombinace" .
+    ?food_ingredient food_ingredient:makes ?food ;
+                     food_ingredient:with ?ingredient ;
+                     food_ingredient:count ?count ;
+                     food_ingredient:unit ?unit .
+    ?ingredient ingredient:name ?ingredient_name
+}
+LIMIT 10

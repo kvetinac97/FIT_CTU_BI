@@ -1,0 +1,14 @@
+# Prefix
+PREFIX manager: <http://wrzecond.fit.cvut.cz/manager/>
+PREFIX restaurant: <http://wrzecond.fit.cvut.cz/restaurant/>
+PREFIX employee: <http://wrzecond.fit.cvut.cz/employee/>
+
+# 12. Vytvoř graf manažer DOHLÍŽÍ NA zaměstnance (v restauracích, které spravuje)
+CONSTRUCT {
+    ?manager manager:supervises ?employee ;
+             manager:in ?restaurant .
+}
+WHERE {
+    ?restaurant restaurant:managed_by ?manager .
+    ?employee employee:works_in ?restaurant .
+}

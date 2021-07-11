@@ -1,0 +1,18 @@
+# Prefix
+PREFIX restaurant: <http://wrzecond.fit.cvut.cz/restaurant/>
+PREFIX table: <http://wrzecond.fit.cvut.cz/table/>
+PREFIX order: <http://wrzecond.fit.cvut.cz/order/>
+PREFIX food: <http://wrzecond.fit.cvut.cz/food/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# 25. Restaurace a čísla stolů, na které bylo objednáno jídlo v hodnotě minimálně 1000 Kč.
+SELECT ?restaurant ?restaurant_name ?table (SUM(?count * ?food_price) AS ?order_price) WHERE {
+    ?restaurant restaurant:name ?restaurant_name .
+    ?table table:in ?restaurant .
+    ?order order:at ?table ;
+           order:count ?count ;
+           order:contains/food:price ?food_price .
+}
+GROUP BY ?restaurant ?restaurant_name ?table HAVING (?order_price >= 1000)
+ORDER BY DESC(?order_price)
+LIMIT 10
