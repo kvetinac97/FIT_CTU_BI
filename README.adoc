@@ -90,7 +90,7 @@ link:BI-ANG/[English Exam after A2L Course (BI-ANG)] - exam essay
 
 link:BI-OSY/[Operating Systems (BI-OSY)] - homeworks on ProgTest
 
-BI-PSI - semestral task, grades export
+link:BI-PSI/[Computer Networks (BI-PSI)] - semestral task and grades export
 
 BI-BEZ - lab wolfram notebooks, programming tasks, grades and MARAST export
 

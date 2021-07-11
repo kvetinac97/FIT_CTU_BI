@@ -1,0 +1,11 @@
+= Computer Networks
+
+Got 10 bonus points from semester for activity. +
+Found critical bug in homework submission server Bouda. +
+Got 90 % from exam, resulting in grade A.
+
+== Semestral task
+
+In Computer Networks, in order to get assessment, we had to develop a simple program for simulating communication with Robots.
+
+I chose to develop it in Kotlin, and you can link:semestral/[see the semestral task here].
