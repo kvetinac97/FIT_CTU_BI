@@ -1,0 +1,11 @@
+= Operating Systems
+
+Got all the bonuses, completed all the tasks. +
+Got 117.15 points on ProgTest resulting in grade A. +
+Finished *1st of 386 students*.
+
+== Tasks
+
+- Task 1: Load balancing (130 %)
+- Task 2: Memory manager (125 %)
+- Task 3: Filesystem (100 %)

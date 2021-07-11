@@ -88,7 +88,7 @@ link:BI-ANG/[English Exam after A2L Course (BI-ANG)] - exam essay
 
 == Fourth semester
 
-BI-OSY - homeworks on progtest, exam on progtest, summary, results
+link:BI-OSY/[Operating Systems (BI-OSY)] - homeworks on ProgTest
 
 BI-PSI - semestral task, grades export
 
