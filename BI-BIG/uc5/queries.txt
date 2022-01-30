@@ -1,0 +1,35 @@
+# Přehled hospitalizovaných ve dnech, kdy bylo hospitalizováno právě 100 lidí
+
+GET /hospitalization/_search
+{
+  "query": {
+    "match": {
+        "Hospitalized": 100
+    }
+  }
+}
+
+# Smrti v obcích, které obsahují ve svém názvu slovo "město"
+
+GET /death/_search
+{
+  "query": {
+    "wildcard": {
+      "AreaText" : "*město*"
+    }
+  }
+}
+
+# Dny v říjnu 2020, seřazené sestupně podle počtu hospitalizovaných lidí
+
+GET /hospitalization/_search
+{
+  "query": {
+    "range": {
+      "Date": {"gte": "2020-10-01T00:00:00.000Z", "lte": "2020-10-30T23:59:59.999Z"}
+    }
+  },
+  "sort":{
+    "HospitalizedNewly": { "order":"desc" }
+  }
+}

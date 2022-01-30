@@ -1,0 +1,4 @@
+= UC4
+
+The task was to create set of queries on our datasets from UC3. +
+Unfortunately, I did not manage to find my solution.

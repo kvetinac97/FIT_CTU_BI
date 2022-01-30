@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('styles/form.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="info-card">
+    <h2>Edit User</h2>
+
+    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('user/_delete_form.html.twig') }}
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+<ul class="user-nav-items">
+    {% set current_route = app.request.get('_route') %}
+    <li {% if current_route == 'profile_show' %} class="active" {% endif %}>
+        <a href="{{ path('profile_show') }}">Profile</a>
+    </li>
+    <li {% if current_route == 'profile_accounts' %} class="active" {% endif %}>
+        <a href="{{ path('profile_accounts') }}">Accounts</a>
+    </li>
+    <li {% if current_route == 'profile_rooms' %} class="active" {% endif %}>
+        <a href="{{ path('profile_rooms') }}">Rooms</a>
+    </li>
+    <li {% if current_route == 'profile_groups' %} class="active" {% endif %}>
+        <a href="{{ path('profile_groups') }}">Groups</a>
+    </li>
+    <li {% if current_route == 'profile_reservations' %} class="active" {% endif %}>
+        <a href="{{ path('profile_reservations') }}">Reservations</a>
+    </li>
+</ul>

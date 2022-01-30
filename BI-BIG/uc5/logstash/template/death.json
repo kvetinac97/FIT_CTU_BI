@@ -1,0 +1,86 @@
+{
+  "index_patterns": "death",
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "mappings": {
+    "doc": {
+      "dynamic_templates": [
+        {
+          "string_fields": {
+            "mapping": {
+              "type": "text",
+              "omit_norms": true,
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "match_mapping_type": "string",
+            "match": "*"
+          }
+        }
+      ],
+      "properties": {
+        "ID": {
+          "type": "integer"
+        },
+        "Deaths": {
+          "type": "integer",
+          "ignore_malformed": true
+        },
+        "StatCode": {
+          "type": "integer"
+        },
+        "GenderNum": {
+          "type": "integer",
+          "ignore_malformed": true
+        },
+        "GenderCode": {
+          "type": "keyword",
+          "ignore_malformed": true
+        },
+        "ReasonNum": {
+          "type": "integer",
+          "ignore_malformed": true
+        },
+        "ReasonCode": {
+          "type": "keyword",
+          "ignore_malformed": true
+        },
+        "ReasonNum2": {
+          "type": "integer"
+        },
+        "ReasonCode2": {
+          "type": "keyword",
+          "ignore_malformed": true
+        },
+        "AreaNum": {
+          "type": "integer"
+        },
+        "AreaCode": {
+          "type": "keyword"
+        },
+        "Date": {
+	  "type": "date",
+	  "format": "yyyy",
+	},
+        "GenderText": {
+          "type": "keyword"
+        },
+        "ReasonText": {
+          "type": "keyword"
+        },
+        "ReasonText2": {
+          "type": "keyword"
+        },
+        "AreaText": {
+          "type": "keyword"
+        }
+      }
+    }
+  },
+  "aliases": {}
+}

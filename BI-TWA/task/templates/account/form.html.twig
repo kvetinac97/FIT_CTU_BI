@@ -1,0 +1,32 @@
+<main id="form">
+    {{ form_start(form) }}
+    <div class="form-row error">
+        {{ form_errors(form.name) }}
+    </div>
+    <div class="form-row">
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+    </div>
+    <div class="form-row error">
+        {{ form_errors(form.plain_password) }}
+    </div>
+    <div class="form-row">
+        {{ form_label(form.plain_password) }}
+        {{ form_widget(form.plain_password) }}
+    </div>
+    <div class="form-row error">
+        {{ form_errors(form.employee) }}
+    </div>
+    <div class="form-row">
+        {{ form_label(form.employee) }}
+        {{ form_widget(form.employee) }}
+    </div>
+    <div class="form-row error">
+        {{ form_errors(form.expiration) }}
+    </div>
+    <div class="form-row">
+        {{ form_label(form.expiration) }}
+        {{ form_widget(form.expiration) }}
+    </div>
+    {{ form_end(form) }}
+</main>

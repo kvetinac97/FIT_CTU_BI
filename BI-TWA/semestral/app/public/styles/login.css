@@ -1,0 +1,90 @@
+body {
+    background: #FFF;
+    height: 100%;
+}
+
+html, main, .login-wrapper {
+    height: 100%;
+}
+
+.login-wrapper {
+    display: flex;
+}
+
+#login-logo {
+    flex-grow: 1;
+}
+
+#login-logo h1 {
+    display: none;
+}
+
+#authorization {
+    color: var(--blackD);
+    align-self: center;
+    flex-grow: 2;
+    align-self: center;
+}
+
+#login-form {
+    width: 20em;
+    margin-top: 0.5em;
+}
+
+#login-form label {
+    display: none;
+}
+
+#login-form input {
+    margin: 0.5em 0;
+    width: 20em;
+}
+
+#login-form input:not([type="submit"]) {
+    color: var(--blackD);
+    background-color: var(--greyL);
+    border: none;
+    border-bottom: solid var(--blackL) 2px;
+}
+
+#login-form button[type="submit"] {
+    margin: 1em 0;
+    box-sizing: content-box;
+    border-radius: 6px;
+    background-color: var(--primary);
+    color: var(--greyL);
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 992px) {
+    .login-wrapper {
+        flex-direction: column;
+    }
+    
+    #login-logo {
+        background-color: var(--primary);
+        color: var(--greyL);
+        padding: 1em;
+    }
+
+    #login-logo img {
+        display: none;
+    }
+
+    #login-logo h1 {
+        display: inline;
+        font-size: 2em;
+    }
+
+    #authorization {
+        margin-top: 5em;
+        /*max-width: 30em;*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #login-form, #login-form input {
+        /*max-width: 30em;*/
+    }
+
+}

@@ -1,0 +1,187 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('styles/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/menu.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/datatable.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/calendar.css') }}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ asset('scripts/submenu.js') }}"></script>
+    <script src="{{ asset('scripts/pages/defaultDetailPage.js') }}"></script>
+    <script src="{{ asset('scripts/pages/reservations/detailDateFilter.js') }}"></script>
+    <script src="{{ asset('scripts/calendar.js') }}"></script>
+{% endblock %}
+
+
+{% block content %}
+    <div class="profile-menu-wrapper">
+        <section id="go-back">
+            <a href="{{ path('user_index') }}"><div class="material-icons">arrow_back</div><br>People</a>
+        </section>
+        <section id="menu-title">
+            <h1>{{ user.name }} [{{ user.id }}]</h1>
+        </section>
+        <nav class="user-nav" id="sub-nav">
+            <button id="dropbtn" class="sub-menu-controller">
+                Reservations
+                <span class="material-icons">
+                arrow_drop_down
+              </span>
+            </button>
+            <div class="sub-menu">
+                {{ include('user/_menu.html.twig') }}
+            </div>
+        </nav>
+    </div>
+    <div class="profile-content-wrapper">
+        <section id="profile" class="info-card">
+        <section id="profile-table" class="table-card">
+            <div class="table-wrapper">
+                <section class="above-table">
+                <div class="filters-section">
+                    
+        <div class='date-filter'>
+        <div class='main-filter'>
+            <button 
+                class="date-search-toggle"
+                id="toggle-date-start"
+                onclick="toggleHidden(['date-start','date-search-submit'],['toggle-date-start'])">
+                    Choose start date
+            </button>
+
+            <div class="calendar-wrapper" id="date-start">
+                <h3>Search by start date</h3>
+                <table class="calendar">
+                    <thead id="calendar-control">
+                        <tr class="calendar-date color-row">
+                            <th colspan="7">
+                                <button id="prev-month" class="calendar-change-month"><</button>
+                                <span id="month"></span>
+                                    - 
+                                <span id="year">2021</span>
+                                <button id="next-month" class="calendar-change-month">></button>
+                            </th>
+                        </tr>
+                        <tr id="week-days">
+                            <th>PO</th>
+                            <th>UT</th>
+                            <th>ST</th>
+                            <th>CT</th>
+                            <th>PA</th>
+                            <th>SO</th>
+                            <th>NE</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-data">   
+                    </tbody>
+                </table>
+            </div>
+
+
+            <button 
+                class="date-search-toggle"
+                id="toggle-date-end"
+                onclick="toggleHidden(['date-end','date-search-submit'],['toggle-date-end'])">
+                    Choose end date
+            </button>
+
+
+            <div class="calendar-wrapper" id="date-end">
+                <h3>Search by end date</h3>
+                <table class="calendar">
+                    <thead id="calendar-control">
+                        <tr class="calendar-date color-row">
+                            <th colspan="7">
+                                <button id="prev-month" class="calendar-change-month"><</button>
+                                <span id="month"></span>
+                                    - 
+                                <span id="year">2021</span>
+                                <button id="next-month" class="calendar-change-month">></button>
+                            </th>
+                        </tr>
+                        <tr id="week-days">
+                            <th>PO</th>
+                            <th>UT</th>
+                            <th>ST</th>
+                            <th>CT</th>
+                            <th>PA</th>
+                            <th>SO</th>
+                            <th>NE</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-data">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button id="date-search-submit">
+            Submit
+        </button>
+        </div>
+
+                </div>
+                </section>
+
+                {% if reservations|length > 0 %}
+                    <section id="table-people" class="table">
+                        <section class="table-row table-header">
+                            <ol>
+                                <li class="id">Id</li>
+                                <li class="room">Room</li>
+                                <li class="author">Author</li>
+                                <li class="status">Status</li>
+                            </ol>
+                        </section>
+                        <section class="table-content">
+                            {% for reservation in reservations %}
+                                <article class="table-row">
+                                    <ol>
+                                        <li class="id">
+                                            {{ reservation.id }}
+                                        </li>
+                                        <li class="room">
+                                            <a href="{{ path('room_show', {'id': reservation.room.id}) }}">{{ reservation.room.name }}</a>
+                                        </li>
+                                        <li class="author">
+                                            <a href="{{ path('user_show', {'id': reservation.author.id}) }}">
+                                                {{ reservation.author.name }}
+                                            </a>
+                                        </li>
+                                        <li class="status">
+                                            {{ reservation.status }}
+                                        </li>
+                                    </ol>
+                                </article>
+                            {% endfor %}
+
+                        </section>
+                    </section>
+                {% else %}
+                    <h2>No reservations found</h2>
+                {% endif %}
+                <section class="bellow-table">
+                    {% if pages >= 1 %}
+                        <nav>
+                            <ol class="pages">
+                                {% for i in 1..pages %}
+                                    <li>
+                                        <a {% if i == current %} class="active-page" {% endif %}
+                                                data-page="{{ i }}"
+                                                href="{{ path('user_reservations', params + {'page' : i, 'id' : user.id}) }}"> {# urlParams +  #}
+                                            {{ i }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ol>
+                        </nav>
+                    {% endif %}
+                </section>
+            </div>
+        </section>
+        </section>
+    </div>
+{% endblock %}

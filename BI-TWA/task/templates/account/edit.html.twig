@@ -1,0 +1,10 @@
+{% extends 'default.twig' %}
+{% block title %} {{ action }} {% endblock %}
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" href="styles/form.css">
+{% endblock %}
+{% block body %}
+    <h1>{{ action }}</h1>
+    {{ include('account/form.html.twig') }}
+{% endblock %}

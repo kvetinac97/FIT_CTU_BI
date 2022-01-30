@@ -1,0 +1,62 @@
+{% extends 'default.twig' %}
+{% block title %} {{ action }} {% endblock %}
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" href="styles/form.css">
+{% endblock %}
+{% block body %}
+    <h1>{{ action }}</h1>
+    <main id="form">
+        {{ form_start(form) }}
+        <div class="form-row error">
+            {{ form_errors(form.name) }}
+        </div>
+        <div class="form-row">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+        </div>
+        <div class="form-row error">
+            {{ form_errors(form.username) }}
+        </div>
+        <div class="form-row">
+            {{ form_label(form.username) }}
+            {{ form_widget(form.username) }}
+        </div>
+        <div class="form-row error">
+            {{ form_errors(form.phone) }}
+        </div>
+        <div class="form-row">
+            {{ form_label(form.phone) }}
+            {{ form_widget(form.phone) }}
+        </div>
+        <div class="form-row error">
+            {{ form_errors(form.email) }}
+        </div>
+        <div class="form-row">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email) }}
+        </div>
+        <div class="form-row error">
+            {{ form_errors(form.website) }}
+        </div>
+        <div class="form-row">
+            {{ form_label(form.website) }}
+            {{ form_widget(form.website) }}
+        </div>
+        <div class="form-row error">
+            {{ form_errors(form.description) }}
+        </div>
+        <div class="form-row">
+            {{ form_label(form.description) }}
+            {{ form_widget(form.description) }}
+        </div>
+        <div class="form-row error">
+            {{ form_errors(form.photoFile) }}
+        </div>
+        <div class="form-row">
+            {{ form_label(form.photoFile) }}
+            {{ form_widget(form.photoFile) }}
+        </div>
+        {{ form_end(form) }}
+    </main>
+{% endblock %}

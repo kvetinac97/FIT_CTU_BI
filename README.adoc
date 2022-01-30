@@ -113,3 +113,30 @@ link:BI-KOT/[Programming in Kotlin (BI-KOT)] - semestral work, labs, lectures, h
 |Basics of Android Application Development|A|101/100|67/76|34/24
 |Programming in Kotlin|A|90/100|37/50|53/50
 |===
+
+== Fifth semester
+
+link:BI-PST/[Probability and statistics (BI-PST)] - grades export
+
+link:BI-PPA/[Programming Paradigms (BI-PPA)] - semestral work, labs, grades and MARAST quiz export
+
+link:BI-BIG/[DB Technologies for Big Data (BI-BIG)] - use-cases and grades export
+
+link:BI-TWA/[Web Applications (BI-TWA)] - homeworks, team semestral work and grades export
+
+link:BI-KSA/[Introduction to Cultural and Social Anthropology (BI-KSA)] - reflection
+
+link:BI-GIT.21/[SW Development Technologies (BI-GIT.21)] - grades export
+
+|===
+|Subject |Grade |Total |Exam |Assessment
+
+|Bachelor Project 4+|-
+|Probability and Statistics|A|94.5/100|58/60|36.5/40
+|Programming Paradigms|A|91/100|46/55|45/45
+|DB Technologies for Big Data|A 3+|92.79/100
+|Web Applications|A|93/100|27/30|65/70
+|Economic and management principles|A|93/100|23/30|70/70
+|Introduction to Cultural and Social Anthropology 4+|A
+|SW Development Technologies|- 3+|57/50
+|===

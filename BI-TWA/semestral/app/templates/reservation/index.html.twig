@@ -1,0 +1,179 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservation index{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('styles/datatable.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/calendar.css') }}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ asset('scripts/datatable.js') }}"></script>
+    <script src="{{ asset('scripts/detail.js') }}"></script>
+    <script src="{{ asset('scripts/pages/reservations/reservations.js') }}"></script>
+    <script src="{{ asset('scripts/calendar.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="table-wrapper">
+        <section class="above-table">
+            <div class="table-title-add">
+                <h1>Reservations</h1>
+                {% if is_granted('create') %}<a href="{{ path('reservation_new') }}" class="add-table-item">+</a>{% endif %}
+            </div>
+            
+        <div class="filters-section">
+{#        <form action="#" class="table-filter" id="search-form-reservations">#}
+{#            <input class="input-underline" type="text" name="author" id="filter"  value="{{ params.author ?? ""}}" placeholder="Search by author...">#}
+{#            <button type="submit">Find</button>#}
+{#        </form>#}
+
+        <div class='date-filter'>
+        <div class='main-filter'>
+            <button 
+                class="date-search-toggle"
+                id="toggle-date-start"
+                onclick="toggleHidden(['date-start','date-search-submit'],['toggle-date-start'])">
+                    Choose start date
+            </button>
+
+            <div class="calendar-wrapper" id="date-start">
+                <h3>Search by start date</h3>
+                <table class="calendar">
+                    <thead id="calendar-control">
+                        <tr class="calendar-date color-row">
+                            <th colspan="7">
+                                <button id="prev-month" class="calendar-change-month"><</button>
+                                <span id="month"></span>
+                                    - 
+                                <span id="year">2021</span>
+                                <button id="next-month" class="calendar-change-month">></button>
+                            </th>
+                        </tr>
+                        <tr id="week-days">
+                            <th>PO</th>
+                            <th>UT</th>
+                            <th>ST</th>
+                            <th>CT</th>
+                            <th>PA</th>
+                            <th>SO</th>
+                            <th>NE</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-data">   
+                    </tbody>
+                </table>
+            </div>
+
+
+            <button 
+                class="date-search-toggle"
+                id="toggle-date-end"
+                onclick="toggleHidden(['date-end','date-search-submit'],['toggle-date-end'])">
+                    Choose end date
+            </button>
+
+
+            <div class="calendar-wrapper" id="date-end">
+                <h3>Search by end date</h3>
+                <table class="calendar">
+                    <thead id="calendar-control">
+                        <tr class="calendar-date color-row">
+                            <th colspan="7">
+                                <button id="prev-month" class="calendar-change-month"><</button>
+                                <span id="month"></span>
+                                    - 
+                                <span id="year">2021</span>
+                                <button id="next-month" class="calendar-change-month">></button>
+                            </th>
+                        </tr>
+                        <tr id="week-days">
+                            <th>PO</th>
+                            <th>UT</th>
+                            <th>ST</th>
+                            <th>CT</th>
+                            <th>PA</th>
+                            <th>SO</th>
+                            <th>NE</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-data">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button id="date-search-submit">
+            Submit
+        </button>
+        </div>
+    </div>
+
+    </section>
+        {% if reservations|length > 0 %}
+            <section id="table-reservations"
+                    {% if is_granted('ROLE_ADMIN') %} data-auth-admin="1" {% endif %}
+                     class="table">
+                <section class="table-row table-header">
+                    <ol>
+                        <li class="id">Id</li>
+                        <li class="author">Author</li>
+                        <li class="room">Room</li>
+                        <li class="status">Status</li>
+                        <li class="start">Start</li>
+                        <li class="until">Until</li>
+                    </ol>
+                </section>
+                <section class="table-content">
+                    {% for reservation in reservations %}
+                        <article class="table-row">
+                            <ol>
+                                <li class="id">
+                                    <a href="{{ path('reservation_show', {'id' : reservation.id}) }}">
+                                        {{ reservation.id }}
+                                    </a>
+                                </li>
+                                <li class="author">
+                                    {{ reservation.author.name }}
+                                </li>
+                                <li class="room">
+                                    <a href="{{ path('room_show', {'id': reservation.room.id}) }}">
+                                        {{ reservation.room.name }}
+                                    </a>
+                                </li>
+                                <li class="status">
+                                    {{ reservation.status }}
+                                </li>
+                                <li class="start">
+                                    {{ reservation.start ? reservation.start|date('Y-m-d H:i:s') : '' }}
+                                </li>
+                                <li class="until">
+                                    {{ reservation.until ? reservation.until|date('Y-m-d H:i:s') : '' }}
+                                </li>
+                            </ol>
+                        </article>
+                    {% endfor %}
+
+                </section>
+            </section>
+        {% else %}
+            <h2>No reservations found</h2>
+        {% endif %}
+        <section class="bellow-table">
+            {% if pages >= 1 %}
+                <nav>
+                    <ol class="pages" id="pages-reservations">
+                        {% for i in 1..pages %}
+                            <li>
+                                <a {% if i == current %} class="active-page" {% endif %}
+                                        data-page="{{ i }}"
+                                        href="{{ path('reservation_index', params + {'page' : i}) }}"> {# urlParams +  #}
+                                    {{ i }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                </nav>
+            {% endif %}
+        </section>
+    </div>
+{% endblock %}

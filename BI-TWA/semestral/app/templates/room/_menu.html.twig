@@ -1,0 +1,14 @@
+<ul class="user-nav-items">
+    {% set current_route = app.request.get('_route') %}
+    <li {% if current_route == 'room_show' %} class="active" {% endif %}>
+        <a href="{{ path('room_show', {'id' : room.id}) }}">Detail</a>
+    </li>
+    {% if is_granted('admin', room) %}
+    <li {% if current_route == 'room_users' or current_route == 'room_users_add' %} class="active" {% endif %}>
+        <a href="{{ path('room_users', {'id' : room.id}) }}">Users</a>
+    </li>
+    {% endif %}
+    <li {% if current_route == 'room_reservations' %} class="active" {% endif %}>
+        <a href="{{ path('room_reservations', {'id' : room.id}) }}">Reservations</a>
+    </li>
+</ul>

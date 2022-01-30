@@ -1,0 +1,9 @@
+<ul class="user-nav-items">
+    {% set current_route = app.request.get('_route') %}
+    <li {% if current_route == 'building_show' %} class="active" {% endif %}>
+        <a href="{{ path('building_show', {'id' : building.id}) }}">Detail</a>
+    </li>
+    <li {% if current_route == 'building_rooms' %} class="active" {% endif %}>
+        <a href="{{ path('building_rooms', {'id' : building.id}) }}">Rooms</a>
+    </li>
+</ul>

@@ -1,0 +1,133 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Account index{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{ asset('styles/profile.css') }}">
+  <link rel="stylesheet" href="{{ asset('styles/datatable.css') }}">
+  <link rel="stylesheet" href="{{ asset('styles/menu.css') }}">
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ asset('scripts/datatable.js') }}"></script>
+  <script src="{{ asset('scripts/detail.js') }}"></script>
+  <script src="{{ asset('scripts/submenu.js') }}"></script>
+  <script src="{{ asset('scripts/pages/defaultDetailPage.js') }}"></script>
+  <script src="{{ asset('scripts/pages/reservations/users.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="profile-menu-wrapper">
+    <section id="go-back">
+      <a href="{{ path('reservation_index') }}"><div class="material-icons">arrow_back</div><br>Reservations</a>
+    </section>
+    <section id="menu-title">
+      <h1>[{{ reservation.id }}]</h1>
+    </section>
+    <nav class="user-nav" id="sub-nav">
+      <button id="dropbtn" class="sub-menu-controller">
+        Users
+        <span class="material-icons">
+                arrow_drop_down
+              </span>
+      </button>
+      <div class="sub-menu">
+        {{ include('reservation/_menu.html.twig') }}
+      </div>
+    </nav>
+  </div>
+
+  {% set can_edit = is_granted('approve', reservation) %}
+<div class="profile-content-wrapper">
+<section id="profile" class="info-card">
+  <section id="table-reservation-users"
+           data-reservation-id="{{ reservation.id }}"
+          {% if can_edit %} data-auth-edit="1" {% endif %}
+          {% if is_granted('ROLE_ADMIN') %} data-auth-admin="1" {% endif %}
+           class="table-card">
+    <div class="table-wrapper">
+      <section class="above-table">
+        <form action="#" class="table-filter" id="search-form-reservation-users">
+          <input class="input-underline" type="text" name="name" id="filter" value="{{ params.name ?? ""}}" placeholder="Search by name...">
+          <button type="submit">Find</button>
+        </form>
+      </section>
+
+    {% if users|length > 0 %}
+      <section id="table-accounts" class="table" >
+        <section class="table-row table-header">
+          <ol>
+            <li class="id">Id</li>
+            <li class="username">Name</li>
+            {% if can_edit %}
+            <li class="remove">Remove</li>
+            {% endif %}
+            {#                        <li class="check">#}
+            {#                            <input type="checkbox" class="select-all checkbox" name="select-all" value="#"/>#}
+            {#                        </li>#}
+          </ol>
+        </section>
+        <section class="table-content" >
+          {% for user in users %}
+            <article class="table-row">
+              <ol>
+                <li class="id">
+                  {{ user.id }}
+                </li>
+                <li class="name">
+{#                  <a href="{{ path('account_show', {'id' : account.id}) }}">#}
+                    {{ user.name }}
+{#                  </a>#}
+                </li>
+                {% if can_edit %}
+                <li class="remove">
+                  <form method="POST">
+                    <label>
+                      <input type="text" name="removeUserId" value="{{ user.id }}" hidden/>
+                    </label>
+                    <button type="submit">REMOVE</button>
+                  </form>
+                </li>
+                {% endif %}
+                {#                                <li class="check"><input type="checkbox" class="select-item checkbox" name="select-item" value="#"/></li>#}
+              </ol>
+            </article>
+          {% endfor %}
+
+        </section>
+      </section>
+    {% else %}
+      <h2>No records found</h2>
+    {% endif %}
+    <section class="bellow-table">
+      {% if pages >= 1 %}
+        <nav>
+          <ol class="pages" id="pages-reservation-users">
+            {% for i in 1..pages %}
+              <li>
+                <a {% if i == current %} class="active-page" {% endif %}
+                        data-page="{{ i }}"
+                        href="{{ path('reservation_users', params + {'page' : i} + {'id' : reservation.id}) }}"> {# urlParams +  #}
+                  {{ i }}
+                </a>
+              </li>
+            {% endfor %}
+          </ol>
+        </nav>
+      {% endif %}
+    </section>
+    </div>
+  </section>
+  </section>
+  {% if can_edit %}
+  <section id="actions" class="info-card">
+    <h2>Actions</h2>
+    <ul id="action-list">
+      <li>
+        <a href="{{ path('reservation_users_add', {'id' : reservation.id}) }}">Add Users</a>
+      </li>
+    </ul>
+  </section>
+  {% endif %}
+</div>
+{% endblock %}

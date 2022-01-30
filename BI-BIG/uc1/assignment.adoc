@@ -1,0 +1,3 @@
+= UC1
+
+We had to write a Docker compose in order to start a functioning web server with Node.js and PostgreSQL.

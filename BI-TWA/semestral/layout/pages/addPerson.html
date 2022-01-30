@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evidence Zamestnancu</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/sidebar.css">
+</head>
+<body>
+    <div id="page-container">
+        <main class="page-content">
+            <form class="form info-card">
+                <div class="field">
+                  <label>Name</label>
+                  <input type="text" name="full-name" placeholder="Name">
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Email">
+                </div>
+                <div class="field">
+                  <label>Phone number</label>
+                  <input type="tel" name="phone" placeholder="Phone">
+                </div>
+                <button class="submit-button" type="submit">Add User</button>
+              </form>
+        </main>
+        <aside class="page-left" id="sidebar">
+            <div class="sidebar-content">
+                <nav>
+                    <a class="logo" href="#">R<span class="animate">OOMER</span></a>
+                    <ul id="nav-links" class="hide-m nav-links">
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-calendar'></i>
+                                <span class="link-text">Timetable</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-calendar-check'></i>
+                                <span class="link-text">Reservations</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="./people.html">
+                                <i class='bx bx-user'></i>
+                                <span class="link-text">People</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-building'></i>
+                                <span class="link-text">Rooms</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-group'></i>
+                                <span class="link-text">Groups</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-log-out'></i>
+                                <span class="link-text">Log Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="sidebar-actions">
+                        <button id="toggle-sidebar">
+                            <i class='sidebar-toggle-icon'></i>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+    </div>
+
+    <script src="../scripts/sidebar.js"></script>
+</body>
+</html>

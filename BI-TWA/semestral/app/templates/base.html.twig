@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{% block title %}Welcome!{% endblock %}</title>
+{#        #}{# Run `composer require symfony/webpack-encore-bundle`#}
+{#           and uncomment the following Encore helpers to start using Symfony UX #}
+{#        {% block stylesheets %}#}
+{#            #}{#{{ encore_entry_link_tags('app') }}#}
+{#        {% endblock %}#}
+
+{#        {% block javascripts %}#}
+{#            #}{#{{ encore_entry_script_tags('app') }}#}
+{#        {% endblock %}#}
+
+        <!-- Fonts CSS -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <!-- Boxicons CSS -->
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- Materialicons CSS -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- Base CSS -->
+        <link rel="stylesheet" href="{{ asset('styles/reset.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/sidebar.css') }}">
+
+        {% block styles %}
+        {% endblock %}
+    </head>
+    <body>
+        <div id="page-container">
+            <main class="page-content">
+                {% block content %}{% endblock %}
+            </main>
+            <aside class="page-left" id="sidebar">
+                <div class="sidebar-content">
+                    <nav>
+                        <a class="logo" {% if menu != 'room' %}
+                            href="{{ path('room_index') }}"
+                            {% endif %}
+                        >R<span class="animate">OOMER</span></a>
+                        <ul id="nav-links" class="nav-links">
+                            {% if is_granted('ROLE_USER') %}
+                                <li {% if menu == 'profile' %} class="active" {% endif %}>
+                                    <a href="{{ path('profile_show') }}">
+                                        <i class='bx bx-user'></i>
+                                        <span class="link-text">Profile</span>
+                                    </a>
+                                </li>
+                                <li {% if menu == 'reservation' %} class="active" {% endif %}>
+                                    <a href="{{ path('reservation_index') }}">
+                                        <i class='bx bx-calendar-check'></i>
+                                        <span class="link-text">Reservations</span>
+                                    </a>
+                                </li>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                <li {% if menu == 'user' %} class="active" {% endif %}>
+                                    <a href="{{ path('user_index') }}">
+                                        <i class='bx bx-user'></i>
+                                        <span class="link-text">People</span>
+                                    </a>
+                                </li>
+                                {% endif %}
+                            {% endif %}
+                            <li {% if menu == 'room' %} class="active" {% endif %}>
+                                <a href="{{ path('room_index') }}">
+                                    <i class='bx bx-building'></i>
+                                    <span class="link-text">Rooms</span>
+                                </a>
+                            </li>
+                            <li {% if menu == 'building' %} class="active" {% endif %}>
+                                <a href="{{ path('building_index') }}">
+                                    <i class='bx bx-building'></i>
+                                    <span class="link-text">Buildings</span>
+                                </a>
+                            </li>
+                            {% if is_granted('view_groups') %}
+                            <li {% if menu == 'group' %} class="active" {% endif %}>
+                                <a href="{{ path('group_index') }}">
+                                    <i class='bx bx-group'></i>
+                                    <span class="link-text">Groups</span>
+                                </a>
+                            </li>
+                            {% endif %}
+                            <li>
+                                {% if is_granted('ROLE_USER') %}
+                                <a href="{{ path('logout') }}">
+                                    <i class='bx bx-log-out'></i>
+                                    <span class="link-text">Log Out</span>
+                                </a>
+                                {% else %}
+                                <a href="{{ path('login') }}">
+                                    <i class='bx bx-log-in'></i>
+                                    <span class="link-text">Log In</span>
+                                </a>
+                                {% endif %}
+                            </li>
+                        </ul>
+                        <div class="sidebar-actions">
+                            <button id="toggle-sidebar">
+                                <i class='sidebar-toggle-icon'></i>
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+            </aside>
+        </div>
+        <script src="{{ asset('scripts/sidebar.js') }}"></script>
+
+        {% block scripts %}
+        {% endblock %}
+    </body>
+</html>

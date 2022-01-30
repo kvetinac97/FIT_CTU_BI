@@ -1,0 +1,12 @@
+button {
+    width: 10em;
+    margin-top: 1em;
+}
+
+form div:first-child>select {
+    margin-top: 1em;
+}
+
+form>div>div>select {
+    width: 10em;
+}

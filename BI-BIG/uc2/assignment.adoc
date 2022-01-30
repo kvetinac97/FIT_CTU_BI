@@ -1,0 +1,3 @@
+= UC2
+
+We got a MongoDB database, and we had to write queries based on given assignment.

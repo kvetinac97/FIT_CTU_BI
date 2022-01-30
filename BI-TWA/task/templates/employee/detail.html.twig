@@ -1,0 +1,55 @@
+{% extends 'default.twig' %}
+{% block title %} Detail | {{ user.name }} {% endblock %}
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" href="styles/detail.css">
+{% endblock %}
+{% block body %}
+    <h1>{{ user.name }}</h1>
+    <main id="content">
+        <div class="vertical-box">
+            <img src="employees/{{ user.photo }}" alt="Image of {{ user.username }}" width="149"/>
+
+            <h2>Position</h2>
+            <section about="Positions">
+                {% if user.roles is empty %}
+                    <span class="cursive">No positions</span>
+                {% else %}
+                    {{ user.roles | map(r => r.name) | join(', ') }}
+                {% endif %}
+            </section>
+
+            {% if canEdit %}
+            <h2>Accounts</h2>
+            <section about="Accounts">
+                <a class="action" href="{{ path('account_list', {'username': user.username}) }}">See accounts</a>
+            </section>
+            {% endif %}
+        </div>
+
+        <div class="vertical-box">
+            <h2>Contact card</h2>
+            <section>
+                <dl>
+                    <dt>Phone</dt>
+                    <dd>{{ user.phone }}</dd>
+
+                    <dt>E-mail</dt>
+                    <dd><a href="mailto:{{ user.email }}">{{ user.email }}</a></dd>
+
+                    <dt>Website</dt>
+                    <dd><a href="{{ user.website }}">{{ user.website }}</a></dd>
+                </dl>
+            </section>
+
+            <h2>Description</h2>
+            <section>
+                <p>
+                    {{ user.description | raw }}
+                </p>
+            </section>
+
+            <a href="{{ path('employee_list') }}">Back to employee list</a>
+        </div>
+    </main>
+{% endblock %}

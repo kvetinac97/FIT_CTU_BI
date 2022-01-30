@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Building{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('styles/form.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="info-card">
+    <h2>Create new Building</h2>
+
+    {{ include('building/_form.html.twig') }}
+</div>
+{% endblock %}

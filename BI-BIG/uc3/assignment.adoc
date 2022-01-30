@@ -1,0 +1,16 @@
+= UC3
+
+Pro splnění UC3 je nutné předložit/ukázat a vysvětlit vyučující v rámci konání cvičení:
+
+* minimálně 3 různé datasety, které tvoří jeden tématický celek (budou dále využity pro UC4 a UC5)
+* alespoň jeden vstupní dataset bude mít nejméně 5.000 záznamů
+* vybrané datové sady musí být navzájem propojitelné skrz nějaký společný identifikátor či jiný sloupec
+* uvést zdroje odkud jsou jednotlivé datové sety čerpány
+* uvést jeden tématický celek, jinými slovy porozumět vybraným datům a uvést jakou oblast řeší
+* předložené datasety je nutné vybrat tak, aby bylo možné vytvářet smysluplné vizualizace
+* uvést, co lze z dat získat
+* uvést, jak rozumíte jednotlivým datovým sadám, například jakého datového typu je každý sloupec, co je obsahem každého sloupce a případná integritní omezení na sloupcích
+* uvést, jakého datového formátu jsou datové sady
+* uvést, zda a jak budete data připravovat pro UC4+UC5 (zmenšení datové sady, vyčištění chybných položek, vyčištění prázdných položek, sjednocení na různé úrovni granularity dat, apod.)
+* hotový UC3 odevzdejte vyučující dle níže uvedeného způsobu odevzdání
+* níže uvedené ukázkové řešení a data nelze použít, dále nevyužívejte prosím databázi IMDB

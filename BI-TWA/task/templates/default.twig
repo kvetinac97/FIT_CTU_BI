@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <base href="/" />
+    {% block styles %}
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/general.css">
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}
+</head>
+<body>
+{% if app.user %}
+    <header>Logged in as <strong>{{ app.user.username }}</strong> <a class="action" href="{{ path('app_logout') }}">Logout</a></header>
+{% endif %}
+{% block body %}
+{% endblock %}
+</body>
+</html>

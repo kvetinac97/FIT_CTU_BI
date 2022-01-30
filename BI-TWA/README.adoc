@@ -1,0 +1,21 @@
+= Web Applications
+
+Got 100 % from semestral task. +
+Worked as part of an amazing team for semestral work - got over 87 %. +
+Got 90 % from written exam, resulting in **grade A** without oral exam.
+
+== Semestral task
+
+Semestral task was to create a user manager web application. This was supposed to be base of our semestral work implementation. There were 4 homeworks, each working as a "checkpoint".
+
+== Semestral work
+
+This project was aimed at creating a Symfony web application - Room manager in team consisting of three members.
+
+What I have done on the project:
+
+ - Bigger part of Rest API with semi-automated tests in Postman
+ - Complete security (authentication and authorization)
+ - Database part
+
+link:semestral/[You can see the project here]

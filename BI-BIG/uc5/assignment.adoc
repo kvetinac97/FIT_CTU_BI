@@ -1,0 +1,47 @@
+= UC5
+
+**Pro řešení UC5 je nutné splnit následující podmínky:**
+
+* Pro indexaci dat musí být použit Elasticsearch,
+* data do Elasticsearch je nutné importovat pomocí Logstash,
+* vizualizace dat musí být zpracována pomocí vizualizačních nástrojů v Kibaně.
+
+**1. Dle postupu ze cvičení 10 a 11 proveďte (10 BODŮ)**:
+
+* Pracujte se dvěma datovýma sadama, které byly schválené v rámci UC3, výběr záleží na vás.
+* Pro každý datový set si nadefinujte pipeline pro posílání dat (logstash/config/pipelines.yml), nezapomeňte, že každá datová sada má svoji vlastní pipelinu a zdroje dat
+pro každou z nich.
+
+[source, yaml]
+----
+pipeline.id: soubor1
+path.config: logstash/pipeline/soubor1.conf
+----
+
+[source, yaml]
+----
+pipeline.id: soubor2
+path.config: logstash/pipeline/soubor2.conf
+----
+
+* Dále připomínám, že v dalších (návazných) souborech je nutné správně popsat příchozí zprávy z datasetů, parsování, jaké sloupce a datové typy se zde vyskytují, atd.
+* Je vyžadováno, aby byl definovaný output Logstash do Elasticsearch.
+* V Elasticsearch namapujte a indexujte vaše data podle vašich šablon (logstash/template). Opět nezapomeňte zde uvést definici indexů spolu s mapováním jednotlivých sloupců a jejich datových typů.
+
+Rozchoďte Index Pattern v Kibaně.
+
+**2. Dotazy do indexů (3 BODY) - záložka Dev Tools v Kibaně**:
+
+* Vytvořte dotaz, kde použijete libovolné filtrování.
+* Vytvořte dotaz, kde použijete wildcard hledání.
+* Vytvořte dotaz, kde použijete třídení.
+
+**3. Vizualizace - (5 BODŮ) vizualizační nástroje v Kibaně**:
+
+* Vytvořte 1 vizualizaci pomocí tabulky.
+* Vytvořte 3 různé vizualizace v Kibaně pomocí grafů. Dbejte na to, aby jste pokaždé pracovali s různými vstupními daty tedy jejich kombinacemi, jeden sloupec se může vyskytovat
+ve více grafech, ale nikoliv kompletní kombinace sloupců ve více grafech.
+
+**4. Dashboard - (2 BODY)**:
+
+* Z vytvořených vizualizací vytvořte Dashboard v Kibaně.

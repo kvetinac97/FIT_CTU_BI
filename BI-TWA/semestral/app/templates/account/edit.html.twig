@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Account{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('styles/form.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="info-card">
+    <h2>Edit Account</h2>
+
+    {{ include('account/_form.html.twig', {'button_label': 'Update'}) }}
+</div>
+{% endblock %}

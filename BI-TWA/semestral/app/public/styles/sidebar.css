@@ -1,0 +1,263 @@
+.sidebar-content{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #FFF;
+    border-right: 1px solid var(--greyD);
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    width: auto;
+}
+
+#sidebar nav{
+    width: 100%;
+}
+
+
+/*------------ ANIMATE -------------*/
+.transition-width > div{
+    transition: width linear .2s;
+}
+
+.transition-opacity,
+#sidebar.transition-opacity .nav-links .link-text,
+#sidebar.transition-opacity .animate
+{
+    transition: opacity linear .1s;
+}
+
+.sidebar-compact-show .sidebar-content{
+    width: 13rem;
+}
+
+.sidebar-compact-hide .sidebar-content{ 
+    width: 7rem;
+}
+
+
+.sidebar-compact-hide .nav-links .link-text, 
+.sidebar-compact-hide .animate
+{
+    opacity: 0;
+}
+
+/* .sidebar-compact-hide #nav-links a, 
+.sidebar-compact-hide a.logo
+{
+    padding-left: 2.5rem;
+} */
+
+.sidebar-compact-show .nav-links .link-text,
+.sidebar-compact-show .animate
+{
+    /* display: flex; */
+    opacity: 1;
+}
+
+
+/*-------- LOGO --------*/
+a.logo{
+    font-weight: 900;
+    font-size: 1.3em;
+}
+
+
+#nav-links a, a.logo{
+    display: flex;
+    align-items: center;
+    color: var(--blackD);
+    width: 100%;
+    padding: 1.3rem 2.5rem;
+}
+
+#nav-links a{
+    gap: .3em;
+}
+
+
+/*-------- NAV-LINKS --------*/
+#sidebar i.bx{
+    font-size: 2em;
+}
+
+#nav-links a{
+    font-weight: 500;
+    font-size: 0.8em;
+}
+
+#nav-links li.active a{
+    font-weight: 700;
+}
+
+#nav-links li a:hover{
+    background: var(--greyD);
+}
+
+.sidebar-toggle-icon:after{
+    content: '<';
+}
+
+/*-------- SIDEBAR-ACTIONS --------*/
+.sidebar-actions{
+    margin-top: 5em;
+    padding-bottom: 5em;
+    text-align: center;
+}
+
+#toggle-sidebar{
+    text-align: left;
+    background: none;
+    cursor: pointer;
+    border: 1px solid #CACACA;
+    color: #CACACA;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    font-weight: 800;
+}
+
+#toggle-sidebar.collapsed{
+    transform: rotate(180deg);
+    transition: transform .2s ease-in-out;  
+}
+
+#sidebar nav ul li:nth-child(4n + 2)::after{
+    content: '';
+    display: block;
+    border-bottom: 1px solid var(--greyD);
+    margin: 1.3rem 2rem;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .sidebar-compact-hide .nav-links{
+        display: none;
+    }
+
+
+    #toggle-sidebar.collapsed .sidebar-toggle-icon:after{
+        content: 'MENU';
+    }
+    
+
+    .sidebar-content{
+        right: 0;
+        bottom: auto;
+        background: #FFF;
+        border-bottom: 1px solid var(--greyD);
+        border-right: none;
+        overflow-y: hidden;
+        padding: 0 1em;
+    }
+
+    a.logo{
+        padding-left: 0;
+    }
+
+    #sidebar nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .sidebar-actions{
+        margin: 0;
+        padding-bottom: 0;
+        text-align: center;
+        z-index: 14;
+    }
+
+    button#toggle-sidebar{
+        border-radius: 4px;
+        color: var(--blackD);
+        width: auto;
+        height: auto;
+    }
+
+    .sidebar-toggle-icon:after{
+        content: 'CLOSE';
+    }
+
+    #nav-links{
+        padding: 3.3em 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: auto;
+        overflow-y: auto;
+        z-index: 13;
+        background: #FFF;
+    }
+
+
+
+    /*---------------- ANIMATE -----------------------*/
+    /* .sidebar-compact-show {
+        flex-basis: 3rem;
+        transition: flex-basis linear .2s;
+    }
+    
+    .sidebar-compact-hide{ 
+        flex-basis: 3rem;
+        transition: flex-basis linear .2s;
+    }
+     */
+    .sidebar-compact-show .sidebar-content{
+        width: 100%;
+        /* transition: width linear .2s; */
+    }
+    
+    .sidebar-compact-hide .sidebar-content{ 
+        width: 100%;
+        /* transition: width linear .2s; */
+    }
+    
+    
+    .sidebar-compact-hide .nav-links .link-text, 
+    .sidebar-compact-hide .animate
+    {
+        opacity: 1;
+        /* transition: opacity linear .1s; */
+    }
+     
+    /* .sidebar-compact-hide #nav-links a, 
+    .sidebar-compact-hide a.logo
+    {
+        padding-left: 2.5rem;
+    } */
+    
+    /* .sidebar-compact-show .nav-links .link-text,
+    .sidebar-compact-show .animate
+    {
+        display: flex;
+        opacity: 1;
+        transition: opacity linear .1s;
+    } */
+    
+    #toggle-sidebar.collapsed{
+        transform: none;
+    }
+
+}
+
+
+
+/* Medium devices (tablets, 600 and up) */
+/* @media only screen and (min-width: 600px) and (max-width: 991px) { 
+    .sidebar-compact-show .sidebar-content{
+        width: 30%;
+        transition: width linear .2s;
+    }
+} */
+
+/* 
+#nav-links li{
+    min-width: 13rem;
+    max-width: 40%;
+    text-align: center;
+} */

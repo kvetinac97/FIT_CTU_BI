@@ -1,0 +1,114 @@
+/*-------- TEMP --------*/
+
+.date-filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-filter {
+    display: flex;
+    align-items: center;
+}
+
+.main-filter>*, #date-search-submit {
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.date-search-toggle {
+    max-height: 2.5em;
+    width: 100%;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: stretch;
+}
+
+.filters-section {
+    min-width: 20em;
+}
+
+.calendar-wrapper, #date-search-submit {
+    display: none;
+}
+
+.calendar-wrapper h3 {
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.calendar{
+    font-size: 0.8em;
+}
+
+.calendar thead{
+    background: #fff;
+    color: var(--blackD);
+}
+
+.calendar thead th{
+    color: var(--blackD);
+    /* padding: 1.5em; */
+}
+
+.table-filter {
+    margin-left: 1em;
+}
+/*-------- TEMP-END --------*/
+
+
+.calendar .color-row{
+    background: var(--primary);
+}
+
+.calendar .color-row th{
+    color: #fff;
+}
+
+.calendar-date th{
+    text-align: center;
+}
+
+.diff-month{
+    color: var(--blackL)
+}
+
+
+.calendar td, .calendar th{
+    padding: 0.25em 0.5em;
+}
+
+.calendar tr td{
+    text-align: center;
+}
+
+
+.calendar tbody td:not(.active-day):hover{
+    background: var(--greyD);
+    cursor: pointer;
+    -webkit-transition: background-color .15s linear;
+    -ms-transition: background-color .15s linear;
+    transition: background-color .15s linear;
+}
+
+.active-day{
+    /* border-left: 3px solid var(--primary); */
+    font-weight: 400;
+    color: var(--primary);
+}
+
+.calendar-change-month{
+    background: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.6em;
+}
+
+.week-days th{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+
+.table-filter, .filters {
+    align-self: flex-start;
+}

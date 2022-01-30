@@ -1,0 +1,10 @@
+= UC3 solution
+
+I chose 4 datasets, all containing data from the Czech Republic throughout year 2020:
+
+ 1. Death reasons
+ 2. Hospitalizations
+ 3. List of economic subjects
+ 4. Helper table mapping districts to cities
+
+My idea was to watch how number of open restaurants is influencing hospitalizations and deaths, to watch death reasons and number of deaths in various cities and months.

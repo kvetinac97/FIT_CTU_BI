@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rezervacni system uceben</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/sidebar.css">
+</head>
+<body>
+    <aside id="sidebar">
+        <nav>
+            <a class="logo" href="#">ROOMER</a>
+            <ul id="nav-links" class="hide-m" class="nav-links">
+                <li><a href="#"><i class='bx bx-calendar'></i>Timetable</a></li>
+                <li><a href="#"><i class='bx bx-calendar-check'></i>Reservations</a></li>
+                <li class="active"><a href="#"><i class='bx bx-user'></i>People</a></li>
+                <li><a href="#"><i class='bx bx-building'></i>Rooms</a></li>
+                <li><a href="#"><i class='bx bx-group'></i>Groups</a></li>
+                <li><a href="#"><i class='bx bx-log-out'></i>Log Out</a></li>
+            </ul>
+            <div class="sidebar-actions">
+                <button id="toggle-sidebar">
+                    <i class='sidebar-toggle-icon'></i>
+                </button>
+            </div>
+        </nav>
+    </aside>
+    <script>
+        document.getElementById('toggle-sidebar').addEventListener('click', ()=>{
+            document.getElementById('nav-links').classList.toggle('hide-m')
+        })
+    </script>
+</body>
+</html>

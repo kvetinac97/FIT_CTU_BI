@@ -1,0 +1,10 @@
+{
+  "name": "simp-todo-list",
+  "version": "0.0.42",
+  "dependencies": {
+    "cors": "*",
+    "express": "*",
+    "pg": "*"
+  }
+}
+

@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Building index{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('styles/datatable.css') }}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ asset('scripts/datatable.js') }}"></script>
+    <script src="{{ asset('scripts/pages/buildings.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="table-wrapper">
+        <section class="above-table">
+            <div class="table-title-add">
+                <h1>Buildings</h1>
+                {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('building_new') }}" class="add-table-item">+</a>{% endif %}
+            </div>
+            <form action="#" class="table-filter" id="search-form-building">
+                <input class="input-underline" type="text" name="name" id="filter" value="{{ params.name ?? ""}}" placeholder="Search by name...">
+                <button type="submit">Find</button>
+            </form>
+        </section>
+
+        {% if buildings|length > 0 %}
+            <section id="table-building" class="table">
+                <section class="table-row table-header">
+                    <ol>
+                        <li class="id">Id</li>
+                        <li class="name">Name</li>
+                    </ol>
+                </section>
+                <section class="table-content">
+                    {% for building in buildings %}
+                        <article class="table-row">
+                            <ol>
+                                <li class="id">
+                                    {{ building.id }}
+                                </li>
+                                <li class="name">
+                                    <a href="{{ path('building_show', {'id' : building.id}) }}">
+                                        {{ building.name }}
+                                    </a>
+                                </li>
+                            </ol>
+                        </article>
+                    {% endfor %}
+
+                </section>
+            </section>
+        {% else %}
+            <h2>No buildings found</h2>
+        {% endif %}
+        <section class="bellow-table">
+            {% if pages >= 1 %}
+                <nav>
+                    <ol class="pages" id="pages-building">
+                        {% for i in 1..pages %}
+                            <li>
+                                <a {% if i == current %} class="active-page" {% endif %}
+                                        data-page="{{ i }}"
+                                        href="{{ path('building_index', params + {'page' : i}) }}">
+                                    {{ i }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                </nav>
+            {% endif %}
+        </section>
+    </div>
+{% endblock %}

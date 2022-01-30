@@ -1,0 +1,129 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Account index{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{ asset('styles/profile.css') }}">
+  <link rel="stylesheet" href="{{ asset('styles/datatable.css') }}">
+  <link rel="stylesheet" href="{{ asset('styles/menu.css') }}">
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ asset('scripts/datatable.js') }}"></script>
+  <script src="{{ asset('scripts/detail.js') }}"></script>
+  <script src="{{ asset('scripts/submenu.js') }}"></script>
+  <script src="{{ asset('scripts/pages/defaultDetailPage.js') }}"></script>
+  <script src="{{ asset('scripts/pages/rooms/roomUsers.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="profile-menu-wrapper">
+    <section id="go-back">
+      <a href="{{ path('room_index') }}"><div class="material-icons">arrow_back</div><br>Rooms</a>
+    </section>
+    <section id="menu-title">
+      <h1>{{ room.name }} [{{ room.id }}]</h1>
+    </section>
+    <nav class="user-nav" id="sub-nav">
+      <button id="dropbtn" class="sub-menu-controller">
+        Users
+        <span class="material-icons">
+                arrow_drop_down
+              </span>
+      </button>
+      <div class="sub-menu">
+        {{ include('room/_menu.html.twig') }}
+      </div>
+    </nav>
+
+  </div>
+<div class="profile-content-wrapper">
+<section id="profile" class="info-card">
+  <section id="table-room-users"
+           data-room-id="{{ room.id }}"
+          {% if is_granted('ROLE_ADMIN') %} data-auth-admin="1" {% endif %}
+           class="table-card">
+    <div class="table-wrapper">
+      <section class="above-table">
+        <form action="#" class="table-filter" id="search-form-room-users">
+          <input class="input-underline" type="text" name="name" id="filter" value="{{ params.name ?? ""}}" placeholder="Search by name...">
+          <button type="submit">Find</button>
+        </form>
+      </section>
+
+    {% if members|length > 0 %}
+      <section id="table-accounts" class="table">
+        <section class="table-row table-header">
+          <ol>
+            <li class="id">Id</li>
+            <li class="username">Name</li>
+            <li class="remove">Remove</li>
+            <li class="manager">Manager</li>
+            <li class="changeRole">Change role</li>
+          </ol>
+        </section>
+        <section class="table-content">
+          {% for member in members %}
+            <article class="table-row">
+              <ol>
+                <li class="id">
+                  {{ member.user.id }}
+                </li>
+                <li class="name">
+                    {{ member.user.name }}
+                </li>
+                <li>
+                  <form method="POST">
+                    <input type="text" name="removeUserId" value="{{ member.user.id }}" hidden/>
+                    <button type="submit">REMOVE</button>
+                  </form>
+                </li>
+                <li class="manager">
+                  {{ member.manager ? "YES" : "NO" }}
+                </li>
+                <li class="changeRole">
+                  <form method="POST">
+                    <input type="text" name="changeUserId" value="{{ member.user.id }}" hidden/>
+                    <input type="text" name="manager" value="{{ member.manager ? "0" : "1" }}" hidden/>
+                    <button type="submit">Set as {{ member.manager ? "member" : "manager"}}</button>
+                  </form>
+                </li>
+              </ol>
+            </article>
+          {% endfor %}
+
+        </section>
+      </section>
+    {% else %}
+      <h2>No records found</h2>
+    {% endif %}
+    <section class="bellow-table">
+      {% if pages >= 1 %}
+        <nav>
+          <ol class="pages" id="pages-room-users">
+            {% for i in 1..pages %}
+              <li>
+                <a {% if i == current %} class="active-page" {% endif %}
+                        data-page="{{ i }}"
+                        href="{{ path('room_users', params + {'page' : i} + {'id' : room.id}) }}"> {# urlParams +  #}
+                  {{ i }}
+                </a>
+              </li>
+            {% endfor %}
+          </ol>
+        </nav>
+      {% endif %}
+    </section>
+    </div>
+  </section>
+  </section>
+  <section id="actions" class="info-card">
+    <h2>Actions</h2>
+    <ul id="action-list">
+      <li>
+        <a href="{{ path('room_users_add', {'id' : room.id}) }}">Add Users</a>
+      </li>
+    </ul>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+[
+  {
+    "_id": "6447dd50-5d9e-11ec-8b29-7bfdcc3ed388",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Dashboard BI-BIG",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":8,\"h\":5,\"i\":\"1\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"8a99ebe0-5d9b-11ec-8b29-7bfdcc3ed388\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":8,\"y\":0,\"w\":4,\"h\":5,\"i\":\"2\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"5a8e5a10-5d9d-11ec-8b29-7bfdcc3ed388\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":0,\"y\":5,\"w\":6,\"h\":7,\"i\":\"3\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"d7597c10-5d9c-11ec-8b29-7bfdcc3ed388\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":6,\"y\":5,\"w\":6,\"h\":7,\"i\":\"4\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"0ac60bd0-5d9e-11ec-8b29-7bfdcc3ed388\",\"embeddableConfig\":{\"spy\":null}}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true,\"hidePanelTitles\":false}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "8a99ebe0-5d9b-11ec-8b29-7bfdcc3ed388",
+    "_type": "visualization",
+    "_source": {
+      "title": "Tabulka - smrti v oblastech",
+      "visState": "{\"title\":\"Tabulka - smrti v oblastech\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Počet smrtí\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"AreaText.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Oblast\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Deaths\",\"customLabel\":\"Průměrný počert smrtí za den\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"8587a990-5d9a-11ec-8b29-7bfdcc3ed388\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "5a8e5a10-5d9d-11ec-8b29-7bfdcc3ed388",
+    "_type": "visualization",
+    "_source": {
+      "title": "Nejčastější příčiny smrti v roce 2020",
+      "visState": "{\"title\":\"Nejčastější příčiny smrti v roce 2020\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"ReasonText2.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Příčina smrti\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"8587a990-5d9a-11ec-8b29-7bfdcc3ed388\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "0ac60bd0-5d9e-11ec-8b29-7bfdcc3ed388",
+    "_type": "visualization",
+    "_source": {
+      "title": "Průměrná incidence v různých skupinách populace v říjnu a listopadu 2020",
+      "visState": "{\"title\":\"Průměrná incidence v různých skupinách populace v říjnu a listopadu 2020\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Average Incidence7\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Průměrná 7denní incidence populace\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":false},{\"show\":true,\"mode\":\"stacked\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":false,\"data\":{\"id\":\"3\",\"label\":\"Průměrná 7denní incidence populace 65+\"},\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"stacked\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":false,\"data\":{\"id\":\"4\",\"label\":\"Průměrná 7denní incidence populace 75+\"},\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Incidence7\",\"customLabel\":\"Průměrná 7denní incidence populace\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Date\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":60,\"order\":\"asc\",\"orderBy\":\"_term\",\"customLabel\":\"Datum\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Incidence65_7\",\"customLabel\":\"Průměrná 7denní incidence populace 65+\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"Incidence75_7\",\"customLabel\":\"Průměrná 7denní incidence populace 75+\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"df7340c0-5d97-11ec-8b29-7bfdcc3ed388\",\"filter\":[],\"query\":{\"query\":\"Date: [\\\"2020-10-01T00:00:00.000Z\\\" TO \\\"2020-11-30T23:59:59.999Z\\\"]\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "d7597c10-5d9c-11ec-8b29-7bfdcc3ed388",
+    "_type": "visualization",
+    "_source": {
+      "title": "Hospitalizovaní v říjnu a listopadu 2020",
+      "visState": "{\"title\":\"Hospitalizovaní v říjnu a listopadu 2020\",\"type\":\"area\",\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Hospitalizovaných\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Hospitalizovaných\",\"id\":\"1\"},\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"linear\",\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"Hospitalized\",\"customLabel\":\"Hospitalizovaných\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Date\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":60,\"order\":\"asc\",\"orderBy\":\"_term\",\"customLabel\":\"Datum\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"df7340c0-5d97-11ec-8b29-7bfdcc3ed388\",\"filter\":[],\"query\":{\"query\":\"Date: [\\\"2020-10-01T00:00:00.000Z\\\" TO \\\"2020-11-30T23:59:59.999Z\\\"]\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  }
+]

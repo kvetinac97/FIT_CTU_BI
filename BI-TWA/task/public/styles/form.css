@@ -1,0 +1,52 @@
+main#form * {
+    font-size: 12pt;
+    font-family: "Arial", sans-serif;
+}
+
+main#form > * {
+    border: 1pt solid #4e4935;
+    background-color: #f6e4b6;
+    padding: 1rem;
+}
+
+div.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+div.form-row.error {
+    color: #f00;
+}
+
+div.form-row.error * {
+    width: 100%;
+    text-align: center;
+}
+
+label {
+    width: 30%;
+    margin-right: 2em;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 35vw;
+}
+
+textarea {
+    height: 5em;
+}
+
+button {
+    width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+    main#form {
+        display: block;
+    }
+}

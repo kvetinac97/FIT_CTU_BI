@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('styles/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/menu.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/datatable.css') }}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ asset('scripts/submenu.js') }}"></script>
+    <script src="{{ asset('scripts/pages/defaultDetailPage.js') }}"></script>
+{% endblock %}
+
+
+{% block content %}
+    <div class="profile-menu-wrapper">
+        <section id="go-back">
+            <a href="{{ path('user_index') }}"><div class="material-icons">arrow_back</div><br>People</a>
+        </section>
+        <section id="menu-title">
+            <h1>{{ user.name }} [{{ user.id }}]</h1>
+        </section>
+        <nav class="user-nav" id="sub-nav">
+            <button id="dropbtn" class="sub-menu-controller">
+                Rooms
+                <span class="material-icons">
+                arrow_drop_down
+              </span>
+            </button>
+            <div class="sub-menu">
+                {{ include('user/_menu.html.twig') }}
+            </div>
+        </nav>
+    </div>
+    <div class="profile-content-wrapper">
+        <section id="profile" class="info-card">
+        <section id="profile-table" class="table-card">
+            <div class="table-wrapper">
+                <section class="above-table">
+                    <form action="#" class="table-filter">
+                        <input class="input-underline" type="text" name="name" id="filter" placeholder="Search by name...">
+                        <button type="submit">Find</button>
+                    </form>
+                </section>
+
+                {% if rooms|length > 0 %}
+                    <section id="table-people" class="table">
+                        <section class="table-row table-header">
+                            <ol>
+                                <li class="id">Id</li>
+                                <li class="name">Name</li>
+                                <li class="role">Role</li>
+                            </ol>
+                        </section>
+                        <section class="table-content">
+                            {% for room in rooms %}
+                                <article class="table-row">
+                                    <ol>
+                                        <li class="id">
+                                            {{ room.id }}
+                                        </li>
+                                        <li class="name">
+                                            <a href="{{ path('room_show', {'id' : room.id}) }}">
+                                                {{ room.name }}
+                                            </a>
+                                        </li>
+                                        <li class="manager">
+                                            {{ room.members|filter(ru => (ru.user == user) and ru.manager) is empty ? 'Member' : 'Manager' }}
+                                        </li>
+                                    </ol>
+                                </article>
+                            {% endfor %}
+
+                        </section>
+                    </section>
+                {% else %}
+                    <h2>No rooms found</h2>
+                {% endif %}
+                <section class="bellow-table">
+                    {% if pages >= 1 %}
+                        <nav>
+                            <ol class="pages">
+                                {% for i in 1..pages %}
+                                    <li>
+                                        <a {% if i == current %} class="active-page" {% endif %}
+                                                data-page="{{ i }}"
+                                                href="{{ path('user_rooms', params + {'page' : i, 'id' : user.id}) }}"> {# urlParams +  #}
+                                            {{ i }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ol>
+                        </nav>
+                    {% endif %}
+                </section>
+            </div>
+        </section>
+        </section>
+    </div>
+{% endblock %}

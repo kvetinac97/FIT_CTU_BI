@@ -1,0 +1,109 @@
+= Domácí úkol
+
+== HTML
+
+=== Přehled všech zaměstnanců:
+
+- [x] malá fotografie
+- [x] jméno a příjmení
+- [x] funkce
+- [x] email
+- [x] odkaz na detail a úpravu
+
+=== Detail zaměstnance
+
+- [x] fotografie zaměstnance
+- [x] jméno a příjmení
+- [x] funkce (může být více)
+- [x] kontaktní údaje (telefon, email, webová stránka, ...)
+- [x] textový popis
+
+== CSS
+
+- [x] Nadefinujte velikost (př. další parametry) písma pro nadpisy.
+- [x] Vytvořte smysluplný layout (česky _rozložení_) stránky, aby nejdůležitější informace byly na očích (využijte _flexbox_ nebo _grid_, vyhněte se použití _float_).
+- [x] Layout by měl být responzivní, využijte proto _media queries_.
+- [x] Nastylujte nadpisy, odkazy (+ všechny pseudo-třídy) a navigaci.
+- [x] Použijte alespoň 1 selector obsahující
+
+* HTML tag
+* ID elementu
+* třídu elementu
+* přímého potomka
+* nepřímého potomka
+* [] složené závorky
+* pseudo-třídu
+* pseudo-element
+
+== PHP
+
+- [x] Využijte nástroj Composer k integraci šablonovacího systému Twig. (vizte nápověda)
+- [x] Upravte soubor `composer.json` takovým způsobem, aby vygenerovaný skript `vendor.php` umožnil automatické načítání tříd ze adresáře `src/`.
+- [x] Vytvořte soubor `index.php`, který bude sloužit jako front-end controller.
+- [x] Vytvořte třídu `Router`, který bude sloužit jako jednoduchý routovač akcí. Pro určitou URL adresu provede konkrétní akci (načte příslušná data, vykreslí správnou šablonu, …).
+- [x] Přepište statické HTML stránky pro použití s vaším routerem a šablonovacím systémem Twig.
+
+- [x] Projekt s validním composerem, front-end souborem `index.php`, jednoduchým routerem, třídou pro získávání dat a přepsanými šablony do systému Twig. Mělo by být možné procházet existující (statické) entity stejně jako ve finální aplikaci.
+
+== Symfony
+
+- [x] Vytvořte nový Symfony projekt. Ověřte, že byl vytvořen správně.
+- [x] Vytvořte `EmployeeController` a vhodné akce `listAction` a `detailAction` (s parametrem), pro zobrazení přehledu uživatelů a detailu konkrétního uživatele.
+- [x] Nastavte správné routování na jednotlivé akce a controller. _(Můžete využít libovolný způsob, preferovaný způsob je pomocí anotací.)_ Routování ověřte pomocí symfony konzole a příkazu `debug:router`.
+- [x] Překopírujte databázi a šablony z minulého cvičení. Upravte šablony, tak aby fungovali v rámci Symfony. Odkazy na jiné stránky musí být pomocí Twig funkce `path(...)`.
+- [x] CSS soubory můžete nechat v `public` složce a odkazovat se na ně přímo _(nejjednodušší varianta)_.
+
+== Doctrine
+
+- [x] Nastavte v konfiguraci správné údaje pro připojení systému Doctrine k databázovému serveru. Využít můžete SQLite _(jedná se o odlehčenou databázi v souboru, a tak nemusí fungovat vždy očekávaným způsobem)_
+- [x] Vytvořte třídy reprezentující jednotlivé entity `Employee`, `Account`, `Role` a doplňte správně jejich atributy. Běžně bývají entity uložené pod namespace `App\Entity`. Nebo použijte k vytvoření Symfony konzoli.
+- [x] Každou entitu a její atributy řádně oanotujte, v této části není nutné anotovat vazby mezi jednotlivými entitami. Zaměřte se na základní anotace `@Id`, `@GeneratedValue` a `@Column`. Obzvláště u anotace `@Column` přijde maximální možné množství smysluplných parametrů. Jednotlivé anotace jsou dostupné ve jmeném prostoru `Doctrine\ORM\Mapping`, ten je nutný v souboru uvést stejně jako v případě `@Route`. K vytvoření lze využít i příkazy Symfony konzole.
+- [x] Proveďte změny v databázi prostřednictvím Symfony konzole.
+- [x] Odstraňte vaši statickou databázi a nahraďte ji voláním metod nad jednotlivými třídami repository. Pokud šablona nepočítá s 0 prvky, vhodně ji upravte.
+- [x] Doplňte do databáze testovací data pro zobrazení.
+- [x] Implementujte stránku, která zobrazí zaměstnanci jeho účty, jejich platnost a odkaz na editaci _(samotnou editaci není nutné implementovat)_. Není vhodné, aby takový přehled byl na stránce s profilem zaměstnance, jelikož jako veřejný by neměl zobrazovat přihlašovací účty, natož jejich platnost.
+
+== Formuláře
+
+- [x] Vytvořte formulář pro entity `Employee` a `Account`.
+- [x] Fomulář vhodně vykreslete a nastylujte.
+- [x] Vytvořte nebo upravte akce pro vytvoření a úpravu nového zaměstnance a účtu. Využijte vámi vytvořený formulář pro použití u obou akcí (vytvoření a úprava).
+- [x] Vhodně oanutujte jednotlivé atributy entit validačními pravidly.
+- [x] Zpracujte validní a odeslaný formulář patřičnou změnou v databázi.
+
+== Asociace
+
+- [x] U existujících entit odmažte pomocné atributy (např.  `$employeeId`) a nahraďte je za implementaci pomocí asociací.
+- [x] Vhodným způsobem oanotujte jednotlivé atributy sloužící pro asociaci.
+- [x] Zajistěte, aby všechny formuláře a stránky řádně fungovaly. Pro získávání vazeb využijte entitu samotnou, nedotazujte se zbytečně na repository.
+- [x] Jednotlivé části procesu schovejte do vhodných služeb.
+- [x] Bude nutné upravit formuláře, aby využívaly `EntityType`, příp. `CollectionType`.
+
+== REST
+
+- [x] Vytvořte controllery pro REST akce pro zdroje „zaměstnanců“ a „účtů“.
+- [x] Pro tyto controllery vypněte autentizaci a autorizaci. (Bude se jednat o veřejně přístupné zdroje.)
+- [x] Naroutujte správně URL na jednotlivé akce. Pro REST API využijte prefix `/api`.
+- [x] Pro „zaměstnance“ vytvořte akce pro získání všech zaměstnanců, informace o konkrétním zaměstnanci, vytvoření nového zaměstnance, editaci zaměstnance. Pro „účty“ vytvořte akce pro získání všech účtů daného zaměstnance.
+- [x] Zajistěte, že lze volat jen povolené metody.
+- [x] Poskytujte data ve formátu `JSON` nebo `XML`.
+
+== AJAX
+
+Využijte AJAX k implementaci:
+
+- [x] Zaregistrování určité části kódu jako modální/dialogové okno. A odkaz nebo button jako spouštěč tohoto okna. Naimplementujte jej jako „třídu“.
+- [x] Potvrzení odstranění uživatelského účtu uživatelem. Využijte vaše modiální/dialogové okno z předchozího bodu.
+- [x] Smazání musí fungovat pomocí AJAXu, stejně tak překreslení.
+- [x] Na stránce s účty umožněte vytvoření nových účtů.
+- [x] Využijte AJAX pro odeslání dat z formuláře a překreslení seznamu účtů.
+- [x] Na stránce se zaměstnanci, využijte JavaScript a AJAX pro přenačítání seznamu dle filtrů (alespoň jména a příjmení)
+
+== Autentizace a autorizace
+
+ - [x] Implementujte přihlášení na základě entity `Account` pomocí vlastního přihlašovacího formuláře (vycházejte z 2. domácího úkolu)
+ - [x] Heslo nesmí být uloženo jako `plaintext` (použijte aktuálně nejvhodnější variantu pro hashování).
+ - [x] Respektujte u účtu jeho časovou validitu `expiration`, zajistěte načtení zaměstnance a příslušných rolí.
+ - [x] Zajistěte řádné odhlášení uživatele.
+ - [x] Implementujte autorizaci dle funkčních požadavků projektu v rozsahu odpovídající implementovaným "stránkám" na cvičeních.
+ - [x] Přistup k "účtům" zařiďte pomocí třídy `Voter`. Naimplementujte ji takovým způsobem, aby uživatel musel být přihlášen permanentním účtem nebo byl administrátor.

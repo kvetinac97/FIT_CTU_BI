@@ -1,0 +1,4 @@
+- pipeline.id: pipeline-death
+  path.config: /usr/share/logstash/pipeline/logstash1.conf
+- pipeline.id: pipeline-hospitalization
+  path.config: /usr/share/logstash/pipeline/logstash2.conf

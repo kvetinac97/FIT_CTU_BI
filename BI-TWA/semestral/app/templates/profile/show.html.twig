@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('styles/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/menu.css') }}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ asset('scripts/submenu.js') }}"></script>
+    <script src="{{ asset('scripts/pages/defaultDetailPage.js') }}"></script>
+{% endblock %}
+
+
+{% block content %}
+    <div class="profile-menu-wrapper">
+        <section id="menu-title">
+            <h1>{{ user.name }} [{{ user.id }}]</h1>
+        </section>
+        <nav class="user-nav" id="sub-nav">
+            <button id="dropbtn" class="sub-menu-controller">
+                Profile
+                <span class="material-icons">
+                arrow_drop_down
+              </span>
+            </button>
+            <div class="sub-menu">
+                {{ include('profile/_menu.html.twig') }}
+            </div>
+        </nav>
+    </div>
+    <div class="profile-content-wrapper">
+        <section id="profile" class="info-card">
+            <div id="profile-pic">
+                <img src="{{ asset('/uploads/' ~ user.image) }}" alt="Profile picture">
+            </div>
+            <div id="profile-info">
+                <h2>Profile</h2>
+                <dl>
+                    <dt>Name</dt>
+                    <dd>{{ user.name }}</dd>
+                    <dt>Email</dt>
+                    <dd>{{ user.email }}</dd>
+                    <dt>Phone</dt>
+                    <dd>{{ user.tel }}</dd>
+                    <dt>Roles</dt>
+                    <dd>
+                        <ul class="role-list">
+                            {% for role in user.getRoles() %}
+                                <li>{{ role }}</li>
+                            {% endfor %}
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+
+        <section id="actions" class="info-card">
+            <h2>Actions</h2>
+            <ul id="action-list">
+                <li>
+                    <a href="{{ path('profile_edit') }}">Edit</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+{% endblock %}

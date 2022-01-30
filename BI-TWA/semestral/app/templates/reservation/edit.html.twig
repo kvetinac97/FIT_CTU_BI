@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Reservation{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('styles/form.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="info-card">
+    <h2>Edit Reservation</h2>
+
+    {{ include('reservation/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('reservation/_delete_form.html.twig') }}
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Group index{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('styles/datatable.css') }}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ asset('scripts/datatable.js') }}"></script>
+    <script src="{{ asset('scripts/detail.js') }}"></script>
+    <script src="{{ asset('scripts/pages/groups/groups.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="table-wrapper">
+        <section class="above-table">
+            <div class="table-title-add">
+                <h1>Groups</h1>
+                {% if is_granted('ROLE_ADMIN') %}<a href="{{ path('group_new') }}" class="add-table-item">+</a>{% endif %}
+            </div>
+            <form action="#" class="table-filter" id="search-form-groups">
+                <input class="input-underline" type="text" name="name" id="filter" value="{{ params.name ?? ""}}" placeholder="Search by name...">
+                <button type="submit">Find</button>
+            </form>
+        </section>
+
+        {% if groupsWithManager|length > 0 %}
+            <section id="table-groups"
+                    {% if is_granted('ROLE_ADMIN') %} data-auth-admin="1" {% endif %}
+                     class="table">
+                <section class="table-row table-header">
+                    <ol>
+                        <li class="id">Id</li>
+                        <li class="name">Name</li>
+                        <li class="managers">Manager</li>
+                    </ol>
+                </section>
+                <section class="table-content">
+                    {% for groupWithManager in groupsWithManager %}
+                        {% set group = groupWithManager.group %}
+                        {% set manager = groupWithManager.manager %}
+                        <article class="table-row">
+                            <ol>
+                                <li class="id">
+                                    {{ group.id }}
+                                </li>
+                                <li class="name">
+                                    <a href="{{ path('group_show', {'id' : group.id}) }}">
+                                        {{ group.name }}
+                                    </a>
+                                </li>
+                                <li class="manager">
+                                    {{ manager.user.name ?? "No managers" }}
+                                </li>
+                            </ol>
+                        </article>
+                    {% endfor %}
+
+                </section>
+            </section>
+        {% else %}
+            <h2>No groups found</h2>
+        {% endif %}
+        <section class="bellow-table">
+            {% if pages >= 1 %}
+                <nav>
+                    <ol class="pages" id="pages-groups">
+                        {% for i in 1..pages %}
+                            <li>
+                                <a {% if i == current %} class="active-page" {% endif %}
+                                        data-page="{{ i }}"
+                                        href="{{ path('group_index', params + {'page' : i}) }}"> {# urlParams +  #}
+                                    {{ i }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                </nav>
+            {% endif %}
+        </section>
+    </div>
+{% endblock %}

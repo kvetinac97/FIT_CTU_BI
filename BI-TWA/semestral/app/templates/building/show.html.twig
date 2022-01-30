@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Building{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('styles/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/menu.css') }}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ asset('scripts/submenu.js') }}"></script>
+    <script src="{{ asset('scripts/pages/defaultDetailPage.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="profile-menu-wrapper">
+        <section id="go-back">
+            <a href="{{ path('building_index') }}"><div class="material-icons">arrow_back</div><br>Buildings</a>
+        </section>
+        <section id="menu-title">
+            <h1>{{ building.name }} [{{ building.id }}]</h1>
+        </section>
+        <nav class="user-nav" id="sub-nav">
+            <button id="dropbtn" class="sub-menu-controller">
+                Detail
+                <span class="material-icons">
+                arrow_drop_down
+            </span>
+            </button>
+            <div class="sub-menu">
+                {{ include('building/_menu.html.twig') }}
+            </div>
+        </nav>
+    </div>
+<div class="profile-content-wrapper">
+    <section id="profile" class="info-card">
+    <div id="profile-info" class="table-card">
+        <h2>Building</h2>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ building.id }}</td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>{{ building.name }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </section>
+    {% if is_granted('ROLE_ADMIN') %}
+    <section id="actions" class="info-card">
+        <h2>Actions</h2>
+        <ul id="action-list">
+            <li>
+                <a href="{{ path('building_edit', {'id': building.id}) }}">Edit</a>
+            </li>
+            <li>
+                {{ include('building/_delete_form.html.twig') }}
+            </li>
+        </ul>
+    </section>
+    {% endif %}
+</div>
+{% endblock %}

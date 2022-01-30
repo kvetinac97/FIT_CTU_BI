@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Account index{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{ asset('styles/profile.css') }}">
+  <link rel="stylesheet" href="{{ asset('styles/datatable.css') }}">
+  <link rel="stylesheet" href="{{ asset('styles/menu.css') }}">
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ asset('scripts/datatable.js') }}"></script>
+  <script src="{{ asset('scripts/detail.js') }}"></script>
+  <script src="{{ asset('scripts/submenu.js') }}"></script>
+  <script src="{{ asset('scripts/pages/defaultDetailPage.js') }}"></script>
+  <script src="{{ asset('scripts/pages/rooms/addRoomUsers.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="profile-menu-wrapper">
+    <section id="go-back">
+      <a href="{{ path('room_users', {'id': room.id}) }}"><div class="material-icons">arrow_back</div><br>Room users</a>
+    </section>
+    <section id="menu-title">
+      <h1>{{ room.name }} [{{ room.id }}]</h1>
+    </section>
+    <nav class="user-nav" id="sub-nav">
+      <button id="dropbtn" class="sub-menu-controller">
+        Add Users
+        <span class="material-icons">
+                arrow_drop_down
+              </span>
+      </button>
+      <div class="sub-menu">
+        {{ include('room/_menu.html.twig') }}
+      </div>
+    </nav>
+  </div>
+<div class="profile-content-wrapper">
+<section class="info-card">
+  <section id="table-room-users-add"
+           data-room-id="{{ room.id }}"
+          {% if is_granted('ROLE_ADMIN') %} data-auth-admin="1" {% endif %}
+           class="table-card">
+    <div class="table-wrapper">
+      <section class="above-table">
+        <form action="#" class="table-filter"  id="search-form-room-users-add">
+          <input class="input-underline" type="text" name="name" id="filter" value="{{ params.name ?? ""}}" placeholder="Search by name...">
+          <button type="submit">Find</button>
+        </form>
+      </section>
+
+    {% if users|length > 0 %}
+      <section id="table-accounts" class="table">
+        <section class="table-row table-header">
+          <ol>
+            <li class="id">Id</li>
+            <li class="username">Name</li>
+            <li class="add">Add manager</li>
+            <li class="add">Add member</li>
+          </ol>
+        </section>
+        <section class="table-content">
+          {% for user in users %}
+            <article class="table-row">
+              <ol>
+                <li class="id">
+                  {{ user.id }}
+                </li>
+                <li class="name">
+                    {{ user.name }}
+                </li>
+                <li class="add">
+                  <form method="POST">
+                    <label>
+                      <input type="text" name="addUserId" value="{{ user.id }}" hidden/>
+                    </label>
+                    <label>
+                      <input type="text" name="manager" value="1" hidden/>
+                    </label>
+                    <button type="submit">ADD MANAGER</button>
+                  </form>
+                </li>
+                <li class="add">
+                  <form method="POST">
+                    <label>
+                      <input type="text" name="addUserId" value="{{ user.id }}" hidden/>
+                    </label>
+                    <label>
+                      <input type="text" name="manager" value="0" hidden/>
+                    </label>
+                    <button type="submit">ADD MEMBER</button>
+                  </form>
+                </li>
+              </ol>
+            </article>
+          {% endfor %}
+
+        </section>
+      </section>
+    {% else %}
+      <h2>No records found</h2>
+    {% endif %}
+    <section class="bellow-table">
+      {% if pages >= 1 %}
+        <nav>
+          <ol class="pages" id="pages-room-users-add">
+            {% for i in 1..pages %}
+              <li>
+                <a {% if i == current %} class="active-page" {% endif %}
+                        data-page="{{ i }}"
+                        href="{{ path('room_users_add', params + {'page' : i, 'id' : room.id}) }}"> {# urlParams +  #}
+                  {{ i }}
+                </a>
+              </li>
+            {% endfor %}
+          </ol>
+        </nav>
+      {% endif %}
+    </section>
+    </div>
+  </section>
+  </section>
+</div>
+{% endblock %}

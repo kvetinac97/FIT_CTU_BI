@@ -1,0 +1,64 @@
+body {
+    background-color: #efefef;
+}
+
+h1 {
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+h2 {
+    font-size: 16pt;
+    text-decoration: underline;
+}
+
+dt {
+    font-weight: bold;
+    margin: 0.5rem;
+}
+
+/* Align columns in main */
+main#content, main#form {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+a[href*=mailto], a.action {
+    text-decoration: none;
+    color: #222222;
+    background-color: #cccccc;
+    padding: 2pt;
+    border: 2pt solid black;
+}
+
+a[href*=mailto]:hover, a.action:hover {
+    color: #ffffff;
+}
+
+.cursive {
+    font-style: italic;
+}
+
+header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+header > strong {
+    font-weight: bold;
+}
+
+header > a {
+    margin-left: 10px;
+}
+
+footer {
+    text-align: center;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+}

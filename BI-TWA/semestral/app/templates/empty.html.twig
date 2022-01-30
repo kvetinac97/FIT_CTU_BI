@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{% block title %}Welcome!{% endblock %}</title>
+{#        #}{# Run `composer require symfony/webpack-encore-bundle`#}
+{#           and uncomment the following Encore helpers to start using Symfony UX #}
+{#        {% block stylesheets %}#}
+{#            #}{#{{ encore_entry_link_tags('app') }}#}
+{#        {% endblock %}#}
+
+{#        {% block javascripts %}#}
+{#            #}{#{{ encore_entry_script_tags('app') }}#}
+{#        {% endblock %}#}
+
+        <!-- Fonts CSS -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <!-- Boxicons CSS -->
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- Materialicons CSS -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <!-- Base CSS -->
+        <link rel="stylesheet" href="{{ asset('styles/reset.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/main.css') }}">
+
+        {% block styles %}
+        {% endblock %}
+
+
+        {% block scripts %}
+        {% endblock %}
+    </head>
+    <body>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </body>
+</html>

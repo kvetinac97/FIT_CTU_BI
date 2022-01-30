@@ -1,0 +1,41 @@
+{% extends 'default.twig' %}
+{% block title %} Accounts - {{ username }} {% endblock %}
+{% block styles %}
+    {{ parent() }}
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/list.css">
+    <link rel="stylesheet" href="styles/form.css">
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script type="application/javascript" src="scripts/account.js"></script>
+    <script type="application/javascript" src="bundles/fosjsrouting/js/router.min.js"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    <script type="application/javascript">
+        let username = '{{ username }}'
+    </script>
+{% endblock %}
+{% block body %}
+    <dialog id="confirm">
+        <main>
+            <h2 id="confirm-title" class="no-margin">Do you really want to delete it?</h2>
+            <div class="dialog-content">
+                <a class="action" id="confirm-yes">Yes</a>
+                <a class="action" id="confirm-no">No</a>
+            </div>
+        </main>
+    </dialog>
+    <h1>Accounts - {{ username }}</h1>
+    <main id="content">
+        <h2>Account list</h2>
+        <table></table>
+
+        {% if form is not same as(false) %}
+        <h2>New account</h2>
+        {{ include('account/form.html.twig') }}
+        {% endif %}
+    </main>
+    <footer>
+        <a class="action" href="{{ path('employee_detail', {'username': username}) }}">Back to employee detail</a>
+    </footer>
+{% endblock %}

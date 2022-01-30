@@ -1,0 +1,9 @@
+= Programming Paradigms
+
+Got 100 % from semestral work with the hardest difficulty. +
+Answered correctly 17 out of 20 semestral quizzes. +
+Got 97 % from written exam, and finished with **grade A** thanks to oral exam.
+
+== Semestral work
+
+As my semestral work, I chose Lambda calculus evaluator which I wrote in Kotlin in functional programming (no assignments or mutable states). You can link:semestral/[see the semestral work here].

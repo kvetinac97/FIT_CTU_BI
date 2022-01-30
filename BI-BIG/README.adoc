@@ -1,0 +1,14 @@
+= DB Technologies for Big Data
+
+Got 100 % from use-cases (tasks on labs). +
+Got 79 % from semestral test, resulting in **grade A**.
+
+== Use-cases
+
+Tasks from labs, with the following themes:
+
+- UC1: Docker
+- UC2: MongoDB
+- UC3: Open data
+- UC4: Apache Spark
+- UC5: ElasticSearch, Kibana

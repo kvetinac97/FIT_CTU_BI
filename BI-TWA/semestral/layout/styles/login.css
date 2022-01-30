@@ -1,0 +1,86 @@
+html, body, main {
+    height: 100%;
+}
+
+main {
+    display: flex;
+}
+
+#login-logo {
+    flex-grow: 1;
+}
+
+#login-logo h1 {
+    display: none;
+}
+
+#authorization {
+    color: var(--blackD);
+    align-self: center;
+    flex-grow: 2;
+}
+
+#login-form {
+    width: 20em;
+    margin-top: 0.5em;
+}
+
+#login-form label {
+    display: none;
+}
+
+#login-form input {
+    margin: 0.5em 0;
+    width: 20em;
+}
+
+#login-form input:not([type="submit"]) {
+    color: var(--blackD);
+    background-color: var(--greyL);
+    border: none;
+    border-bottom: solid var(--blackL) 2px;
+}
+
+#login-form input[type="submit"] {
+    margin: 1em 0;
+    box-sizing: content-box;
+    border-radius: 6px;
+    background-color: var(--primary);
+    color: var(--greyL);
+    font-weight: bold;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    main {
+        display: inline;
+    }
+
+    #login-logo {
+        background-color: var(--primary);
+        color: var(--greyL);
+        padding: 1em;
+    }
+
+    #login-logo img {
+        display: none;
+    }
+
+    #login-logo h1 {
+        display: inline;
+        font-size: 2em;
+    }
+
+    #authorization {
+        margin-top: 5em;
+        width: 15em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #login-form, #login-form input {
+        width: 15em;
+    }
+
+}

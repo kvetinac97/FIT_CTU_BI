@@ -1,0 +1,4 @@
+rests:
+  resource: ../src/Controller/Rest/
+  type: annotation
+  prefix: /api

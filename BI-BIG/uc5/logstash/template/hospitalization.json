@@ -1,0 +1,74 @@
+{
+  "index_patterns": "hospitalization",
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "mappings": {
+    "doc": {
+      "dynamic_templates": [
+        {
+          "string_fields": {
+            "mapping": {
+              "type": "text",
+              "omit_norms": true,
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "match_mapping_type": "string",
+            "match": "*"
+          }
+        }
+      ],
+      "properties": {
+        "ID": {
+          "type": "keyword"
+        },
+        "Day": {
+          "type": "keyword"
+        },
+        "Date": {
+	  "type": "date",
+	  "format": "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+	},
+        "CityCode": {
+          "type": "integer"
+        },
+        "CityText": {
+          "type": "keyword"
+        },
+        "Incidence7": {
+          "type": "integer"
+        },
+        "Incidence65_7": {
+          "type": "integer"
+        },
+        "Incidence75_7": {
+          "type": "integer"
+        },
+        "Prevalence": {
+          "type": "integer"
+        },
+        "Prevalence65": {
+          "type": "integer"
+        },
+        "Prevalence75": {
+          "type": "integer"
+        },
+        "Hospitalized": {
+          "type": "integer"
+        },
+        "HospitalizedNewly": {
+          "type": "integer"
+        },
+        "Test7": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "aliases": {}
+}

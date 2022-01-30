@@ -1,0 +1,67 @@
+// 1
+db.cars.find({"znacka": null}).count()
+
+// 2
+db.cars.find({"evidence": "Praha"}, {"jmeno": 1, "prijmeni": 1, "_id": 0}).sort({"prijmeni": 1, "jmeno": 1})
+
+// 3
+db.cars.deleteMany({"evidence": "Karlovy Vary", "$or": [{"jmeno": "Roman", "prijmeni": "Komarov"}, {"vyrobce": "Mercedes", "barva": "cerna"}]})
+
+// 4
+db.cars.insert({
+	"stari": 0,
+	"barva": "cerna",
+	"znacka": "BIGDATA",
+	"jmeno": "Michal",
+	"prijmeni": "Valenta",
+	"evidence": "Praha",
+	"vyrobce": "Audi"
+})
+
+// 5
+db.cars.update({"znacka": "BIGDATA"}, {
+	"$push": {"kontroly": {
+		"stanice": "Beroun",
+		"uspech": true,
+		"datum": new Date("2021-10-21"),
+	}},
+	"$set": {"jmeno": "Josef", "prijmeni": "Gattemayer"}
+})
+
+// 6
+db.cars.aggregate([
+	{ "$group": {
+		"_id": "$evidence",
+		"prumerneStari": {"$avg": "$stari"}
+	}}
+])
+
+// 7
+db.cars.aggregate([
+	{ "$unwind": { "path": "$kontroly", preserveNullAndEmptyArrays: true } },
+	{ "$match": { "kontroly.uspech": true, "kontroly.datum": {"$gte": new Date("2018-10-21")} } },
+	{ "$group": {"_id": "$znacka"} },
+	{ "$sort": { "_id": 1 } }
+])
+
+// 8
+db.cars.aggregate([
+	{ "$group": {
+		"_id": "$znacka",
+		"pocet": {"$sum": 1}
+	}},
+	{ "$match": { "pocet": {"$gt": 1} } }
+]).forEach(function(doc) { db.getCollection("cars").remove({"znacka": doc._id}); })
+
+db.cars.ensureIndex({"znacka": 1}, {"unique": true})
+
+
+
+
+
+
+
+
+
+
+

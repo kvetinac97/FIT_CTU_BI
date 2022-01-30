@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('styles/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/menu.css') }}">
+    <link rel="stylesheet" href="{{ asset('styles/datatable.css') }}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ asset('scripts/submenu.js') }}"></script>
+    <script src="{{ asset('scripts/pages/defaultDetailPage.js') }}"></script>
+{% endblock %}
+
+
+{% block content %}
+    <div class="profile-menu-wrapper">
+        <section id="menu-title">
+            <h1>{{ user.name }} [{{ user.id }}]</h1>
+        </section>
+        <nav class="user-nav" id="sub-nav">
+            <button id="dropbtn" class="sub-menu-controller">
+                Groups
+                <span class="material-icons">
+                arrow_drop_down
+              </span>
+            </button>
+            <div class="sub-menu">
+                {{ include('profile/_menu.html.twig') }}
+            </div>
+        </nav>
+    </div>
+    <div class="profile-content-wrapper">
+    <section id="profile" class="info-card">
+        <section id="profile-table" class="table-card">
+            <div class="table-wrapper">
+                <section class="above-table">
+                    <form action="#" class="table-filter">
+                        <input class="input-underline" type="text" name="name" id="filter" placeholder="Search by name...">
+                        <button type="submit">Find</button>
+                    </form>
+                </section>
+
+                {% if groups|length > 0 %}
+                    <section id="table-people" class="table">
+                        <section class="table-row table-header">
+                            <ol>
+                                <li class="id">Id</li>
+                                <li class="name">Name</li>
+                                <li class="role">Role</li>
+                            </ol>
+                        </section>
+                        <section class="table-content">
+                            {% for group in groups %}
+                                <article class="table-row">
+                                    <ol>
+                                        <li class="id">
+                                            {{ group.id }}
+                                        </li>
+                                        <li class="name">
+                                            {% if is_granted('view', group) %}
+                                            <a href="{{ path('group_show', {'id' : group.id}) }}">
+                                                {{ group.name }}
+                                            </a>
+                                            {% else %}
+                                                {{ group.name }}
+                                            {% endif %}
+                                        </li>
+                                        <li class="manager">
+                                            {{ group.members|filter(member => (member.user == user) and member.manager) is empty ? 'Member' : 'Manager' }}
+                                        </li>
+                                    </ol>
+                                </article>
+                            {% endfor %}
+
+                        </section>
+                    </section>
+                {% else %}
+                    <h2>No groups found</h2>
+                {% endif %}
+                <section class="bellow-table">
+                    {% if pages >= 1 %}
+                        <nav>
+                            <ol class="pages">
+                                {% for i in 1..pages %}
+                                    <li>
+                                        <a {% if i == current %} class="active-page" {% endif %}
+                                                data-page="{{ i }}"
+                                                href="{{ path('profile_groups', params + {'page' : i}) }}"> {# urlParams +  #}
+                                            {{ i }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ol>
+                        </nav>
+                    {% endif %}
+                </section>
+            </div>
+        </section>
+        </section>
+    </div>
+{% endblock %}

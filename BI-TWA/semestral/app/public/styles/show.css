@@ -1,0 +1,9 @@
+section {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+}
+
+section>* {
+    margin-right: 1em;
+}

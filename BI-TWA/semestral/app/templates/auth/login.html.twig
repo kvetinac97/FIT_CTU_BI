@@ -1,0 +1,43 @@
+{% extends 'empty.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('styles/login.css') }}">
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block content %}
+<div class="login-wrapper">
+    <section id="login-logo">
+        <h1>Roomer</h1>
+        <img src="{{ asset('resources/roomerLogo.png') }}" alt="Roomer">
+    </section>
+
+    <section id="authorization">
+        <h2>Authorize</h2>
+
+        <form method="post" id="login-form">
+            <div class="form-row error">
+                {% if error %}
+                    <ul><li>{{ error.messageKey }}</li></ul>
+                {% endif %}
+            </div>
+            <div class="form-row">
+                <label for="input_name" class="required">Username</label>
+                <input type="text" id="input_name" name="name" value="{{ last_username }}" autocomplete="username" placeholder="Enter Your Username" required autofocus>
+            </div>
+            <div class="form-row">
+                <label for="input_password">Password</label>
+                <input type="password" id="input_password" name="password" autocomplete="current-password" placeholder="Enter Your Password" required>
+            </div>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+            <div>
+                <button type="submit" value="Log In">Sign in</button>
+            </div>
+        </form>
+    </section>
+</div>
+{% endblock %}

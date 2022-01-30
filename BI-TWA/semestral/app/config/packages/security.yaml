@@ -1,0 +1,46 @@
+security:
+    # https://symfony.com/doc/current/security/authenticator_manager.html
+    enable_authenticator_manager: true
+    # https://symfony.com/doc/current/security.html#c-hashing-passwords
+    password_hashers:
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+        App\Entity\Account:
+            algorithm: 'auto'
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        account_provider:
+            entity:
+                class: App\Entity\Account
+                property: name
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            lazy: true
+            provider: account_provider
+            custom_authenticator: App\Auth\AccountAuthenticator
+            logout:
+                path: logout
+                target: index
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/api, roles: PUBLIC_ACCESS }
+        - { path: ^/login, roles: PUBLIC_ACCESS }
+        - { path: ^/room, roles: PUBLIC_ACCESS }
+        - { path: ^/building, roles: PUBLIC_ACCESS }
+        - { path: ^/logout, roles: ROLE_USER }
+        - { path: ^/reservation, roles: ROLE_USER }
+        - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/group, roles: ROLE_USER }
+        - { path: ^/account, roles: ROLE_USER }
+        - { path: ^/user, roles: ROLE_ADMIN }
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }

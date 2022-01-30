@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evidence Zamestnancu</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/datatable.css">
+    <link rel="stylesheet" href="../styles/sidebar.css">
+</head>
+<body>
+    <div id="page-container">
+        <main class="page-content">
+            <div class="table-wrapper">
+                <section class="above-table">
+                    <div class="table-title-add">
+                        <h1>People</h1>
+                        <a href="./addPerson.html" class="add-table-item">+</a>
+                    </div>
+                    <form action="#" class="table-filter">
+                        <input class="input-underline" type="text" name="filter" id="filter" placeholder="Search...">
+                        <button type="submit">Find</button>
+                    </form>  
+                </section>
+        
+                <section id="table-people" class="table">
+                    <section class="table-row table-header">
+                        <ol>
+                            <li class="id">Id</li>
+                            <li class="name">Name</li>
+                            <li class="email">Email</li>
+                            <li class="tel">Phone number</li>
+                            <li class="check"><input type="checkbox" class="select-all checkbox" name="select-all" value="#"/></li>
+                        </ol>
+                    </section>
+                    <section class="table-content">
+                        <article class="table-row">
+                            <ol>
+                                <li class="id">1</li>
+                                <li class="name">
+                                    <a href="./profile.html">
+                                        John Doe
+                                    </a>
+                                </li>
+                                <li class="email">j.d@gmail.com</li>
+                                <li class="tel">+420 111 222 333</li>
+                                <li class="check"><input type="checkbox" class="select-item checkbox" name="select-item" value="#"/></li>
+                            </ol>
+                        </article>
+                        <article class="table-row">
+                            <ol>
+                                <li class="id">2</li>
+                                <li class="name">
+                                    <a href="./profile.html">
+                                        John Doe
+                                    </a>
+                                </li>                                <li class="email">j.d@gmail.com</li>
+                                <li class="tel">+420 111 222 333</li>
+                                <li class="check"><input type="checkbox" class="select-item checkbox" name="select-item" value="#"/></li>
+                           </ol>
+                        </article>
+                        <article class="table-row">
+                            <ol>
+                                <li class="id">3</li>
+                                <li class="name">
+                                    <a href="./profile.html">
+                                        John Doe
+                                    </a>
+                                </li>                                <li class="email">j.d@gmail.com</li>
+                                <li class="tel">+420 111 222 333</li>
+                                <li class="check"><input type="checkbox" class="select-item checkbox" name="select-item" value="#"/></li>
+                            </ol>
+                        </article>
+                        <article class="table-row">
+                            <ol>
+                                <li class="id">4</li>
+                                <li class="name">
+                                    <a href="./profile.html">
+                                        John Doe
+                                    </a>
+                                </li>                                <li class="email">j.d@gmail.com</li>
+                                <li class="tel">+420 111 222 333</li>
+                                <li class="check"><input type="checkbox" class="select-item checkbox" name="select-item" value="#"/></li>
+                            </ol>
+                        </article>
+                        <article class="table-row">
+                            <ol>
+                                <li class="id">5</li>
+                                <li class="name">
+                                    <a href="./profile.html">
+                                        John Doe
+                                    </a>
+                                </li>                                <li class="email">j.d@gmail.com</li>
+                                <li class="tel">+420 111 222 333</li>
+                                <li class="check"><input type="checkbox" class="select-item checkbox" name="select-item" value="#"/></li>
+                            </ol>
+                        </article>
+                        <article class="table-row">
+                            <ol>
+                                <li class="id">6</li>
+                                <li class="name">
+                                    <a href="./profile.html">
+                                        John Doe
+                                    </a>
+                                </li>                                <li class="email">j.d@gmail.com</li>
+                                <li class="tel">+420 111 222 333</li>
+                                <li class="check"><input type="checkbox" class="select-item checkbox" name="select-item" value="#"/></li>
+                            </ol>
+                        </article>
+                        <article class="table-row">
+                            <ol>
+                                <li class="id">7</li>
+                                <li class="name">
+                                    <a href="./profile.html">
+                                        John Doe
+                                    </a>
+                                </li>                                <li class="email">j.d@gmail.com</li>
+                                <li class="tel">+420 111 222 333</li>
+                                <li class="check"><input type="checkbox" class="select-item checkbox" name="select-item" value="#"/></li>
+                            </ol>
+                        </article>
+                        <article class="table-row">
+                            <ol>
+                                <li class="id">8</li>
+                                <li class="name">
+                                    <a href="./profile.html">
+                                        John Doe
+                                    </a>
+                                </li>                                <li class="email">j.d@gmail.com</li>
+                                <li class="tel">+420 111 222 333</li>
+                                <li class="check"><input type="checkbox" class="select-item checkbox" name="select-item" value="#"/></li>
+                            </ol>
+                        </article>
+                    </section>
+                </section>
+<!--         
+                <section class="data-cards">
+        
+                    <article class="info-card">
+                        <h2>John Doe (1)</h2>
+                        <ol>
+                            <li>
+                                <h3>Email:</h3>
+                                <p>j.d@gmail.com</p>
+                            </li>
+                            <li>
+                                <h3>Phone number:</h3>
+                                <p>+420 111 222 333</p>
+                            </li>
+                        </ol>
+                    </article>
+        
+                </section>
+         -->
+                <section class="bellow-table">
+                    <nav>
+                        <ol class="pages">
+                            <li><a href="#" class="active-page">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                        </ol>
+                    </nav>
+                    <!-- <button>Add user</button> -->
+                </section>    
+            </div>
+        </main>
+        <aside class="page-left" id="sidebar">
+            <div class="sidebar-content">
+                <nav>
+                    <a class="logo" href="#">R<span class="animate">OOMER</span></a>
+                    <ul id="nav-links" class="nav-links">
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-calendar'></i>
+                                <span class="link-text">Timetable</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-calendar-check'></i>
+                                <span class="link-text">Reservations</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="./people.html">
+                                <i class='bx bx-user'></i>
+                                <span class="link-text">People</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-building'></i>
+                                <span class="link-text">Rooms</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-group'></i>
+                                <span class="link-text">Groups</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-log-out'></i>
+                                <span class="link-text">Log Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="sidebar-actions">
+                        <button id="toggle-sidebar">
+                            <i class='sidebar-toggle-icon'></i>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+    </div>
+
+    <script src="../scripts/sidebar.js"></script>
+    <script src="../scripts/datatable.js"></script>
+</body>
+</html>

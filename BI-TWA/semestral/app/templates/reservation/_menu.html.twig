@@ -1,0 +1,9 @@
+<ul class="user-nav-items">
+    {% set current_route = app.request.get('_route') %}
+    <li {% if current_route == 'reservation_show' %} class="active" {% endif %}>
+        <a href="{{ path('reservation_show', {'id' : reservation.id}) }}">Detail</a>
+    </li>
+    <li {% if current_route == 'reservation_users' or current_route == 'reservation_users_add' %} class="active" {% endif %}>
+        <a href="{{ path('reservation_users', {'id' : reservation.id}) }}">Users</a>
+    </li>
+</ul>

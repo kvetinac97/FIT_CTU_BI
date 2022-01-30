@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BLABLABLA this will be just part of template</title>
+
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <section id="go-back">
+            <div class="material-icons">arrow_back</div>
+            <a href="#">People</a>
+        </section>
+        <section id="menu-title">
+            <h1>Username [ID]</h1>
+        </section>
+        <nav class="dropdown-nav">
+            <button onclick="myFunction()" class="dropbtn">
+                <span class="material-icons">
+                    arrow_drop_down
+                </span>
+            </button>
+            <div id="profile-dropdown" class="dropdown-content">
+              <a href="#">Profile</a>
+              <a href="#">Rooms</a>
+              <a href="#">Groups</a>
+              <a href="#">Reservations</a>
+            </div>
+        </nav> 
+        <nav class="horizontal-nav">
+            <ul>
+                <li>
+                    <a href="#">Profile</a>
+                </li>
+                <li>
+                    <a href="#">Rooms</a>
+                </li>
+                <li>
+                    <a href="#">Groups</a>
+                </li>
+                <li>
+                    <a href="#">Reservations</a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+    <script>
+        
+        // TEMPORARY !!!
+
+        function myFunction() {
+          document.getElementById("profile-dropdown").classList.toggle("show");
+        }
+    </script>
+
+</body>
+</html>

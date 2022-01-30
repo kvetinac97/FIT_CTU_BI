@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Úkolníček</title>
+    <style type="text/css">
+        body { max-width: 500px; margin: auto; font-family: sans-serif; }
+        table { margin-top: 50px; border-collapse: collapse; }
+        tr:nth-child(even) { background-color: #f8f8f8; }
+        td { padding: 5px 0; }
+        .name { width: 100%; }
+        .name a { color: black; text-decoration: none; }
+        .name a:hover { color: black; text-decoration: line-through; }
+        .done .name a, a:hover { color: gray; text-decoration: line-through; }
+        .delete a { display: block; background-color: gray; color: white; text-decoration: none; border-radius: 3px; padding: 5px; }
+        .delete a:hover { background-color: darkred; color: white; text-decoration: none; }
+        .done .delete a { background-color: lightgray; }
+        #template { display: none; }
+    </style>
+</head>
+<body>
+<h1>Úkolníček</h1>
+<form onsubmit="return createTask(this)">
+<input type="text" class="text" placeholder="Zadej úkol" autofocus="autofocus"/><input type="submit" value="Vytvoř úkol">
+</form>
+<table>
+    <tbody id="tasks">
+        <tr id="template" data-id="0"><td class="name"><a href="#" onclick="finishTask(this)">Název</a></td><td class="delete"><a href="#" onclick="removeTask(this)">Smazat</a></td></tr>
+    </tbody>
+</table>
+<script type="text/javascript">
+const apiUrl = "http://localhost:3001";
+// on page load, fetch task data
+function createTask(e) {
+    let i = e.querySelector('.text');
+    fetch(apiUrl + '/tasks', {
+        method: 'PUT',
+        body: JSON.stringify({
+            name: i.value
+        }),
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        })
+    }).then(res => res.json())
+        .then(res => appendTask(res))
+        .catch(err => console.error(err));
+    i.value = "";
+    return false;
+}
+
+function appendTask(data) {
+    let c = document.querySelector('#template').cloneNode(true);
+    c.id = "";
+    c.dataset.id = "" + data.taskid;
+    if(data.completedon) c.classList.add('done');
+    c.querySelector('.name a').textContent = data.name;
+    let t = document.querySelector('#tasks');
+    t.insertBefore(c,t.firstChild);
+}
+
+function finishTask(e) {
+    let c = e.parentNode.parentNode;
+    if(c.classList.contains('done')) return false;
+    fetch(apiUrl + '/task/' + c.dataset.id, {
+        method: 'PATCH',
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        }
+    }).catch(err => console.error(err));
+    c.classList.add('done');
+    return false;
+}
+
+function removeTask(e) {
+    let c = e.parentNode.parentNode;
+    fetch(apiUrl + '/task/' + c.dataset.id, {
+        method: 'DELETE',
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        }
+    }).catch(err => console.error(err));
+    c.parentNode.removeChild(c);
+    return false;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    fetch(apiUrl + '/tasks')
+        .then(res => res.json())
+        .then(res => res.tasks.map(appendTask))
+        .catch(err => console.error(err));
+}, false);
+</script>
+</body>
+</html>
+

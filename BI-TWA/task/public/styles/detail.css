@@ -1,0 +1,34 @@
+main#content section {
+    font-size: 12pt;
+}
+
+/* Align children of main */
+main#content > * {
+    padding: 1rem;
+    border: 1pt solid #4e4935;
+    background-color: #f6e4b6;
+}
+
+.vertical-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+img {
+    margin-bottom: 1rem;
+}
+
+.vertical-box > * {
+    padding: 0.5rem;
+}
+
+@media screen and (max-width: 700px) {
+    main#content {
+        display: block;
+    }
+
+    img {
+        margin-bottom: 0;
+    }
+}

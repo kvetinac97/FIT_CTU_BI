@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evidence Zamestnancu</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/sidebar.css">
+    <link rel="stylesheet" href="../styles/profile.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <div id="page-container">
+        <main class="page-content">
+            <div class="profile-menu-wrapper">
+                <section id="go-back">
+                    <div class="material-icons">arrow_back</div>
+                    <a href="./people.html">People</a>
+                </section>
+                <section id="menu-title">
+                    <h1>Username [ID]</h1>
+                </section>
+                <nav class="user-nav">
+                    <button onclick="myFunction()" id="dropbtn">
+                        Profile
+                        <span class="material-icons">
+                            arrow_drop_down
+                        </span>
+                    </button>
+                    <div class="hide-m">
+                        <ul class="user-nav-items">
+                            <li class="active">
+                                <a href="./people.html">Profile</a>
+                            </li>
+                            <li>
+                                <a href="#">Rooms</a>
+                            </li>
+                            <li>
+                                <a href="#">Groups</a>
+                            </li>
+                            <li>
+                                <a href="#">Reservations</a>
+                            </li>
+                        </ul>
+                    </div>  
+                </nav>
+            </div>
+            <div class="profile-content-wrapper">
+                <section id="profile" class="info-card">
+                    <div id="profile-pic">
+                        <img src="../resources/profilePic.png" alt="Profile picture">
+                    </div>
+                    <div id="profile-info">
+                        <h2>Profile</h2>
+                        <dl>
+                            <dt>Name</dt>
+                            <dd>John Smith</dd>
+                            <dt>Email</dt>
+                            <dd>smith.john@gmail.com</dd>
+                            <dt>Phone</dt>
+                            <dd>+420 123 456 789</dd>
+                            <dt>Roles</dt>
+                            <dd>
+                                <ul class="role-list">
+                                    <li>U</li>
+                                    <li>GM</li>
+                                    <li>RM</li>
+                                    <li>A</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+                </section>
+    
+                <section id="actions" class="info-card">
+                    <h2>Actions</h2>
+                    <ul id="action-list">
+                        <li>
+                            <a href="#">Generate new password</a>
+                        </li>
+                        <li>
+                            <a href="#">Delete</a>
+                        </li>
+                        <li>
+                            <a href="#">Edit profile</a>
+                        </li>
+                    </ul>
+                </section>
+            </div> 
+        </main>
+        <aside class="page-left" id="sidebar">
+            <div class="sidebar-content">
+                <nav>
+                    <a class="logo" href="#">R<span class="animate">OOMER</span></a>
+                    <ul id="nav-links" class="hide-m nav-links">
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-calendar'></i>
+                                <span class="link-text">Timetable</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-calendar-check'></i>
+                                <span class="link-text">Reservations</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./people.html">
+                                <i class='bx bx-user'></i>
+                                <span class="link-text">People</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-building'></i>
+                                <span class="link-text">Rooms</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-group'></i>
+                                <span class="link-text">Groups</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-log-out'></i>
+                                <span class="link-text">Log Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="sidebar-actions">
+                        <button id="toggle-sidebar">
+                            <i class='sidebar-toggle-icon'></i>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </aside> 
+    </div>
+
+    <script src="../scripts/sidebar.js"></script>
+    <script>
+        
+        // TEMPORARY !!!
+
+        function myFunction() {
+          document.querySelector(".user-nav .user-nav-items").parentElement.classList.toggle("hide-m");
+        }
+    </script>
+</body>
+</html>

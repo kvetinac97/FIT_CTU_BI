@@ -1,0 +1,259 @@
+/*------------- BELOW TABLE -------------*/
+.above-table, .bellow-table{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bellow-table{
+    margin-top: 1.5rem;
+}
+
+/*------------- ABOVE TABLE -------------*/
+.above-table{
+    margin-bottom: 1.5rem;
+}
+
+.add-table-item{
+    display: block;
+    color: rgb(184, 255, 112);
+    padding: .3rem .9rem;
+    border: thin solid rgb(217, 255, 199);
+    background-color: #fff;
+    font-weight: 400;
+    font-size: 1.7em;
+    border-radius: 8px;
+}
+
+.add-table-item:hover{
+    background-color: rgb(247, 255, 239);
+}
+
+.table-title-add{
+    display: flex;
+    align-items: center;
+    gap: 1.3em;
+}
+
+.input-underline{
+    border: none;
+    flex-grow: 1;
+    width: 20rem;
+    border-bottom: thin solid var(--greyD);
+}
+
+.table-filter{
+    display: flex;   
+    flex-wrap: wrap;
+}
+
+.active-status-filter{
+    font-weight: bold;
+}
+/*------------- TABLE -------------*/
+.table {
+    border-radius: 10px;
+    background: #fff;
+}
+
+.table-header {
+    background-color: var(--primary);
+    color: var(--greyL);
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+}
+
+.table-header ol li{
+    text-transform: capitalize;
+}
+
+.table-header, .table-row {
+    padding: 0 1em;
+}
+
+.table-row{
+    border-left: solid thin var(--greyD);
+    border-right: solid thin var(--greyD);
+    border-top: solid thin var(--greyM);
+}
+
+.table .id{
+    flex-grow: 2;
+    flex-basis: 1rem;
+}
+
+
+
+.table-header>ol, .table-row>ol {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table-header>ol>li, .table-row>ol>li {
+    flex-grow: 5;
+    flex-basis: 0;
+    padding: .6em .5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table-content li a{
+    color: rgb(79 104 143);
+}
+
+.table-content .table-row:last-child {
+    border-radius: 0 0 10px 10px;
+    border-bottom: solid thin var(--greyD);
+}
+
+
+/*Checkbox*/
+.table .check{
+    flex-grow: 0;
+    flex-basis: 3rem;
+}
+
+.table-header .check{
+    border-color: #fff;
+}
+
+.table-header input[type="checkbox"]:checked{
+    border-color: #fff;
+    background-color: #fff;
+}
+
+.table-header input[type="checkbox"]:checked::after{
+    color: var(--primary);
+}
+
+/*------------- PAGES -------------*/
+.pages{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+
+.pages li a{
+    display: block;
+    padding: .7rem 1.1rem;
+    border: thin solid var(--greyD);
+    background-color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.pages li a:hover{
+    background-color: var(--greyM);
+    transition: background-color ease-in-out .13s;
+}
+
+.pages li a.active-page{
+    color: #fff;
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+/*------------ LOADER ------------------*/
+.loader-wrapper{
+    position: relative;
+}
+
+.loader-hidden{
+    display: none;
+}
+
+.loader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(56, 56, 206, 0.22);
+    text-align: center;
+    color: #fff;
+    font-weight: 800;
+    font-size: 2em;
+}
+
+.loader .loader-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/*------------ DETAIL BOX -----------*/
+.detail-box{
+    position: absolute;
+    border-radius: 1px;
+    border: thin solid var(--greyD);
+    background: #fff;
+    z-index: 13;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+    align-items: center;
+    padding: 2em;
+}
+
+.detail-box-image img{
+    width: 5em;
+}
+
+.detail-box-info dl{
+    margin-top: 1.3em;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    vertical-align: middle;
+    gap: 1.5em 2.5em;
+    font-size: .9em;
+}
+
+.detail-box-info .list{
+    display: flex;
+    gap: .5em;
+}
+
+.detail-box-info>dl>*{
+    margin: auto 0;
+}
+
+.detail-box-info>dl>dt{
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.detail-box-info>dl>dt::before {
+    content: "-";
+    margin-right: .7em;
+}
+
+
+/* Medium devices (tablets, 600 and up) */
+@media only screen and (max-width: 992px){
+    .above-table {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5em;
+    }
+
+    .table-filter{
+        width: 100%;
+    }
+
+    .table .email, .table .tel{
+        display: none;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .input-underline{
+        width: 0;
+    }
+
+
+}

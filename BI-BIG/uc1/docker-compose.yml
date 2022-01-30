@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  frontend:
+    image: nginx:alpine
+    volumes:
+     - ./frontend:/usr/share/nginx/html
+    ports:
+     - 3000:80
+  backend:
+    build: ./backend
+    environment:
+     DB_HOST: db
+     DB_PORT: 5432
+     DB_USER: bibig
+     DB_PASSWORD: bibig
+     DB_NAME: bibig
+    ports:
+     - 3001:3001
+  db:
+    image: postgres
+    restart: always
+    volumes:
+     - ./database:/var/lib/postgresql/data
+     - ./db:/docker-entrypoint-initdb.d/
+    environment:
+      POSTGRES_USER: bibig
+      POSTGRES_PASSWORD: bibig
+      POSTGRES_DB: bibig
+    ports:
+     - 5432:5432
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+     - 8080:8080
