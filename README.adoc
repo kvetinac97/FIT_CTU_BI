@@ -140,3 +140,15 @@ link:BI-GIT.21/[SW Development Technologies (BI-GIT.21)] - grades export
 |Introduction to Cultural and Social Anthropology 4+|A
 |SW Development Technologies|- 3+|57/50
 |===
+
+== Sixth semester
+
+Bachelor's thesis is available as a separate repository on this GitHub account.
+
+|===
+|Subject |Grade |Total |Exam |Assessment
+
+|Documentation, Presentation, Rhetorics|A 3+|93/100
+|French Language 2 4+|-
+|Bachelor Thesis 4+|-
+|===
