@@ -4,6 +4,10 @@ Got exactly 100 % of points thanks to activity in semester and nearly faultless 
 
 Was the *first one to finish ProgTest homework* in just 4 hours and 16 minutes.
 
+== Homework
+
+Voluntary homework done to receive extra points for activity.
+
 == Task
 
  - Part 1: Determinization of Multiple Input State Finite Automata (100 %)

@@ -11,6 +11,10 @@ Got 89.59 points, went to oral exam to finish with grade A. +
 - Task 2: University supercomputer (60 %)
 - Task 3: Elections (100 %)
 
+== Homework
+
+Voluntary homeworks based on course content.
+
 == Random
 
 Various programs written to practice topics like AVL, binomial/binary heap...
