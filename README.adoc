@@ -2,6 +2,8 @@
 
 Collection of my projects made on FIT_CTU throughout bachelor studies.
 
+In final exam, I defended my thesis with grade A and was examined from subjects BI-PSI (grade A) and BI-VWM (grade A).
+
 == First semester
 
 link:BI-PA1/[Programming and Algorithms (BI-PA1)] - homeworks on ProgTest, exercises from labs
